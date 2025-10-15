@@ -1,0 +1,29 @@
+
+
+%% See https://stackoverflow.com/questions/78504075/pgf-import-in-latex-not-working-due-to-matplotlib-axes-font
+%% for more info
+%% matplotlib preamble.
+\def\mathdefault#1{#1}
+\everymath=\expandafter{\the\everymath\displaystyle}
+%\IfFileExists{scrextend.sty}{
+%    \usepackage[fontsize=9.000000pt]{scrextend}
+%}{
+%\renewcommand{\normalsize}{\fontsize{9.000000}{10.800000}\selectfont}
+%\normalsize
+%}
+%\ifdefined\pdftexversion\else  % non-pdftex case.
+%\usepackage{fontspec}
+%\setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/home/users/lbaldini/.pyenv/versions/3.13.1/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%\setsansfont{DejaVuSans.ttf}[Path=\detokenize{/home/users/lbaldini/.pyenv/versions/3.13.1/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%\setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/home/users/lbaldini/.pyenv/versions/3.13.1/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%\fi
+%\makeatletter\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}\makeatother
+
+
+\newcommand{\keyfigures}[2]{
+\marginnote{
+\begin{tcolorbox}[width=0.45\textwidth, boxsep=-0pt]
+\underline{Key facts: #1}\\[8pt]
+#2
+\end{tcolorbox}
+}}

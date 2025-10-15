@@ -1,0 +1,96 @@
+\chapter{Cross section and mean free path}\label{chap:xsec}
+
+
+In scattering theory, the differential cross section measures the probability for
+a given particle to be deflected in a given direction by a scattering
+center\sidenote{In real life things can be more complicated, and a cross section
+  can be \emph{differential} in an arbitrary number of variable, not limited
+  to directions in space (e.g., the momentum transferred in the collisiom), but
+  we shall stick to the simplest case.}.
+It has the physical dimensions of an area, and, at least in particle physics, is
+customarily measured in \emph{barns}, where
+\begin{align*}
+  1~b = 10^{-24}~\text{cm}^2.
+\end{align*}
+
+From a physical standpoint, given a uniform beam of particles impinging onto a
+scattering center, the differential cross section is the ratio $\nicefrac{d\sigma}{d\Omega}$,
+where $d\sigma$ represents the (infinitesimal) area, perpendicular to the beam
+axis, across which particles are deflected in the direction $d\Omega$.
+
+Integrating over all the directions yields the so called \emph{total} cross section
+\begin{align}
+  \sigma = \int_\Omega \dv{\sigma}{\Omega} \diff\Omega
+\end{align}
+which measures the total surface orthogonal to the beam direction over which
+particles are scattered in \emph{some} direction\sidenote{It follows from the definition
+that the total cross section is infinite for long-range forces, like the Coulomb
+scattering off a naked nucleus: in this case the incoming particle is deflected
+by some angle, no matter how large the impact parameter is.}.
+
+
+\section{Diffusion from a hard sphere}
+
+\begin{marginfigure}
+  \input{figures/hard_sphere_xsec.pgf}
+  \caption{Schematic representation of the scattering of a point-like particle
+  off a hard shpere.}
+  \label{fig:hard_sphere_xsec}
+\end{marginfigure}
+
+Many of the features of the cross section can be effectively illustrated with the
+simple example of the diffusion of a point-like particle by a hard sphere with
+infinite mass. The scattering angle as a function of the impact parameter $b$
+is given by
+\begin{align*}
+  \sin\nicefrac{\theta}{2} = \frac{b}{r}
+  \quad\text{or}\quad
+  b = r \sin\nicefrac{\theta}{2}.
+\end{align*}
+Since the problem has azimuthal simmetry, the infinitesimal area orthogonal to
+the particle flux that is scattered at an angle $\theta$ is given by
+\begin{align*}
+  d\sigma = 2\pi b \diff b = 2\pi b \abs{\dv{b}{\theta}} \diff\theta =
+  2\pi \frac{r^2}{2} \sin\nicefrac{\theta}{2}\cos\nicefrac{\theta}{2}\diff\theta =
+  2\pi \frac{r^2}{4} \sin\theta \diff\theta
+\end{align*}
+and the differential cross section
+\begin{align}
+  \dv{\sigma}{\Omega} = \frac{d\sigma}{2\pi \sin\theta \diff\theta} = \frac{r^2}{4}
+\end{align}
+does not explicitely depend on $\theta$.
+
+The total cross section can be easily calculated integrating over the entire
+solid angle and, not surprisingly, reads
+\begin{align}
+  \sigma = \int_\Omega \dv{\sigma}{\Omega} \diff\Omega =
+  \int_0^\pi \int_0^{2\pi} \frac{r^2}{4} \sin\theta \diff\theta \diff\phi =
+  4 \pi \frac{r^2}{4} = \pi r^2,
+\end{align}
+that is, is the physical area of the hard sphere, projected on the plane orthohonal
+to the incident flux.
+
+
+\section{The mean free path}
+
+The average length that a particle traverses before interacting depends on both
+the number density (that is, the number per unit volume) of the scattering centers
+and the cross section, for a given process, of the single scattering center
+\begin{align}
+  \lambda = \frac{1}{n \sigma}.
+\end{align}
+This is correct from a dimensional standpoint (the number density has the dimension
+of the inverse of a volume and $\sigma$ is an area), and meets the intuition that
+the mean free path is smaller when the density of targets and/or the cross section
+are larger.
+
+Since the mean free path scales naturally with the (mass) density of the medium,
+it is customary to give the same name \emph{mean free path} to the quantity
+$\lambda \density$, measured in g~cm$^{-2}$, with the understanding that one has
+to divide the numerical value of the latter by the density of the medium to recover
+the actual length in the proper physical units (e.g., cm). This is especially useful
+for gases, as one can express the mean free path for a given process as an
+intrinsic property of a given mixture, irrespectively of the pressure.
+
+
+\todo{Add Fermi golder rule?}

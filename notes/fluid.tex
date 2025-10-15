@@ -1,0 +1,424 @@
+\chapter{Fluidodynamics}\label{chap:fluidodynamics}
+
+In this chapter we shall quickly review some basic fact from non-relativistic
+fluidodynamic. We shall assume that
+\begin{align*}
+  \vbvelocity(x, y, z, t)
+\end{align*}
+is the velocity field of the fluid and all the properties of the latter can be
+described as (scalar, vector, or tensor) functions of time and position.
+(The discussion is largely tailored to cosmic-ray acceleration in shocks, that we
+treat in section~\ref{sec:shock_acceleration}.)
+
+
+
+\section{Vector calculus}
+
+Since we shall use it extensively in the following, we recall here that for any
+scalar function $f(x, y, z, t)$ the total time derivative reads
+\begin{align*}
+  \dv{f}{t} &= \pdv{f}{t} + \pdv{f}{x} \dv{x}{t} +
+  \pdv{f}{y} \dv{y}{t} + \pdv{f}{z} \dv{z}{t} =
+  \pdv{f}{t} + \velocity_x \pdv{f}{x} + \velocity_y \pdv{f}{y} + \velocity_z \pdv{f}{z},
+\end{align*}
+which can be written more succinctly\sidenote{It is obvious from the expansion of
+the expression that
+\begin{align*}
+  (\vbvelocity \cdot \grad) f = \vbvelocity \cdot \grad{f} =
+  \grad{f} \cdot \vbvelocity
+\end{align*}
+but the form with the parenthesis showcases the underlying physical meaning
+of the total derivative as an operator, and can be applied to vectors with no
+ambiguities.} as
+\begin{align}
+  \dv{f}{t} = \pdv{f}{t} + \overbrace{(\vbvelocity \cdot \grad)}^{\text{advection}} f
+\end{align}
+where the part containing the spatial derivatives is generally referred to as the
+\emph{advective} term.
+
+We shall also make use of the well-know divergence theorem, that we state here
+for a generic vectorial field $\vb{f}$
+\begin{align}\label{eq:divergence_theorem}
+  \int_S \vb{f} \cdot d\vb{S} = \int_V \vnabla \cdot \vb{f} \dd{V}.
+\end{align}
+
+
+
+\section{Conservation laws}
+
+Let us consider a non-relativistic fluid described by its mass density
+$\density(x, y, z, t)$, function of position and time. We shall express in differential
+form the conservation laws for mass, momentum and energy.
+
+
+
+\subsection{Mass conservation}\label{sec:nrf_mass_conservation}
+
+The conservation of mass can be expressed by affirming that, in absence of any
+source (or sink) term, the change of mass within any given volume $V$ in the fluid
+must be compensated by the flux of matter crossing the corresponding closed surface $S$
+\begin{align*}
+  \int_V \pdv{\density}{t} \dd{V} + \int_S \density \vbvelocity \cdot d\vb{S} = 0.
+\end{align*}
+By virtue of the divergence theorem this can be rewritten as
+\begin{align*}
+  \int_V \pdv{\density}{t} \dd{V} + \int_V \vnabla \cdot (\density \vbvelocity) \dd{V} = 0
+\end{align*}
+and, considering the arbitrariness of the integration volume, it yields the continuity
+equation, in differential form, for the conservation of mass
+\begin{align}\label{eq:continuity_equation}
+  \pdv{\density}{t} + \vnabla \cdot (\density \vbvelocity) = 0.
+\end{align}
+
+We emphasize that this very same general structure, where the (partial) time derivative
+of a quantity is equal and opposite to the divergence of a vectorial field, is
+characteristic of conservation laws for scalar quantities. The conservation of the
+electric charge\sidenote{The latter is generally expressed as
+\begin{align*}
+  \pdv{\density}{t} + \vnabla \cdot \vb{j} = 0,
+\end{align*}
+and the vectorial field, here, is represented by the electrical current $\vb{j}$.
+Note we are overloading for a second the meaning of $\density$ to indicate the
+charge density---this will be the only instance throughout these notes.}
+is a prime example, and we shall see another one (the conservation of energy) in section~\ref{sec:nrf_energy_conservation}.
+
+
+
+\subsection{Momentum conservation}\label{sec:nrf_momentum_conservation}
+
+Since the momentum is a vectorial quantity, the associated conservation law does
+not take the form of a continuity equation.
+The force excerted on our volume of fluid from the rest of the fluid corresponds
+(with the opposite sign) to the integral of the pressure over the surface \sidenote{We
+have used the divergence theorem, as you can check for yourself on any cartesian
+component, e.g.,
+\begin{align*}
+  \mathcal{F}_x &= \int_S (\pressure \vb*{i}) \cdot d\vb{S} =
+  \int_V \nabla \cdot (\pressure \vb*{i}) \dd{V} =\\
+  &= \int_V \left( \vb*{i} \cdot \vnabla \pressure +
+  \pressure \cancel{\vnabla \cdot \vb*{i}} \right) \dd{V} =\\
+  &= \int_V \pdv{\pressure}{x} \dd V.
+\end{align*}
+(The term $\vnabla \cdot \vb*{i}$ cancels because the versor $\vb*{i}$ is constant.)}
+\begin{align*}
+  \mathbfcal{F} = -\int_S \pressure \dd{\vb{S}} = -\int_V \vnabla \pressure \dd{V}.
+\end{align*}
+
+Now, in absence of other external forces, and neglecting any viscous effect
+the equation of motion reads
+\begin{align*}
+  \mathbfcal{F} = %\int_V \dv{\vbvelocity}{t} \dd{m} =
+  \int_V \density  \dv{\vbvelocity}{t} \dd{V} =
+  \int_V \density \left[\pdv{\vbvelocity}{t} +
+  (\vbvelocity \cdot \vnabla) \vbvelocity
+  \right] \dd{V}.
+\end{align*}
+
+Given that the integration volume is, again, arbitrary, this yields what is generally
+referred to as the Euler equation for the conservation of momentum in differential
+form\sidenote{Note this is an instance where the $\vbvelocity \cdot \grad$ operator
+is applied to a vector and needs to be written in parenthesis.}
+\begin{align}\label{eq:euler_equation}
+  \pdv{\vbvelocity}{t} + (\vbvelocity \cdot \grad) \vbvelocity =
+  -\frac{\grad{\pressure}}{\density}.
+\end{align}
+
+
+
+\subsection{Energy conservation}\label{sec:nrf_energy_conservation}
+
+If we neglect viscosity and thermal conductivity, we can write the total energy per
+unit volume in any given volume as the sum of a kinetic and an internal term
+\begin{align}
+  \varepsilon = \frac{E}{V} = \frac{1}{2}\density \velocity^2 + \frac{U}{V} =
+  \frac{1}{2}\density \velocity^2 + \frac{U}{m} \frac{m}{V} =
+  \frac{1}{2}\density \velocity^2 + \mathcal{u} \density,
+\end{align}
+where we have implicitly defined the energy per unit mass $\mathcal{u}$ as
+\begin{align*}
+  \mathcal{u} = \frac{U}{m}.
+\end{align*}
+The energy being a scalar, we would like to express the associated conservation
+law in a form similar to~\eqref{eq:continuity_equation}
+\begin{align*}
+  \pdv{\varepsilon}{t} + \vnabla \cdot \mathbfcal{J} = 0,
+\end{align*}
+where the vector $\mathbfcal{J}$ should be written in terms of the thermodynamical
+quantities of the system (e.g., $\pressure$ and $\density$). We might event be tempted
+to make a bold guess
+\begin{align*}
+  \mathbfcal{J} = \varepsilon \vbvelocity =
+  \density \vbvelocity \left( \frac{1}{2}\velocity^2 + \mathcal{u} \right)
+  \quad \text{(wrong!)}
+\end{align*}
+but in fact we would not be quite right if we did that\sidenote{This is actually
+not too far from the right answer, and if you are not concerned with the gory details
+of the calculation, you can move forward at the end of this section: you will see
+that all you have to do to make this right is to change the internal energy per
+unit mass into the enthalpy per unit mass.}, so let us take a breath and proceed
+in a orderly manner---if you are in a rush, you can jump straight to the correct
+answer~\eqref{eq:nrf_energy_conservation}.
+
+Before we start, along the same lines of what we did for the internal energy, let
+us define the entropy and enthalpy per unit mass:
+\begin{align*}
+  \mathcal{s} = \frac{S}{m}
+  \quad\text{and}\quad
+  \mathcal{h} = \frac{H}{m} = \frac{U + \pressure V}{m} =
+  \mathcal{u} + \frac{\pressure}{\density}.
+\end{align*}
+We are now ready to start piecing things together. The (partial) time derivative
+of the energy per unit volume reads
+\begin{align*}
+  \pdv{\varepsilon}{t} =
+  \pdv{}{t}\left( \frac{1}{2} \density \velocity^2 + \mathcal{u} \density \right) =
+  \frac{1}{2} \velocity^2 \pdv{\density}{t} + \density \vbvelocity \cdot \pdv{\vbvelocity}{t} +
+  \density \pdv{\mathcal{u}}{t} + \mathcal{u} \pdv{\density}{t}.
+\end{align*}
+and all we have to do is to recast the right-end side of the expression as a divergence.
+
+The task is actually less daunting than it might seem at a first glance, as the
+conservation laws for mass and momentum do allow to write most of the time derivatives
+as spatial gradients. The one bit where it is not completely obvious how to proceed
+is the one involving the time derivative of the internal energy per unit mass, so we
+shall begin from that. In our setting, where we are operating in terms of intensive
+quantities\sidenote{One should note that the differential of the volume in the
+$\pressure dV$ term becomes
+\begin{align*}
+  \pressure dV \rightarrow \pressure d\left(\frac{V}{m}\right) =
+  \pressure d\left(\frac{1}{\density}\right) = -\frac{\pressure}{\density^2}d\density.
+\end{align*}},
+the first law of thermodynamics can be recasted as
+\begin{align*}
+  d\mathcal{u} - \frac{\pressure}{\density^2}d\density = T d\mathcal{s}
+  \quad\text{or}\quad
+  \pdv{\mathcal{u}}{t} =
+  T \pdv{\mathcal{s}}{t} + \frac{\pressure}{\density^2}\pdv{\density}{t},
+\end{align*}
+which in turns allows to rewrite the part of our energy balance involving the
+internal energy as
+\begin{align*}
+  \density \pdv{\mathcal{u}}{t} + \mathcal{u} \pdv{\density}{t} &=
+  \density T \pdv{\mathcal{s}}{t} + \frac{\pressure}{\density}\pdv{\density}{t} +
+  \mathcal{u} \pdv{\density}{t} =
+  \density T \pdv{\mathcal{s}}{t} +
+  \overbrace{\left( \mathcal{u} + \frac{\pressure}{\density} \right)}^{\text{enthalpy}}
+  \pdv{\density}{t} =\\
+  & = \density T \pdv{\mathcal{s}}{t} + \mathcal{h} \pdv{\density}{t}.
+\end{align*}
+(Oh, look what we have here: the enthalpy has appeared, as we did anticipate in
+the sidenote a few lines above.)
+
+If we assume adiabaticity, the total time derivative of the entropy vanishes, which
+we can use at our advantage in order to write the partial time derivative as a spatial
+derivative
+\begin{align*}
+  \dv{\mathcal{s}}{t} = \pdv{\mathcal{s}}{t} + (\vbvelocity \cdot \grad) \mathcal{s} = 0
+  \quad\text{and}\quad
+  \density T \pdv{\mathcal{s}}{t} = -\density T (\vbvelocity \cdot \grad) \mathcal{s}.
+\end{align*}
+At this point we are basically done, except for the fact that we have two non-independent
+quantities in the mix (the entropy and the enthalpy), and we would rather express
+everything in terms of one or the other. We shall pick the enthalpy, and use again
+the first law of thermodynamics
+\begin{align*}
+  d\mathcal{h} = d\mathcal{u} + \frac{1}{\density}d\pressure -
+  \frac{\pressure}{\density^2}d\density =
+  Td\mathcal{s} + \frac{1}{\density}d\pressure
+  \quad\text{or}\quad
+  Td\mathcal{s} = d\mathcal{h} - \frac{1}{\density}d\pressure,
+\end{align*}
+which, finally, yields\sidenote{If you are not quite sure why this follows from the
+previous relation, keep in mind that by $d\mathcal{s}$ we mean \emph{any} differential,
+including our convective derivative. In other words:
+\begin{align*}
+  T(\vbvelocity \cdot \vnabla) \mathcal{s} =
+  (\vbvelocity \cdot \vnabla) \mathcal{h} -
+  \frac{1}{\density} (\vbvelocity \cdot \vnabla) \pressure
+  % Don't ask me why this extra \mathcal is needed here to prevent the enthalpy
+  % to appear in bold...
+  \mathcal{},
+\end{align*}
+and since both $\mathcal{s}$ and $\pressure$ are scalars, we can get rid of the
+parentheses with no ambiguities. Et voila.
+}
+\begin{align*}
+  \density T \pdv{s}{t} =
+  -\density \vbvelocity \cdot \grad{\mathcal{h}} +
+  \vbvelocity \cdot \grad{\pressure}
+  % Don't ask me why this extra \mathcal is needed here to prevent the enthalpy
+  % to appear in bold...
+  \mathcal{}.
+\end{align*}
+
+We are now ready to put everything together,
+\begin{align*}
+  \pdv{\varepsilon}{t} =
+  %\pdv{t}(\frac{1}{2} \density \velocity^2 + \mathcal{u} \density) =
+  \frac{1}{2} \velocity^2 \pdv{\density}{t} + \density \vbvelocity \cdot \pdv{\vbvelocity}{t}
+  -\density\vbvelocity \cdot \grad{\mathcal{h}} + \vbvelocity \cdot \grad{\pressure} +
+  \mathcal{h} \pdv{\density}{t}.
+\end{align*}
+Using the the continuity equation and the Euler equation we can rewrite the right-hand
+side of the expression as
+\begin{align*}
+  \pdv{\varepsilon}{t} = &
+  -\frac{1}{2}\velocity^2 \vnabla \cdot (\density \vbvelocity)
+  - \density \vbvelocity \cdot (\vbvelocity \cdot \grad) \vbvelocity
+  - \cancel{\vbvelocity \cdot \grad{\pressure}} + \mathcal{}\\
+  & -\density(\vbvelocity \cdot \grad) \mathcal{h}
+  + \cancel{\vbvelocity \cdot \grad{\pressure}} +
+  - \mathcal{h} \vnabla \cdot (\density \vbvelocity) = \mathcal{}\\
+  = & - \left( \frac{1}{2} \velocity^2 + \mathcal{h} \right) \vnabla \cdot (\density \vbvelocity)
+  - \density \vbvelocity \cdot \grad(\frac{1}{2} \velocity^2 + \mathcal{h}) = \mathcal{}\\
+  = & - \vnabla \cdot \left[
+    \density \vbvelocity \left( \frac{1}{2} \velocity^2 + \mathcal{h} \right)
+    \right]\mathcal{}.
+\end{align*}
+And we are done---this is the expression for $\mathbfcal{J}$ we were looking for,
+and the full, glorious formula for the energy conservation reads.
+\begin{align}\label{eq:nrf_energy_conservation}
+  \pdv{t} \left( \frac{1}{2}\density \velocity^2 + \mathcal{u} \density \right) +
+  \vnabla \cdot \left[ \density \vbvelocity
+  \left( \frac{1}{2} \velocity^2 + \mathcal{u} + \frac{\pressure}{\density} \right)\right] = 0.
+\end{align}
+
+
+
+\subsection{Conservation laws in one dimension}
+
+Before we move on, it is instructive to write down explicitely the three conservation
+laws in the one-dimensional case\sidenote{If you are wondering what is the use for
+that, be reassured this is relevant for the discussion of a parallel shock that
+we shall do in section~\ref{sec:shock_acceleration}}, i.e, when the velocity field
+and all the dynamical variables only depend on a single spatial coordinate (e.g., $x$),
+and, possibly, on the time
+\begin{align}
+  \begin{cases}
+  \displaystyle\pdv{\density}{t} + \pdv{x}(\density \velocity) = 0
+  & \quad\text{(mass)}\\[5pt]
+  \displaystyle\pdv{\velocity}{t} + \velocity \pdv{\velocity}{x} = -\frac{1}{\density} \pdv{\pressure}{x}
+  & \quad\text{(momentum)}\\[5pt]
+  \displaystyle\pdv{t}(\frac{1}{2} \density \velocity^2 + \mathcal{u} \density) +
+  \pdv{x} \left[\density \velocity \left( \frac{1}{2} \velocity^2 + \mathcal{u} +
+  \frac{\pressure}{\density} \right) \right] = 0
+  & \quad\text{(energy)}
+\end{cases}
+\end{align}
+
+In the stationary case, when all the time derivatives vanish, these reduce to
+the simple expressions\sidenote{If you are unsure about why the momentum conservation
+reads this way, note that
+\begin{align*}
+  \dv{x}(\density \velocity^2) =
+  \density \velocity \dv{\velocity}{x} + \cancel{\velocity \dv{x}(\density \velocity)} =
+  \density \velocity \dv{\velocity}{x}
+\end{align*}
+where the striked-through term vanishes in virtue of the continuity equation in
+the stationary case.}
+\begin{align}\label{eq:conservation_1d_stationary}
+  \begin{cases}
+  \displaystyle\dv{x}(\density \velocity) = 0
+  & \quad\text{(mass)}\\[5pt]
+  \displaystyle\dv{x}(\density \velocity^2 + \pressure) = 0
+  & \quad\text{(momentum)}\\[5pt]
+  \displaystyle\dv{x}
+    \left[
+    \density \velocity \left( \frac{1}{2} \velocity^2 + \mathcal{u} +
+    \frac{\pressure}{\density} \right)
+    \right] = 0
+  & \quad\text{(energy)}
+  \end{cases}
+\end{align}
+which are readily integrated yielding
+\begin{align}
+  \begin{cases}
+    \density \velocity = \text{const}
+    & \quad\text{(mass)}\\
+    \density \velocity^2 + \pressure = \text{const}
+    & \quad\text{(momentum)}\\
+    \density \velocity \left( \frac{1}{2} \velocity^2 +
+    \mathcal{u} + \frac{\pressure}{\density} \right) = \text{const}
+    & \quad\text{(energy)}.
+  \end{cases}
+\end{align}
+
+
+% \section{An application: sound waves in a fluid}\label{sec:fluid_waves}
+
+% Let us consider the implications of the conservation laws for small perturbations
+% of a non-relativistic fluid with zero velocity, i.e., let us assume
+% that the density and the pressure can be written as
+% \begin{align*}
+%   \pressure(x, y, z, t) = \pressure_0 + \pressure'(x, y, z, t),
+%   \quad\text{and}\quad
+%   \density(x, y, z, t) = \density_0 + \density'(x, y, z, t)
+% \end{align*}
+% where
+% \begin{align*}
+%   \pressure'(x, y, z, t) \ll \pressure_0.
+%   \quad\text{and}\quad
+%   \density'(x, y, z, t) \ll \density_0
+% \end{align*}
+
+% The continuity equation reads
+% \begin{align*}
+%   \pdv{\density}{t} + \div(\density \vb{u}) \approx
+%   \pdv{\density'}{t} + \div(\density_0 \vb{u}) =
+%   \pdv{\density'}{t} + \density_0 \div{\vb{u}} = 0,
+% \end{align*}
+% while the conservation of momentum\sidenote{The fact that the second term vanishes
+% is connected with the zero-velocity hypothesis, but we should be more explicit
+% about this.} is
+% \begin{align*}
+%   \pdv{\vb{u}}{t} + \cancel{(\vb{u} \dotproduct \grad )\vb{u}} =
+%   -\frac{1}{\density} \grad{\pressure} \approx
+%   -\frac{1}{\density_0} \grad{\pressure'}.
+% \end{align*}
+
+% If we assume a generic equation of state $\pressure = \pressure(\density)$, small
+% perturbations in the pressure are proportional to small perturbations in the
+% density through
+% \begin{align*}
+%   \pressure'(x, y, z, t) = c_s^2 \density'(x, y, z, t)
+%   \quad\text{where}\quad
+%   c_s^2 = \eval{\pdv{\pressure}{\density}}_{\density = \density_0}
+% \end{align*}
+% (we shall see in a second why we have named $c_s^2$ the constant of proportionality).
+
+% We are left with the system of equations
+% \begin{equation*}
+%   \begin{cases}
+%     \displaystyle \frac{1}{c_s^2} \pdv{\pressure'}{t} + \density_0 \div{\vb{u}} = 0\\[8pt]
+%     \displaystyle \pdv{\vb{u}}{t} = - \frac{1}{\density_0} \grad{\pressure'},
+%   \end{cases}
+% \end{equation*}
+% to which we can search a solution in the form $\vb{u} = \grad{\varphi}$. We can
+% make the substitution in the secon equation, yielding
+% \begin{align*}
+%   \pdv{\grad{\varphi}}{t} = \grad{\pdv{\varphi}{t}} = -\frac{1}{\density_0} \grad{\pressure'}
+%   \quad\text{or}\quad
+%   p' = -\density_0 \pdv{\varphi}{t}
+% \end{align*}
+% Finally, plugging this into the first equation yields
+% \begin{align}
+%   \frac{1}{c_s^2}\pdv[2]{\varphi}{t} - \laplacian{\varphi} = 0
+% \end{align}
+% which is a wave equation for sound waves propgating at speed~$c_s$ (which is why
+% we called it that way in the first place).
+
+% In case of an adiabatic perturbation of a perfect gas we have $\pressure V^\gamma$
+% (where $\gamma$ is the adiabatic index defined in~appendix~\ref{chap:thermodynamics}).
+% Since $V \density$ amounts to the total mass of gas (and is therefore rigorously
+% constant), and we can write the equation of state as
+% \begin{align*}
+%   \pressure = k \density^\gamma
+%   \quad\text{or}\quad
+%   \pdv{\pressure}{\density} = \gamma k \density^{\gamma - 1} = \frac{\gamma\pressure}{\density}
+% \end{align*}
+% from which it follows that
+% \begin{align}
+%   c_s = \sqrt{\frac{\gamma\pressure}{\density}} = \sqrt{\frac{\gamma RT}{M}},
+% \end{align}
+% where $M$ is the molar gas for the gas. For dry air, assuming $\gamma = \nicefrac{7}{5}$
+% and $M = 0.02897$~km~m$^-1$, the formula yields $c_s = 343$~m~s$^-1$ at $20^\circ$~C.

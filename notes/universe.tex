@@ -1,0 +1,2119 @@
+\chapter{The Hitchhiker's guide to the universe}
+\label{chap:universe}
+
+
+One of the main features of the material covered in this writeup is its eclecticism,
+along with the variety of scales we shall explore along diverse dynamical axes.
+Some of the objects we shall encounters are relevant in various ways in different
+contexts---supernov\ae~are a prime example we shall discuss in the context of the
+cosmic-distance ladder, the problem of cosmic-ray acceleration, that of neutrino
+production the study of neutrino properties, as well as the measurement of the
+cosmological parameters.
+
+This chapter constitutes a succinct recognition of some of the objects populating
+the universe we shall encounter in the following, with the goal of establishing
+some basic orders of magnitude and developing a common dictionary.
+
+
+\section{Measuring the universe}
+\label{sec:cosmic_ladder}
+
+\begin{table}[htb!]
+  \begin{tabular}{llr}
+    \hline
+    Symbol & Name & Numerical value [m]\\
+    \hline
+    \hline
+    fm & Fermi & $10^{-15}$\\
+    \AA & Angstrom & $10^{-10}$\\
+    au & Astronomical unit & $1.4960 \times 10^{11}$\\
+    lyr & Light-year & $9.4607 \times 10^{15}$\\
+    pc & Parsec & $3.0857 \times 10^{16}$\\
+    \hline
+  \end{tabular}
+  \label{tab:length_units}
+  \caption{Basic units of measurements for length.}
+\end{table}
+
+Since in the following we shall be dealing with length scales ranging over some
+45 orders of magnitude---from the proton radius up to the overall dimensions of
+the visible universe, we start off with a brief overview of the various units we
+shall be using, trying to gauge how it is even possible to establish a self-consistent
+framework extending to distances to much larger than what we commonly experience
+on Earth.
+
+The \emph{astronomical unit} corresponds historically to the average distance
+between the Earth and the Sun, and has been re-defined in 2012 to be exactly
+$149,597,870,700 \approx 1.496 \times 10^{11}$~m.
+The light year is the distance traveled by light in year and (since the speed of
+light has been defined in 1983 to be exactly $299,792,458$~m~s$^{-1}$) has again
+an exact value of $9,460,730,472,580,800$~m. The \emph{parsec} (pc) is defined
+as the distance at which 1~astronomical unit subtends 1~arcsec, or
+$3.0857 \times 10^{16}$~m, or $\approx 3.26$~lyr. (You should be able to work out
+with no hesitation the magic number that turns an~au into a~pc. Hint: it is
+$3600 \times \nicefrac{180}{\pi} \approx 2.06 \times 10^5$.)
+
+\begin{marginfigure}[]
+	\input{figures/astronomical_dimensions.pgf}
+	\caption{Sizes of relevant astrophysical objects.}
+	%\labfig{normalmonalisa}
+\end{marginfigure}
+
+Astronomical distances are customarily measured throughout a variety of techniques.
+Within the solar system, modern radar ranging techniques allow to measure the relative
+distances within object to an astonishing degree of precision---a part in a billion
+or better. For relatively nearby stars, parallax measurement is the most
+straightforward method: pioneered by Bessel and others in the first half of the
+19-th century, it is nowadays a precision technique, with the Gaia space mission
+measuring with a reasonable accuracy stars out to the Galactic center, at a distance
+of about 10~kpc. The Hertzsprung-Russel diagram is a useful tool to gauge the distance
+of stars within the Milky way, although this kind of measurements is prone to subtle
+systematic effects due, e.g., to the light extinction. Beyond our galaxy main-sequence
+stars are too faint to be measured accurately and standard candles such as Cepheid
+variables and Type-Ia supernov\ae, which are relatively common and can be much brighter,
+come to rescue. At even larger distances, the measurement of the cosmological redshift
+is the prime technique in use. (And there is a number of alternative tools and methods
+we do not mention here which, although limited in the number of objects the can
+be applied to, are useful as independent cross-checks.)
+
+All these different techniques are routinely stitched together and used in conjunction
+to define what is generally referred to as the \emph{cosmic-distance ladder}.
+In the rest of this chapter we shall briefly review these techniques and
+familiarize ourselves with some of the objects we have mentioned in passing and
+are relevant for some of the topics we shall deal with in much more detail in the
+following.
+
+
+
+\subsection{The astronomical unit}
+\label{sec:astronomical_unit}
+
+Kepler's laws provide a mean to build a fully-fledged scale model of the solar system,
+where the relative sizes of the orbits of the planets are determined by their
+periods---the latter being comparatively easy to measure to a very high accuracy.
+The knowledge of numerical value of any single relevant scale length (e.g., the
+distance of any of the planets from the Sun) allows to fully specify this
+model and calculate the absolute position of any of the bodies in the solar system.
+
+\begin{figure}[htbp!]
+	\input{figures/au_measurements.pgf}
+	\caption{Historical evolution of the various measurements of the astronomical
+  unit from 1600 to 1900 (adapted from~\cite{2001JAHH....4...15H}). The values
+  on the $y$ axis are referred to the current value of $149,597,870,700$~m.
+  The time span between 1625 and ca. 1750 is what is what~\cite{2001JAHH....4...15H}
+  refers to as "the period of confusion", following the realization, by Kepler
+  and others, that the classical value of 1150 Earth radii derived by Aristarchus
+  in 280~BC was largely underestimated. In the second half of the nineteenth
+  century the astronomical unit has come to be known to about 1\%, while
+  modern radar ranging techniques allow to measure distances in the solar
+  system to a few parts per million.}
+\end{figure}
+
+The quantity that, historically, has served the purpose of this reference scale
+length is the \emph{astronomical unit} (au), originally conceived as the average
+of the aphelion and the perihelion of the Earth's orbit around the Sun, and redefined
+in 2012 to have the exact numerical value of $149,597,870,700$~m. As we shall see
+in the next section, the astronomical units is also key to the determination of
+the distance to the closest stars through the measurement of stellar parallax, and
+is effectively the first step in the cosmic ladder.
+
+A detailed account of the quest for the numerical value of the astronomical unit
+is provided in~\cite{2001JAHH....4...15H}. Unlike other fundamental astronomical
+quantities---such as the radius of the Earth and the distance between the Earth
+and the Moon, which have been known to a good precision since ancient times---the
+astronomical unit has a troubled story. Early measurements were grossly underestimated,
+and for about 19 centuries the estimates by Aristarchus, Hipparchus and Ptolemy
+(all of them some 20~times too small) were hardly questioned---Copernicus and Tycho
+were still using them at the end of the sixteenth century. In the early seventeenth
+century Johannes Kepler was one the first casting doubts on the accepted values,
+starting a period of about 150~years of developments and ingenious new methods.
+By 1750, the estimates for the astronomical units were within $\pm 5\%$ of the current
+reference value.
+
+
+
+\subsection{Stellar parallax}
+\label{sec:parallax}
+
+Although the idea of measuring star distances using the parallax dates back at
+least to the ancient Greeks, and was explicitly mentioned in 1632 by Galileo
+Galilei in his \emph{Dialogue Concerning the Two Chief World Systems}%
+\sidenote{\emph{Perch'io non credo che le stelle siano sparse in una sferica
+superficie, egualmente distanti da un centro, ma stimo che le loro lontananze da
+noi siano talmente varie, che alcune ve ne possano esser 2 e 3 volte pi\`u remote
+di alcune altre; talch\'e, quando si trovasse co'l telescopio qualche piccolissima
+stella vicinissima ad alcuna delle maggiori, e che per\`o quella fusse altissima,
+potrebbe accadere che qualche sensibil mutazione succedesse tra di loro,
+rispondente a quella de i pianeti superiori.}
+(Galileo, Dialogo sopra i due massimi sistemi del mondo.)},
+early attempts at the measurement of the \emph{absolute} stellar
+parallax~\cite{1975JRASC..69..222F} brought in fact the discovery of stellar
+\emph{aberration}, that James Bradley correctly explained in 1727 as a combined
+effect of the finite speed of light and the revolution of the Earth around the
+Sun~\cite{1727RSPT...35..637B}.
+
+It was not until the end of the 1830s that sensitive enough instrumentation became
+available for the \emph{relative} stellar parallax to be unambiguously detected,
+independently, by Friedrich Wilhelm Bessel for 61~Cygni~\cite{1838MNRAS...4..152B},
+Thomas Henderson for $\alpha$~Centauri~\cite{1839MNRAS...4..168H} and Otto Wilhelm
+von Struve for $\alpha$~Lyrae~\cite{1837sdmm.book.....S, 1840AN.....17..177V}.
+
+\begin{table}[htbp!]
+  \begin{tabular}{lrr}
+    \hline
+    Star & Original estimate [as] & Current estimate [as]\\
+    \hline
+    \hline
+    61~Cygni & $0.314 \pm 0.020$~\cite{1838MNRAS...4..152B} &
+      $0.285995 \pm 0.000060$~\cite{2023A&A...674A...1G}\\
+    $\alpha$~Centauri & $1.06 \pm 0.12$~\cite{1839MNRAS...4..168H} &
+      $0.743 \pm 0.013$~\cite{2016A&A...586A..90P}\\
+    $\alpha$~Lyrae & $0.125 \pm 0.055$~\cite{1837sdmm.book.....S} &
+      $0.13023 \pm 0.00036$~\cite{2007A&A...474..653V}\\
+    \hline
+  \end{tabular}
+  \caption{Comparison between the original parallax values measured for
+    61~Cygni, $\alpha$~Centauri, and $\alpha$~Lyrae, and the currently
+    accepted values.}
+\end{table}
+
+A recent reanalysis \cite{2020AN....341..860R} of some of the original data sets
+provides an informed account on the spectacular difficulty of these early measurements,
+demonstrating how all of them have stand the test of time. Bessel's measurement,
+in particular, could be described in modern terms as a least-square fit to 183~independent
+data points that the author performed (flawlessly) without the aid of a computer,
+and being very much aware of the possible sources of systematic effects. In order
+to put things in context, it is worth reminding that 0.3~as correspond to the angle
+subtended by a coin at a distance of $\sim 7$~km.
+
+In a time where the Gaia data release 3~\cite{2023A&A...674A...1G} contains the
+full astrometry solution for almost 2~billions of stars out to magnitude of about
+$G = 21$, with parallax errors as small as $20~\mu$as, this might seems nothing
+short of romantic, but the consequences of these pioneering measurements can be
+hardly downplayed, as for the first time in history a sensible estimate of the distance
+to closest stars was available.
+
+
+
+\subsection{Standard candles}
+\label{dec:standard_candles}
+
+One of the cornerstones in the development of the modern cosmic-distance ladder is
+the realization, by Henrietta Swan Leavitt\sidenote{It is hard not to notice that
+the original Harvard College Observatory circular~\cite{1912HarCi.173....1L} is
+signed by the Director of the Observatory, Edward Pickering, since Henrietta, as
+a woman, was not allowed to disseminate the result directly.}, of the existence of
+a period-luminosity relation for a particular class of sources going under the name
+of \emph{Cepheids}.
+
+\begin{figure}[htbp!]
+	\input{figures/leavitt_1912.pgf}
+	\caption{Original evidence for the relation between luminosity and period in
+    Cepheid variables (adapted from~\cite{1912HarCi.173....1L}). The plot
+    shows the measured brightness and period for 25 variable stars in the Small
+    Magellanic Cloud---the black points represent the geometric mean of the
+    minimum and maximum luminosity reported in the 1912 paper by Henrietta Swan Leavitt.
+    In modern terms, the fit represent a power law with index $2.04 \pm 0.10$.
+    Under the assumption that the stars lie all the same distance (which is not
+    terrible, as the diameter of the LMC is roughly 10\% of its distance, 60~kpc,
+    from the Earth) this represents the first evidence that specific source classes
+    can be used as standard candles for distance measurements. It is also interesting
+    to note how such a crude relation allows to recover the source distance
+    from its period typically within $\sim 0.3$ magnitudes, i.e., a factor of of 2.}
+	%\labfig{normalmonalisa}
+\end{figure}
+
+Named from the star Delta Cephei in the constellation Cepheus, Cepheids are
+radially-pulsating, variable stars, whose magnitudes change with time with a relatively
+regular pattern. Studying a sample of Cepheids in a Large Magellanic cloud, Leavitt
+was the first to realize the presence of a tight correlation between the brightness
+and the period\sidenote{Note the key to this measurement is the fact that we can
+assume the stars in the LMC are all approximately at the same distance.} This, in
+turn, paved the way to the indirect measurement of the distances of other galaxies
+by the measurement of the period and the relative magnitude of Cepheid stars embedded
+into them: you derive the absolute magnitude from the period and gauge the distance
+via the inverse-square low by comparing it to the relative magnitude.
+
+Cepheids constitute the first instance of so called \emph{standard candles}, or
+objects whose absolute luminosity is known or can be reliably inferred by the
+measurement of some ancillary quantity, such as the period of variability. Other
+examples of standard candles include Type-Ia supernov\ae, that we shall briefly
+touch upon in section~\ref{sec:supernovae}. And of course the very concept of standard
+candle is a slippery one, and the measurement principle we have outlined is potentially
+plagued by subtle systematic effects, but nonetheless it is instrumental in the
+intermediate part of the cosmic-distance ladder.
+
+
+
+\subsection{Hubble law and cosmological redshift}
+\label{sec:hubble_law}
+
+The spectrum of the light emitted by a star typically contain atomic \emph{absorption}
+lines caused by the relatively cold gas in the upper atmosphere. Since when we look
+at a galaxy we are looking at the sum of individual stars\sidenote{Active galaxies
+may contain \emph{emission} lines from much hotter gas in the environment.}, it turns
+out that galaxy spectra contain a number of spectral features a well-know frequencies,
+determined by the absorbing material, that can be used to measure the relative velocity
+along the line of sight via Doppler shift. The measurement of the \emph{redshift}
+of any given galaxy
+\begin{align}
+	z = \frac{\lambda_\text{obs} - \lambda_\text{em}}{\lambda_\text{em}}
+\end{align}
+is a measure of how fast the galaxy itself is recessing from (or approaching, in
+the less common case where $z < 0$) us. More specifically, in the limit where the
+recession velocity $v$ is much smaller than the speed of light, we can use the
+first order approximation of the Doppler formula
+\begin{align*}
+	z \approx \beta = \frac{v}{c} \quad\text{or}\quad v = zc.
+\end{align*}
+
+By 1927 it was know that the vast majority of the galaxies with measured redshift
+was characterized by a value $z > 0$---that means, if we really buy into the Doppler
+effect interpretation of the cosmological redshift, that most of the galaxies are
+recessing from us. In 1929 Hubble also noted that more distant galaxies tended to
+have higher redshifts~\cite{1929PNAS...15..168H}, and fitted the data\sidenote{Measuring
+the distance of a cosmological object is a highly non-trivial task and, as a matter
+of fact, in the original publication Hubble was severely underestimating the distances
+to the individual galaxies, which yielded an unrealistically high value for $H_0$
+of $ 500$~km~s$^{-1}$~Mpc$^{-1}$.} with a linear relation
+\begin{align}
+	z = \frac{H_0}{c}d \quad\text{or}\quad v = H_0 d,
+\end{align}
+where $H_0$ has made it into cosmological mainstream as the \emph{Hubble constant}.
+The most recent precision measurements point to a value for the Hubble constant of
+$H_0 \sim 70$~km~s$^{-1}$~Mpc$^{-1}$. (Note that, despite the funny units it is
+usually expressed with, the Hubble constant has the dimension of the inverse of a
+time---more about this in a second.) This is relevant for our discussion, because
+measuring redshifts is relatively easy, and one can invert Hubble law and infer
+the distance from the redshift
+\begin{align*}
+  d = \frac{zc}{H_0}.
+\end{align*}
+
+\keyfigures{Hubble law}{
+  $H_0 \approx 67.66$~km~s$^{-1}$~Mpc$^{-1}$\\
+  $\tau_H = H_0^{-1} \approx 14.45$~Gyr\\
+  $r_H = cH_0^{-1} \approx 4.431$~Gpc\\
+  $\density_c \approx 8.599 \times 10^{-30}$~g~cm$^{-3}$
+}
+
+It is interesting to note that the fact that all distant galaxies are recessing
+from us (and more so the more distant they are) is not a blatant violation of the
+Copernican principle\sidenote{We shall come back to the topic but, in a nutshell,
+the Copernican principle states that the Earth, and us humans with it, does not
+occupy a priviledge place in the universe.}, but rather it is exactly what one would
+expect if the universe was undergoing an homogeneous and isotropic expansion, where
+all distances within pairs of objects scale with a factor $a(t)$ increasing with time:
+\begin{align*}
+  \frac{d_{12}(t)}{a(t)} = \frac{d_{12}(t_0)}{a(t_0)} \quad\text{or}\quad
+	d_{12}(t) = \frac{a(t)}{a(t_0)} d_{12}(t_0) = \frac{a(t)}{a_0} d_{12}(t_0).
+\end{align*}
+If we take the time derivative it is trivial to demonstrate that
+\begin{align*}
+	v_{12}(t) = \frac{\dot{a}(t)}{a_0} d_{12}(t_0) = \frac{\dot{a}(t)}{a(t)} d_{12}(t),
+\end{align*}
+and therefore the Hubble parameter\sidenote{Make sure you take note of the subtlety,
+here: there is no guarantee that $H$ would stay constant throughout the evolution
+of the universe and we call the function $H(t)$ the Hubble parameter, while we reserve
+the name Hubble constant for the value $H_0$ of the Hubble parameter at the present
+time.} is simply
+\begin{align}
+	H(t) = \frac{\dot{a(t)}}{a(t)}.
+\end{align}
+
+Let us go along with this na\"ive argument and assume that this expansion has been
+at work continuously with no acceleration or deceleration. It follows that, no matter
+what is the current distance $d_{12}$ between the two points today, they where bound
+to be in contact a some point in the past, and the time elapsed since that time is
+\begin{align*}
+	\tau_H = \frac{d_{12}}{v_{12}} = \frac{d_{12}}{H_0 d_{12}} = H_0^{-1}.
+\end{align*}
+$H_0^{-1}$ is generally referred to as the \emph{Hubble time}, and for our fiducial
+value of $H_0$ its numerical value is of the order of 14~Gyr. This is about a factor
+of three larger than the age of the Earth, which is, in many ways, reassuring: if
+this has anything to to with the age of the universe, that it better be of the same
+order of magnitude of the oldest things that we know of\sidenote{Fun fact: if we
+take the initial estimate of $H_0$ by Hubble, we end up with a significantly shorter
+Hubble time of 2~Gyr, which was troubling back in the days, as geologists had already
+inferred a resonably accurate estimate for the age of the Earth, twice as large.}.
+
+And of course we can't help noting that if you multiply the Hubble time by the speed
+of light you get a natural length scale
+\begin{align*}
+  r_H = \frac{c}{H_0} \approx 1.3 \times 10^{28}~\text{cm}
+  \approx 4.3~\text{Gpc} \approx 14~\text{Glyr},
+\end{align*}
+which is sometimes referred to as the \emph{Hubble radius}. If the Hubble time is a
+proxy of the age of the universe, the Hubble radius would be signaling the distance
+of the horizon beyond which anything that happened wouldn't have had time to reach us.
+
+There is another interesting quantity that we can calculate---that of the
+\emph{critical density} of the universe. Let us consider an arbitrary point, and
+a test mass $m$ at a distance $r$ from that point; the latter will be radially
+receding with a kinetic energy
+\begin{align*}
+  E_k = \frac{1}{2}mv^2 = \frac{1}{2}mH_0^2 r^2.
+\end{align*}
+We shall make a step forward and assume that the universe is isotropic and
+homogeneous\sidenote{As we shall see in the following, this is the basic content of
+the cosmological principle, and one of the basic assumption that goes into modern
+cosmology.}, with a constant density $\density$. The potential energy of our test
+mass due to the gravitational attraction from the mass $M(r)$ within a sphere of radius
+$r$ centered on the initial point will be
+\begin{align*}
+  U_G = \frac{G m M(r)}{r} = \frac{4\pi Gm \density r^2}{3}.
+\end{align*}
+If we now equate the two terms and solve for $\density$, we can derive the \emph{critical}
+value $\density_c$ of the density for which the velocity of our test mass at infinity
+is zero
+\begin{align}
+  \density_c = \frac{3H_0^2}{8\pi G} \approx 8.599 \times 10^{-30}~\text{g~cm}^{-3}
+	\quad\text{and}\quad
+	\density_c c^2 \approx 4.824~\text{keV}~\text{cm}^{-3}.
+\end{align}
+As we shall see in the following, this holds in general relativity, and it is a
+fundamental parameter determining the expansion history of the universe.
+
+
+
+\section{The Earth}
+\label{sec:earth}
+
+\keyfigures{Earth caracteristics}{
+  Mean radius: $R_E = 6378$~km\\
+  Mean density: $\density_E = 5.52$~g~cm$^{-3}$
+}
+
+Now that we have a grasp on some of the scales of length (and how we measure them)
+involved in the description of the universe, we are ready to begin our journey, and
+we do that starting from the thing that is closest to us, the Earth, outward.
+
+Moving off the surface of the Earth the first two things that we encounter are the
+Earth atmosphere and the geomagnetic field. As we shall see, both are relevant to
+our discussion for a series of reasons.
+
+
+
+\subsection{The Earth atmosphere}
+\label{sec:earth_atmosphere}
+
+The Earth atmosphere is the very thing that shields us from most of the celestial
+electromagnetic radiation (with the exception of two relatively narrow windows in
+optical and radio) and low-energy cosmic rays, and, in addition, it acts as a sort
+of gigantic calorimeter allowing us to detect very-high-energy gamma rays and charged
+cosmic rays---generating as a by-product copious amounts of neutrinos that, as we
+shall see, proved to be instrumental in the determination of the properties of this
+elusive particle.
+
+The most salient features of the atmosphere can be understood in terms of the equation
+for the hydrostatic equilibrium:
+\begin{align*}
+  \pressure(h + dh) - \pressure(h) = -g\density(h) \diff{h}
+  \quad\text{or}\quad
+  \dv{\pressure}{h}{(h)} = -g\density(h)
+\end{align*}
+If we assume that the atmosphere follows the ideal gas law
+\begin{align*}
+  \pressure = \frac{\density RT}{\mu}
+  \quad\text{or}\quad
+  \density = \frac{\pressure \mu}{RT}
+\end{align*}
+we can rewrite the equilibrium equation as
+\begin{align}\label{eq:atmosphere_hydrostatic_equilibrium}
+  \dv{\pressure}{h}{(h)} = - \frac{g\mu \pressure(h)}{RT(h)}
+\end{align}
+where $\mu$ is average molar mass of the gas, which we shall take as
+$\mu \sim 29$~g~mol$^{-1}$, assuming a composition of 80\% of $N_2$ and 20\% of $O_2$.
+
+\begin{marginfigure}
+  \input{figures/atmospheric_density.pgf}
+  \caption{Barometric density profile for an isothermal atmosphere at $T = 240^\circ$~K.}
+  \label{fig:atmospheric_density}
+\end{marginfigure}
+
+Equation~\eqref{eq:atmosphere_hydrostatic_equilibrium} can only be numerically integrated
+for a generic temperature profile, but simplifies considerably if the temperature
+is constant, which is generally referred to as the isothermal atmosphere limit,
+where the solutions for both the pressure and the density are simple exponential
+functions
+\begin{align}
+  \pressure(h) = \pressure_0 \exp\left(-\frac{h}{h_0}\right)\quad
+  \density(h) = \density_0 \exp\left(-\frac{h}{h_0}\right)\quad
+  h_0 = \frac{RT}{g\mu}.
+\end{align}
+If we assume a temperature $T \sim 240^\circ$~K, the scale height for our simplified
+atmosphere turns out to be $h_0 \sim 7$~km, which provides a surprisingly accurate
+model at least up to the mesopause, at an altitude of about 90~km. In the following
+we shall also assume the standard values for the pressure and density at sea level
+\begin{align}
+  \pressure_0 = 1013~\text{mbar}
+  \quad\text{and}\quad
+  \density_0 = 1.24~\text{mg~cm}^{-3}.
+\end{align}
+
+\begin{marginfigure}
+  \input{figures/atmospheric_grammage.pgf}
+  \caption{Grammage profile for an isothermal atmosphere at $T = 240^\circ$~K.}
+  \label{fig:atmospheric_grammage}
+\end{marginfigure}
+
+These very ingredients allow to calculate a number of interesting quantities.
+The grammage \emph{above} a given altitude $h$, e.g., follows the same exponential
+law
+\begin{align}\label{eq:atmospheric_grammage}
+  \grammage(h) = \int_h^\infty \density(h') \diff{h'} =
+  \density_0 h_0 \exp\left(-\frac{h}{h_0}\right).
+\end{align}
+It is interesting to note that the atmospheric grammage at sea level is
+$\density_0 h_0 \sim 900~\text{g~cm}^{-2}$, equivalent to a column height of
+$\sim 80$~cm if rescaled to the density of lead---which is the basic reason why
+primary cosmic rays above $\sim 10$~eV do not reach the Earth surface.
+
+
+
+\subsection{The Earth magnetic field}
+\label{sec:geomagnetic_field}
+
+Everybody is familiar with the fact that the Earth generates a magnetic field, and
+the magnitude of this field is $\sim 0.5$~G. As it turns out, enormous progress
+has been made, over the last century or so, in mapping the basic properties of the
+geomagnetic field---modern \emph{professional} descriptions, such as the International
+Geomagnetic Reference Field (IGRF) contain expansions up to order 13~\cite{2010GeoJI.183.1216F}.
+In this section we shall limit ourselves to a cursory description of the most basic
+features.
+
+In the following of this section we shall use spherical coordinates
+$(r, \theta, \phi)$\sidenote{In addition to the magnetic co-latitude $\theta$, we
+shall also occasionally make use of the magnetic latitude $\lambda = 90^\circ - \theta$,
+which is widely used in the literature.} centered and aligned with the magnetic
+dipole generating the lowest-order component of the geomagnetic field.
+In source-free regions (i.e., above the Earth's surface), since
+$\nabla \times {\mathbf B} = 0$, the static magnetic field can be expressed as
+the negative gradient of a scalar potential $\psi$, just like the ordinary
+electrostatic field. This potential, in turn, can be expanded in spherical
+harmonics as
+\begin{align}\label{eq:geomag_expansion}
+  \psi(r, \theta, \phi) =&
+  R_E \sum_{n=1}^{\infty}\left(\frac{R_E}{r}\right)^{n+1}\nonumber\\
+  &\sum_{m=0}^{n}(g_n^m\cos m\phi + h_n^m\sin m\phi)P_n^m(\cos\theta).
+\end{align}
+(The reader is referred to \cite{Walt} for the exact definition of the
+terms; we limit ourselves to note that, with the expansion written in this
+form, $g_n^m$ and $h_n^m$ have the dimensions of a magnetic field.)
+
+\keyfigures{Geomagnetic field}{
+  $B_0 \approx 0.312$~G
+}
+
+Many of the features of the geomagnetic field can be effectively illustrated
+by truncating the expansion to the lowest-order (i.e., the dipole) term, with
+$n = 1$ and $m = 0$ (which is the same as saying that the Earth's magnetic
+field is, to a reasonable approximation, a dipole field):
+\begin{align}
+  \psi(r, \theta, \phi) = R_E \left(\frac{R_E}{r}\right)^{2} B_0 \cos\theta.
+\end{align}
+(We have set $g_1^0 = B_0$ for convenience---more about that in a second.)
+Noting that $B_\phi$ is identically $0$ for symmetry reasons, the two non-trivial
+components of the magnetic field\sidenote{Keep in mind that
+the gradient in spherical coordinates reads
+$$
+\nabla = \left( \pdv{}{r},~\frac{1}{r}\pdv{}{\theta},~\frac{1}{r\sin\theta}\pdv{}{\phi}\right).
+$$
+} read
+\begin{align}\label{eq:dipole_field_components}
+  \begin{cases}
+  B_r(r, \theta, \phi) & = \displaystyle -\pdv{\psi}{r} =
+  2 B_0  \left(\frac{R_E}{r}\right)^3 \cos\theta,\\
+  B_\theta(r, \theta, \phi) & = \displaystyle -\frac{1}{r}\pdv{\psi}{\theta} =
+  B_0 \left(\frac{R_E}{r}\right)^3 \sin\theta.
+  \end{cases}
+\end{align}
+That is, the field is purely radial at the poles and purely tangential at the equator.
+For completeness, the intensity of the dipole field at any given point is given by
+\begin{align*}
+  B(r, \theta, \phi) =
+  \sqrt{B_r^2(r, \theta, \phi) + B_\theta^2(r, \theta, \phi)}
+  = B_0 \left(\frac{R_E}{r}\right)^3 \sqrt{1 + 3\cos^2\theta}.
+\end{align*}
+From the above expressions it is easy to recognize that physically $B_0$ represents
+the field intensity at the equator ($\theta = 90^\circ$) on the Earth surface
+($r = R_E$). It is also easy to recognize that the field intensity on the Earth
+surface is minimum at the equator and twice as large at the magnetic poles.
+
+Even more important, it follows from~\eqref{eq:dipole_field_components} that
+the equation for a geomagnetic field line, is
+\begin{align}
+  \frac{dr}{rd\theta} = \frac{B_r}{B_\theta} = \frac{2\cos\theta}{\sin\theta},
+\end{align}
+which is readily integrated\sidenote{Mind when you do that you have logarithms on
+both sides that simplify.} to give:
+\begin{align}
+  r = R_EL\sin^2\theta.
+\end{align}
+At this point the quantity $L$ in the equation above (which is customarily referred
+to as the McIlwain~$L$ coordinate) is just a constant of integration, but one with
+a pretty straightforward physical interpretation---it is the distance, measured
+in units of Earth radii, at which a given field line crosses the magnetic equator
+($\theta = 90^\circ$). For completeness, the McIlwain~$L$ coordinate can be expressed
+in term of the geomagnetic coordinates as
+\begin{align}
+  L = \frac{r}{R_E \sin^2\theta} = \frac{r}{R_E \cos^2\lambda},
+\end{align}
+which becomes
+\begin{align}
+  L = \frac{1}{\sin^2\theta} = \frac{1}{\cos^2\lambda}
+\end{align}
+on the surface of the Earth ($r = R_E$). The McIlwain~$L$ coordinate is convenient
+to describe the population of trapped particles in the Earth magnetosphere, although
+there are some subtleties involved in its definition for non-dipolar field geometries.
+
+The actual geomagnetic field is not a perfectly aligned and centered dipole.
+First of all the dipole axis is misaligned by $\sim 11^\circ$ with respect to
+the spin axis of the Earth. In addition, the center of the dipole does not
+coincide with the center of the Earth (the offset being of the order of 700~km).
+Finally, asymmetries in the interior current system generating the magnetic
+field produce higher-order terms in the expansion~\eqref{eq:geomag_expansion}.
+Not surprisingly, all of this is beyond the scope of this writeup, and it is now
+time to move on.
+
+
+
+\section{The Sun}
+\label{sec:sun}
+
+We shall say up front we're not really interested into planets, and the very next
+thing we encounter moving away from the Earth and within the Solar system is the
+star that is closest to us---the Sun. The Sun is relevant to us because it makes
+the portion of the galaxy we happen to live in (the \emph{heliosphere}) a very special
+place---the spectrum of low-energy cosmic rays, for instance, is highly influenced
+by the solar environment. In addition, as we shall see in chapter~\ref{chap:nu},
+the Sun was recognized very early on as a powerful source of neutrinos, and this
+realization played a pivotal role in the determination of some of the fundamental
+neutrino properties.
+
+\keyfigures{Sun caracteristics}{
+	Mass: $M_\odot = 1.99 \times 10^{30}$~kg\\
+	Radius: $R_\odot = 6.96 \times 10^8$~m\\
+	Luminosity: $L_\odot = 3.83 \times 10^{26}$~W\\
+}
+
+A few quick facts: the Sun is, by all standards, a typical star---a G-type main
+sequence star, as we shall see in the next section. With a mass of $\sim 2 \times 10^{30}$~kg and
+a radius of $\sim 700,000$~km, it shines with a spectrum that is well described by
+a blackbody with a temperature of $\sim 5700^\circ$K, with a total irradiance at
+the top of the atmosphere of $F_\odot \approx 1361$~W~m$^{-2}$, or
+$1.361 \times 10^6$~erg~s$^{-1}$~cm$^{-2}$.
+
+
+\subsection{The Solar inner structure}
+
+Stars are self-gravitating bodies in dynamical equilibrium, where the attractive
+gravitational force is counter-balanced by the internal pressure, be it that of
+the gas and/or of the radiation. Since stars continuously loose energy, most notably
+by radiation from the surface, an internal energy source is needed to avoid collapse,
+and for regular stars this source is provided by the nuclear reactions taking place
+in the inner part of the star itself. In the case of the Sun the main mechanism
+generating energy is the fusion of $H$ into $He$.
+
+\keyfigures{Sun core}{
+	Density: $\density_c = 150.5$~g~cm$^{-3}$\\
+	Pressure: $\pressure_c = 3.45 \times 10^{11}$~atm\\
+	Temperature: $T_c = 1.55 \times 10^7~^\circ$K\\
+}
+
+\begin{figure}[htbp!]
+	\input{figures/sun_standard_model.pgf}
+	\caption{Basic Sun characteristics according to the BS05 Sun standard model
+  described in~\cite{2005ApJ...621L..85B}. According to the model, the temperature
+  at the center of the Sun is $1.55~^\circ$K, while the density is $150$~g~cm$^{-3}$.
+  The temperature and density approximately follow an exponential law across mos
+  of the radial profile.}
+    \label{fig:sun_standard_model}
+\end{figure}
+
+The general problem of stellar structure is a very complex one (and one that can
+only be solved by means of numerical methods) where several different inter-dependent
+factors come into play: the hydrostatic equilibrium, the mass and energy conservation,
+and the energy transport. From a technical standpoint, even under the simplifying
+assumption of spherical symmetry, the complete description of the star interior
+requires the solution of seven coupled differential equations for seven unknown
+function of the radial coordinate $r$. Since this is not a suspense novel, we
+shall say up front that these calculations are standard, nowadays, and
+figure~\ref{fig:sun_standard_model} provides a succinct summary of what the
+\emph{standard solar model} looks like.
+
+\begin{marginfigure}
+  \input{figures/gravitational_energy.pgf}
+  \caption{Basic sketch for setting up the hydrostatic equilibrium in a star.}
+\end{marginfigure}
+
+We shall limit ourselves to some back-of-the-envelope calculations to gauge the orders
+of magnitude, here. If we consider a generic spherical shell of radius $r$ and
+(infinitesimal) thickness $dr$ inside the Sun, we should require that gravitational
+attraction per unit surface by the mass $M(r)$ of the sphere enclosed in the shell
+is counter-balancing the gradient of the pressure, i.e.,
+\begin{align}\label{eq:hydro_equilibrium}
+  \frac{G M(r)\density(r) dr}{r^2} = \pressure(r) - \pressure(r + dr)
+  \quad\text{or}\quad
+  \dv{\pressure}{r}{(r)} = -\frac{G M(r) \density(r)}{r^2}.
+\end{align}
+(If this sounds familiar it is because it is exactly what we have done, in a planar
+geometry, for the Earth atmosphere.)
+
+Now, if we had a detailed model describing how the density $\density(r)$,
+and therefore the mass $M(r)$, vary with the radius, we could readily solve this
+equation to calculate the pressure---but that is too complicated. We can get a
+crude estimate of the quantities we are interested in by dividing both sides
+by $4\pi r^2 \density(r)$, after which the equilibrium equation reads
+\begin{align}
+  \dv{\pressure}{M}{(M)} = -\frac{G M}{4\pi r^4}.
+\end{align}
+This is really not any simpler than before---all we really have done is to change
+our dynamical variable from $r$ to $M(r)$, so that $P$ is now a function of
+$M$, and this would work great if $M$ was all that is left on the right-hand side,
+but unfortunately the $r^4$ at the denominator prevents us from writing a solution
+in closed form. But we can do some brutal assumption to try and make some progress.
+On the left hand of the equation we are looking for a pressure that decreases from a
+maximum value $\pressure_c$ at the center of the Sun (where the mass enclosed in
+the corresponding shell is $M = 0$) to zero on the surface, where $M = M_\odot$, and
+for the sake of the argument we can just pretend that the scaling is linear and the
+(constant) slope is
+\begin{align*}
+	\frac{d\pressure}{dM} = -\frac{\pressure_c}{M_\odot} \quad
+	\text{(fictional assumption)}
+\end{align*}
+
+\begin{marginfigure}
+	\input{figures/sun_pm_fictional.pgf}
+	\caption{Toy model for the Sun pressure profile as a function of the mass variable
+	$M$.}
+\end{marginfigure}
+
+At this point the right-hand part of the equation must be assumed to be constant,
+and there is no way to do that in a self-consistent fashion, as there is no guarantee
+that the $M(r)$ scales as $r^4$ (although, if we admit that the density decreases
+with $r$ we are forced to admit that it scales with a power of $r$ greater than 3,
+so our setup might not be completely unreasonable, actually). All we can do is to pick
+a particular value of $r$ and make an educated guess on the enclosed mass $M(r)$.
+If we say, for instance, that half of the solar mass is enclosed in a circle of radius
+$\nicefrac{1}{4} R_\odot$, we end up with\sidenote{The reader is not mistaken if they
+are under the impression that there is some level of sorcery involved in this argument.
+Beside the assumption that the pressure scales linearly with the mass, we could have
+literally taken any pair of $r$ and $m$ values to fix the right-hand side. Had we
+picked $M_\odot$ and $R_\odot$ (all the mass in included within the solar radius),
+we would have come with an estimate 40~times smaller. (See, however,
+figure~\ref{fig:sun_standard_model} for a hit to where our guess is coming from.)
+It is fair to say that our figure is just a little more than a dimensional argument,
+providing the correct scaling with the quantities involved, but in order to get a
+more accurate numerical factor, a significantly more complex modeling would be required.}
+\begin{align*}
+    \frac{\pressure_c}{M_\odot} = \frac{32}{\pi} \frac{G M_\odot}{R_\odot^4}
+	  \quad\text{or}\quad
+    \pressure_c = \frac{32}{\pi} \frac{G M_\odot^2}{R_\odot^4}
+		\approx 1.1 \times 10^{11}~\text{atm}.
+\end{align*}
+This is merely a factor of three wrong on the low side, as the pressure at the
+center of the Sun yielded by the state-of-the-art modeling is actually
+$3.45 \times 10^{11}$~atm---not bad for such a back-of-the-envelope calculation.
+
+If we now want to calculate the temperature $T_c$ at the center of the Sun, all we
+need is an equation of state. For the sake of simplicity we shall assume that the
+matter in the Sun is made of fully ionized atoms (that is, free atomic nuclei and
+fellow electrons), obeying the ideal gas law---more on this later, but we anticipate
+that this is not a bad assumption at all. The ideal gas law reads
+\begin{align}
+  \pressure = \sum_i (1 + Z_i)n_i \kT = \sum_i (1 + Z_i) \frac{\density_i \kT}{m_p A_i}
+\end{align}
+where $n_i$, $\density_i$, $Z_i$ and $A_i$ are the number density, mass density,
+atomic number and the mass number of the $i$-th ion species, and the sum is extended
+to all the species. The factor $(1 + Z_i)$ is due to the fact that for every nucleus
+of atomic number $Z_i$ we have $Z_i$ electrons (in addition to the nucleus itelf)
+contributing to the pressure. If we pretend for a second that the Sun is entirely
+composed of ionized $H$ ($Z = 1$, $A = 1$), this reduces to\sidenote{Mind the factor
+of 2: one for the proton, and one for the electron}
+\begin{align*}
+	\pressure = \frac{2\density \kT}{m_p} \quad\text{or}\quad
+  T = \frac{P m_p}{2\density \kB}
+\end{align*}
+and we can gauge the temperature at the center of the Sun with
+\begin{align*}
+  T_c = \frac{\pressure_c m_p}{2 \density_c \kB} =
+	\frac{16}{\pi} \frac{G M_\odot^2 m_p}{R_\odot^4 \density_c \kB}.
+\end{align*}
+The only slight problem is that we don't know the value $\density_c$ of the density
+at the center of the Sun, but is we stick with our na\"ive prescription for the density
+profile (half the mass within $\nicefrac{1}{4}$ of the radius) we get a generous
+lower limit
+\begin{align*}
+	\density_c \geq \frac{24}{\pi} \frac{M_\odot}{R_\odot^3} \approx 45~\text{g~cm}^{-3},
+\end{align*}
+which, amusingly, is again about a factor of three too low---the actual density at
+the center of the Sun is about $150$~g~cm$^{-3}$, or 7.5~times that of the tungsten.
+The two factors of three do cancel out when we take the ratio, which produced the
+accurate estimate for the temperature $T_c$
+\begin{align*}
+	T_c = \frac{2}{3} \frac{m_p G M_\odot}{\kB R_\odot} \approx 1.5 \times 10^7~^\circ\text{K}
+\end{align*}
+which is in line with the canonical value from a detailed stellar modeling.
+Keep note of the relative scaling of the thermodynamic quantities at the center
+of a star
+\begin{align}
+	P_c \propto \frac{M_s^2}{R_s^4} \text{,}\quad
+	\density_c \propto \frac{M_s}{R_s^3} \quad\text{and}\quad
+	T_c \propto \frac{M_s}{R_s}
+\end{align}
+because they will be useful in the following\sidenote{The latter in particular (i.e.,
+the fact that the core temperature of a star is inversely proportional to its radius)
+is very important in the internal dynamic of the star, as we shall see in more
+detail in section~\ref{sec:stars_virial_theorem}.}.
+
+Now that we have an estimate of the temperature at the center of the Sun we can
+re-examine out assumption that the equation of state of the solar interior is that
+of a perfect gas. The pressure for a photon gas is
+\begin{align*}
+	\pressure_\text{rad} = \frac{4\sigma}{3c} T_c^4 \approx 1.4 \times 10^{8}~\text{atm}
+\end{align*}
+which in our case is only about 0.1\% of that from the ideal gas law we have
+used---radiation pressure is just subdominant in a star with the mass of the
+Sun\sidenote{Note, however, that while the ideal gas pressure is proportional to
+the temperature, radiation pressure scales as $T^4$, and the ratio between the
+two goes like $T^3$: if the temperature in the core of teh Sun was just a mere
+order of magnitude larger, the radiation pressure would be dominant.}.
+
+In section~\ref{sec:white_dwarfs} we shall see that for \emph{degenerate} stars
+there exists yet another source of pressure that, in some cases, determines the
+stellar equilibrium.
+
+
+
+\section{Stars}
+\label{sec:stars}
+
+In ancient times, our knowledge of the universe was limited to the Earth, the
+Moon, the Sun, the closest planets in the solar system and the few thousands
+stars that are visible at night to the naked eye. While it is extremely difficult
+to summarize in the form of simple metrics the enormous progress done since the
+telescope revolutionized astronomy at the beginning of the seventeenth century,
+the historical development of astronomical catalogues, shown in
+figure~\ref{fig:astronomical_catalogues}, provides an interesting cross section
+of how our understanding has expanded over the last four centuries.
+
+\begin{figure}[htbp!]
+	\input{figures/astronomical_catalogues.pgf}
+  \caption{Compilation of the number of objects as a function of publication year
+    for a few, historically relevant astronomical catalogs. The choice of the
+    particular catalogs is largely arbitrary, and driven mainly by the intent
+    of showing the evolution of the overall number of distinct astronomical objects
+    catalogues at any given time.}
+    \label{fig:astronomical_catalogues}
+\end{figure}
+
+Compared with the 1050 sources in the classical catalogue by Ptolemy, that has been
+the ultimate reference for astronomers for some 1500~years since its completion in
+AD 150, the third data release of the Gaia  mission~\cite{2023A&A...674A...1G}
+includes almost 2~\emph{billion} distinct sources. This figure will be more than an
+order of magnitude larger when the final catalog of the Large Synaptic Survey
+Telescope (LSST) is released, some time in the 2030's. In the meantime, astronomy
+opened itself to all the other wavelengths in the electromagnetic spectrum, and
+we know today about 1.5~million X-ray sources, spread across a multitude of different
+catalogs, and more than 5000 $\gamma$-ray sources~\cite{2020ApJS..247...33A}, along
+with millions of sources in the radio, infrared, and ultraviolet bands. In addition,
+the universe is studied by means of completely different cosmic messengers: background
+radiation at all the electromagnetic wavelengths (most notably the CMB), charged
+cosmic rays, neutrino and gravitational waves---all of which have full citizenship
+in astro-particle physics.
+
+
+
+\subsection{Flux, luminosity, and magnitude}
+\label{sec:stars_magnitude}
+
+Although, in ancient times, the main object of astronomy was the study of the position
+of celestial objects and their motion in the sky, early astronomers were very well
+aware that different stars had different brightness. In Ptolemy's catalog, dated
+ca.~AD~150, the stars are divided in 6 classes of brightness (1 to 6 from the
+brightest to the dimmest) according to their \emph{apparent magnitude}---and
+most likely this classification predates Ptolemy by at least a few centuries.
+
+In modern language the apparent brightness of a celestial object is measured in
+terms of its radiant flux $F$, which is the total energy received per unit time
+and area, and is customarily expressed in erg~s$^{-1}$~cm$^{-2}$. The flux, in turn,
+depends on both the intrinsic luminosity $L$ of the object (that is, the total energy
+radiated per unit time, expressed in erg~s$^{-1}$) and its distance $d$ according
+to the inverse square law
+\begin{align}
+  F = \frac{L}{4\pi d^2}.
+\end{align}
+The total solar irradiance at the top of the atmosphere, as we said, is
+$F_\odot \approx 1361$~W~m$^{-2}$, or $1.361 \times 10^6$~erg~s$^{-1}$~cm$^{-2}$,
+which, according to the inverse square law, corresponds to a luminosity
+$L_\odot \approx 3.828 \times 10^{26}$~W or $3.828 \times 10^{33}$~erg~s$^{-1}$.
+
+The modern definition of apparent magnitude%
+\sidenote{While the magnitude scale was first formalized by Norman~R. Pogson in
+  1856~\cite{1856MNRAS..17...12P}, the definition of the zero point $F_0$ has
+  changed several times over the years, and the reader should not be surprised
+  by the slight inconsistencies that can be found in the literature.}
+is largely designed to keep backward compatibility with the historical catalogs:
+the magnitude scale is an inverse logarithmic scale where 5 magnitudes correspond
+exactly to a factor of 100\sidenote{Not surprisingly, this is the approximate dynamic
+range of the naked human eye when looking at the night sky.}---that is, one magnitude
+unit corresponds to a factor $\sqrt[5]{100} \approx 2.512$:
+\begin{align}
+  m = -2.5 \log_{10} \left( \frac{F}{F_0} \right).
+\end{align}
+
+\begin{margintable}
+  \begin{tabular}{lrr}
+    \hline
+    Filter & $\lambda_0$ & $\Delta\lambda$ (FWHM)\\
+    \hline
+    \hline
+    V & 551~nm & 88~nm\\
+    B & 445~nm & 94~nm\\
+    U & 365~nm & 66~nm\\
+    \hline
+  \end{tabular}
+  \caption{Representative values for the midpoint wavelength and bandwidth for
+    commonly used filters.}
+  \label{tab:vbu_filters}
+\end{margintable}
+
+This definition can be applied within any given band of the electromagnetic
+spectrum and, as we shall see in a moment, it is customary to observe celestial
+objects through different filters---e.g., visible ($V$), blue ($B$) and
+ultraviolet ($U$), as illustrated in table~\ref{tab:vbu_filters}, with associated
+apparent magnitudes $m_\text{V}$, $m_\text{B}$ and $m_\text{U}$.
+An additional important concept is the \emph{apparent bolometric magnitude}
+$m_\text{bol}$, which refers to the flux integrated over all the wavelengths, and
+is directly tied to the total energy output of a given source. We note that the
+arbitrary reference flux (or zero point) $F_0$ is set independently within each
+energy band. The recommended reference bolometric flux, for instance, is
+$F_0 = 2.518 \times 10^{-8}$~W~m$^{-2}$ or $2.518 \times 10^{-5}$~erg~s$^{-1}$~cm$^{-2}$,
+and with this convention, the apparent bolometric magnitude of the Sun is
+$-26.832$\sidenote{It is amusing to note that, while the approximate dynamic range of the human naked
+eye is a mere 2 orders of magnitude, modern space telescopes can observe objects
+as dim as a stunning $35$~apparent magnitude---that is, with a radiance some
+25~orders of magnitude lower than that of the Sun!}.
+
+When the distance to a celestial object is know, the inverse square laws allows
+to define an \emph{absolute magnitude} $M$, which is set conventionally to the
+apparent magnitude $m$ that the object would have if it was placed at a distance
+of $d_0 = 10$~pc%
+%\sidenote{The problem is in fact significantly more complicated due to the
+%  stellar extinction affecting distant sources, but this is sufficient for our
+%  purposes.}
+\begin{align}
+  M = m - 5 \log \left( \frac{d}{d_0} \right) \quad\text{or}\quad
+  (m - M) = 5 \log \left( \frac{d}{d_0} \right).
+\end{align}
+The absolute magnitude is a fundamental quantity because it is related to the
+intrinsic luminosity of the object. (The Sun, e.g., has a modest absolute
+bolometric magnitude of $4.74$). The quantity $m - M$ if function solely of the
+distance and is customarily called the \emph{distance modulus}.
+
+
+
+\subsection{Temperature and color}
+\label{sec:stars_color}
+
+Stars differs not only in intrinsic luminosity, but also in \emph{color}. This is
+visible to the naked eye in favorable observing conditions, and it is something
+that is occasionally commented upon in the historical accounts of astronomical
+observations. The quantum theory of light\sidenote{If you did not have a chance
+to review appendix~\ref{chap:qstat}, this is definitely a good time to take a look!}
+allows to recast this qualitative observation in quantitative terms, and modern
+instruments provides precise spectroscopic measurements to test the theory against
+experimental data.
+
+When we observe the light emitted by a star, what we are mainly looking at is its
+(relatively cold) atmosphere. If we assume that this photosphere is a
+blackbody\sidenote{Sure enough, no star is a perfect blackbody, and yet this is a
+surprisingly good approximation, and one that allows to derive a number of interesting
+and far-reaching consequences that allow to gain profund insight into the inner
+workings of these objects.}, we know that the spectrum of the radiation is described
+by the Planck distribution, and depends on a single parameter---the effective temperature.
+The hotter the blackbody, the shorter the wavelength (or the higher the frequency
+and energy) at which the spectrum peaks, as captured by Wien's displacement law
+(see section~\ref{sec:wien_law}).
+
+The interesting thing is that, due to the shape of the Planck distribution, the
+measurement of the flux at two distinct wavelengths (or within two distinct narrow
+bands) provides enough information to recover the characteristic temperature of
+the parent spectral distribution, as illustrated in figure~\ref{fig:color_index}.
+This is at the base of an experimental technique routinely used in practice---that is:
+observing the same object with two filters, e.g., blue (B) and visible (V), and
+then combining the measured flux values in a so called \emph{color index}
+\begin{align}
+  (B - V) = m_B - m_V = -2.5 \log_{10}\left( \frac{F_B}{F_V} \right).
+\end{align}
+The $(B - V)$ color index of the Sun is $0.656$; blue-ish objects have a smaller
+color index, and red-ish objects have a larger color index.
+Owing to its differential nature, the measurement of the color index has the good
+property that, at least in principle, it does not depend on the source brightness,
+and some of the possible sources of systematic effects do cancel out in the process.
+
+\begin{marginfigure}
+  \input{figures/planck_color_index.pgf}
+  \caption{Sketch of the measurement principle for the color index. The curves in
+    the two panels are the Planck distribution, in wavelength space, at two
+    different temperatures. Measuring the radiance at two different
+    wavelengths---or, more realistic, using two filters with a finite band-pass
+    centered at these wavelengths---allows to recover the temperature.}
+  \label{fig:color_index}
+\end{marginfigure}
+
+In practice, things are significantly more complicated due to a number of subtle
+effects, including the fact that the stellar extinction is frequency-dependent,
+producing a distinct \emph{reddening}. More importantly, real stars are not
+perfect blackbodies, and measuring the effective temperature of the photosphere
+involves a level of modeling that is significantly more complex that just
+integrating the Planck distribution. As a result, a number of empirical compilations
+is available that can be used to convert a given temperature in the corresponding
+color index and vice versa~\cite{1996ApJ...469..355F, 1998JRASC..92...36R, 2012EL.....9734008B}.
+Figure~\ref{fig:color_index} shows one of those compilations.
+
+\begin{marginfigure}
+  \input{figures/color_index.pgf}
+  \caption{Empirical correction curve between temperature and $(B - V)$ color
+    index, compiled from~\cite{1996ApJ...469..355F} and~\cite{1998JRASC..92...36R}.}
+  \label{fig:color_index}
+\end{marginfigure}
+
+
+
+\subsection{The HR diagram}
+\label{sec:stars_hr}
+
+\begin{figure*}[!tbp]
+  \input{figures/herzprung_russel_diagram.pgf}
+  \caption{Illustrative Hertzsprung-Russel diagram, with the observational quantities
+    (color index and magnitude) running on the bottom and left axes, and the
+    corresponding theoretical quantities (temperature and luminosity) running on
+    the top and right ones; the diagonal grids are the iso-radius curves in the
+    color index-magnitude space implied by the Stefan-Boltzmann law, according to
+    the prescription in~\cite{1998JRASC..92...36R}. Stellar data
+    are taken from the Hipparcos-Yale-Gliese (HYG) database available
+    at~\href{https://github.com/astronexus/HYG-Database}{here}, and we emphasize
+    that the source selection performed here is eccentric by any sensible metrics:
+    it is intended for the reader to have a sense of the main sub-populations
+    (main sequence, white dwarfs, red giants), but it is in no way meant, e.g.,
+    to provide an unbiased sense as to what the relative proportions are.
+    The data for the index-magnitude evolution of the small sample of supernov\ae\
+    at the top---which for good reasons is almost never shown on the HR diagram---are
+    taken from~\cite{2018MNRAS.473..513F} and provide an amusing illustration
+    of how core-collapse SNe fit in the context of normal stellar systems
+    (the small superscript "n~d" labels provides the time since the explosion,
+    in days, at the start and the end of the monitoring observations).}
+  \label{fig:hr}
+\end{figure*}
+
+We now have all the ingredients to introduce the Hertzsprung-Russel diagram.
+From an observational prospective, the HR diagram is a simple scatter plot with
+the color index running over the $x$-axis, and the absolute visual magnitude running
+over the $y$-axis, such as the one shown in~figure~\ref{fig:hr}.
+Since the color index is a proxy for the temperature of the star photosphere
+and the absolute magnitude is proportional to its intrinsic luminosity, the HR
+diagram can also be seen as a temperature-luminosity scatter plot, and the two
+types of representations are sometimes referred to as \emph{observational} and
+\emph{theoretical} HR diagrams.
+
+A cursory look at the resources available on the web will show that, within the
+copious amount of combined HR diagrams available, no one is identical to the
+other---this is no coincidence, as there is a number of subtleties involved into
+the transition between the observational form of the diagram (which displays
+measured quantities, and should be therefore considered as the primary version)
+and the theoretical one. First of all the conversion between color index and
+temperature, beyond being highly non linear, comes with significant uncertainties
+owing to its purely empirical nature---different compilations will provide different
+calibration curves, especially at the extremes of the temperature range.
+In addition, while the observational HR diagram has the absolute \emph{visual}
+magnitude running on the $y$-axis, the theoretical HR diagram is best re-casted
+in \emph{bolometric} luminosity, as that is the most sensible measure of the overall
+energy output, irrespectively of the star temperature.
+
+Now, it is obvious from figure~\ref{fig:color_index} that the fraction of the spectral
+radiance measured in the visual band depends on the temperature: it is largest when
+the blackbody spectrum peaks of at the center of the $V$ band (that is, for an effective
+temperature of $6000$--$7000~^\circ$K) and smaller (and, quite possibly, much smaller)
+for lower and higher temperature. Just like the conversion between temperature
+and color index, the bolometric correction can be calculated from first principles
+only for a perfect blackbody. For real stars, empirical compilations are available,
+such as the one shown in figure~\ref{fig:bolometric_correction}, and can be used
+to transform a visual magnitude into a bolometric luminosity for any give effective
+temperature.
+
+\begin{marginfigure}
+    \input{figures/bolometric_correction.pgf}
+    \caption{Empirical parametrization of the bolometric correction, adapted
+      from~\cite{1998JRASC..92...36R}. Note that for very hot and very cold
+      stars the bolometric correction can exceed $5$~magnitudes---that is, a factor
+      of $100$---assuming that the (arbitrary) zero point is set in such a way
+      that the correction is $\sim 0$ at the peak.}
+    \label{fig:bolometric_correction}
+\end{marginfigure}
+
+There is one last piece of information that we have not thrown in the mix, yet:
+the Stefan-Boltzmann law (see section~\ref{sec:stefan_boltzmann_law}). If we maintain
+that a star is a blackbody, then we know that its luminosity is proportional to the
+emitting surface and the fourth power of the temperature:
+\begin{align}
+  L = A \sigma T^4 = 4 \pi R^2 \sigma T^4.
+\end{align}
+This means that on a theoretical HR~diagram the lines at constant stellar radii
+are power laws with index $4$ (or, in fact, $-4$, since the temperature axis
+usually runs in the reverse direction). In an observational HR diagram things
+are more complicated, as the relation between the color index and the temperature
+is more nuanced for all the reasons explained above (the temperature scale is not
+logarithmic and the loci at constant luminosity are not horizontal lines) but it
+is not difficult to numerically calculate proper iso-radius contours (under the
+assumption that the Stefan-Boltzmann law holds) as shown in figure~\ref{fig:hr}.
+
+Sadly enough, we shall rarely go back to the HR diagram in the following.
+In many respects we might say that, as particle astrophysicists, we are chiefly
+concerned with the objects at the very top of our illustrative HR diagram
+(representing some of the most violent phenomena in the Universe), and those
+at the bottom-left corner (which is where matter at the most extreme densities
+lives).
+
+
+
+\subsection{Stellar equilibrium: the virial theorem}
+\label{sec:stars_virial_theorem}
+
+We have seen the equation for the hydrostatic equilibrium~\eqref{eq:hydro_equilibrium}
+in our cursory description of the inner structure of the Sun. If we multiply by
+$4\pi r^3$ both sides and integrate over the radial coordinate from the center to
+the surface of the star we get
+\begin{align*}
+  \int_0^{R_s} 4\pi r^3 \dv{P}{r}{(r)} dr =
+  -\int_0^{R_s} \frac{GM(r)}{r} \, \underbrace{4\pi r^2 \density(r) dr}_{dM}.
+\end{align*}
+In the right-hand side we immediately recognize the total gravitational potential
+energy $U_G$. The left-hand side can be integrated by parts, yielding
+\begin{align*}
+  \int_0^{R_s} 4\pi r^3 \dv{P}{r} dr =
+  \cancel{\left[ 4\pi r^3 P \right]_0^{R_s}} - 3 \int_0^{R_s} P(r) 4\pi r^2 dr
+\end{align*}
+where the first term in the integral vanishes in virtue of the fact that the pressure
+is (approximately) zero at the star surface. For a perfect gas
+\begin{align*}
+  PV = \mu RT = \mu (C_p - C_v)T =
+  \mu C_v T \left( \frac{C_p}{C_v} - 1 \right) = U (\gamma - 1)
+\end{align*}
+and if we divide both ends by the volume $V$ we get $P = u (\gamma - 1)$, or
+\begin{align*}
+  \int_0^{R_s} P(r) 4\pi r^2 dr = (\gamma - 1) \int_0^{R_s} u(r) 4\pi r^2 dr =
+  (\gamma - 1) U.
+\end{align*}
+Combining everything together we can express the \emph{virial theorem} for our system
+as
+\begin{align}
+  U_G + 3 (\gamma - 1) U = 0.
+\end{align}
+
+It is hard to over-emphasize the importance of this result. The condition for the
+total energy to be negative (i.e., for the system to be dynamically stable) reads
+\begin{align*}
+  E_\text{tot} = U_G + U = (4 - 3\gamma) U < 0 \quad\text{if and only if}\quad \gamma > \frac{4}{3}.
+\end{align*}
+In the simple case of a mono-atomic ideal gas, when $\gamma = \nicefrac{5}{3}$,
+we have
+\begin{align}
+  U_G = - 2U \quad\text{and}\quad E_\text{tot} = - U = -\frac{3}{2} N \ave{\kB T},
+\end{align}
+which means that when the system looses energy, the temperature increase---in a
+thermodynamical sense this corresponds to a \emph{negative heat capacity}.
+
+Counter-intuitive as this might seem at a first glance, this simply means that
+when the stars contracts, half of the gravitational energy is lost from the surface
+of the star, and the other half is converted into internal energy (i.e., heat),
+causing a raise of the temperature\sidenote{There is an amusing, purely mechanical
+analogous of this phenomenon: the decay of the orbit of a satellite, where the
+velocity (and the kiketic energy) of the latter increases as the height of the
+orbit (and hence the potential energy) decreases.}.
+The virial theorem is instrumental in guaranteeing the stability of a star as the
+nuclear fuel is burned into its core: if the energy production increase, this
+causes the core to expand, which in turn cause the temperature to decrease, which
+inhibits additional energy production, providing a negative feedback to the system
+and making in stable. (Incidentally, we not that this is true for \emph{normal} stars.
+As we shall see in the next sections, for degenerate stars, where the pressure is
+independent of the temperature, the situation is very different and the presence
+of a positive feedback in that case can lead to a thermonuclear runaway.)
+
+The virial theorem is also of the driving forces of stellar evolution. In the initial
+stages of its life, where the nuclear fusion has not started, yet, the
+star is bound to loose energy, and since $E_T = \nicefrac{1}{2}U_G$, the gravitational
+energy must decrease, which means that the star contracts and its temperature increases.
+This will continue until the core is hot enough for the nuclear fusion to be ignited.
+The lifecycle of a star is governed by an alternation of contractions and nuclear
+burning phases.
+
+
+
+\subsection{Compact stars: white dwarfs}
+\label{sec:white_dwarfs}
+
+After the 40~Eridani~B and Sirius~B---later to become the first classical
+\emph{white dwarfs}--- were discovered, the question of how such sub-luminous objects
+could survive the collapse from their own gravitational pressure, in striking
+contrast with the accepted paradigm of stellar evolution%
+\sidenote{\emph{We learn about the stars by receiving and interpreting the messages
+which their light brings to us. The message of the companion of Sirius when it
+was decoded ran: 'I am composed of material 3,000 times denser than anything you
+have ever come across; a ton of my material would be a little nugget that you
+could put in a matchbox.' What reply can one make to such a message? The reply
+which most of us made in 1914 was---'Shut up. Don't talk nonsense.'}\\[10pt]
+A.~S.~Eddington~\cite{1927stat.book.....E}, pag.~50.},
+puzzled the astronomers for nearly 70 years~\cite{2009JHA....40..137H}.
+A cursory look at the HR diagram in figure~\ref{fig:hr} clearly shows that, assuming
+these system approximately behave like blackbodies, we are talking about
+objects with a mass comparable to that of the Sun (as indicated by the motion
+around the companions) squeezed in a sphere as big as a planet.
+
+After R.~H.~Fowler pointed out, in 1926, that the electron degeneracy pressure was
+in fact the key to solve the apparent paradox~\cite{1926MNRAS..87..114F}, it took
+less than a decade to formulate a coherent theory of white dwarfs, and calculate
+the mass upper limit that generally goes under the name of \emph{Chandrasekhar limit}.
+As is often the case, the history behind these theoretical developments is an
+interesting one~\cite{2008JHA....39..297N} and, although S.~Chandrasekhar is in
+fact the one who first solved the equations for the hydrostatic equilibrium in a
+compact star, providing a self-consistent treatment of the problem, at least two
+other Physicists---E.~Stoner and W.~Anderson---provided
+fundamental contributions\cite{1929Stoner,1929ZPhy...56..851A,1930LEDPM...9..944S}
+that predate his work. They should be credited, in particular, with the realization
+that it is the connection between special relativity and quantum mechanics that,
+at the very fundamental level, leads to the existence of a mass limit for compact
+stars.
+
+The simplest possible model for a compact star is a uniform\sidenote{Sure enough,
+this is a fairly crude model with no pretention of providing a self-consistent physical
+description of a star, if only for the fact that a uniform sphere cannot be in
+hydrostatic equilibrium, which a real star \emph{must} be. And yet, this toy setup
+allows to reason on all the main physical ingredients of our problem in the simplest
+possible way, without being carried away by subtle modeling details.}, electrically
+neutral sphere of mass $M$ composed of completely ionized atoms where the inward
+gravitational pressure generated by the nucleons is counteracted by the outward
+degeneracy pressure of a gas of electrons at zero temperature.
+Given the average number of nucleons per electrons, which we shall assume as
+$\muave = 2$ in the following%
+\sidenote{It is curious to note that all the original papers use $\muave = 2.5$
+  (appropriate for completely ionized atoms of lead), and the numerical values of
+  the relevant quantities generally differ from those given here. Our figure is
+  appropriate for stars composed by $C$ and $O$, for which the number of neutrons
+  is equal to the number of protons, but at the beginning of the twentieth century
+  there were reasons to believe that stars were composed of much heavier elements.},
+the total number of atoms $N$ is fully determined by the stellar mass
+\begin{align}
+  N = \frac{M}{\muave m_p}.
+\end{align}
+(we are neglecting the electron mass in the budget) and the only unknown left is
+the the number density $n = N/V$ or, equivalently, the radius $R$ of the star
+\begin{align}\label{eq:wd_radius_density}
+  n = \frac{N}{V} = \frac{3M}{4\pi R^3 \muave m_p} \quad\text{or}\quad
+  R = \left( \frac{3M}{4\pi n \muave m_p} \right)^{\frac{1}{3}}.
+\end{align}
+The basic idea is then to calculate the total kinetic energy density $u_F$ due to the
+Fermi pressure and the total gravitational energy $u_G$
+and impose the condition
+\begin{align}\label{eq:wd_equilibrium_condition}
+  \frac{d}{dn} (u_F + u_G) = 0
+\end{align}
+to calculate the resulting density $n$ (or, equivalently, the radius $R$) at the
+equilibrium.
+
+\begin{marginfigure}
+  \input{figures/gravitational_energy.pgf}
+  \caption{Calculation of the gravitational binding energy of a uniform sphere
+    with constant density $\rho$.}
+  \label{fig:sphere_gravitational_energy}
+\end{marginfigure}
+
+The gravitational self-energy density of a uniform sphere of mass $M$ and radius
+$R$ can be readily calculated by integrating the contributions of a series of
+thin layers as shown in figure~\ref{fig:sphere_gravitational_energy}:
+\begin{align*}
+  E_G = &- \int_0^R \frac{G}{r}
+    \overbrace{4\pi \varrho r^2}^\text{shell}
+    \underbrace{\frac{4}{3} \pi \varrho r^3}_\text{sphere} dr =
+   - \frac{16 \pi^2}{15} G \varrho^2 R^5 = -\frac{3GM^2}{5R},
+\end{align*}
+and the corresponding energy density reads
+\begin{align*}
+  u_G = \frac{E_G}{V} =
+  -\frac{3GM^2}{5R} \frac{3}{4\pi R^3} = -\frac{9}{20} \frac{GM^2}{R^4}.
+\end{align*}
+We can then use the expression for the stellar radius as a function of the number
+density~\eqref{eq:wd_radius_density} to recast this as
+\begin{align}
+	u_G = -\frac{3}{5} \left( \frac{4}{3} \right)^\frac{1}{3} \pi^\frac{4}{3} G M^\frac{2}{3}
+	\muave^\frac{4}{3} m_p^\frac{4}{3} n^\frac{4}{3}.
+\end{align}
+
+We have already calculated the expression for the kinetic energy density due to the
+Fermi degeneracy pressure in appendix~\ref{chap:qstat} in both the non-relativitic
+and the relativistic limit. In the first case it reads
+\begin{align}
+  u_F^{NR} = \left( \frac{h^3}{8\pi} \right)^\frac{2}{3}
+	\frac{3^\frac{5}{3}}{10 m_e} n^\frac{5}{3}
+\end{align}
+and the equilibrium condition for the density~\eqref{eq:wd_equilibrium_condition},
+irrespectively of how hard it is to keep track of all the numerical factors, is actually
+trivial\sidenote{If you think about, the basic structure of~\eqref{eq:wd_equilibrium_condition}
+is nothing more complicated than
+$$
+\dv{}{n}\left( c_1 n^\frac{5}{3} - c_2 n^\frac{4}{3} \right) = 0.
+$$}, yielding the solution
+\begin{align}\label{eq:wd_n_nr}
+  n &= 256 \left( \frac{\pi}{3} \right)^3 \frac{G^3 \muave^4 m_p^4 m_e^3}{h^6} M^2.
+\end{align}
+This, in turn, can be recast in a closed expression for the radius $R$:
+\begin{align}\label{eq:wd_radius_nr}
+  R &= 2^{-\frac{10}{3}} \left( \frac{3}{\pi} \right)^\frac{4}{3}
+  \frac{h^2}{G \muave^\frac{5}{3} m_p^\frac{5}{3} m_e} M^{-\frac{1}{3}}.
+\end{align}
+The key to success, here, is that $u_G$ and $u_F$ scale with different powers of the
+number density $n$, and this implies that an equilibrium configuration will exist,
+no matter what the value of $M$ is. (Incidentally, the equilibrium number density
+$n$ is proportional to the square of the mass of the star in our case.)
+
+\begin{marginfigure}
+	\input{figures/white_dwarf_fermip_nr.pgf}
+	\caption{Estimate for the Fermi momentum $\pF$ as a function of the mass of a
+    white dwarf in the non-relativistic limit---this is calculated by simply
+    plugging the non-relativistic expression for the number density~\eqref{eq:wd_n_nr}
+    into the formula for the Fermi momentum~\eqref{eq:fermi_momentum}. We note
+    that the hypothesis that the electrons in the Fermi gas are not relativistic
+    $\pF \ll m_e c$, in fact, does not hold over most of the mass range of
+    interest.}
+    \label{fig:wd_fermip_nr}
+\end{marginfigure}
+
+For a $1~M_\odot$ star, \eqref{eq:wd_n_nr} yields a number density
+$n \approx 3.9 \times 10^{29}$~cm$^{-3}$, or a mass density
+$\rho = n \muave m_p \approx 1.3 \times 10^6$~g~cm$^{-3}$.
+(Yes: this is in excess of a tonne per cubic centimeter, and the density of white
+dwarfs can in fact be high enough for their radiation to be gravitationally red-shifted,
+as first measured for Sirius~B in 1925~\cite{1925PNAS...11..382A}.) The corresponding
+radius~\eqref{eq:wd_radius_nr} is roughly $7200$~km.
+
+While these figures are roughly in the right ballpark, given the early estimates
+of the density at the core of the classical white dwarfs, it is maybe more
+interesting to note that the corresponding Fermi momentum~\eqref{eq:fermi_momentum}
+is $\pF \approx 450$~keV/c. To put things in context, figure~\ref{fig:wd_fermip_nr}
+illustrates how the Fermi momentum, calculated in the non-relativistic regime,
+scales with the stellar mass. While the non-relativistic approximation might
+hold up for a $0.1~M_\odot$ white dwarf, it is clear that the basic assumption of
+our reasoning is not verified at the high-end of the mass spectrum of interest.
+
+It was in fact W.~Anderson in 1930~\cite{1929ZPhy...56..851A} who first pointed
+out that the dynamical effect of special relativity could not be neglected.
+Although, in retrospect, Anderson's approach to the problem was fundamentally
+flawed, shortly after his paper Stoner worked out the uniform sphere problem in
+a fully relativistic approach~\cite{1930LEDPM...9..944S}. This was hardly a mere
+incremental improvement over the previous model, as incorporating the relativistic
+effects gives birth to a completely new phenomenon: the existence of a hard mass
+limit above which the equilibrium~\ref{eq:wd_equilibrium_condition} simply cannot
+hold. Perhaps the easiest way to see this is to note that in the ultra-relativistic
+regime the energy density due to the Fermi degeneracy pressure
+\begin{align*}
+	U_F^{UR} = \left( \frac{h^3}{8\pi} \right)^\frac{1}{3}
+	\frac{3^\frac{4}{3} c}{4} n^\frac{4}{3}
+\end{align*}
+scales with the same power of $n$ of the gravitational energy density $u_G$, and the
+equilibrium condition is never reached! It follows that the electron kinetic
+energy cannot increase indefinitely within equilibrium conditions: there must be
+a mass threshold above which the electron degeneracy pressure is unable to counteract
+the gravitational pressure.
+
+The full relativistic calculation of the kinetic term, as it turns out, can be solved
+analytically in closed form, but the details of the calculation are not very inspiring.
+What is interesting is the resulting limiting mass\sidenote{Owing to the value
+$\muave = 2.5$ chosen for the average molecular weight of the star interior, the value
+quoted in the original paper is actually $1.10~M_\odot$.}
+\begin{align}\label{eq:wd_mass_limit_stoner}
+  M_{L}^\text{St} = \frac{3}{4\pi} \left( \frac{5}{4} \right)^\frac{3}{2} \frac{1}{\sqrt{2}}
+  \left( \frac{hc}{G} \right)^\frac{3}{2} \frac{1}{\muave^2 m_p^2} \approx 1.72~M_\odot.
+\end{align}
+This is about as far as the n\"aive uniform-sphere model goes, and, given the
+crudeness of the calculation, one might argue it is even surprising that it
+overshoot the currently accepted value by only 20\%.
+
+\begin{figure}[htbp!]
+	\input{figures/white_dwarf_mass_radius.pgf}
+	\caption{White dwarf radius as a function of the mass. The black solid line
+    represents the result of the original calculation in the uniform-sphere
+    approximation by Stoner\cite{1930LEDPM...9..944S}, obtained by inverting
+    equation~\eqref{eq:wd_stoner_mass_relation}, while the gray line is the
+    corresponding non-relativistic limit---where there is no limiting mass.
+    The data points are the values obtained by Chandrasekhar~\cite{1935MNRAS..95..207C}
+    by numerically integrating the solution of the differential equations for
+    the hydrostatic equilibrium.}
+    \label{fig:wd_mass_radius}
+\end{figure}
+
+At about the same time then 19-years old S.~Chandrasekhar started working on the
+solution of the differential equations for the hydrostatic equilibrium of compact
+stars, both in the non-relativistic and in the ultra-relativistic limits, which
+he first published in 1931~\cite{1931MNRAS..91..456C}. The full treatment of the
+stellar equilibrium is too complex to be summarized here, but it is worth mentioning
+that a cryptic, two-pages long paper published by Chandrasekhar in the same
+year~\cite{1931ApJ....74...81C} provides the first occurrence of what would
+be later called the \emph{Chandrasekhar limit}%
+\sidenote{Like Stoner, Chandrasekhar too assumed $\muave = 2.5$, and the value
+  quoted in the original paper is $0.91~M_\odot$.
+  Note that $\omega_3^0 \approx 2.018236$ is a mere numerical constant connected
+  with the solution of a particular class of differential equations.}
+\begin{align}\label{eq:wd_mass_limit_chandra}
+  M_{L}^\text{Ch} = \omega_3^0 \frac{\sqrt{3\pi}}{2}
+  \left( \frac{hc}{2\pi G} \right)^\frac{3}{2} \frac{1}{\muave^2 m_p^2} \approx 1.44~M_\odot.
+\end{align}
+which is surprisingly similar, both in the form and in the numerical value, to
+that derived by Stoner in a much simpler setup.
+It was not until 1935 that Chandrasekhar published a full relativistic treatment
+of the problem, providing numerical estimates for the relation between the radius
+and the mass for a realistic star model~\cite{1935MNRAS..95..207C}, as shown in
+figure~\ref{fig:wd_mass_radius}.
+
+The existence of a mass limit for a white dwarf is not a mere curiosity, as it
+hints at the fact that more massive stars must collapse in even denser states of
+matter than a degenerate electron gas. Perhaps the skepticism with which the very
+idea was met at the beginning is best illustrated by the famous public controversy
+between Eddington and Chandrasekhar that unfolded in the 1930s\sidenote{We now
+believe that the vast majority of stars---those with initial masses lower
+than $\approx 10~M_\odot$---become white dwarfs when they cannot fuse nuclear
+elements in the core anymore. Thousands of white dwarfs are known, with a mass
+distribution peaking at $\approx 0.6~M_\odot$, and with a low-mass cut at
+$\approx 0.6~M_\odot$, for which it would take more than the age of the universe
+for the progenitors to leave the main sequence.}.
+
+
+\subsection{Supernov\ae}
+\label{sec:supernovae}
+
+Supernov\ae\ (SN\ae) are powerful star explosions marking the endpoint of the stellar
+evolution for particular classes of stars. Although the peak optical luminosity of a
+supernova can be comparable to that of the host galaxy, the fraction of stars that
+can undergo this evolutionary phase is relatively small (essentially massive stars,
+or stars in binary systems with at least a white dwarf). This, combined with the relatively
+short fading timescale (weeks to months) make the chances of being able to see such
+an event with the naked eye slim: about a dozen of SN\ae\ are documented in the
+history of pre-telescope astronomy, the first of which is SN~185\sidenote{Supernov\ae\
+are typically identified by the year of their  explosion, possibly followed by a
+lowercase letter to distinguish between events within the same calendar year.},
+observed and recorded by Chinese astronomers. The most famous historical supernov\ae\
+include SN~1006 (probably the largest ever observed), SN~1054 (also know as the Crab),
+SN~1572 (Tycho's SN) and SN~1604 (Kepler's SN), all of which continue to be object
+of detailed studies at all wavelengths.
+
+\begin{marginfigure}
+  \begin{center}
+  \begin{tikzpicture}
+    \node{SN}
+      child {node [xshift=-0.25cm] (NoH) {No H}
+        child {node [xshift=-0.5cm] (Si) {Si}}
+        child {node [xshift=-0.75cm, yshift=-1cm] {No Si}
+          child {node (He) {He}}
+          child {node (NoHe) {No He}}
+        }
+      }
+      child {node [xshift=0.5cm] (H) {H}};
+      \node[below=1.cm of Si] (Ia) {Type~Ia};
+      \node[below=1.cm of He] (Ib) {Type~Ib};
+      \node[below=1.cm of NoHe] (Ic) {Type~Ic};
+      \node[below=5cm of H] (II) {Type~II};
+
+      \draw (Si.south) -- (Ia.north);
+      \draw (He.south) -- (Ib.north);
+      \draw (NoHe.south) -- (Ic.north);
+      \draw (H.south) -- (II.north);
+
+      \node[below=-0. cm of Ic] {(Core collapse)};
+  \end{tikzpicture}
+  \end{center}
+  \caption{Simplified SN classification tree---if you ask to an expert, they will
+    come out with all sorts of refinements over this basic scheme, but as usual
+    this is hardly relevant for our limited scope.}
+\end{marginfigure}
+
+Supernovae are customarily classified based on the optical spectra near the maximum
+light. Historically the first broad categorization of SN\ae\ was proposed by
+Minkowski, based on the absence (Type~I) or presence (Type~II) of hydrogen absorption
+lines. About forty years later it was realized, on the base of an ever-growing number
+of high-quality optical spectra, that Type~I SN\ae\ encompassed qualitatively
+different objects, which are generally referred as Type~Ia, showing a strong
+silicon absorption at 6150~\AA, and Type~Ib and Ic, with no Si feature (the
+latter differing for the presence or no of He absorption lines).
+
+While the historical classification of supernov\ae\ is still widespread, it is fair to
+say that it is confusing in many respects, as nowadays it is commonly accepted that
+Type~II, Type~Ib and Type~Ic SN\ae\ result from the core-collapse of massive stars,
+while Type~Ia SN\ae\ are the thermonuclear explosions of white dwarfs accreting matter
+from a companion in a binary system. (It follows that, in many respects, Type~II,
+Type~Ib and Type~Ic are more similar to each other than any ot them is to Type~Ia.)
+
+
+\subsubsection{Type~Ia SN\ae\ as standard candles}
+
+As we said, a Type~Ia supernova occurs when a carbon-oxygen\sidenote{The chemical
+composition of the core of the star is relevant in this context because carbon fusion
+is the process triggering the runaway and preventing the star from reaching the
+Chandrasekhar mass and collapsing into a neutron star.} white dwarf in a binary system
+gradually accretes matter from the companion, up to the point when the temperature
+becomes high enough to ignite carbon fusion and the star undergoes a thermonuclear
+runaway. (Remember: for degenerate stars the degeneracy pressure does not depend
+on the temperature, and the negative feedback that is instrumental in keeping regular
+stars in equilibrium just does not apply.) The runaway is triggered when the mass
+of the star gets very close (but not quite equal to) the Chandrasekhar limit, and
+within a few seconds a substantial fraction of the mass of the core is fused into
+heavier elements, releasing such a large amount of energy in such a short time that
+the star is basically dissolved in a shock wave that leaves nothing behind.
+
+Since the process we have just described is a threshold process taking place at a very
+specific critical mass, all Type~Ia supernov\ae\ produce a fairly similar peak luminosity,
+which is way they are so interesting as standard candles: by measuring the apparent
+magnitude and assuming a standard value for the total energy release\sidenote{The typical
+absolute magnitude of Type~Ia supernovae is $M_v = -19.3$, with little variations.},
+one can measure the distance to the host galaxy via the inverse-square law.
+We shall come back to this in section~\ref{sec:}.
+
+The order of magnitude for the overall energy output can be estimated by assuming
+that one solar mass of material undergoes fusion, with an average energy release
+$Q \approx 1$~MeV per nucleon
+\begin{align}
+	E_\text{Ia} \sim \frac{M_\odot Q}{m_p} \approx 10^{51}~\text{erg}.
+\end{align}
+The total radiated energy, which can be measured by simply integrating the light curve
+(corrected for the distance) over the prompt phase, turns out to be some two orders
+of magnitude smaller, indicating that the vast majority of the energy released in the
+explosion goes actually into the kinetic energy of the ejecta\sidenote{As it turns out,
+and unlike the case of core-collapse supernov\ae, the energy emitted in the form of
+neutrinos is also subdominant in this case.}. The initial velocity of the latter
+can be simply estimated by
+\begin{align}
+  \frac{1}{2} M_\odot v_\text{ej}^2 = E_\text{Ia}
+  \quad\text{or}\quad
+  v_\text{ej} = \sqrt{\frac{2 E_\text{Ia}}{M_\odot}} \approx 10,000~\text{km~s}^{-1}.
+\end{align}
+As we shall see in section~\ref{sec}, this will be relevant for the discussion of
+the acceleration of cosmic rays in shocks.
+
+
+\subsubsection{Core-collapse supernov\ae}
+
+While some of the aspects we have discussed for Type~Ia supernov\ae\ do qualitatively
+apply to their core-collapsed cousins, there is one key feature that is specific
+to the latter---the explosion is not triggered by a thermonuclear runaway just
+before the Chandrasekhar limit is reached. Instead, when the mass of the core
+exceeds the Chandrasekhar limit, the electron degeneracy pressure is no more sufficient
+to counterbalance the gravitational force, and the core starts collapsing. The detail
+of the process depends on the specific of the environment (e.g., the mass and
+chemical composition of the star), but essentially the inner density and temperature
+become so high that the inverse beta decay
+\begin{align}
+  p + e^- \rightarrow n + \nu_e
+\end{align}
+comes into play, converting protons into neutrons, and depleting the core from
+electrons. This sometimes goes under the name of \emph{de-leptonization}, and it makes
+all the difference in the world, because all of a sudden the electron degeneracy
+pressure vanishes and all that is possibly left is the degeneracy pressure of neutrons
+which, as we have seen, is 2000~times smaller.
+
+We shall look into this process more closely in chapter~\ref{chap:nu}, but we anticipate
+two key differences with respect to the Type~Ia scenario we have described in the
+previous section: (i) in addition to the ejecta, the supernova explosion leaves a
+compact object behind---either a \emph{neutron star} or a \emph{black hole}, depending
+on the mass of the progenitor---which is the remnant of the stella collapse; and (ii)
+the vast majority of the energy (typically of the order of $10^{53}$~erg) in this case is
+carried away by the neutrinos produced in the de-leptonization, to which the exploding
+environment is largely transparent.
+
+
+% \subsubsection{Supernova remnants (SNRs)}
+
+% \todo{Write something about typical dimensions, magnetic fields, age, dynamic.}
+
+
+
+\subsection{Neutron stars}
+\label{sec:neutron_stars}
+
+Although anecdotal evidence can be found in the literature that Lev~Landau
+might have provided the first theoretical prediction of the existence of
+nuclei-like dense stars~\cite{1932PhyZS...1..285L} (interestingly enough, predating
+the discovery of the neutron), the term \emph{neutron star}%
+\marginnote{\emph{With all reserve we advance the view that a super-nova represents
+  the transition of an ordinary star into a neutron star, consisting mainly of
+  neutrons. Such a star may possess a very small radius and an extremely high density.
+  As neutrons can be packed much more closely than ordinary nuclei and electrons,
+  the "gravitational packing" energy in a cold neutron star may become very large,
+  and, under certain circumstances, may far exceed the ordinary nuclear packing
+  fractions. A neutron star would therefore represent the most stable configuration
+  of matter as such.}\\[10pt]Baade and Zwicky~\cite{1934PNAS...20..259B}.}
+first appeared in a short paper by Walter~Baade and Fritz~Zwicky published in
+1934~\cite{1934PNAS...20..259B}, and providing no quantitative detail at all about
+the underlying physical mechanism.
+
+%Calculate the density at which this happens, that is, when the Fermi momentum is
+%high enough. The number should be around $1.2 \times 10^7$~g~cm$^{-3}$, which is
+%about an order of magnitude larger than the typical density for a white dwarf.
+
+There is one interesting aspect that emerges immediately, and we have touched upon
+several times alredy: since the Fermi degeneracy pressure is inversely proportional
+to the mass of the fermion, it will be about 2000~times smaller for neutrons,
+compared to electrons. That is, a neutron star is bound to be fairly small. If we
+imagine repeating the basic reasoning that went into the estimation of the radius
+of a white dwarf~\eqref{eq:wd_radius_nr}\sidenote{Note that was in the non-relativistic
+limit, but since we're talking orders of magnitude we'll just take it.} assuming
+that the neutrons are now providing the degeneracy pressure, we end up with
+\begin{align}
+  \frac{R_\text{NS}}{R_\text{WD}} = \frac{m_e}{m_n} \muave^\frac{5}{3}
+  \approx 1.7 \times 10^{-3}.
+\end{align}
+Note that in this case is the same fermions (the neutrons) that provide both the
+degeneracy pressure and the mass of the star, so the equivalent of $\muave$, that
+was the average number of electrons per nucleon for a white dwarfs, is now simply $1$.
+
+Assuming that a typical white dwarf has a radius of the order of the Earth radius,
+a typical neutron star would have a radius of $\sim 10$~km, with an astonishing density
+of $\sim 4 \times 10^{14}$~g~cm$^{-3}$ (that is, in excess of that of an atomic
+nucleus) and a surface gravity of $\sim 10^{12}$~m~s$^{-2}$. It is no
+surprise that, under these conditions, the Newtonian mechanics is totally inadequate,
+and one must correctly incorporate the effects of general relativity\sidenote{The
+escape velocity at the surface of a neutron predicted by Newtonian mechanics would be
+$$
+	v_\text{esc} = \sqrt{\frac{2G M}{R}} \approx 0.52~c!
+$$
+}.
+
+The first quantitative calculation for the equilibrium of a neutron star where
+done by Oppenheimer and Volkoff~\cite{1939PhRv...55..374O}, building up on ideas
+from Tolman~\cite{1939PhRv...55..364T}. The resulting mass limit of 0.7~$M_\odot$
+was lower than the Chandrasekhar limit for white dwarfs, and modern calculations,
+including the effects of strong interactions, place it between 1.5 and 3~$M_\odot$
+for a non-rotating neutron star. For the sake of the discussion, in the following
+we shall refer to a \emph{canonical neutron star} as a uniform sphere of mass
+$M = 1.4~M_\odot$ and radius $R = 10$~km\sidenote{Real mileage
+might vary, and different neautron stars will have different masses, radii, and
+density profiles. With the highest neutron star masses staning at bout $2~M_\odot$,
+it is commonly accepted that any NS of mass greater that $3~M_\odot$ would collapse
+into a black hole.}.
+
+There is a few fun facts about neutron stars that will turn out to be relevant
+in the following. If we treat a star as a rigid, uniform sphere with a moment of
+inertia\sidenote{The basic scaling with the mass and the radius of the star
+$$
+  I \propto M R^2
+$$
+holds in the general case, with the constant of proportionality depending on the
+actual radial distribution of the mass inside the star.}
+\begin{align*}
+	I = \frac{2}{5} MR^2
+\end{align*}
+and we assume that the angular momentum $I\Omega$ is conserved in the contraction
+and collapse of the star, we get a relation between the angular velocities at the
+beginning and the end of the process:
+\begin{align}
+	R^2_i \Omega_i = R^2_f \Omega_f
+	\quad \text{or} \quad
+	\Omega_f = \left( \frac{R_i}{R_f} \right)^2 \Omega_i
+\end{align}
+If we now imagine starting with a star like the Sun and have it rigidly collapse
+to a neutron star, the initial period of 24.47~days would be reduced by a spectacular
+factor $(\nicefrac{R_\odot}{R_\text{NS}})^2 \approx 10^{10}$ to less than~1~ms!
+This is largely fictional, but it is true that, at least potentially, neutron stars
+can spin very fast, and in fact \emph{millisecond pulsars} do exist\sidenote{Note
+that for a period of 1~ms, a point on the neutron star surface would rotate at a
+tangential speed of
+$$
+	v = \frac{2\pi R}{P} \approx 0.23~c!
+$$
+}.
+
+Interestingly enough, by the Alfven theorem, the magnetic flux $BR^2$ is also conserved
+in the collapse\sidenote{This is a basic consequence that, through the collapse, the
+material of the star behaves like a plasma, and is characterized by a high
+electrical conductivity, so that the process takes place with no dissipation.},
+and so the magnetic field at the surface is also amplified by the same factor $10^{10}$.
+If we start with a magnetic field of 1~G, such as the one of the Sun, we end up
+to a spectacular figure of $10^{10}$~G after the collapse. Again, simplistic as
+the argument is, we are still in the land of plausible things, as pulsars do tend
+to have intense magnetic fields, and examples with spectacular magnetic fields are known.
+
+
+
+\subsection{Pulsars}
+\label{sec:pulsars}
+
+It is interesting to calculate the bolometric luminosity for our canonical neutron
+star, assuming a surface temperature of a million of degrees K.
+This comes to be around 20\% of the luminosity of the Sun, but according to Wien
+displacement law it peaks in X-rays\sidenote{And it is in fact from modern X-ray
+measurements (in addition to theoretical modeling) that we have a good grasp on
+NS temperatures.}, at about $250$~eV. It is fair to say that in the 1930s nobody
+was holding their breadth on the fact that such an object would be ever detectable.
+
+It was in 1967 that Pacini~\cite{1967Natur.216..567P} pointed out that rapidly
+rotating, magnetized neutron stars might emit radio waves. The basic argument is
+that, since the geometry of the mass loss in the supernova explosion is unlikely
+to be perfectly spherical, the angle between the magnetic field direction (e.g.,
+the dipole axis if we assume the field to be dipolar) and the rotation axis is
+likely to be arbitrary. In order words, we are likely dealing with an oblique rotator,
+and the misalignment between the two axes would cause the system to emit low-energy
+electromagnetic radiation by the lighthouse effect.
+
+Needless to say, pulsars were in fact discovered at about the same time, in the
+form of a periodic radio signal (with $P = 1.337$~s) from a specific position in
+the sky detected during a sky survey at 81.5~MHz~\cite{1968Natur.217..709H}.
+Today we know thousands of pulsars, with periods between $\sim 1$~ms and $\sim 10$~s,
+which are routinely studied at all wavelengths, from radio to gamma rays.
+
+% Very interesting and informative page here.
+% https://www.cv.nrao.edu/~sransom/web/Ch6.html
+
+If we interpret the pulsation as a result of the rapid rotation of a neutron star,
+we immediately have an interesting bound on the average density of the object by
+just requiring that the centrifugal force experienced by a point at the equator does
+not exceed the gravitational attraction by the rest of the star:
+\begin{align}\label{eq:pulsar_minimum_density}
+	\Omega^2 R < \frac{GM}{R^2} = \frac{4\pi}{3} G R \density \quad\text{or}\quad
+  \density > \frac{3 \Omega^2}{4\pi G} = \frac{3\pi}{GP^2}.
+\end{align}
+
+\begin{marginfigure}
+  \input{figures/pulsar_minimum_density.pgf}
+  \caption{Minimum density of a neutron star as a function of the period
+    from~\eqref{eq:pulsar_minimum_density}.}
+  \label{fig:pulsar_minimum_density}
+\end{marginfigure}
+
+The basic scaling of the bound is shown in figure~\ref{fig:pulsar_minimum_density}.
+The first pulsar discovered had a period $P = 1.3$~s, so its mean density is at
+least $8.4 \times 10^7$~g~cm$^{-3}$, which is in line with the typical figure for
+a white dwarf. For the Crab pulsar, whose period is $33$~ms, the bound is much
+more stringent ($1.3 \times 10^{11}$~g~cm$^{-3}$), and for the fastest known pulsar
+($P = 1.4$~ms) it becomes $\density_\text{NS} > 7.2 \times 10^{13}$~g~cm$^{-3}$,
+which is indeed comparable with the density of nuclear matter.
+
+Although pulsars are generally regarded as very precise cosmic clocks, it was realized
+soon after their discovery that their periods do increase with time, with period
+derivatives $\dot{P}$ varying over more than ten orders of magnitude\sidenote{In general,
+the pulsar period as a function of time can be expanded ina Taylor series
+$$
+  P(t) = P_0 + \dot{P} t + \frac{1}{2} \ddot{P} t^2 + \cdots
+$$
+but the terms beyond the first derivative are generally negligible. (The second
+derivative is only measured for a handful of the brightest pulsars.)
+We explicitely note that the time derivative of the period
+$$
+  \dot{P} = \dv{P}{t}
+$$
+is a dimensionless number, although occasionally you will find it indicated in the
+literature with funny units s~s$^{-1}$,}, from $10^{-9}$ to $10^{-21}$. This is
+generally understood as the result of the power output by the pulsar in magnetic
+dipole radiation, which in turn is responsible for the overall electromagnetic
+radiation from the system. For a uniformly magnetized sphere with radius $R$ and
+surface magnetic field strength $B$ the radiated power is given by
+\begin{align}
+  P_\text{rad} = \frac{2}{3c^3} (BR^3 \sin\alpha)^2 \left( \frac{2\pi}{P} \right)^4 <
+  \frac{2B^2 R^6}{3c^3} \left( \frac{2\pi}{P} \right)^4
+\end{align}
+(Here $\alpha$ is the inclination angle of the magnetic dipole with respect to the
+rotation axis, which is generally not measured directly; it goes without saying,
+the output power vanishes when the dipole is aligned with the rotation axis and
+is maximum when the two are orthogonal.)
+
+\begin{marginfigure}
+  \input{figures/pulsar_rotational_energy.pgf}
+  \caption{Rotational kinetic energy of a neutron star as a function of the
+    period~\eqref{eq:pulsar_rotational_energy}.}
+  \label{fig:pulsar_rotational_energy}
+\end{marginfigure}
+
+The rotational kinetic energy of our canonical (uniform) neutron star can be written as
+\begin{align}\label{eq:pulsar_rotational_energy}
+  E_\text{rot} = \frac{1}{2} I \Omega^2 = \frac{4\pi^2}{5} \frac{M R^2}{P^2},
+\end{align}
+which for the Crab pulsar amount to a very respectable $2 \times 10^{49}$~erg.
+The time derivative of the rotational energy, which is customarily called the
+\emph{spin-down luminosity}, reads
+\begin{align*}
+  -\dot{E}_\text{rot} = -I \Omega\dot{\Omega} = -\frac{4\pi^2 I\dot{P}}{P^3}.
+\end{align*}
+Note this is not to be confused with the actual pulsar luminosity in any particular
+band. The very-long-wavelength magnetic dipole radiation does not propagate very far
+and is mostly heating up and powering the surrounding environment, which in turn
+emits electromagnetic radiation at all wavelengths with a bolometric luminosity
+that is comparable with the spin-down luminosity. (For the Crab pulsar the spin-down
+luminosity amounts to $4 \times 10^{38}$~erg~s$^{-1}$, or about $100,000$ the luminosity
+of the Sun, which is more than 8~orders of magnitude higher than the average
+radio pulse luminosity of the pulsar.)
+
+If we know equate the spin-down luminosity to the magnetic dipole power, we can
+derive a constraint on the minimum magnetic field at the NS surface for the case
+of an orthogonal rotator
+\begin{align}
+  B > B\sin\alpha = \left( \frac{3c^3 I}{8\pi^2 R^6} \right)^\frac{1}{2}
+  \left( P\dot{P}\right)^\frac{1}{2},
+\end{align}
+which is generally referred to as the \emph{characteristic magnetic field}. For the
+Crab pulsar this amounts to a minimum surface field of $4 \times 10^{12}$~G.
+
+If we assume that the quantity $B\sin\alpha$ does not change significantly through
+the lifetime of the pulsar, since $I$ and $R$ are not expected to change either,
+we immediately realize that $P\dot{P}$ is constant. But than we can integrate
+the pulsar period over the pulsar lifetime $\tau$, assuming an initial period $P_0$
+at the time the pulsar was born
+\begin{align*}
+  \frac{P^2 - P_0^2}{2} = \int_{P_0}^P P dP = \int_0^\tau P \dot{P} dt =
+  P \dot{P} \int_0^\tau dt = P \dot{P} \tau.
+\end{align*}
+Of course we don't know $P_0$, but if the pulsar is old enough for the current period
+to be much longer than the initial one ($P \gg P_0$), the above equation simplifies
+yielding the nice relation for the \emph{characteristic age}
+\begin{align}
+  \tau = \frac{P}{2\dot{P}}.
+\end{align}
+(The characteristic age for the Crab pulsar is 1250~years, which is only slightly
+larger than time elapsed by the explosion of the supernova, which historical records
+place at 1054~AD.)
+
+\begin{figure}[htbp!]
+	\input{figures/pulsar_period_pdot.pgf}
+	\caption{Standard pulsar $P$-$\dot{P}$ diagram for all the known pulsars at a
+    distance $d \le 2$~kpc. Data are taken from the ATNF pulsar
+    catalog~\cite{2005AJ....129.1993M}, available online
+    at~\url{https://www.atnf.csiro.au/research/pulsar/psrcat/}.
+    The two sets of diagonal lines indicate the loci at constant characteristic
+    surface $B$ field and characteristic age.}
+  \label{fig:pulsar_ppdot}
+\end{figure}
+
+Pulsars are customarily represented in a $P$-$\dot{P}$ diagram such as the one
+shown in figure~\ref{fig:pulsar_ppdot}, where the surface magnetic field and
+characteristic age inferred from the period and period derivative can be illustrated
+as diagonal grids. The pulsars with periods smaller than $\sim 10$~ms are generally
+referred to as \emph{millisecond pulsars}, and are believed to be old objects,
+recycled through the accretion of matter (and angular momentum) from a companion
+in a binary system\sidenote{It goes without saying: the characteristic age and
+magnetic field for millisecond pulsars should be taken \emph{cum grano salis}}.
+
+
+%\subsection{Black holes}
+
+
+
+\section{Galaxies}
+\label{sec:galaxies}
+
+Galaxies are gravitationally-bound systems comprised of stars, stellar remnants,
+interstellar gas and dust, in addition to \emph{dark-matter}---more on this (much)
+later, as this is actually one of the main aspects we shall try and cover in this
+writeup. Needless to say, we live in our own galaxy, which is called the Milky Way.
+
+Galaxies come in all forms and shapes, and their morphology is customarily categorized
+in three large groups: elliptical, spiral and irregular, with most spiral galaxies
+structured in a central bulge and a disk. They typically range between 1~kpc and
+100~kp in diameter and the number or stars orbiting around the center of mass of
+the system range from $10^3$ for dwarf galaxies to $10^{14}$ for super-giants.
+The Milky Way is a spiral galaxy with a diameter of 27~kpc, hosting a few $10^{11}$
+stars. Galaxies tend to be organized in larger structures (groups, clusters and
+super-clusters)\sidenote{The Milky Way is part of the Local Group, which in turn
+belongs to the Virgo supercluster. The closest independent galaxy is Andromeda (M~31)
+at about 2.5~Mpc.}, with distances between individual galaxies being typically of
+the order of Mpc.
+
+
+\subsection{Galaxy rotation curves}
+
+The \emph{rotation curve} of a galaxy is the relation $v(r)$ expressing the radial
+velocity $v$ that a star in a galaxy must have to maintain a circular orbit at a
+specified distance from the center. Rotation curves are customarily measured using the
+Doppler shift of the stars, and provide invaluable information about the gravitational
+potential within the system.
+
+In a simple, spherical-symmetric setting the orbital velocity of a star at a given
+distance $r$ from the center of the galaxy is only determined by the total mass
+enclosed within a sphere of radius $r$, i.e.,
+\begin{equation*}
+  \frac{v^2}{r} = \frac{G M(r)}{r^2}
+  \quad\text{or}\quad
+  v = \left(\frac{GM(r)}{r}\right)^\frac{1}{2}.
+\end{equation*}
+(Conversely, if we measure the rotation curve, we are effectively mapping the radial
+distribution of matter within the galaxy.)
+
+\begin{marginfigure}
+	\input{figures/galaxy_rotation.pgf}
+	\caption{Toy model for a galaxy rotation curve~\eqref{eq:galaxy_rotation}, based
+		on the assumption that the mass of the galaxy is concentrated in the bulge.}
+	\label{fig:galaxy_rotation}
+\end{marginfigure}
+
+In a toy model where we imagine a spiral galaxy as a relatively small, homogeneous
+central bulge with radius $R_b$ and a thin disk with radius $R_d > R_b$, with the
+majority of the mass concentrated in the bulge, it is straightforward to see that
+the rotation curve should increase linearly within the latter and then decrease
+as $\nicefrac{1}{\sqrt{r}}$ for larger radii.
+\begin{align}\label{eq:galaxy_rotation}
+  v(r) \propto \begin{cases}
+    r & \quad\text{for}~r \leq R_b\\
+    r^{-\frac{1}{2}} & \quad\text{for}~r > R_b.
+  \end{cases}
+\end{align}
+Now, this is clearly an oversimplification by all means, but what is generally true
+is that, as long we admit that the mass in the outer parts of the disk is small
+compared to that in the bulge, the conclusion holds true that the rotation curve
+should go to zero with some power of $r$ not very different from $-\nicefrac{1}{2}$
+for large radii. This is at odd with the observed rotation curves in many galaxies,
+remaining relatively constant (or even increasing) up to significantly larger radii
+than one would expect, based on the content of visible matter.
+
+This is, historically, the first evidence for the existence of dark matter, and
+we shall come back to this in a completely different context in chapter~\ref{chap:cosmo}.
+
+
+\subsection{The Milky Way}
+
+The Milky Way appears like a pale band of light to the naked eye, and this is where
+its name derives from. It was not until Galileo pointed its telescope towards the
+heavens that it became clear that it was an enormous collection of individual
+stars. The first attempts at mapping the structure of the milky way, largely due
+to the difficulties in disentangling the effects on stellar extinction.
+
+Our current understanding of the Milky Way is somewhat resembling the sketch in
+figure~\ref{fig:milky_way}, with a disk of about 50~kpc in diameter\sidenote{As we shall
+see in a second, there is no hard boundary, here, and this figure should be understood
+as merely indicating a characteristic length.}, and the Sun
+lying within the disk at about $\nicefrac{2}{3}$ of the galactic radius towards the
+outskirts, or about 8~kpc from the galactic center.
+
+\begin{figure}[htbp]
+	\begin{tikzpicture}
+
+		\node (gc) at (0., 0.) {};
+		\node[inner sep=0] (sun) at (3., 0.) {};
+		\node (pole) at (3., 4.) {};
+		\node[inner sep=0] (star) at (1.5, 3) {};
+		\node[inner sep=0] (base) at (1.5, -0.42) {};
+    % Galactic disk (horizontal ellipse)
+    \draw[thick] (gc) ellipse (5 and 1);
+		% Galactic center (Sagittarius A*)
+    \fill[black] (gc) circle (0.1);
+    \node[above] at (gc) {Galactic Center};
+    % Sun's position
+    \fill[black] (sun) circle (0.1);
+    \node[below] at (sun) {Sun};
+		\draw (gc)--(sun);
+		\draw[->] (sun)--(pole);
+		\node[above] at (pole) {North galactic pole};
+		\draw (sun)--(star);
+		\draw[dashed] (sun)--(base);
+		\draw[dashed] (star)--(base);
+    \node[above] at (star) {Sky direction};
+
+		%\draw[gray,dashed] (sun) ellipse (2.5 and 0.5);
+		\draw[->] (0.5,0) arc[start angle=180, end angle=232, x radius=2.5, y radius=0.5];
+    \draw[->] (2.1,-0.25) arc[start angle=180, end angle=134, x radius=1.5, y radius=1.5];
+    \node at (0.75, -0.5) {$\ell$};
+    \node at (2.05, 0.5) {$\mathcal{b}$};
+
+	\end{tikzpicture}
+	\caption{Cursory sketch of the Milky Way structure, and definition of the galactic
+    longitude $\ell$ and latitude $\mathcal{b}$. The distance between the Sun
+    and the galactic center is $\sim 8$~kp, while the approximate diameter of the
+    galactic disk is $\sim 50$~kp.}
+	\label{fig:milky_way}
+\end{figure}
+
+The disk is actually composed of at least two components---the thin disk and the
+thick disck---both of which can be roughly modeled as continuous distributions
+\begin{align}
+	n(r, z) = n_0 e^{-\frac{r}{r_0}} e^{-\frac{z}{z_0}},
+\end{align}
+where the radial scale is of the order of $r_0 \approx 3.5$~kp and the vertical
+scale lengths are of the order of 300~pc for the thin disk and 1.5~kp for the thick
+disk.
+
+The galactic bulge constitutes an independent component of the Milky Way, with a
+complex, non-spherical shape and a mean radius of about 1~kpc. The total mass of the
+bulge is believed to be of the order of $10^{10}~M_\odot$, which is about $20\%$ of
+the mass in the disk (and predominantly the think disk).
+
+The last luminous component of the galaxy is the stella halo, mostly composed of
+globular clusters and field stars, with large velocity components perpendicular to the
+galactic plane.
+(And, of course, we believe the MIlky Way is embedded in a dark matter halo---but we
+won't elaborate further on the structure of this halo, and we shall return to the
+general subject of dark matter in chapter~\ref{chap:cosmo}.)
+
+
+\subsection{The interstellar medium}
+
+The matter and radiation fields that are present in the space between stars within
+the Milky Way goes under the name of \emph{interstellar medium}, or
+ISM\sidenote{Other galaxies have their own insterstellar
+medium, too}.
+The ISM in mainly composed by Hydrogen ($\sim 90\%$ in number) and Helium
+($\sim 10\%$ in number), with small traces of heavier elements\sidenote{Keep in mind
+that astronomers are accustomed to call \emph{metals} anything that is heavier
+than helium.}. It comes in different phases (ionized, atomic, molecular), depending
+on the local temperature. The latter ranges from tens (in cold molecular clouds)
+to millions (in the hot ionized medium) of degrees~K, with a corresponding number
+density that goes from $\sim 10^6$ to $10^{-4}$.
+
+The interstellar space is also host of a magnetic field, that is know to possess
+at least two components: a \emph{large-scale} (or \emph{regular}) field that is
+coherent over scale lengths of the order ot the dimensions of the galaxy, and
+\emph{small-scale} (or \emph{random}) component that is connected to the turbulence
+of the interstellar medium~\cite{Haverkorn2015}. Both are important for the energy
+balance of the galaxy, and for the propagation of charged particles.
+
+The strength of the large scale galactic magnetic field is mainly inferred from
+Faraday rotation measurements of pulsars and is, on average, of the order of 1--2~$\mu$G,
+although it is larger $\sim 6~\mu$G in the solar neighborhood and even larger toward
+the galactic center. The actual morphology of the field is still matter of debate,
+although some general features---most notably, the fact that it follows the spiral
+arms---seem to be commonly accepted.
+
+The strength of the random magnetic field is also of the order of a few $\mu$G,
+and its power spectrum is significantly more difficult to constraint. As we shall
+see, the small-scale magnetic field in discrete objects such as supernova remnants
+is a crucial ingredient of the diffusive-shock acceleration paradigm, which is one
+of the most accredited ideas to explain the acceleration of galactic cosmic rays.
+
+
+% \subsection{Active Galaxies}
+
+
+% Mention AGN and GRB?
+
+
+\section{The Universe at the largest scales}
+\label{sec:universe_on_large_scales}
+
+One of the most striking features that emerge when we look at the universe on its
+largest scales, is that it looks the same in all directions. (In slightly more technical
+terms the universe is \emph{isotropic}).
+
+Now, taken at face value, this is largely counter-intuitive, to use an euphemism.
+A cursory look at our surrounding, wherever we happen to find ourselves, is enough
+to convince us that what we see does not look isotropic at all. And yet, on scales
+larger than 100~Mpc (remember, this corresponds to 2,000 times the diameter of the
+Milky Way), we have several independent pieces of evidence that the universe is
+approximately isotropic. Deep optical survey measuring the spatial distribution of
+distant galaxies are one, and the \emph{cosmic-microwave background}, which we shall
+return to several times in the following is another (and, possibly, even more compelling)
+one.
+
+Since we are at it we note that, although isotropy and homogeneity are two very
+different things\sidenote{Saying that the universe is isotropic means that it looks
+the same in all directions---there are no preferred directions. Saying that it is
+homogeneous means that it looks the same in all locations---there are priviledged
+positions. In general one property does not imply the other, altough the two are
+clearly related in that, e.g., if the universe is isotropic around any point, then
+it is bound to be homogeneous, too.}. Nonetheless, if we accept the fact that there
+is nothing special in our location in the universe (a stance that goes under the name
+of \emph{Copernican principle}) then we are forced to accept that the experimental
+evidence that the universe \emph{around us} is isotropic implies that the latter is
+homogeneous, too.
+The combination of the two things (the universe is isotropic \emph{and} homogeneous)
+is called the \emph{cosmological principle}. As we shall see in chapter~\ref{chap:cosmo},
+simple as it is, the cosmological principle allows to draw a surprising amount of
+far-reaching consequences.
+
+
+\subsection{The cosmic microwave background}
+
+The cosmic-microwave background (CMB) is microwave radiation pervading the universe
+with a spectrum that, to an astounding accuracy, is that of a blackbody with a
+temperature of $2.7255^\circ$~k . One of the most striking features of the CMB is its
+isotropy\sidenote{The CMB is not, in fact, \emph{perfectly} isotropic, and nobody
+expected it to be. The relative temperature fluctuations of the CMB are at the
+level of $10^{-5}$ and encode important cosmological information.},
+which we have in fact cited at the beginning of this section as one of the most
+compelling experimental evidences that the universe is isotropic at large scales.
+
+\keyfigures{CMB}{
+	Temperature: $2.7255^\circ$~k\\
+	Peak energy: $3.74 \times 10^{-4}$~eV\\
+	$\subcmb{n} \approx 410$~cm$^{-3}$\\
+	$\subcmb{\density} \approx 0.2606$~eV~cm$^{-3}$
+}
+
+Everything we have said about the Planck distribution in appendix~\ref{chap:qstats}
+holds for the CMB. The differential number density peaks at $3.74 \times 10^{-4}$~eV,
+but due to the right tail in the distribution the average photon energy is
+$6.62 \times 10^{-4}$~eV. The total number density is $410$~cm$^{-3}$ and the total
+energy density $0.2606$~eV~cm$^{-3}$. We note that this is at the level of $10^{-4}$
+of the critical energy density we have calculated in section~\ref{sec:hubble_law},
+i.e., the CMB is not a dominant contributor to the energy budget of the contemporary
+universe (although, as we shall see, it was in earlier phase of the evolution of the
+universe).
+
+\begin{marginfigure}
+  \input{figures/cmb.pgf}
+  \caption{Spectrum of the CMB.}
+  \label{fig:cmb}
+\end{marginfigure}
+
+
+The very existence of the CMB is cosmologically very important, and it is fair to
+say that it was its discovery by Penzias and Wilson in 1965 that made the scale
+in the big debate between the steady-state model and the big-bang model tip in favor
+of the latter. In a big-bang scenario, as we shall see in details, the presence
+of a relic of electromagnetic radiation arise natural from the photon decoupling
+from the thermal bath at the point in time when electrons and protons combine to
+form neutral atoms, so that the bath itself becomes transparent to radiation.
+
+
+\subsection{The extragalactic background light}
+
+The CMB is not the only form of radiation pervading the universe. The second most
+energetic diffuse background is the so-called \emph{extragalactic background light},
+with a much more mundane origin---it is the light produced by all luminous objects,
+in the universe, accumulated over the cosmic history, and extends over the entire
+electromagnetic spectrum, up to the highest-energy gamma rays, as shown in
+figure~\ref{fig:ebl}.
+
+\begin{figure}[!htbp]
+  \input{figures/ebl.pgf}
+  \caption{Approximate spectrum of the extragalactic background light, from
+		radio to gamma rays~\cite{}.}
+  \label{fig:ebl}
+\end{figure}
+
+When compared with the CMB, the combined energy density of all the EBL components
+only amounts to 5--10\% of the former, indicating the energy density of the CMB
+is (much) larger than the energy density of all the light produced by all the stars
+in the history of the universe. So much so that, to a first approximation, the
+EBL can be just neglected from a cosmological standpoint. And yet we shall see in
+section~\ref{sec:universe_opacity} that it is fundamental for very-high-energy
+gamma-ray astronomy, as it is the component that renders the universe opaque to
+photons above $~\sim 100$~GeV.
+
+\begin{margintable}
+	\begin{tabular}{lr}
+		\hline
+		Component & $\epsilon$~[ev~cm$^{-3}$]\\
+		\hline
+		\hline
+		Infrared & $7.4 \times 10^{-3}$\\
+		Optical & $ 6.0 \times 10^{-3}$\\
+		X-ray & $ 7.0 \times 10^{-5}$\\
+		$\gamma$-ray & $ 3.5 \times 10^{-6}$\\
+		\hline
+	\end{tabular}
+	\caption{Energy density of the various components of the extragalactic background light.}
+\end{margintable}
+
+
+%\section{Orders of magnitude}
+%
+%\subsection{Energies}
+%
+%\subsection{Masses}
+%
+%\subsection{Temperatures}
+%
+%\subsection{Magnetic fields}

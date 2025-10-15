@@ -1,0 +1,1754 @@
+% Missing things
+%
+% MDR for a magnetic spectrometer.
+% Gyroradius for a 1 TeV proton in Bsun = 10 uG
+% Faraday rotation?
+% Earth magnetic field and radiation belts.
+% Ground based measurements
+% TOF for space-based
+
+
+\chapter{Cosmic Rays}
+
+The discovery of cosmic rays is customarily credited to Victor Hess for his balloon
+flights in the summer of 1912~\cite{Hess:1912srp}. In fact, around the same time,
+several different scientists were carrying out investigations on the penetrating
+radiation with Wulf electroscopes, including Pacini~\cite{1912NCim....3...93P},
+Gockel and Wulf himself. By 1915 such instruments had been flown on balloons up
+to more than~8000 m, measuring a level of radiation much larger than that recorded
+by Hess in his first flight. The evidence for the extraterrestrial origin of the
+radiation was compelling.
+
+A vibrant and enlightening account of the first 50 years of research on cosmic rays
+is given by a classic book by Bruno Rossi~\cite{rossi1964cosmic}. Interestingly enough,
+the question of the nature of the cosmic radiation did not get much attention until
+the end of the 1920s. The most striking known feature of cosmic rays was their high
+penetrating power and, for the first 15~years after their discovery, scientists
+implicitly assumed that they were gamma rays---the most penetrating radiation known at
+the time. This points to one of the most prominent difficulties that had to be faced
+in the early studies of the cosmic radiation: the fact that little or nothing was
+known about the physical interaction processes experienced by high-energy photons
+and charged particles. The first satisfactory theory of electromagnetic showers,
+due to Bethe and Heitler, was published in 1934~\cite{41}; before that, people could
+only assume that high-energy gamma rays only interacted with matter via Compton
+scattering, whose cross section has been shown to decrease with energy by
+Dirac~\cite{42} and Klein and Nishina~\cite{43}. Robert Millikan formulated the
+first complete theory of cosmic rays, based on all the measurements of attenuation
+in the atmosphere and in water available at the time~ \cite{44}. He proposed that
+the primary cosmic radiation was composed of gamma rays of well-defined energies,
+produced in the interstellar space by the the fusion of hydrogen atoms in heavier
+elements---and that the charged particles observed in the Earth atmosphere were electrons
+produced via Compton scattering.
+
+The begin of the post-electroscope era, around 1929, largely relies on a few fundamental
+technical breakthroughs: the development of the Geiger-M\"uller tubes, the first
+practical implementations of the coincidence technique, introduced by Bothe and
+Kolh\"orster~\cite{45} and refined by Bruno Rossi~\cite{46}, and the introduction
+of imaging devices such as the bubble chamber (and, later, the cloud chambers and
+the stacks of photographic emulsions sensitive to single charged particles).
+It was thanks to different clever arrangements of Geiger tubes in coincidence and
+shielding materials that an incredible amount of new information about cosmic rays
+was made available in the 1930s. It soon became clear that some of the particles
+observed could pass through very noticeable amounts of material, which casted serious
+doubts on the interpretation of the primary component as consisting of photons.
+At about the same time, physicists realized that the interaction between radiation
+and matter was much more complicated that they had anticipated. In 1933 Blackett
+and Occhialini~\cite{47} published the results of the first observations performed
+with a cloud chamber triggered by Geiger-M\"uller tubes, clearly showing the copious
+production of secondary radiation and the new phenomenon of the showers. This, in
+turn, forced scientists to focus the attention on the genetic relation between the
+primary and the secondary components of the cosmic radiation, and to consider seriously
+the hypothesis that most of the particles observed near the surface were actually
+produced in the atmosphere. The idea that the magnetic field of the Earth could be
+used to shed light on the nature of the cosmic radiation, and establish unambiguously
+whether primary cosmic rays were photons or charged particles occurred early on in
+the 1920s. It was clear that, in the second case, they would be somewhat channeled
+along the field lines and one would expect a larger intensity at the magnetic poles
+compared to the equator. Searches for this latitude effect were carried out as soon
+as 1927, but it is fair to say that in 1930, when Bruno Rossi started the first
+quantitative analysis of the problem, evidence for an influence of the geomagnetic
+field on the intensity of the cosmic radiation were far from being compelling
+(the latitude effect was only established in the 1930s thanks to a monumental
+measurement campaign led by A. H. Compton). Building on top of the work by the Norwegian
+geophysicist Carl St\"ormer, Rossi set the stage for the ray-tracing techniques
+which are nowadays customarily used to study the motion of charged particles in a
+magnetic field. He predicted that, if the primary cosmic rays were charged, and
+predominantly of one sign (either positive or negative), one should observe an
+East-West flux asymmetry, which would be maximal around the geomagnetic equator.
+In 1934 Rossi~\cite{48} and two other groups independently measured this East-West
+effect. It was an incontrovertible evidence that primary cosmic rays are
+charged----and, even more, the sign of the effect allowed to predict the prevalent
+sign of their charge.
+
+On a slightly different note, we should emphasize that we deliberately left out from
+this short summary at least two fundamental items. The first is the deep connection
+between cosmic rays and the early stages of development of particle physics, with
+the positron [49], muon [50, 51] and pion [52] all being discovered in the cosmic
+radiation. The other is the discovery of extensive air showers [53], which originated
+an independent (and incredibly prolific) line of research---that of the study of
+ultra-high-energy cosmic rays from the ground. All this said, it is fair to say that
+between 1940 and 1950 a complete and coherent picture of the phenomena connected
+with the cosmic radiation emerged, with most of the primary cosmic rays being protons
+and nuclei of heavier elements and most of the particles observed near to the surface
+being secondary products of their interaction with the atmosphere.
+
+Many fundamental questions remain object of active investigation: what are the acceleration
+sites of cosmic rays, and what are the acceleration mechanisms at play? What is the
+origin of the spectral features in the spectra, and how the tie to the propagation
+and confinement in our Galaxy? Are there sign of new physics, e.g., from annihilating
+or decay of dark matter particles?
+
+
+
+\section{Observables and phenomenology}
+
+
+\begin{figure}[!htbp]
+  \input{figures/cr_intensity.pgf}
+  \caption{Compilation of some of the most recent measurements of the all-particle
+    spectrum of cosmic rays from $\sim 1$~GeV to the highest energies.
+    (The particular choice of data sets does not imply that the latter are necessarily
+    the most accurate nor the most historically important, but is a sensible
+    illustration of the variety of experimental techniques used to study cosmic rays).
+    While the dashed line illustrates that the spectrum is reasonably well described
+    by a single power law across some 11~orders of magnitude, the inset showing the
+    intensity of ultra-high-energy cosmic rays multiplied by $E^{2.75}$ reveals
+    two prominent spectral features, customarily referred to as the \emph{knee}
+    (at $10^{15}$--$10^{16}$~eV) and the \emph{ankle} (at $10^{18}$--$10^{19}$~eV),
+    in addition to a sharp cutoff around $10^{20}$~eV. The vertical line at
+    $2 \times 10^{13}$~eV (or 20~TeV) is taken here as the reference energy separating
+    the regimes where the cosmic rays are abundant enough that can be measured from
+    space and that where they need to be detected from ground.}
+  \label{fig:cr_intensity}
+\end{figure}
+
+When it comes to the phenomenology of cosmic rays there are three main observables
+we are interested in: the energy spectrum, the \emph{chemical composition}, and
+the distribution of arrival directions. All of these observables have been studied
+in the last century with an impressive variety of techniques and to a high degree
+of accuracy.
+
+
+\subsection{Energy spectrum}
+
+The energy spectrum of all charged cosmic rays, shown in figure~\ref{fig:cr_intensity}
+is one of the most dramatic examples of power laws one encounters in physics,
+extending over more then 10~decades in energy. At a cursory look, the differential
+intensity\sidenote{The reader should note the sr$^{-1}$ in the units on the
+$y$~axis: the concept of differential intensity is most suited for isotropic or
+quasi-isotropic fluxes and is properly normalized to the portion of the sky we
+are looking at.} is reasonably well described by a simple power law
+\begin{align}
+  J(E) = J_0 \qty(\frac{E}{E_0})^{-\Gamma},
+\end{align}
+with a spectral index $\Gamma \approx 2.75$. The particular dashed line in
+figure~\ref{fig:cr_intensity}, for instance, which represents a simple unweighted
+fit to the data between $10^{10}$ and $10^{18}$~eV, has parameters
+\begin{align*}
+  \Gamma \approx 2.75 \quad\text{and}\quad
+  J_0(E) \approx 2.5 \times 10^4~\text{m}^{-2}~\text{s}^{-1}~\text{sr}^{-1}~\text{GeV}^{-1}
+\end{align*}
+assuming a reference energy $E_0 = 1$~GeV. Once we have a sensible parametrization
+for the cosmic-ray spectrum we can easily calculate the integral flux above any
+given energy
+\begin{align}\label{eq:cr_integral_flux}
+  I_J(E) = \Delta\Omega \int_E^\infty J(E') \diff{E'} \diff{\Omega} =
+  \Delta\Omega\frac{J_0}{\Gamma - 1} \qty(\frac{E}{E_0})^{1 - \Gamma},
+\end{align}
+which is one of the most important metrics when it comes to design an experiment,
+as it sets the scale for the necessary effective area of the detector and the
+necessary integration time. We shall get back to this in section~\ref{sec:irf}.
+
+\begin{marginfigure}
+  \input{figures/cr_integral_flux.pgf}
+  \caption{Cosmic-ray all-particle integral flux above a given energy. This particular
+  power law assumes the parametrization from the best fit in figure~\ref{fig:cr_intensity},
+  and a field of view of $\pi$~sr, or \nicefrac{1}{4} of the sky, corresponding to
+  a perfect planar detector.}
+  \label{fig:cr_integral_flux}
+\end{marginfigure}
+
+The cosmic ray integral flux, assuming an ideal planar detector with a field of
+view of \nicefrac{1}{4} of the sky is shown for reference in figure~\ref{fig:cr_integral_flux}.
+By the time the integral flux above a given energy becomes of the order
+of 1~m$^{-2}$~yr$^{-1}$, it becomes practically impossible to have any sensible
+statistics from space---1~m$^2$ of active surface is pretty big by any space standard,
+and 1~yr is the natural unit for a mission. This happens at energies of the order
+of $10^{15}$--$10^{16}$ for any sensible assumption on the field of view, and in
+reality, as we shall see in a second, there are other factors that might limit
+the measurement at significantly lower energies.
+
+Our simple parametrization of the cosmic-ray spectrum allows for the calculation
+of another interesting number: the total energy content per unit volume.
+Technically what we have to do is to integrate the differential intensity from
+$0$ to $\infty$, but due to the rollover of the spectrum when the protons become
+non relativistic, the part below $\sim 1$~GeV does not contribute much,
+and we can start the integration from our reference energy $E_0$, yielding
+\begin{align}
+  u_\text{CR} = \frac{4\pi}{c} \int_{E_0}^\infty E J(E) \diff{E} =
+  \frac{4\pi}{c} \int_{E_0}^\infty E J_0 \qty(\frac{E}{E_0})^{-\Gamma} \diff{E} =
+  \frac{4\pi}{c} J_0 E_0^2.
+\end{align}
+If we plug in the numbers from or toy parametrization, this turns out to be
+$u_\text{CR} \approx 1~\text{eV~cm}^3$, which was troubling for the early studies
+of cosmic rays as, is assumed to permeate the entire Galaxy, or even the
+intergalactic space, would imply formidable energies. We shall get back on this
+later.
+
+Going back to figure~\ref{fig:cr_intensity}, it is clear that our power-law
+approximation is nothing more that a proxy for the actual shape of the spectrum,
+but the latter is more complex. This is somewhat more visually evident if we
+multiply the intensity by a suitable power of the energy (say $E^{2.75}$) to
+enhance the deviations from the simple power-law behavior. By doing so at least
+three features distinctly emerge: a \emph{knee} at $10^{15}$--$10^{16}$~eV,
+an \emph{ankle} around $10^{18}$--$10^{19}$~eV, and what looks like a sharp cutoff
+around $10^{20}$~eV. One might say that the overall differential intensity is
+better described by a broken power law, where the spectral index is $\Gamma \approx 2.75$
+below the knee and above the ankle, and the spectrum is steeper in between.
+As we shall briefly discuss in the following, all these features convey crucial
+information about the origin and accelerating sites of the cosmic radiation, the
+confinement in our Galaxy, as well as the transparency of the Universe to charged
+particles over cosmological distances.
+
+On a related note, below~10~GeV the cosmic ray spectrum begins to be significantly
+affected by the eliospheric environment (particularly, by the magnetic field generated
+by the Sun), and the flux is modulated in time according to the eleven-year solar
+cycle. In addition, in the non relativistic regime (i.e., below~1~GeV for protons)
+ionization losses also become important, and the combined effects of these two
+factors cause the rollover observed on the left-end of the spectrum. Although this
+is interesting from the point of view of the study of the near-Sun environment,
+we shall not elaborate further.
+
+
+\subsection{Composition}
+
+\begin{figure}[!htbp]
+  \input{figures/cr_composition.pgf}
+  \caption{Compilation of the relative cosmic-ray nuclear abundancies in the Solar System
+    (from~\cite{2003ApJ...591.1220L}) and in galactic cosmic rays at 20~Gev (adapted from
+    the cosmic-ray database described in~\cite{2023EPJC...83..971}). The abundance
+    of Si, which is measured precisely, is taken to be exactly $10^6$.}
+  \label{fig:cr_composition}
+\end{figure}
+
+The vast majority of the cosmic radiation is comprised of bare atomic nuclei,
+most notably protons. This is way, in many contexts, the composition of cosmic
+rays is referred as to the \emph{chemical} composition, and it has been precisely
+measured by space-born experiment over a relatively wide energy
+range. Measuring the composition for ultra-high-energy cosmic rays from the ground
+is significantly more difficult, as we shall see in a moment, and is one of the open
+questions being actively investigated.
+
+The comparison between the relative nuclear abundances measured in the Solar
+System\sidenote{This is been determined from a combination of spectroscopy on the Sun,
+studies of the solar wind and by chemical analysis of meteorites.} and
+those measured in cosmic rays is instructive, as the latter provides information
+about the chemical evolution of the Universe outside the Solar System.
+The most striking difference, as shown in figure~\ref{fig:cr_composition}, is the
+relatively large abundance in cosmic rays of groups of nuclei that are comparatively
+rare in the vicinity of the Earth: these include Li, Be and B, F, as well as the
+elements preceding the iron in the periodic table (Sc to Mn). This is generally
+understood as these elements being \emph{secondary} products of the collisions of
+heavier nuclei (e.g., C, O, Ne, Fe) with the interstellar gas.
+
+The importance of this comparison can hardly be overstated, as it provides a
+straightforward measurement of the total amount (or, to be more precise, the
+total \emph{grammage}) of interstellar gas traversed from the production sites
+to the Earth, that for ultra-relativistic particles reads
+\begin{align*}
+  X(E) = \overbrace{n_\text{ism} \mu_\text{ism}}^{\text{density}}
+    \underbrace{c \tau_\text{esc}(E)}_{\text{path length}} \quad\text{or}\quad
+  \tau_\text{esc}(E) = \frac{X(E)}{n_\text{ism} \mu_\text{ism} c}
+\end{align*}
+
+\begin{marginfigure}
+  \input{figures/cr_bc_ratio.pgf}
+  \caption{Emergy dependence of the B/C ratio measured by AMS-02~\cite{2021PhR...894....1A}.
+    This is one of the main observables for constraining the cosmic-ray
+    confinement time in our Galaxy.}
+  \label{fig:cr_bc_ratio}
+\end{marginfigure}
+
+The boron-over-carbon ($B/C$) ratio is one of the standard observables to gauge the
+grammage traversed by galactic cosmic rays: boron is very rare in the Solar System
+and relatively abundant in cosmic rays, generated by spallation of $C$ and $O$ on
+the insterstellar medium
+\begin{align*}
+  C + p \rightarrow B + \cdots \quad\text{and}\quad
+  O + p \rightarrow B + \cdots
+\end{align*}
+(and similar reactions with $\alpha$ particles). The measured boron over carbon ratio,
+shown in figure~\ref{fig:cr_bc_ratio}, is $B/C \approx 0.28$~at 10~GeV, decreasing
+with energy. For a standard spallation cross section of $\sigma_\text{sp} \sim 50$~mb
+this provides a grammage of
+\begin{align*}
+  X \approx B/C \times \frac{\mu_\text{ism}}{\sigma_\text{sp}} \approx 10~\text{g~cm}^{-2}.
+\end{align*}
+at 10~GeV. Now, for the sake of a back of the envelope calculation\todo{We should
+move the description of the Galaxy to the previous section.}, we can assume
+that the majority of the mass of the Galaxy is embedded in thin disk whose height
+is $h_\text{disk} \approx 300~\text{pc}$ with a number density
+$n_\text{disk} \approx 1~\text{cm}^{-3}$, and the height of the halo is
+$h_\text{halo} \approx 6~\text{kpc}$, so that
+\begin{align*}
+  n_\text{ism} \approx n_\text{disk} \frac{h_\text{disk}}{h_\text{halo}} =
+  5 \times 10^{-2}~\text{cm}^{-3}.
+\end{align*}
+For the standard chemical composition of the insterstellar medium (with $\sim 15\%$
+of He) we can take $\mu_\text{ism} \approx 1.4 m_p$\sidenote{A trick to remember the
+numerical value of the mass of the proton is to note that the mass of a mole
+of H is 1~g.)}. This translates into an escape time of the order of
+$\tau_\text{esc} \approx 80~$Myr at 10~GeV\sidenote{Mileage may vary, and you will
+find different nnumbers in the literature, ranging from 10 to 100~Myr, depending
+on the underlying assumptions, but it is clear that this no more than a mere order
+of magnitude in the context of a toy model.}, which is exceeding the ballistic
+propagation time
+\begin{align*}
+  \tau_\text{ballistic} = \frac{h_\text{halo}}{c} \approx 20~\text{kyr}
+\end{align*}
+by mode than three orders of magnitude. To date, this is the most compelling evidence
+that charged cosmic rays undergo a diffusive random walk in our Galaxy, at least
+up to the knee energy. The energy dependence of the B/C ratio indicates that the
+grammage, and therefore the cosmic-ray escape time, can be parameterized as simple
+power laws
+\begin{align}
+  X(E) \propto E^{-\delta}
+  \quad\text{and}\quad
+  \tau_\text{esc}(E) \propto E^{-\delta}
+\end{align}
+but the available data at high energy are not precise enough to constraint $\delta$
+very well, beyond the relatively large interval $\delta \approx 0.3$--$0.6$.
+
+\begin{figure}[!htbp]
+  \input{figures/cr_others.pgf}
+  \caption{Compilation of cosmic-ray spectra for protons~\cite{2015PhRvL.114q1103A},
+    electrons~\cite{2019PhRvL.122j1101A}, positrons~\cite{2019PhRvL.122d1102A} and
+    antiprotons~\cite{2016PhRvL.117i1103A} measured by AMS-02. The study of leptons
+    and antimatter in cosmic rays provides fundamental information about the
+    sources and propagation.}
+  \label{fig:cr_others}
+\end{figure}
+
+The composition of cosmic rays is by no means limited to atomic nuclei. Electrons
+are also accelerated in the production sites, although with a smaller efficiency,
+and they are found with a differential intensity of about two orders of magnitudes
+smaller than protons. High-energy electrons (and positrons) are interesting because,
+unlike protons they tend to loose energy very rapidly by synchrotron radiation on
+the Galactic magnetic field and by inverse Compton scattering on the interstellar
+radiation field\sidenote{For reference, the typical distance over which a 1~TeV
+cosmic-ray electron loses half its energy is of the orde of 300--400~pc when it
+propagates within about 1~kpc of the Sun.}. As a consequence, they probe directly
+the nearby intergalactic space, and their spectrum is steeper ($\Gamma \approx 3.1$)
+than that of protons.
+
+Antimatter (i.e., positrons and antiprotons) is not readily available within the
+acceleration sites, but just as secondary nuclei is produced by the interactions
+of primary cosmic rays with the interstellar medium, in the measure of $10^{-3}$--$10^{-4}$
+of the proton intensity. Positron and antiproton ratios (i.e., $e^+ / (e^+ + e^-)$
+and $\overline{p} / p$) are therefore standard probes of cosmic-ray propagation in
+the Galaxy, and have been heavily scrutinized for possible signs of new physics
+(e.g., annihilation or decay of putative dark matter particles), although the level
+of knowledge of the astrophysical backgrounds is generally not precise enough to
+provide incontrovertible evidences in this respect.
+
+Gamma rays are present in the cosmic radiation with an average differential
+intensity that is lower than that of the antiprotons. Most of the cosmic gamma rays
+are in fact produced by cosmic-ray interactions with the interstellar gas and radiation
+fields through the processes of inelastic nucleon scattering, bremsstrahlung, and
+inverse Compton scattering that we have already described. As a result, the gamma-ray
+sky is strongly dominated by diffuse radiation originating in our Milky Way Galaxy,
+the Galactic plane being the most striking feature. In addition, being gamma rays
+electrically neutral, they are not deflected by magnetic fields, and point back
+to the sources, which allow for a direct probe of the putative acceleration sites.
+
+And, finally, neutrinos.\todo{Write something here.}
+
+
+\subsection{Cosmic-ray astronomy?}
+
+As said in the previous section, charged cosmic rays undergo a random walk from
+their sources to the Earth, which implies that they are approximately isotropic
+over most of the energy range. Anisotropies have been measured, and they also
+provide interesting constraints on cosmic ray propagation. Since the deviation of
+cosmic rays by the magnetic fields is smaller and smaller as their energy increases,
+the question of whether one can do cosmic-ray astronomy at the high-end of the
+spectrum is an open one, and relies on the determination of the intergalactic
+magnetic field, which is very poorly known, and the UHECR chemical composition,
+which is also poorly know.
+
+Gamma-ray astronomy is now a routine observational technique, both in space and
+from ground, with a sub-degree angular resolution available above $\sim 10$~GeV.
+This allows for detailed point source spectral studies on large samples, and
+morphological and spectral studied for extended sources. The last Fermi-LAT
+catalog, based on 12~years of data between 50~MeV and 1~TeV and dubbed
+4FGL-DR4~\cite{2023arXiv230712546B}, includes 7194~distinct sources,
+sampling all the known source classes (most notably AGNs and gamma-ray pulsars).
+By contrast, the TeVCat includes almost 300~sources know to emit gamma rays at the
+highest energies that can be detected.\todo{The TevCas has a lot of review papers
+that might be interesting.}
+
+Just as gamma rays, neutrinos point back to their sources, but, as it turns out,
+measuring precisely their direction is much more difficult and neutrino astronomy
+is not yet a mature diagnostic tools, although we might be on the verge of a
+breakthrough\todo{Write something on multi-messenger astrophysics.}.
+
+
+\section{Experimental techniques}
+
+Over the century since the discovery of cosmic rays, the basic observables described
+in the previous section have been measured to a great degree of accuracy with
+a surprisingly variety of experimental techniques.
+
+
+\subsection{Instrument response: basic concepts}\label{sec:irf}
+
+Up to this point we have discussed the properties of cosmic rays in terms of their
+intrinsic physical characteristic, e.g., the differential intensity. What one
+actually measures in real life is a set of quantities in detector space, e.g.,
+counts binned in measured energy. The two are tied to each other by the instrument
+response.
+
+As we said, fluxes from point sources are measured in particles per unit area,
+time and energy, e.g. in \fluxunits, while isotropic intensities of charged particles
+or photons are measured in particles per unit area, time, energy and solid angle,
+e.g. in \intensityunits. In the first case the conversion factor between the
+differential source flux $dF/dE$ and the differential count spectrum $dN/dE$ measured
+by the detector\sidenote{Strictly speaking, as we shall see in the following, this
+is true only if the effects of the energy dispersion and the point-spread function are
+negligible.} (in s$^{-1}$~GeV$^{-1}$) is the \emph{effective area} \aeff:
+\begin{align}\label{eq:aeff_flux}
+  \frac{dN}{dE} = \aeff \times \frac{dF}{dE}.
+\end{align}
+In the latter case the conversion factor between the differential intensity $dJ/dE$
+and the differential count spectrum $dN/dE$ measured by the detector (again, in
+s$^{-1}$~GeV$^{-1}$) is the \emph{acceptance}\sidenote{Depending on the context,
+this very same quantity is also referred to as geometric factor, effective geometric
+factor, \emph{etendue}, aperture and geometrical aperture.} \accept:
+\begin{align}\label{eq:acc_flux}
+  \frac{dN}{dE} = \accept \times \frac{dJ}{dE}.
+\end{align}
+The effective area is measured in m$^2$ and the acceptance in m$^2$~sr.
+
+Equations~\eqref{eq:aeff_flux} and~\eqref{eq:acc_flux} are effectively
+\emph{operative} definitions of the effective area and acceptance.
+Typically we use the equations \eqref{eq:aeff_flux} and \eqref{eq:acc_flux} in the
+other direction, i.e., we \emph{divide}\sidenote{Again, this is only true in the
+limit where the effect of the energy dispersion is negligible.} the measured count
+spectrum by the effective area or acceptance to recover the actual flux or intensity.
+
+The effective area is in general defined for a give energy $E$ and viewing
+direction $(\theta, \phi)$. In broad terms the effective area can
+be factored out in three different pieces:
+\begin{align}\label{eq:aeff_factorization}
+  \aeff(E, \theta, \phi) =
+  A_\text{geo}(\theta, \phi)
+  \varepsilon_\text{det}(E, \theta, \phi)
+  \varepsilon_\text{sel}(E, \theta, \phi),
+\end{align}
+where the $A_\text{geo}(\theta, \phi)$ is the geometric cross-sectional area
+presented by the instrument toward a given direction,
+$\varepsilon_\text{det}(E, \theta, \phi)$ is the detection efficiency at a given
+energy and incidence direction (for gamma-ray detectors this includes the
+conversion efficiency) and $\varepsilon_\text{sel}(E, \theta, \phi)$ is the
+efficiency of the selection cuts (e.g., for suppressing the backgrounds).
+The last factor in equation~\eqref{eq:aeff_factorization} makes it clear that
+the effective area, as we said, is not an intrinsic property of the detector, as
+it subtends a specific event selection.
+
+The effective area at normal incidence (or on-axis effective area)
+will be used frequently in the following and deserves a dedicated notation
+\begin{align}
+  \aeffnorm(E) = \aeff(E, \theta = 0).
+\end{align}
+(Note that, for $\theta = 0$, there is a degeneracy on $\phi$ and \aeff\
+only depends on $E$.)
+
+The acceptance (or geometric factor) is formally defined as the integral
+of the effective area over the solid angle:
+\begin{align}
+  \accept(E) = \int_{\Omega}\aeff(E, \theta, \phi) d\Omega,
+\end{align}
+and the field of view as the ratio between the geometric factor and the
+effective area at normal incidence:
+\begin{align}
+  \fov(E) = \frac{\accept(E)}{\aeffnorm(E)} =
+  \frac{\int_{\Omega}\aeff(E, \theta, \phi) d\Omega}{\aeffnorm(E)}.
+\end{align}
+
+This is all best illustrated by the (somewhat unrealistic) scenario of a planar
+(i.e. infinitely thin) detector, sensitive to all the particles crossing it from
+the upper emisphere. In this case the effective area at normal incidence is simply
+the geometrical area. The effective area only depends on the polar angle $\theta$:
+\begin{align}
+  \aeff(E, \theta, \phi) = \aeffnorm \cos\theta,
+\end{align}
+and the correspondence acceptance and field of view\sidenote{The reader might be
+wondering why the field of view is not $2\pi$---after all our detector sees the
+entire upper hemisphere, doesn't it? Well, that would be if the effective area was
+independent of the off-axis angle. In our case the effective area is monotonically
+decreasing with $\theta$, and in fact it is zero at $\theta = 90^\circ$.} read:
+\begin{align}
+  \accept = S\int_0^{2\pi}\!d\phi
+  \int_0^\pi \!\cos\theta\sin\theta d\theta = \pi S
+  \quad\text{and}\quad
+  \fov = \frac{\accept}{S} = \pi,
+\end{align}
+that is, our detector sees $\nicefrac{1}{4}$ of the full sky.
+
+\begin{marginfigure}
+  \input{figures/irf_fov.pgf}
+  \caption{Field of view, expressed as a fraction of the full sky, as a function
+  of the maximum angle of the acceptance cone. When $\theta_\text{max} = 90^\circ$,
+  this reduces to the planar detector.}
+  \label{fig:irf_fov}
+\end{marginfigure}
+
+As a simple generalization of this toy mental model we can consider a detector
+with an acceptance cone defines by the maximum off-axis angle $\theta_\text{max}$
+and parametrize the corresponding effective area, by analogy, as linear in $\cos\theta$
+\begin{align*}
+  \aeff(\theta) = \aeffnorm
+  \left(\frac{\cos\theta - \cos\theta_\text{max}}{1 - \cos\theta_\text{max}}\right),
+\end{align*}
+yielding
+\begin{align}
+  \fov = \pi (1 - \cos\theta_\text{max})
+\end{align}
+This is useful in practice, as different instrument types will have different
+field of views: ground arrays and calorimetric space experiments, including
+pair conversion telescopes, can have large acceptance up to
+$\theta_\text{max} = 60$--$70^\circ$, magnetic spectrometers tend to have
+smaller acceptance cones ($\theta_\text{max} = 15$--$20^\circ$), and \cherenkov\
+telescopes have relatively narrow field of views up to $\theta_\text{max}$ of a
+few degrees. This can easily translate into orders of magnitude as far as the
+sly coverage is concerned, as illustrated in~figure~\ref{fig:irf_fov}.
+
+The energy dispersion $\edisp(E; E_\text{true})$ is the probability density to
+measure an energy $E$ for an event with (true) energy $E_\text{true}$. Unlike the
+effective area, the energy dispersion is not a scalar, but a probability density
+function. From an operational standpoint, the energy dispersion is essentially the
+distribution of the measured energy values for a monochromatic particle beam.
+The \emph{energy resolution} \eresl\ is typically defined as the half width of the
+smallest energy window containing 68\% of the energy dispersion, divided by the
+most probable value of the energy dispersion itself. Difficult as it might seem,
+this definition reduces to the ratio $\sigma/\mu$ in the gaussian case.
+At any given energy the energy resolution is a scalar and it is \emph{the}
+figure of merit which is customarily used to summarize the information
+contained in the energy dispersion.
+
+When measuring particle spectra binned in energy, the energy dispersion
+originates the phenomenon of the \emph{event migration}, or
+\emph{bin-to-bin migration}---namely the fact that events that would really
+belong to a given energy bin are assigned to a different (hopefully neighbor)
+bin. Strictly speaking, this implies that our operational definitions of
+the effective area and acceptance, equations~\eqref{eq:aeff_flux}
+and~\eqref{eq:acc_flux}, no longer hold: one cannot divide the count spectrum
+by the effective area or the acceptance to recover the actual source flux
+or intensity. Whether the effect is negligible or not really depends on the
+measurement setup, i.e., the details of the energy dispersion and the
+input spectrum.
+
+Similarly to the energy dispersion, the point-spread function (PSF) is the
+probability density function for the (three-dimensional) space angle between
+the measured and true directions. From an operational standpoint, the PSF
+is the distribution of the reconstructed directions for a point source placed
+at infinite distance. It goes without saying that, photons pointing back to
+their sources, this is mostly a relevant metric for pair conversion
+telescopes---and gamma-ray instruments in general.
+
+As for the other instrument response functions, the point-spread function
+depends, in general, on the incidence direction and impact position of the
+incidence particle. Like the energy dispersion, for any point in the
+instrument phase space, it is a probability density function---one notable
+difference, though, is that the angular deviation is positive-definite.
+In strict analogy with the energy resolution, the information contained in the
+point-spread function is customarily summarized in the space angles containing
+68\% and 95\% of the probability density function itself%\
+\sidenote{This so true that the 68\% containment angle of the PSF is sometimes
+  (improperly) referred to as \emph{the point-spread function}.}.
+The ratio between the 95\% and 68\% containment angles of the PSF (which is
+exactly 2 in the gaussian case, and typically larger in real life) gives
+information about the tails of the distribution.
+
+
+
+\subsection{Space-born detectors}
+
+Direct cosmic-ray measurements from space have the only distinct disadvantage that,
+given the severe limits to the physical dimensions, mass and power that one can
+practically place outside the Earth atmosphere, we run out of statistics relatively
+soon: $\sim 10$~TeV is a reasonable figure as to what the maximum proton energy can
+be measure in space to date. On the plus side, within the accessible energy range
+we get all the benefits of a direct measurement: the energy or momentum scale is
+calibrated on the ground with monochromatic beams, without any additional burden
+due to the modeling of interaction of primary cosmic rays with the atmosphere and,
+more importantly, we can isolate the different particle species, be them nuclei,
+leptons, or gamma rays. (Actually, if we really want, we can also measure the
+isotopic composition of cosmic-ray nuclei.)
+
+Most modern space-born cosmic-ray detectors fall in either of the two categories:
+magnetic spectrometers or calorimetric experiments. Strictly speaking all
+the advanced magnetic spectrometers feature an electromagnetic calorimeter
+for energy measurement, so the basic difference between the two is really the
+presence of the magnet.
+The key feature of magnetic spectrometers is their ability of distinguishing
+the charge sign---e.g., separating electrons and positrons or protons and
+antiprotons. In addition, they are typically equipped with additional
+sub-detectors (\cherenkov\ detectors and/or transition radiation detectors) aimed
+at particle identification, e.g., for isotopical composition studies. This all
+comes at a cost, in that the magnet is a passive element (and typically a heavy one)
+contributing to the mass budget and limiting the field of view (not even mentioning the
+potential issue of the background of secondary particles). Both effect conspire
+to make the acceptance of this kind of instrument relatively smaller.\sidenote{Add sketch.}
+
+Calorimetric experiments, on the other hand, typically feature a larger acceptance
+and energy reach---and are best suited for measuring, e.g., the inclusive $e^+ + e^-$
+spectrum or the proton and nuclei spectra up to the highest energies---but cannot
+readily separate charges (see, however, section~\ref{sec:geomeg_charge_sep} for
+yet another twist to the story).
+Modern electromagnetic imaging calorimeters, be they homogeneous or sampling,
+provide excellent electron/hadron discrimination and are typically instrumented
+with some kind of external active layer for the measurement of the absolute
+value of the charge (e.g., to distinguish between singly-charged particles and
+heavier nuclei). Since flying an accelerator-type hadronic calorimeter in space
+is impractical due to mass constraints (see section~\ref{sec:had_cal}),
+a fashionable alternative to measure the energy for hadrons is that of
+exploiting a passive low-Z target (as done, e.g., in the CREAM and ATIC
+detectors) to promote a nuclear interaction and then recover the energy from
+the electromagnetic component of the shower.\sidenote{Add sketch.}
+
+In the basic scheme laid out in the previous section gamma-ray pair conversion
+telescopes are essentially calorimetric experiments featuring a dedicated
+tracker-converter stage in which foils of high-$Z$ materials are interleaved
+with position sensitive detection planes. The basic detection principle is
+easy: the conversion foils serve the purpose to promote the conversion of
+high-energy (say above $\sim 20$~MeV) gamma rays into an electron-positron pair
+which is in turn tracked to recover the original photon direction.
+The pair is then absorbed into the calorimeter for the measurement of the
+gamma-ray energy. Last but not least, pair conversion telescopes feature some
+kind of anti-coincidence detector for the rejection of the charged-particle
+background that, as we have seen, outnumbers the signal by several orders of
+magnitude in typical low-Earth orbit. EGRET~\cite{1988SSRv...49...69K} on-board
+the CGRO mission, AGILE and the Fermi-LAT~\cite{2009ApJ...697.1071A} are
+prototypical examples of pair-conversion telescopes.\sidenote{Add sketch.}
+
+\todo{Add compton telescopes?}
+
+
+\subsection{The Earth atmosphere as a calorimeter}
+
+\begin{marginfigure}
+  \input{figures/atmospheric_scales.pgf}
+  \caption{Longitudinal profile of the Earth atmosphere, when viewed as a
+  calorimeter (from the top). The two leftmost axes represent the total grammage
+  above any given altitude expressed in radiation lengths and proton
+  interaction lengths, calculated inverting~\eqref{eq:atmospheric_grammage}.}
+  \label{fig:atmospheric_scales}
+\end{marginfigure}
+
+When viewed as a gigantic (inhomogeneous) calorimeter, with characteristic
+radiation and proton interaction lengths of
+\begin{align*}
+  \radlength \sim 37~\text{g~cm}^{-2}
+  \quad\text{and}\quad
+  \intlength_p \sim 90~\text{g~cm}^{-2},
+\end{align*}
+the Earth atmosphere provides about 24~\radlength~and 10~$\intlength_p$~of target
+material---enough, as we shall see in a little while, to generate extensive air
+showers when hit by ultra-high-energy cosmic rays.
+(For reference, the atmospheric overburden at the typical altitude $h \sim 40$~km
+where stratospheric balloons float, is still of the order of 3--4~g~cm$^{-2}$, which,
+as we shall see, is comparable with the propagation path length of cosmic rays in
+the Galaxy.)
+
+
+\begin{marginfigure}
+  \input{figures/atmospheric_cherenkov.pgf}
+  \caption{\cherenkov~energy threshold for electrons and maximum \cherenkov~angle
+  as a function of the altitude.}
+  \label{fig:atmospheric_cherenkov}
+\end{marginfigure}
+
+The optical properties of the atmosphere are also relevant, as they determine the
+condition for relativistic charged particles to generate \cherenkov~radiation.
+As long as we assume that the chemical composition does not change with height,
+the index of refraction of the atmosphere is related to the local density by the
+Gladstone-Dale relation
+\begin{align}
+  n(h) - 1 = \alpha \density(h) = \alpha \density_0 \exp\left(-\frac{h}{h_0}\right),
+\end{align}
+where $\alpha$ is a constant that can be determined based on the standard index
+of refraction of air at see level $n_0 - 1 = 2.93 \times 10^{-4}$
+\begin{align*}
+  \alpha = \frac{n_0 - 1}{\density_0} = 0.236.
+\end{align*}
+Not only this provides a model for the index of refraction of the atmosphere at
+an arbitrary height, but it also allows to calculate the energy threshold
+for a particle with mass $m$ to emit \cherenkov~radiation at any given altitude $h$
+\begin{align}
+  E_c(h) = \frac{mc^2}{\sqrt{1 - 1 / n^2(h)}} \approx \frac{mc^2}{\sqrt{2 n(h)}} =
+  \frac{mc^2}{\sqrt{2 \alpha \density(h)}},
+\end{align}
+as well as the characteristic angle of the \cherenkov~cone in the ultra-relativistic
+limit
+\begin{align*}
+  \cos\theta_c(h) = \frac{1}{n(h)}
+  \quad\text{or}\quad
+  1 - \frac{1}{2} \theta_c^2(h) \approx \frac{1}{1 + \alpha \density(h)}
+  \approx 1 - \alpha \density(h),
+\end{align*}
+yielding
+\begin{align}
+  \theta_c(h) = \sqrt{2 \alpha \density(h)}.
+\end{align}
+
+
+\subsection{Extensive air showers}
+
+A succinct but enlightening review of the generation of particle showers from the
+interaction of cosmic-rays in the high atmosphere is provided in~\cite{2018PrPNP..98...85M},
+and we shall limit ourselves to summarizing the most salient features here.
+
+Showers initiated by photons or electrons proceed as outline in section~\ref{subsec:showers},
+and, at the reachable energies, they are typically absorbed in the high atmosphere,
+with the only practical way to measure them being the (highly collimated)
+\cherenkov~radiation, via the \cherenkov~telescope technique.
+
+Showers initiated by protons or heavier nuclei are intrinsically more complex,
+and generally consists of three separate components (electromagnetic, hadronic
+and muonic), not counting the invisible energy that is lost through neutrinos.
+In this case the simplest possible model is that in which at each generation
+$n_\text{tot}$\sidenote{The number of secondaries per interaction in this context
+is typically large, and varies dramatically with energy, which are two of the
+very reasons for some of the peculiarities of extensive air showers.
+$n_\text{tot} \sim 20$ can be regarded as a typical figure, but it can be as high
+as several hundreds at the highest energies of interest.} secondaries
+are produced. In general these will include all sorts
+of mesons and baryonic resonances, but for the sake of simplicity we shall assume
+that secondaries are entirely composed of pions, in equal proportions: one third
+of $\pi^0$ and two thirds of $\pi^\pm$.
+
+Neutral pions immediately decay to two photons
+\begin{align*}
+  \pi^0 \rightarrow \gamma \gamma,
+\end{align*}
+which in turn starts electromagnetic cascades, feeding the electromagnetic component
+of the shower. Under the naive assumption that at every step $1/3$ of the energy
+is channeled into photons, the electromagnetic energy in the shower after $n$
+generations is
+\begin{align}
+  E_\text{em} = E_0 \left[ 1 - \left( \frac{2}{3} \right)^n \right],
+\end{align}
+that is, 90\% of initial energy is transferred into the electromagnetic part of the
+shower in only 5--6 generations.
+
+The favorite decay mode for charged pions is to muons and neutrinos via weak interaction
+\begin{align*}
+  \pi^- \rightarrow \mu^- \; \overline{\nu}_\mu
+  \quad\text{and}\quad
+  \pi^+ \rightarrow \mu^+ \; \nu_\mu,
+\end{align*}
+with a characteristic decay time $\tau_\pi = 26~ns$. Whether the charged pions
+have time to actually decay depends on the ratio between their decay length and
+the nuclear interaction length\sidenote{Note in this context we are referring to the
+interaction length measured in g~cm$^{-2}$.}, and in fact they will, on average, re-interact
+(strongly) with the air nuclei as long as
+\begin{align*}
+  \gamma_\pi c \tau_\pi > \frac{\lambda_\pi}{\density}
+  \quad\text{or}\quad
+  E_\pi > \frac{m_\pi c^2 \lambda_\pi}{\density c\tau_\pi}.
+\end{align*}
+Assuming $\lambda_\pi = 3/2 \lambda_p$ (since the pion nuclear cross section is
+about $2/3$ of that of the proton) this translates into a typical threshold of
+$\sim 30$~GeV.
+
+Muons can in turn decay via the weak interaction
+\begin{align*}
+  \mu^- \rightarrow e^- \; \overline{\nu}_e \; \nu_\mu
+  \quad\text{and}\quad
+  \mu^+ \rightarrow e^+ \; \nu_e \; \overline{\nu}_\mu
+\end{align*}
+with a decay time $\tau_\mu = 2.2 \times 10^{-6}$~s but, again, this only happens
+if the energy is low enough
+\begin{align*}
+  \gamma_\mu c \tau\mu > h
+  \quad\text{or}\quad
+  E_\mu > \frac{m_\mu c^2 h}{c\tau_\mu}
+\end{align*}
+which is about $3$~GeV for $h \sim 20$~km.
+
+
+\subsection{Ground-based detectors}
+
+
+
+\section{Acceleration of cosmic rays}
+
+Since a (static) magnetic field does non do work on charged particles, some kind of
+electric field is in general needed for the acceleration to occur. There are two
+fundamentally different types of cosmic-ray acceleration mechanisms that we can
+imagine: one where particles are accelerated in one shot, e.g., from a coherent
+electric field generating a large enough difference of potential; and one where
+the acceleration takes place in the form of a large number of small kinks, in a
+stochastic fashion.
+\begin{align*}
+  \begin{cases}
+    \ave{\vb{E}} \neq 0 & \text{regular acceleration}\\
+  \ave{\vb{E}} = 0~\text{but}~\ave{E^2} \neq 0 & \text{stochastic acceleration}
+  \end{cases}
+\end{align*}
+As we shall see, both are viable mechanisms, and both are likely at play in different
+kinds of astronomical acceleration sites: unipolar inductors associated to the
+rotating magnetic field in pulsars and magnetic reconnection are examples of regular
+acceleration\sidenote{We stress, howvwer, that owing to the high electrical conductivity
+of astrophysical plasmas, achieving large-scale elctrical fields in astrophysical
+environments is non trivial.}, while supersonic astrophysical shocks, as we shall
+see, provide the natural setting for stochastic acceleration.
+
+Before we start, we notice up front that we shall deliberately neglect two fundamental
+problems arising basically in any model for cosmic-ray acceleration. The first is
+how cosmic rays overcome initial ionization losses before they become energetic
+enough for the latter to be negligible and the acceleration to be effective---in
+fact we shall simply assume that the cosmic rays to be accelerated are (mildly)
+relativistic to start with. The second is how they are released in the interstellar
+medium at the end of the acceleration process. Both questions are still very much
+object of active research, and we shall refrain from elaborating further on either one.
+
+
+
+\subsection{Fermi second-order acceleration}
+
+The first plausible mechanism of stochastic acceleration was proposed by Fermi in
+1949~\cite{1949PhRv...75.1169F} and, although in retrospect its physics relevance
+is limited, it showcases a number of aspects that remain relevant in modern shock
+acceleration theory. In this section we shall review in the simplest possible setting
+the two main aspects of the problem, namely: (i) the calculation of the average
+energy gain in a single collision; and (ii) how the effect of many collisions combine
+to generate the broadband spectrum.
+
+The basic idea is that cosmic rays undergo multiple reflections from ideal magnetic
+mirrors\sidenote{If you are not familiar with the concept of a magnetic mirror, and
+why a magnetic field gradient exerts a repulsive on a charged particle, this is
+probably a good moment to have a look at appendix~\ref{chap:bmotion}.} (or clouds),
+representing irregularities in the Galactic magnetic field, which we model as plane
+fronts of infinite mass moving at a constant velocity $\beta c$, isotropically
+distributed in the Galaxy. This implies that the collision is elastic in the cloud
+reference frame, and the calculation of the change of energy in a single collision
+proceeds via two Lorentz transformation---from the laboratory frame to the cloud
+frame and vice versa. As we said, we shall consider the cosmic ray to be accelerated
+as a relativistic test particle.
+
+\begin{marginfigure}
+  \input{figures/fermi_accel_headon.pgf}
+  \input{figures/fermi_accel_follow.pgf}
+  \caption{Sketch of the Fermi second-order acceleration mechanism, providing the
+  relevant setting for the problem for head-on and following collisions.}
+  \label{fig:fermi_accel}
+\end{marginfigure}
+
+Let us assume that, in the laboratory frame, the cloud is moving along the $x$-axis
+and the test particle is impinging on the hard wall at an angle $\theta$, measured
+from the direction of the direction of motion of the cloud, as shown in
+figure~\ref{fig:fermi_accel}. (Note that in our setup the test particle is always
+moving toward negative $x$ values, and $\cos\theta < 0$ when the cloud is moving
+in the negative $x$ direction.)
+The energy $E_i'$ and momentum $p_i'$ before the collision in the reference frame
+of the cloud (primed) can be written in terms of the corresponding quantities $E_i$
+and $p_i$ in the reference frame of the laboratory as\sidenote{Note again that, here
+and in the rest of this section, $\beta$ and $\gamma$ refer to the velocity of the
+cloud, not that of the particle, which, as we said, is relativistic.}
+\begin{align*}
+  \begin{cases}
+    E_i' = \gamma(E_i + \beta p_i c\cos\theta)\\
+    cp_i'\cos\theta' = \gamma(p_i c \cos\theta + \beta E_i).
+  \end{cases}
+\end{align*}
+Since the collision is assumed to be elastic in the cloud reference frame, the energy
+$E_f'$ and momentum $p_f'$ after the collision in the primed system are
+\begin{align*}
+  \begin{cases}
+    E_f' = E_i'\\
+    p_f'c\cos\theta' = - p_i'c\cos\theta',
+  \end{cases}
+\end{align*}
+and by transforming back into the laboratory system, we have
+\begin{align*}
+  E_f = \gamma(E_f' - \beta p_f'c \cos\theta') =
+  \gamma(E_i' + \beta p_i'c \cos\theta'),
+\end{align*}
+which can be expressed in terms of the quantities in the laboratory frame using the
+initial transformations
+\begin{align*}
+  E_f &= \gamma \left(
+  \gamma(E_i + \beta p_i c \cos\theta) +
+  \gamma\beta(p_i c \cos\theta + \beta E_i)
+  \right) =\\
+  &= \gamma^2 E_i + 2 \beta \gamma^2 p_i c \cos\theta +
+  \beta^2 \gamma^2 E_i =
+  \gamma^2 \left( E_i + 2 \beta p_i c \cos\theta  + \beta^2 E_i \right).
+\end{align*}
+
+Now, since typical values of the cloud velocity inferred from the observations are
+small ($\beta \sim 10^{-4}$) we can expand the expression in a Taylor series. For a
+reason that will be clear in a second, we shall need to retain the terms up to $\beta^2$,
+i.e.,
+\begin{align*}
+  \gamma^2 = \frac{1}{1 - \beta^2} \approx 1 + \beta^2
+\end{align*}
+It follows that the approximate expression for the fractional energy variation in
+a single collision is\sidenote{If you are wondering why we have retained the first
+term in $\beta^2$, since the second one is proportional to $\beta$, look carefully
+the expression: this is the fractional energy change for a single collision at a given
+impact angle, and the leading term ($\propto \beta$) can be either positive or negative,
+so it is not immediately obvious what happens when we average over all values of $\theta$.}
+\begin{align}\label{eq:energy_change}
+  \frac{\Delta E}{E}(\theta) = \frac{E_f - E_i}{E_i} \approx 2 \beta^2 + 2 \beta \frac{p_i c}{E_i} \cos\theta
+  \approx 2 \beta^2 + 2 \beta \cos\theta,
+\end{align}
+where we have neglected the terms in $\theta^4$ and we have used the fact that, being
+the particle ultra-relativistic, $pc/E \approx 1$.
+If you wonder what is the origin of the change in energy, since magnetic fields
+do not do work, recall that a moving magnetic field induces an electric field in
+lab frame, and the latter is the very cause of the acceleration.
+
+The expression~\eqref{eq:energy_change} is interesting, in that it contains a leading
+term $\propto \beta$ that can be positive or negative, depending on whether the
+collision is head-on ($\cos\theta > 0$) or following ($\cos\theta < 0$), and a
+second-order term $\propto \beta^2$ that is independent of the angle.  Physically,
+the latter comes from the fact that in a collision at $90^\circ$, i.e., for
+$\cos\theta = 0$, things simplifies considerably, and we have a definite, if small,
+energy gain\sidenote{Think about it: being hit from a side still qualifies as a net
+energy gain, no matter how fast we are going!}
+\begin{align*}
+  E_f = \gamma^2 (1 + \beta^2) E_i \approx (1 + 2\beta^2)E_i \quad\text{or}\quad
+  \frac{\Delta E}{E} = 2\beta^2
+\end{align*}
+and this contribution is there for all possible configurations. Of course this is
+generally negligible with respect to the other term, and what we are really interested
+in is the \emph{mean} energy gain, that we can calculate by performing the proper
+average over the isotropic distribution of cloud velocity.
+
+If you don't particularly care about tedious algebra you can go directly to
+equation~\eqref{eq:fermi_average}, but the interesting fact here, which was pointed
+out by Fermi, is that the rate of encounter at any given angle $\theta$ is proportional
+to the relative velocity between the cloud and the particle along the direction of motion
+of the cloud, and is therefore slightly larger for head-on collisions than for following
+collisions. Although this seems to be overlooked in many textbooks, we maintain that for an
+ultra-relativistic particle we have to use the relativistic formula for the composition
+of velocities, that we can write and expand in series for the two cases of head-on
+and following collisions\sidenote{One should note that these expressions behave as
+expected in the limiting cases: $v_x^\text{rel} = c$ for both $\cos\theta = 1$ and
+$\cos\theta = -1$, while for $\cos\theta = 0$ there is a discontinuity, and
+$v_x^\text{rel} = \pm \beta c$ depending on whether the collision is head-on or following.}
+\begin{align*}
+  \frac{v_x^\text{rel}}{c} =
+  \begin{cases}
+  \displaystyle\frac{\cos\theta + \beta }{1 + \beta\cos\theta} \approx
+  \cos\theta + \beta (1 - \cos^2\theta)
+  & \quad(\cos\theta \geq 0)\\[10pt]
+  \displaystyle\frac{-\cos\theta - \beta}{1 + \beta\cos\theta} \approx
+  -\cos\theta - \beta (1 - \cos^2\theta)
+  & \quad(\cos\theta < 0)
+  \end{cases}
+\end{align*}
+
+\begin{marginfigure}
+  \input{figures/fermi_accel_average.pgf}
+  \caption{Even and odd components of the probability density function over which
+    we average the fractional energy loss per collision. Note that the odd part
+    $p_\text{odd}(x)$ is multiplied by $10^3$ to make it visible.}
+  \label{fig:fermi_accel_average}
+\end{marginfigure}
+
+If we now let $\cos\theta = x$, it is easy to show that the probability density
+function for $x$, which is proportional to the relative velocity we have just calculated,
+is\sidenote{If you are not convinced that $p(x)$ in~\eqref{eq:fermi_average_pdf}
+is properly normalized, remember that $p_\text{odd}$ does not contribute to the
+normalization since the integration domain is symmetric with respect to $0$.}
+\begin{align}\label{eq:fermi_average_pdf}
+  p(x) = \overbrace{\abs{x}}^\text{even} +
+  \overbrace{\text{sign}(x) \beta (1 - x^2)}^\text{odd} =
+  p_\text{even}(x) + p_\text{odd}(x),
+\end{align}
+which is the sum of an even and a (much smaller) odd term. The average fractional
+energy loss per collision is
+\begin{align*}
+  \ave{\frac{\Delta E}{E}} = \ave{2\beta^2 + 2\beta x} = 2\beta^2 + 2\beta \ave{x}
+\end{align*}
+and the only interesting quantity that is left to calculate is $\ave{x}$. It is
+somewhat interesting to note that the average would rigorously vanish if $p(x)$
+was even, but the odd term provides a non-zero contribution instead
+\begin{align*}
+  \ave{x} =
+  \int_{-1}^1 x p(x) \diff{x} =
+  2\int_0^1 x p_\text{odd}(x) \diff{x} =
+  2\beta \int_{0}^1 x (1 - x^2) \diff{x} =
+  \frac{\beta}{2},
+\end{align*}
+which, in turn, yields\sidenote{For what it's worth, in many textbooks, where
+the non relativistic formula for the addition of velocities is used, the result
+is $\nicefrac{8}{3} \beta^2$ instead of $3\beta^2$.}
+\begin{align}\label{eq:fermi_average}
+  \left< \frac{\Delta E}{E} \right> = 2 \beta^2 + \beta^2 =
+  3 \beta^2 \coloneqq \xi.
+\end{align}
+
+This confirms that the proper average is indeed positive, i.e., particles are accelerated,
+but on the other hand the mean energy gain per collision is proportional to $\beta^2$
+(hence the name \emph{second-order acceleration}), which means that, $\beta$ being
+small, the process is highly inefficient. For $\beta \sim 10^{-4}$ this only gives
+an average fractional energy increase of $\xi \sim 3 \times 10^{-8}$, and it will
+take many many collisions for the particle to experience a noticeable fractional
+energy increase. In fact the energy $E(n)$ after $n$ collisions, assuming an initial
+energy $E_0$, will be
+\begin{align*}
+  E(n) = E_0 \left( 1 + \xi \right)^n,
+\end{align*}
+which can be inverted to calculate the average number of collisions it takes to
+accelerate the particle from $E_0$ to $E_n$
+\begin{align}\label{eq:fermi_accel_num_collisions}
+  n(E) = \frac{\ln(E / E_0)}{\ln(1 + \xi)} \approx \frac{\ln(E / E_0)}{\xi}.
+\end{align}
+
+\begin{marginfigure}
+  \input{figures/fermi_accel_efficiency.pgf}
+  \caption{Characteristic cosmic-ray escape and acceleration time as a function
+  of energy. Here we assume $\tau_\text{esc} = 80$~Myr at 10~GeV, decreasing
+  with energy as $(\nicefrac{E}{E_0})^{-\delta}$ and a collision mean free path
+  of 0.1~pc. The shaded band indicates the interval $\delta = 0.3$--$0.6$.}
+  \label{fig:fermi_accel_efficiency}
+\end{marginfigure}
+
+We need $\sim 2.3 \times 10^8$ collisions to accelerate a particle to $1000$~times
+its initial energy (e.g., from 1~GeV to 1~TeV). Luckily enough, $n$ scales logarithmically,
+and if we want to accelerate a particle, say, to $10^{13}$ times its initial energy
+(e.g., from 1~GeV to $10^{21}$~eV), it will \emph{only} take $\sim 10^9$ collisions
+on average. And yet the inefficiency of this mechanism becomes obvious when we translate
+this figure into an acceleration time, given some representative value of the mean
+free path $\lambda$ for the random collisions with the magnetic clouds
+\begin{align*}
+  \tau_\text{acc} = \frac{n \lambda}{c}.
+\end{align*}
+
+Even assuming a mean free path as small as $\lambda = 0.1$~pc, $10^8$~collisions
+translate into an acceleration time of about 30~Myr. As shown in
+figure~\ref{fig:fermi_accel_efficiency}, things might work out at 10~GeV, but
+since the cosmic-ray escape time decreases with energy and the acceleration time
+increases with energy, by the time we hit $10^{16}$~eV (which we believe is roughly
+the maximum energy for cosmic rays accelerated in the Galaxy) the latter exceeds
+the former by at least two orders of magnitude. That is, a second-order Fermi process
+is simply too slow to accelerate particles to very high energies before they escape
+the diffusive halo.
+
+
+\subsection{From the single collision to the broadband spectrum}
+
+One interesting aspect of a stochastic acceleration mechanism, such as the one proposed
+by Fermi, where the fractional energy gain per collision is constant is that the
+resulting broadband spectrum of the accelerated particles can be readily calculated.
+If we imagine that the process continues indefinitely, with a fixed (small) probability
+of escape $P_E$ at each single step, the probability mass function for the number
+$n$ of collisions leading to escape is essentially a negative binomial
+\begin{align}\label{eq:num_collisions_pmf}
+ P(n) = P_E(1 - P_E)^n.
+\end{align}
+We can use~\eqref{eq:fermi_accel_num_collisions} to translate this into the corresponding
+probability density function for the energy $E$ at the escape\sidenote{There is a
+few subtleties involved, here: $n$ is a discrete variable, and~\eqref{eq:num_collisions_pmf}
+is normalized as
+\begin{align*}
+  \sum_{n=0}^\infty P(n) = 1,
+\end{align*}
+as one can easily verify (the normalization is the sum of a geometric series). Since
+we shall treat $E$ as a continuous variable, we want treat $n$ in the same fashion;
+amusingly
+\begin{align*}
+  \int_0^\infty P_E(1 - P_E)^n \diff{n} = -\frac{P_e}{\ln(1 - P_E)}
+\end{align*}
+which tends to $1$ when $P_E$ is small. In other words, in our case \eqref{eq:num_collisions_pmf}
+is properly normalized when seen as a continuous distribution, too.}
+\begin{align*}
+  p(E) = \dv{n(E)}{E} P_E (1 - P_E)^{\frac{\ln(E / E_0)}{\xi}} =
+  \frac{1}{\xi E_0} \qty(\frac{E}{E_0})^{-1} P_E (1 - P_E)^{\frac{\ln(E / E_0)}{\xi}}.
+\end{align*}
+This might seem overly convoluted, but noting that
+\begin{align*}
+  \lim_{P_E \rightarrow 0} (1 - P_E)^{\frac{\ln(E / E_0)}{\xi}} =
+  %\lim_{P_E \rightarrow 0} (1 - P_E)^{\frac{P_E\ln(E / E_0)}{P_E \xi}} =
+  \lim_{P_E \rightarrow 0} (1 - P_E)^{\frac{\ln(E / E_0)^\frac{P_E}{\xi}}{P_E}} =
+  \qty(\frac{E}{E_0})^{-\frac{P_E}{\xi}},
+\end{align*}
+we get the much simpler expression (that the user can verify being correctly normalized
+between $E_0$ and $\infty$)
+\begin{align*}
+  p(E) \approx \frac{P_E}{\xi E_0} \qty(\frac{E}{E_0})^{-\left(1 + \frac{P_E}{\xi}\right)}.
+\end{align*}
+In other words, the the differential energy spectrum is a power law
+\begin{align}
+  p(E) \propto \left( \frac{E}{E_0} \right)^{-\Gamma}
+  \quad\text{with}\quad
+  \Gamma = 1 + \frac{P_E}{\xi}.
+\end{align}
+
+In the case of Fermi second-order acceleration we have a rough estimate for $\xi$,
+but we have literally no idea about what $P_E$ might amount to. We know, however,
+that experimentally $\Gamma \approx 2.75$, and we can try and use this to gauge
+the escape probability
+\begin{align*}
+  P_E = \xi (\Gamma - 1) \approx 5 \times 10^{-8},
+\end{align*}
+but the fact that our theory needs one of its crucial parameter to be fed in with
+no fundamental argument supporting it is another weak point, should the inefficiency
+we have already discussed not be enough.
+
+The most important thing here, though, is that the basic reasoning leading us from
+the average energy gain per collision to the broadband spectrum is independent of
+the particular underlying mechanism, and if we find a more efficient way to gain
+energy (which we will in the next section) we still have a chance for the basic
+idea of stochastic acceleration to work in practice.
+
+
+\subsection{The basis of the supernov\ae~paradigm}
+
+In the late seventies, almost 30~years after the original paper by E.~Fermi, the
+realization that shock fronts could efficiently accelerate particles stirred a renewed
+interest in the topic, originating a line of research very much active to these days.
+There is nowadays substantial consensus that the bulk of Galactic cosmic rays, at
+least up to the knee energy, are accelerated by supenov\ae\ explosions, with a mechanism
+that generally goes under the name of \emph{diffusive shock acceleration}, or DSA.
+
+As we have seen, Supernov\ae\ exploding in our Galaxy liberate a typical kinetic
+energy $E_\text{SN} \approx 10^{51}$~erg (weakly dependent on the SN type) in the
+form of moving ejecta at a rate of about one every 30~yr, or
+$R_\text{SN} \approx \nicefrac{1}{30}~\text{yr}^{-1}$, for an overall power output of
+\begin{align*}
+  P_\text{SN} = E_\text{SN} R_\text{SN} \approx 10^{42}~\text{erg~s}^{-1}.
+\end{align*}
+We have estimated the cosmic-ray energy density $u_\text{CR} \approx 1$~eV~cm$^{-3}$,
+and we can translate this into a power by multiplying for the confinement
+volume \sidenote{If we model the Galaxy as a cylinder of radius $R_\text{MW} \approx 15$~kpc
+and height $h_\text{halo} \approx 6$~kp we end up with a confinement volume of
+\begin{align*}
+  V_\text{conf} = \pi R_\text{MW}^2 h_\text{halo} \approx 10^{68}~\text{cm}^3.
+\end{align*}
+The other two things that we need are the fact that 1~eV corresponds to
+$1.6 \times 10^{-12}$~erg and 1~yr corresponds to $3.16 \times 10^7$~s.}
+and dividing by the escape time
+\begin{align*}
+  P_\text{CR} = \frac{u_\text{CR} V_\text{conf}}{\tau_\text{esc}}
+  \approx 4 \times 10^{40}~\text{erg~s}^{-1}.
+\end{align*}
+If we compare the two figures, we can say that the energetics works as long as
+a few \% of the supernov\ae~energy output is channeled in the acceleration of
+cosmic rays, which is reassuring---the condition $P_\text{SN} \gg P_\text{CR}$ is
+a pre-requisite for the idea we are discussing to be plausible.
+
+In addition, gamma-ray observations of galactic supernov\ae\ provide indirect insight
+into the acceleration mechanisms at play that complement cosmic-ray studies.
+A direct signature of the acceleration of protons to ultra-relativistic energies
+is the generation of neutral mesons (e.g., $\pi^0$), rapidly decaying to gamma rays
+\begin{align*}
+  \pi^0 \rightarrow \gamma \gamma.
+\end{align*}
+In the center-of-mass reference frame each of the two photons produced has an
+energy $E_\gamma = \nicefrac{m_\pi c^2}{2} = 67.5$~MeV, and in the lab frame the
+gamma-ray spectrum is symmetric about 67.5~MeV when expressed on a logarithmic
+scale. This characteristic spectral feature, customarily referred to as the
+\emph{pion bump}, has been observed in selected SNR~\cite{2013Sci...339..807A},
+which lends further support to the supernov\ae~paradigm.
+
+
+
+\subsection{First-order acceleration in shocks}\label{sec:shock_acceleration}
+
+As we have seen in section~\ref{sec:supernovae}, the initial velocity of the ejecta
+of a SN shock is $\sim 10,000$~km~s$^{-1}$, corresponding to a relativistic
+$\beta \approx 0.03$. That is, the shock is non relativistic, but highly
+supersonic\sidenote{The sound speed in the interstellar medium can be estimated as
+\begin{align*}
+  c_s = \sqrt{\frac{\gamma KT}{m_p}} \approx 10~\text{km~s}^{-1}
+\end{align*}
+for $kT \approx 10^4~^\circ$~K. The SN ejecta have an initial Mach number
+$\machnum \approx 1000$.}.
+In this section we shall illustrate the idea of DSA in the simplest possible setting:
+an infinite, parallel, supersonic shock propagating at a constant velocity parallel
+to the magnetic field lines, as first described in~\cite{1978MNRAS.182..147B},
+and schematically represented in figure~\ref{fig:shock_cartoon}.
+
+\begin{marginfigure}
+  \input{figures/shock_cartoon.pgf}
+  \caption{Schematic view of a parallel shock in the reference frame where the
+  interstellar gas is at rest, and the shock front is moving with velocity $\beta c$
+  along the $x$ axis.}
+  \label{fig:shock_cartoon}
+\end{marginfigure}
+
+Before we start analyzing the problem, let us spell out our assumption clearly.
+We are primarily interested in the acceleration of protons, so we shall model
+the insterstellar medium upstream the shock front as an ideal gas of protons
+(i.e., an ideal monoatomic gas, with adiabatic index $\adiabatidx = \nicefrac{5}{3}$)
+with density~$\density_1$, pressure~$\pressure_1$ and temperature~$T_1$. Since
+the shock is supersonic, it cannot possibly modify the gas upstream, but it can
+(and it does) influence the gas downstream, which in general will have a different
+density~$\density_2$, pressure~$\pressure_2$ and temperature~$T_2$. (We shall see
+in a second how the two set of thermodynamic quantities are related to each other.)
+In any event, both the upstream and the downstream media can be described using
+standard non-relativistic fluidodynamics, whose basic concepts are reviewed in
+appendix~\ref{chap:fluidodynamics}.
+
+We shall assume that a number of relativistic\sidenote{Once again: we shall not elaborate
+on how these protons are accelerated to relativistic energies in the first place.}
+protons coexist with the gas, and these will be the cosmic rays that we
+want to accelerate. At no moment in time we should confuse the two. We shall work
+in the test particle approximation, assuming that the presence on non-thermal
+particles near the shock front does not change the physics. Strictly speaking this
+is not true, but likely not a terrible approximation in the limit where the non
+thermal population is subdominant, which is not unreasonable, given that we are
+looking at converting a small fraction of the shock energy into high-energy particles.
+
+Finally, we shall assume that the thickness of the shock is much smaller than the
+gyroradius of the high-energy particles, in such a way that the latter do not
+feel the shock at all. We shall see, though, that a strong turbulence of the magnetic
+field, both upstream and downstream the shock, is a key ingredient for this mechanism
+to work, as it ensure that, if and when a high-energy particle crosses the shock
+front, its direction is efficiently (and elastically) randomized, and quickly becomes
+isotropic in the reference frame of the gas. Under these condition a high energy
+particle can cross the shock many times in both direction, gaining a small amount
+of energy at each passage.
+
+\begin{marginfigure}
+  \input{figures/shock_cartoon_front.pgf}
+  \caption{Schematic view of a parallel shock in the reference frame where the
+  shock front is at rest.}
+  \label{fig:shock_cartoon_front}
+\end{marginfigure}
+
+Let us start analyzing the problem in the reference frame where the shock is at rest,
+as shown in figure~\ref{fig:shock_cartoon_front}. The system is unidimensional
+(i.e., the thermodynamic quantities are only function of $x$). The gas upstream
+is moving in the negative direction of the $x$ axis with a velocity $u_1$ that is
+equal (in absolute value) to the velocity $\beta c$ of the shock front, while the gas
+downstream is moving with a velocity $u_2$---which we don't know, yet, but is presumably
+smaller than $u_1$. In this reference frame the system is \emph{stationary}, and
+the conservation laws for mass, energy and momentum~\eqref{eq:conservation_1d_stationary},
+that we have derived in appendix~\ref{chap:fluidodynamics}, read
+\begin{align*}
+  \begin{cases}
+  \density \velocity = \text{const}\\
+  \density \velocity^2 + \pressure = \text{const}\\
+  \density \velocity \left( \frac{1}{2}\velocity^2 + \mathcal{u} +
+    \frac{\pressure}{\density} \right) = \text{const}.
+  \end{cases}
+\end{align*}
+
+For an ideal monoatomic gas the internal energy (and corresponding enthalpy) per
+unit mass can be written as
+\begin{align*}
+  \mathcal{u} = \frac{U}{m} = \frac{3}{2} \frac{N\kT}{\density V} =
+  \frac{3}{2} \frac{n\kT}{\density} = \frac{3}{2} \frac{\pressure}{\density}
+  \quad \text{and} \quad
+  \mathcal{h} = \mathcal{u} + \frac{P}{\density} =
+  \frac{5}{2} \frac{\pressure}{\density},
+\end{align*}
+and the conservation of energy in the fluid can therefore be rewritten as
+\begin{align*}
+  \velocity \left( \frac{1}{2}\density \velocity^2 + \frac{5}{2}\pressure \right)= \text{const}.
+\end{align*}
+
+We shall search for a solution where the thermodynamic quantities are constant
+(i.e., independent of $x$) in both the upstream and the downstream region, but
+discontinuous at $x = 0$, that is
+\begin{align}
+  \begin{cases}
+  \density_1 \velocity_1 =  \density_2 \velocity_2\\
+  \density_1 \velocity_1^2 + \pressure_1 = \density_2 \velocity_2^2 + \pressure_2\\
+  \velocity_1 \left( \frac{1}{2}\density_1 \velocity_1^2 + \frac{5}{2}\pressure_1 \right) =
+  \velocity_2 \left( \frac{1}{2}\density_2 \velocity_2^2 + \frac{5}{2}\pressure_2 \right).
+  \end{cases}
+\end{align}
+
+The algebra is quite convoluted here, but, beside the trivial solution where all
+the quantities are constant across the shock (which is not physically interesting),
+the system admits the discontinuous solution\sidenote{The fact that the Mach number
+$\machnum_1$ is appearing here should not come a surprise since, as show in
+section~\ref{sec:fluid_waves}, the speed of sound for an ideal monoatomic
+gas is given by
+\begin{align*}
+  c_s^2 = \frac{5\pressure}{3\density}
+\end{align*}
+and therefore
+\begin{align*}
+  \machnum_1^2 = \frac{3 \density_1 \velocity_1^2}{5 \pressure_1}.
+\end{align*}}
+\begin{align*}
+  \begin{cases}
+  \displaystyle\frac{\density_2}{\density_1} = \frac{\velocity_1}{\velocity_2} =
+    \frac{4}{1 + \nicefrac{3}{\machnum_1^2}}\\[8pt]
+  \displaystyle\frac{\pressure_2}{\pressure_1} =
+    \frac{5 \machnum_1^2 - 1}{4}\\[8pt]
+  \displaystyle\frac{T_2}{T_1} =
+    \frac{5 (\machnum_1^2 - \nicefrac{1}{3}) (\machnum_1^2 + 2)}{16 \machnum_1^2},
+  \end{cases}
+\end{align*}
+where $\machnum_1$ is the Mach number in the upstream region. In the strong-shock
+limit, where $\machnum_1 \gg 1$
+\begin{align}\label{eq:shock_acceleration_conditions}
+  \begin{cases}
+  \displaystyle\frac{\density_2}{\density_1} =
+  \frac{\velocity_1}{\velocity_2} \approx 4
+  & \text{or}\quad \velocity_2 = \frac{1}{4}\velocity_1  = \frac{1}{4} \beta c\\[8pt]
+  \displaystyle\frac{\pressure_2}{\pressure_1} \approx \frac{5}{4}\machnum_1^2
+  & \text{or}\quad \pressure_2 \gg \pressure_1 \\[8pt]
+  \displaystyle\frac{T_2}{T_1} \approx \frac{5}{16}\machnum_1^2
+  & \text{or}\quad T_2 \gg T_1.
+  \end{cases}
+\end{align}
+(Keep in mind $\velocity_1$ and $\velocity_2$ are the velocities upstream and
+downstream in the reference frame where the shock is at rest. This allows to calculate
+the corresponding speeds in any reference frame.)
+
+We note, incidentally, that, under our assumption of an ideal proton gas, we can
+readily calculate the equivalent temperature downstream
+\begin{align*}
+  kT_2 = \frac{5}{16} \machnum_1^2 kT_1 =
+  \frac{5}{16} \frac{3 \density_1 u_1^2}{5 \pressure_1} kT_1 =
+  \frac{3}{16} m_p u_1^2 \overbrace{\frac{n_1 kT_1}{\pressure 1}}^{\text{ideal gas}} =
+  \frac{3}{16} m_p u_1^2,
+\end{align*}
+that is, a significant fraction of the kinetic energy of the particles upstream
+in the shock reference frame is converted into internal energy of the gas downstream,
+no matter what the upstream temperature $T_1$ is.
+
+\begin{marginfigure}
+  \input{figures/shock_cartoon_upstream.pgf}
+  \caption{Schematic view of a parallel shock in the reference frame where the
+  velocity distribution for the upstream gas is isotropic.}
+  \label{fig:shock_cartoon_upstream}
+\end{marginfigure}
+
+Let us now consider a high-energy test particle crossing the shock from the upstream
+region to the downstream region, as shown in figure~\ref{fig:shock_cartoon_upstream}
+with an angle $\theta$ with respect to the normal to the shock. In the reference
+frame where the upstream gas is stationary, the downstream region is moving with
+a velocity $\nicefrac{3}{4} \beta c$, and the Lorentz-transformed energy of the particle after
+the crossing is, just like for the original Fermi mechanism
+\begin{align*}
+  E' = \gamma \qty(E + \frac{3}{4}\beta pc \cos\theta) \approx
+  E \qty(1 + \frac{3}{4}\beta \cos\theta).
+\end{align*}
+(Here, we repeat one more time, $\gamma$ and $\beta$ refer to the velocity of the
+shock, and, since the particle is ultra-relativistic, we can assume that $pc \approx E$
+for the latter.) The fractional energy gain in a single collision reads
+\begin{align*}
+  \frac{\Delta E}{E} = \frac{3}{4} \beta \cos\theta,
+\end{align*}
+and the new fact is that this is always positive, as, unlike in the case of the
+Fermi second-order acceleration, $\cos\theta > 0$ by definition. The averaging over
+all the possible directions, in fact, proceeds essentially like before, with the
+notable difference that we are only dealing with head-on collisions, the integration
+over $x = \cos\theta$ is limited to positive values of $x$, and since the even term
+in~\eqref{eq:fermi_average_pdf} does not average to zero over the new domain, the
+odd term proportional to $\beta$ can be neglected, and to first order we
+have\sidenote{The reader can easily verify that this probability density function
+is correctly normalized between 0 and 1.}
+\begin{align*}
+  p(x) = 2 x.
+\end{align*}
+Most importantly, the average energy gain per crossing is
+\begin{align}
+  \ave{\frac{\Delta E}{E}}_\text{single} \!\!\!\!\!\! =
+  \int_0^{1} \frac{3}{2} \beta x^2 \diff{x} =
+  \frac{1}{2} \beta \quad\text{(single crossing)}.
+\end{align}
+
+\begin{marginfigure}
+  \input{figures/shock_cartoon_downstream.pgf}
+  \caption{Schematic view of a parallel shock in the reference frame where the
+  velocity distribution for the downstream gas is isotropic.}
+  \label{fig:shock_cartoon_downstream}
+\end{marginfigure}
+
+At this point, as stated before, the velocity of the high-energy particle is quickly
+isotropized (without energy losses) by the turbulence in the downstream medium.
+The interesting thing is that (as shown in figure~\ref{fig:shock_cartoon_downstream})
+when seen from the reference frame where the downstream gas is stationary, the
+upstream region is moving with the same velocity $\nicefrac{3}{4} \beta c$, and the
+situation is completely symmetric with respect to the previous case\sidenote{There
+is in fact a notable difference, that we shall get back to in a second: the velocity
+of the shock is different in the two reference frames, and this will be important
+for the calculation of the escape probability}.
+The high-energy particle can cross again the shock and get back in the upstream
+region, where it originally belonged. If, and when, that happens the energy gained
+in a full cycle is
+\begin{align}
+  \ave{\frac{\Delta E}{E}}_\text{cycle} \!\!\!\!\!\! =
+  \frac{1}{2} \beta + \frac{1}{2} \beta =
+  \beta \coloneqq \xi \quad\text{(full cycle)}.
+\end{align}
+The energy gain in a full cycle is proportional to the $\beta$ of the shock
+(as opposed to $\beta^2$), which is why this mechanism is generally referred to as
+\emph{first order} Fermi acceleration. The fundamental difference with respect to
+the original mechanism proposed by Fermi is that here there is a definite energy
+gain at each cycle. If we go back to~\eqref{eq:fermi_accel_num_collisions} for a
+second, we immediately realize that the basic figure for second order acceleration
+($\sim 2.3 \times 10^8$ collisions for a factor of 1000 in energy) is now beat down
+to a few hundreds, that is, shock acceleration is vastly more efficient than the
+original Fermi argument.
+
+There is another twist to the story---the fact that in our new setup we can provide
+an estimate of the escape probability for the process, which in turn allows to close
+the loop and calculate the energy spectrum of the accelerated particles.
+Given the number density $n$ of the accelerated particles, moving at the speed of
+light with an isotropic distribution of the velocity direction, the flux through
+any given plane (e.g., the shock) is given by\sidenote{If this sounds familiar, you
+have probably read the discussion about the differences between energy density,
+radiance and radiant emittance in appendix~\ref{sec:stefan_boltzmann_law}.}
+\begin{align*}
+  F_C = \frac{nc}{4\pi}\int_\Omega \cos\theta \diff{\Omega} =
+  \frac{nc}{4\pi}\int_0^{2\pi}\diff{\phi}\int_0^{1} \cos\theta \diff{\cos\theta} =
+  \frac{nc}{4}.
+\end{align*}
+The critical thing to be noticed is that, while a high-energy particle in the
+upstream region sees the shock front approaching at a speed $\beta c$, and therefore
+will eventually cross the shock, this is not true for a particle isotropized in
+the downstream region, that sees the front shock \emph{moving away} at a
+speed~$\nicefrac{1}{4} \beta c$. In other words, particles in the downstream region
+will be \emph{advected} from the shock at a rate proportional to the advection
+velocity\sidenote{Look back at figure~\ref{fig:shock_cartoon_front} for a moment:
+the advection velocity is the velocity $\nicefrac{1}{4} \beta c$ of the gas downstream
+in the reference frame where the shock is at rest. In addition, note that this is
+in line with our expectation in the limiting cases: it is zero for $\beta = 0$
+(the shock is at rest in the lab frame) and $F_C$ for $\beta = 1$ (the shock is
+ultra-relativistic).}
+\begin{align*}
+  F_A = n\velocity_A = \frac{n\beta c}{4}.
+\end{align*}
+The escape probability is simply the ratio of the two, and it is somewhat amusing
+to note that the two factors $\nicefrac{1}{4}$, with a completely different origin,
+cancel out yielding
+\begin{align}
+  P_E = \frac{F_A}{F_C} = \beta.
+\end{align}
+Since the shock is non relativistic, the escape probability is small, and this
+is consistent with our view that the particle crosses the shock many times before
+being released into the interstellar medium. We can now repeat the argument
+exactly in the same fashion of the original Fermi mechanism, and the resulting
+particle spectrum is a power law with index
+\begin{align}
+  \Gamma_\text{src} = 1 + \frac{P_E}{\xi} = 2.
+\end{align}
+Not only this simplified picture of diffusive shock acceleration is able to efficiently
+accelerate particles to high energies, but it also provides a power-law spectrum
+with a \emph{universal} spectral index equal to $2$!
+
+This is not quite in line with the observed cosmic-ray spectrum, whose spectral
+index below the knee, as we have seen, is closer to $2.7$. But there is another
+notable difference between diffusive shock acceleration and the original mechanism
+proposed by Fermi we have not had a chance to discus, so far: while second-order
+Fermi acceleration is a diffuse process that takes place in the entire Galactic
+volume, up to moment in time when the accelerated particle leaves the Galaxy,
+shock acceleration happens in relatively confined spaces, and the spectrum at the
+source is not necessarily the same as the one we observe at Earth. In fact we have
+already said that cosmic rays perform a random walk in the Galactic diffusion volume,
+with a residence time that decreases with energy. When the energy-dependent effect
+of cosmic-ray propagation is taken into account, we get a spectrum at the observer
+with a spectral index
+\begin{align}
+  \Gamma_\text{obs} = \Gamma_\text{source} + \delta,
+\end{align}
+where $\delta \sim 0.3$--$0.6$ is the index representing the energy dependence of
+diffusion coefficient inferred from the $B/C$ ratio. Not quite there, but it is
+clear that this is bound to be more than a mere coincidence, and in fact there are
+many things we have neglected that might cause steeper injection spectra than the
+one we have calculated.
+
+
+
+\subsection{A plausible regular acceleration mechanism}
+
+As we said in section~\ref{sec:pulsars}, pulsar periodic radio emission is interpreted
+to be the consequence of the misalignment between the rotation axis and the direction
+of the dipolar magnetic field, which creates a lighthouse effect. According to Maxwell
+equations, the periodic variation of the magnetic field generates an electric field
+given by
+\begin{align*}
+  \curl{\vb{E}} = -\frac{1}{c}\pdv{\vb{B}}{t}.
+\end{align*}
+With no specific assumptions on the details of the field configuration, we can estimate
+the variation of the magnetic field as
+\begin{align*}
+  \pdv{B}{t} \sim \frac{B}{P} = \frac{B\omega}{2\pi},
+\end{align*}
+where $P$ is the pulsar period, and $\omega$ the associated angular frequency.
+If we now consider a circle with a radius of the same order of magnitude of the
+pulsar radius $R$, representing a possible particle trajectory in proximity of the
+pulsar surface, we can integrate the equation over the surface delimited by the
+loop. The right-hand side can be expressed as a line integral by virtue of the
+Stokes theorem
+\begin{align*}
+  \int_S (\curl{\vb{E}}) \cdot d\vb{S} = \oint \vb{E} \cdot d\vb{l} = 2\pi R \ave{E},
+\end{align*}
+where $\ave{E}$ is the magnitude of the electric field, averaged over the loop. On
+the right-hand side we have the flux through the surface of a quantity that, in our
+rough approximation, is constant
+\begin{align*}
+  \int_S \frac{1}{c}\pdv{\vb{B}}{t} \cdot d\vb{S} \sim
+  \pi R^2 \frac{B\omega}{2\pi} = \frac{R^2 B \omega}{2},
+\end{align*}
+and if we multiply both hands by $Ze$\sidenote{Since this just a back of the envelope
+calculation, we can also drop the factor of two at the denominator.} we get a closed
+expression for the overall electromotive force
+\begin{align*}
+  \text{emf} = \frac{\omega}{c} Ze B R^2.
+\end{align*}
+If $B \sim 10^{12}$~G, and $\omega \sim 200$~rad~s$^{-1}$ (as for the Crab pulsar),
+a circuit connected between pole and equator would see an emf of $\sim 10^{18}$~eV.
+Although in practice it is hard to imagine that this limit could be fully realized
+due to the large electrical conductivity of the plasma, the order of magnitude that
+we obtain is indubitably interesting.
+
+
+
+\subsection{Maximum energy and the Hillas plot}
+
+Given the physical characteristics of the acceleration site (e.g., the magnetic
+field $B$ and the linear dimensions $L$), and no matter what is the specific acceleration
+mechanism at play, there must be a maximum energy up to which particles can be
+effectively accelerated. Naively one would expect that when the gyroradius of the
+particle, which in ultra-relativistic regime reads
+\begin{align*}
+  \gyrorad = \frac{pc}{ZeB} \approx \frac{E}{ZeB}
+\end{align*}
+exceeds the linear dimensions of the accelerator, then it becomes virtually impossible
+to magnetically confine the particle itself, which inevitably escapes. Simply requiring
+that $\gyrorad < L$ would yield the condition
+\begin{align*}
+  E_\text{max} = ZeBL \quad\text{(wrong!)}
+\end{align*}
+which, as it turns out, is not quite right. It was A.~M.~Hillas in a seminal paper~\cite{1984ARA&A..22..425H} who first pointed out, in the context of diffusive
+shock acceleration, that the characteristic velocity $\beta c$ of the scattering
+centers in the acceleration region plays a vital role in the argument, and the
+correct condition reads
+\begin{align}\label{eq:hillas_emax}
+  E_\text{max} = \beta ZeBL,
+\end{align}
+which is customarily referred to as the \emph{Hillas criterion}. This is very useful,
+as, for any given maximum energy, provides a simple geometrical constraint on the
+combination of physical size and magnetic field strength that a putative acceleration
+site needs to possess in order to accelerate particles up to that energy, as shown
+in the \emph{Hillas plot} in figure~\ref{fig:hillas_plot}.
+
+\begin{figure}[!htbp]
+  \input{figures/hillas_plot.pgf}
+  \caption{Hillas plot, adapted from~\cite{1984ARA&A..22..425H}. The black, solid
+  line represents the Hillas criterion~\eqref{eq:hillas_emax} for $10^{20}$~eV protons,
+  assuming that the velocity of the scattering centers is $c$, while the black dotted
+  line represents the more realistic case $\beta = 0.01$. (The shaded area is useful
+  to gauge the effect of the shock velocity on the argument.) The dashed gray lines
+  represent the Hillas conditions for lower and lower proton energies, decreasing from
+  $10^{19}$~eV to $10^{14}$~eV, in the ideal case $\beta = 1$. Any given putative
+  source has to be above a line to accelerate particles above that energy. Note
+  that the iron lines would be shifted downward by a factor $Z = 26$.}
+  \label{fig:hillas_plot}
+\end{figure}
+
+As we have seen, the average shock velocity for a typical SN is of the order of
+$\beta \approx 0.03$ so that, if one plugs the numbers into the formula, assuming
+$B \sim 3~\mu$G and $R \sim 5$~pc, the condition~\eqref{eq:hillas_emax}
+provides a maximum energy of $\sim 5 \times 10^{14}$~eV for a proton. This is several
+orders of magnitude short of the maximum observed cosmic-ray energy, and different
+acceleration mechanisms (other than the SN paradigm) must be at play in the Universe.
+On the other hand this energy is not tremendously different from the energy at
+which the knee is observed. The maximum energy at which an \emph{iron} nucleus can be
+accelerated in a typical SN shock is 26~times larger, and is in fact right around
+the knee energy. This might suggest than what we are really seeing is the different
+species (from proton to iron) progressively cutting off, with some harder different
+component eventually kicking it at the ankle\sidenote{This scenario predicts a
+gradual change in the chemical composition of cosmic rays, which should transition
+from a proton-dominated to an iron-dominated mixture around the knee. Measurements
+seem to be roughly consistent with this picture.}.
+
+The Hillas criterion is not limited to stochastic acceleration. In the case or regular\
+acceleration by a pulsar, from instance, one could argue, as we have done in
+section~\ref{sec:pulsars} that the maximum possible energy that is not physically
+prohibited is obtained when a point on the equatorial surface of the pulsar moves
+at the speed of light
+\begin{align*}
+  \omega = \frac{c}{R}
+  \quad\text{or}\quad
+  \text{emf} = Ze B R
+\end{align*}
+which, incidentally, has the same structure of the corresponding expression we have
+derived in the case of stochastic acceleration\sidenote{One might even argue that,
+also in this case, a factor $\beta \ll 1$ might be included to account for the fact
+that it is hard to imagine that regular acceleration in pulsars might be 100\% efficient
+(see the previous remark on the electrical conductivity of the plasma).}.
+In any event, the Hillas plot provides important insight into what kind of astrophysical
+objects might act as cosmic accelerators. It is clear that, while SNR can account
+for the bulk of Galactic cosmic rays, UHECR need a different class of
+sources.
+
+
+
+\section{The transparency of the Universe}
+
+As we have seen in section~\ref{sec:universe_on_large_scales}, the intergalactic
+medium houses background radiation fields at all wavelengths, the CMB being the
+most prominent component. This radiation has interesting consequences in terms of
+the opacity of the universe to cosmic rays over cosmological distances.
+
+
+
+\subsection{Ultra-high-energy protons}
+
+The interaction probability for ultra-relativistic charged particles in the extragalactic
+space is negligible in most cases\sidenote{Technically speaking, the universal redshift
+effect that we shall describe in details in chapter~\ref{chap:cosmo}
+\begin{align*}
+  \dv{E}{t} = -H(t) E
+\end{align*}
+is always at play, implying an energy-independent length scale for the corresponding
+adiabatic energy loss of
+\begin{align*}
+  \lambda = \frac{c}{H} \approx 4~\text{Gpc}
+\end{align*}
+with the current value of the Hubble constant $H_0 = 70~\text{km~s}^{-1}~\text{Mpc}^{-1}$.
+This is large enough to imply that this mechanism does not cause a significant
+opacity even on cosmological scales.}. The presence of the CMB, though, introduces
+two distinct physical processes that are relevant for the propagation of ultra-high-energy
+protons, namely pair production
+\begin{align*}
+  p + \gamma \rightarrow p + e^+ + e^-
+\end{align*}
+and resonant pion production\sidenote{Look carefully at the $N$ on the right-hand
+side of the equation, as the result is very different depending on whether the proton
+disappers (and a neutron appears in its place) or it simply looses energy.}
+\begin{align*}
+  p + \gamma \rightarrow \Delta^+ \rightarrow N + \pi.
+\end{align*}
+Both are threshold processes, and the threshold energy is a simple calculation in
+relativistic kinematics. Assuming that the initial four-momenta of the particle in
+the lab reference system are
+\begin{align*}
+  \mathcal{p_p} = \qty(\frac{E_p}{c}, \vb{p}_p)
+  \quad\text{and}\quad
+  \mathcal{p_\gamma} = \qty(\frac{E_\gamma}{c}, \vb{p}_\gamma),
+\end{align*}
+and the invariant mass read
+\begin{align*}
+  s = (\mathcal{p_p} + \mathcal{p_\gamma})^2 =
+  m_p^2 c^2 + 2 \mathcal{p_p} \dotproduct \mathcal{p_\gamma} \approx
+  m_p^2 c^2 + 2 \frac{E_p E_\gamma}{c^2} (1 - \cos\theta),
+\end{align*}
+which is maximum for head-on collisions ($\cos\theta = -1$)
+\begin{align*}
+  s_\text{max} = m_p^2 c^2 + 4 \frac{E_p E_\gamma}{c^2} \quad\text{(initial)}.
+\end{align*}
+At the threshold energy the products are created at rest in the center of mass
+frame, and the final invariant mass is readily calculated, as a function of the
+sum of the masses of all the products (excluding the proton) $m_\Sigma$
+\begin{align*}
+  s = (m_p c + m_\Sigma c)^2 =
+  m_p^2 c^2 + m_\Sigma^2 c^2 + 2 m_p m_\Sigma c^2 \quad\text{(final)}.
+\end{align*}
+The condition for the threshold proton energy $E_\text{th}$ is given by the condition
+\begin{align*}
+  \cancel{m_p^2 c^2} + 4 \frac{E_p E_\gamma}{c^2} =
+  \cancel{m_p^2 c^2} + m_\Sigma^2c^2 + 2 m_p m_\Sigma c^2
+\end{align*}
+and reads
+\begin{align}
+  E_\text{th} = \frac{m_\Sigma (m_\Sigma + 2 m_p) c^4}{4E_\gamma} \approx
+  \frac{m_p m_\Sigma c^4}{2E_\gamma}
+\end{align}
+(the last approximation is valid when the combined mass of the secondary products
+is small compared to the mass of the proton, which is well satisfied for pair
+production, and not horrible for pion production---more about this in a second).
+The threshold energies for the two processes are $\sim 10^{18}$~eV for pair production
+and $\sim 3 \times 10^{20}$~eV for pion production. (All the other inelastic processes
+involving protons have a much higher threshold energy and are therefore irrelevant
+in this context.)
+
+Now, the cinematic possibility for a process to happen does not automatically implies
+that the process is physically important---in our case there are at least two
+additional questions that we must ask ourselves: what is the cross section for the
+process and what is the average fractional energy loss\sidenote{Keep in mind that
+this is not relevant when pion production is accompanied by the creatio of a neutron,
+as in that case the proton simply disappear.} $y$ for the proton?
+
+The second question is easy to answer close to the threshold energy of the process,
+where the products are created essentially at rest in the center-of-mass frame and,
+as a consequence, they move with the same $\gamma$ factor in the lab frame, i.e.,
+\begin{align}
+  y \approx \frac{\gamma m_\Sigma c^2}{\gamma m_p c^2} = \frac{m_\Sigma}{m_p}.
+\end{align}
+This is very small ($\sim 10^{-3}$) for pair production and $\sim 15\%$ for pion
+production. Given the cross section $\sigma$ of the process at hand, we have a
+characteristic length scale for the energy loss
+\begin{align}
+  \lambda = \frac{1}{\ave{y \sigma n_\text{CMB}}}.
+\end{align}
+
+
+
+\subsection{The GZK cutoff}
+
+For pair production, assuming a cross section of the order of
+$\sim 1$~mb\sidenote{And of course life is more complicated, as the cross section
+is energy-dependent, and so is the associated scale length, but our figure is in
+the right ball park.} the scale length for the energy loss turns out to be of the
+order of $\sim 1$~Gpc. This is still a measurable fraction of the dimensions of the
+universe, which means that pair production is not a very efficient energy-loss
+mechanism for ultra-high-energy protons, even on cosmological scales.
+
+The case of pion photoproduction is more interesting. The cross section at the
+peak of the $\Delta$ resonance is $\sim 0.5$~mb, and the associated length scale
+for energy loss is \emph{only} $\sim 10$~Mpc. This is cosmologically small,
+which implies that the flux should be strongly suppressed above the threshold: this is
+GZK effect predicted in the sixties and, in all likelihood, the cutoff that is
+actually observed on the high-energy end of the cosmic-ray spectrum.
+
+It is interesting to note that this distance is about of the same order of magnitude
+of the distance of the closest galaxy cluster---the Virgo cluster. The fact that
+the horizon for protons around $10^{20}$~eV is so small, implies that at these
+enormous energies we are only probing (cosmologically) near space, which could make
+the direct identification of the sources feasible, despite the moderate angular
+resolution of UHECR experiments and the deviations of the particles due to the
+magnetic fields.
+
+
+\subsection{Gamma rays}
+
+The previous discussion applies, with a few differences, to gamma rays. High-energy
+photons can undergo pair production with intergalactic radiation fields via
+\begin{align*}
+  \gamma + \gamma \rightarrow e^{+} + e^{-}.
+\end{align*}
+We note that, unlike proton photoproduction, this an inelastic process, where
+the photon in the initial state disappears, as opposed to loosing energy. As a
+consequence, the associated length scale is not a length scale for energy loss,
+but a length scale for absorption.
+
+Just like before, this is a threshold process, and the argument proceeds in the
+same fashion, with an even simpler kinematics\sidenote{The situation is interesting,
+as the initial state contains two identical particles, and we can read the threshold
+energy as a condition for the incoming high-energy photon, given a fixed energy
+for the radiation field (just like we have done for protons), or vice versa.}:
+\begin{align}
+  E_\text{th} = \frac{(m_e c^2)^2}{E}.
+\end{align}
+If we consider the CMB photons, with our reference energy of $2.3 \times 10^{-4}$~eV,
+the threshold for the process turns out to be of the order of $10^{15}$~eV, or
+$1$~PeV. Indeed the Universe is largely opaque to such energetic gamma rays, but
+this is hardly relevant from an experimental point of view, as the cosmic gamma-ray
+flux above $1$~PeV is so small, that it would be essentially impossible to measure
+anyway with the current detectors.
+
+For a $1$~TeV photon the threshold condition (used in the inverse direction) gives
+a minimum energy of $0.25$~eV for the background radiation field, corresponding to
+a wavelength of $\sim 5~\mu$m---in the infrared. Indeed the infrared/optical/ultraviolet
+background light is enough to produce measurable absorption above $\sim 100$~GeV
+for gamma-ray sources at cosmological distances, and data from \cherenkov\ telescope
+must be deabsorbed using detailed model for the EBL.
+
+%\todo{Add connection with new physics, e.g., axions using VHE gamma rays or GRBs.}

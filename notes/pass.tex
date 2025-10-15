@@ -1,0 +1,524 @@
+\chapter{Passage of particles through matter}
+
+This is a fairly succinct recap of the basic facts concering the passage of
+particles through matter. The reader will find more in depth information
+in~\cite{PDG} and reference therein. We emphasize that the importance of the
+material covered in this section is pervasive within this writeup, as it is
+equally important in context as different as the acceleration of cosmic rays,
+their propagation and their detection.
+
+
+\section{Charged particles: energy losses}
+
+Energy losses of charged particles are customarily discussed separately for
+heavy\sidenote{In this context by \emph{heavy} we really mean anything much
+heavier than an electron.} (e.g., protons, alpha particles and nuclei) and light
+(e.g. electrons) particles---the reason behind that being that radiation losses
+are, generally speaking, negligible for the the former. Given that, in principle, all
+particles---be they heavy or light---suffer both ionization and radiation
+losses, here we take a slightly different approach, focusing our discussion,
+at the top level, on the distinction between these two types of losses.
+
+
+\subsection{Ionization losses}
+
+Relativistic charged heavy particles passing through matter loose energy by
+ionization at an average rate that is reasonably well described by the Bethe
+equation over most of energies we are interested. Numerical factor aside, this
+reads
+\begin{align}\label{eq:stopping_power}
+  -\ave{\frac{dE}{dx}}_\text{ion} \!\!\!\!\!\!
+  \propto z^2 \frac{Z}{A}\frac{1}{\beta^2}
+  \left[ \frac{1}{2} \ln(C_0 \beta^2\gamma^2) - \beta^2 +
+    \text{corrections} \right],
+\end{align}
+where $Z$ and $A$ refer to the target material and $z$, $\beta$ and $\gamma$
+refer to the projectile. (The readed can refer to~\cite{PDG} for a detailed
+description of all the terms in the equation).
+
+\begin{marginfigure}
+  \input{figures/muon_ionization_loss.pgf}
+  \caption{Muon ionization loss in silicon as a function of the particle momentum
+    (adapted from~\cite{PDG}). The vertical dashed line indicates the minimum of
+    the ionization (in this specific case at $p \sim 363$~MeV/c, or
+    $\beta\gamma \sim 3.44$) separating the two regimes where the energy loss
+    scales as $\nicefrac{1}{E}$ and $\log E$, respectively.}
+  \label{fig:muon_ionization_loss}
+\end{marginfigure}
+
+Basically the energy loss per unit length is proportional to the $Z/A$ ratio of
+the target material and the square of the charge $z$ of the incident particle.
+When the latter is slow ($\beta \ll 1$) the energy losses decrease as
+$1/\beta^2 \propto 1/E$ as $\beta$ increases. In the ultra-relativistic regime
+($\beta \approx 1$) the losses increase as $\ln \gamma^2 \propto \ln E$, which
+generally goes under the name of relativistic (or logarithmic) rise.
+When plotted as a function of the momentum of the incident particle, the ionization
+energy-loss curve has the typical shape shown in figure~\ref{fig:muon_ionization_loss},
+with a relatively broad minimum at $\beta\gamma \sim 3$, where $dE/dx$ (normalized
+to the density of the target) is of the order of 1--2~MeV~g$^{-1}$~cm$^{2}$.
+A particle with the energy corresponding to this minimum ionization is customarily
+called a \emph{minimum ionizing particle} (MIP).
+
+We note for completeness that, since ionization losses are fundamentally due to
+interactions between the incoming particle and the atomic electrons of the
+medium, there are significant kinematic differences between the two cases of
+heavy and light projectiles. In addition to that, quantum-mechanical effects due
+to the fact that the projectile and the target are identical particles come
+into play in case of electrons, but we won't insist any further on the subject.
+
+
+\subsection{Radiation losses and critical energy}
+
+At sufficiently high energy any charged particle passing through matter emits
+electromagnetic radiation, most notably via \bremss\ in the field of the
+atomic nuclei of the target material---although there are other physical processes
+contributing, as explained in detail in~\cite{2001ADNDT..78..183G}.
+
+\begin{marginfigure}
+  \input{figures/muon_stopping_power.pgf}
+  \caption{Muon stopping power in silicon as a function of the particle momentum
+    (adapted from~\cite{PDG}). The two dashed lines indicate the ionization losses
+    (also shown in figure~\ref{fig:muon_ionization_loss}) and the radiation
+    losses. The energy at which the two cross each other is the critical energy,
+    which is in this specific case is 580~GeV.}
+  \label{fig:muon_stopping_power}
+\end{marginfigure}
+
+To first order radiation losses are proportional to the energy of the radiating
+particle
+\begin{align}\label{eq:rad_losses}
+  -\left<\frac{dE}{dx}\right>_\text{rad} \!\!\!\!\!\! \propto \frac{Z^2}{m^2} E
+\end{align}
+and, since ionization losses only grow logarithmically, the two loss rates, when
+seen as function of energy, are bound to cross each other at some point, as shown
+in figure~\ref{fig:muon_stopping_power}. The energy $E_c$ at which this
+happens is called \emph{critical energy}. Since radiation losses scale as $1/m^2$,
+for any given material $E_c$ is different for different particles---and it is
+much higher for heavier particles. For reference, the critical energy in silicon
+is $\sim 40$~MeV for electrons, $\sim 580$~GeV for muons, and in the tens to
+hundreds of TeV for protons. (We do note explicitly that, in any given material,
+the critical energies for electrons and positrons are, in general, slightly different,
+but this will not bear any real consequence in this context.)
+
+\begin{marginfigure}
+  \input{figures/critical_energy.pgf}
+  \caption{Approximate critical energy~\eqref{eq:critical_energy} for elements as
+    a function of the atomic number. (The solid line is for solids, while the
+    dashed one is for gases.)}
+  \label{fig:critical_energy}
+\end{marginfigure}
+
+To most practical purposes radiation losses are only relevant for electrons
+(and positrons) and it is customary to refer to the critical energy for electrons
+as \emph{the} critical energy. A popular empirical approximation for $E_c$ as a
+function of the atomic number of the material is
+\begin{align}\label{eq:critical_energy}
+  E_c =
+  \begin{cases}
+    \displaystyle\frac{610}{Z + 1.24}~\text{MeV}\quad\text{for solids}\\[8pt]
+    \displaystyle\frac{710}{Z + 0.92}~\text{MeV}\quad\text{for gases}
+  \end{cases}
+\end{align}
+as shown in figure~\ref{fig:critical_energy}.
+
+
+\subsection{The radiation length}%
+\label{sec:radiation_length}
+
+Above the critical energy, i.e., in the regime where radiation losses dominate,
+equation~\eqref{eq:rad_losses} can readily integrated for a homogeneous material,
+yielding the electron energy as a function of the distance $x$ traversed:
+\begin{align}
+  E(x) = E_0 \exp\left(-\frac{x}{X_0}\right).
+\end{align}
+The quantity $X_0$, representing the typical length over which an electron looses
+all but $1/e$ of its energy due to \bremss, is called \emph{radiation length} and
+is characteristic of the material. The radiation length is conveniently expressed
+in g~cm$^{-2}$, i.e., factoring out the density of the medium, and a popular
+parametrization is
+\begin{align}
+  X_0 = \frac{716~A}{Z(Z + 1) \ln\frac{287}{\sqrt{Z}}}~\text{g~cm}^{-2}.
+\end{align}
+Table~\ref{tab:exp_radlen} shows numerical values for a few materials of interest.
+
+\begin{table}[htb!]
+  \begin{tabular}{p{0.21\linewidth}p{0.21\linewidth}p{0.21\linewidth}%
+      p{0.21\linewidth}}
+    \hline
+    Material & $X_0$~[g~cm$^{-2}$] & $\density$ [g~cm$^{-3}$] & $X_0$ [cm]\\
+    \hline
+    \hline
+    Pb & 6.37 & 11.350 & 0.561\\
+    BGO & 7.97 & 7.130 & 1.12\\
+    CsI & 8.39 & 4.510 & 1.86\\
+    W & 6.76 & 19.3 & 0.350\\
+    C (graphite) & 42.70 & 2.210 & 19.3\\
+    Si & 21.82 & 2.329 & 9.37\\
+    Air & 36.62 & $1.2 \times 10^{-3}$ & 30,500\\
+    \hline
+  \end{tabular}
+  \caption{Tabulated values of the radiation length for some materials of
+    interest.}
+  \label{tab:exp_radlen}
+\end{table}
+
+The radiation length is the natural scale for all the most relevant
+electromagnetic phenomena we shall deal with in the following: multiple
+scattering, electron \bremss, pair production and electromagnetic
+showers. We shall customarily indicate with the letter $t = x/X_0$ any
+distance measured in units of $X_0$.
+
+
+\subsection{Multiple Coulomb scattering}%
+\label{sec:inter_mcs}
+
+A charged particle traversing a medium undergoes multiple Coulomb scatterings
+on the atomic nuclei of the material. In the so-called gaussian approximation
+the root mean square of the deviation angle projected in any of the planes
+containing the incoming particle direction can be parameterized as
+\begin{align}\label{eq:theta_ms}
+  \theta^\text{rms}_\text{plane} =
+  \frac{13.6~\text{MeV}}{\beta c p}z\sqrt{t} (1 + 0.038 \ln t)~\text{rad},
+\end{align}
+where $\beta c$, $p$ and $z$ are the velocity, momentum and charge number
+of the incoming particle, and $t$ is the thickness of the traversed
+material in units of radiation lengths.
+
+\begin{marginfigure}
+  \input{figures/multiple_scattering.pgf}
+  \caption{Multiple scattering angle in the plane from~\eqref{eq:theta_ms} as a
+    function of momentum for $t = 1\%~X_0$ and $t = 10\%~X_0$. The solid (dashed)
+    line indicates the curve for electrons (protons).}
+  \label{fig:multiple_scattering}
+\end{marginfigure}
+
+The deflection space angle being the sum in quadrature of the independent
+deflections on two orthogonal planes, it is simply given by
+\begin{align}
+  \theta^\text{rms}_\text{space} = \sqrt{2}\theta^\text{rms}_\text{plane}.
+\end{align}
+Whether one or the other is more relevant depends on the problem at hand
+(e.g., typically the pointing accuracy of a detector is parameterized in terms
+of the space angle, but in a magnetic spectrometer the important figure is
+really the deflection angle in the bending plane).
+
+
+\section{Photons}%
+\label{sec:inter_gammas}
+
+High-energy photon interaction with matter involves essentially three distinct physical
+processes, each dominant in a different energy range.
+
+\begin{figure}[htbp!]
+  \input{figures/photon_xsec.pgf}
+  \caption{Photon interaction cross section in silicon. The dashed lines indicate
+    the three dominant process: photoelectric absorption, Compton scattering and
+    pair production. The contribution from the coherent scattering on the atoms
+    of the material, which is subdominant at all energies, is included in the total
+    but not shown separately.}
+  \label{fig:photon_xsec}
+\end{figure}
+
+At low energy\sidenote{If we are adamant in stating a number, here, we might say
+that the photoelectric effect dominates below $\sim 10$~keV, but this is highly
+dependent on the atomic number of the absorbing material.} the interaction process
+with the largest cross section is the photoelectric effect, where the photon is
+absorbed by an atom and an electron is emitted in its place. As it turns out, this
+is a complicated process, preferentially involving the atomic electrons of the
+inner orbitals, where the atom is left in an excited state and subsequently relaxes
+via the emission of another electron (the so-called Auger electron) or a fluorescence
+photon. The photoelectric cross section scales rather violently with both the
+atomic number $Z$ of the target material and the photon energy $E$
+\begin{align}
+  \sigma_\text{photoelectric} \propto
+  \begin{cases}
+    \displaystyle\frac{Z^4}{E^3} \quad\text{at low energy}\\[8pt]
+    \displaystyle\frac{Z^5}{E} \quad\text{at high energy}
+  \end{cases}
+\end{align}
+with dramatic resonances (of the order of 10\%) in correspondence of the energies
+of the atomic orbitals.
+
+At intermediate energies (roughly speaking around a MeV) the dominant photon
+interaction process is the Compton scattering off (quasi-free) atomic electrons
+\begin{align}
+  \gamma \; e^- \rightarrow \gamma \; e^-.
+\end{align}
+This is an inelastic process where the photon transfer part of its energy to the
+electron and, in general, changes its direction. Since the atomic electrons are
+seen incoherently, the total cross section
+\begin{align}
+  \sigma_\text{Compton} \propto Z
+\end{align}
+is proportional to the atomic number of the target material.
+
+Very high-energy photons (above a few tens of MeV) interact with matter mainly by
+pair production in the field of atomic nuclei (although pair production off
+atomic electrons also play a subdominant role). Like the photoelectric effect, this
+is a destructive process, where the photon disappear and (in this case) an
+electron-positron pair materializes instead. From a kinematic point of view,
+this is a threshold process, with a minimum energy of $2 m_e c^2 = 1.022$~MeV
+in the case of pair production off nuclei and $4 m_e c^2 = 2.044$~MeV in the
+case of electrons. The total cross section
+\begin{align}
+  \sigma_\text{pair} \propto Z(Z + 1) \approx Z^2
+\end{align}
+is asymptotically constant at high energy and proportional to the square of the
+atomic number of the target material.
+
+
+\subsection{Pair production}
+
+\begin{marginfigure}
+  \input{figures/em_shower_feynman.pgf}
+  \caption{Feynman diagram at tree level for the electron \bremss\ (top) and pair
+  production by gamma rays in the field of an atomic nucleus. The two only differ
+  for the exchange of the top external legs.}
+  \label{fig:em_shower_feynman}
+\end{marginfigure}
+
+As it turns out, the processes of electron \bremss\ and pair production are intimately
+related to each other, as the underlying tree-level Feynman diagrams for the two
+cases tranform into each other via the swap of a single external leg. More specifically,
+the scattering matrix element for the two processes is identical, and the only
+different is the phase-space term, due to the fact that the kinematic of the final
+state is different. As a result, the mean free path for pair production for a
+high-energy photon is related to the radiation length of the material
+\begin{align}\label{eq:lambda_pair}
+  \lambda_\text{pair} = \frac{9}{7}X_0
+\end{align}
+(i.e., it is $9/7$ of the scale length over which a high-energy electron
+looses all but $1/e$ of its energy).
+
+It should be noted that, while pair production is a destructive process
+(the gamma-ray no longer exists afterwards), \bremss\ only degrades the
+electron energy. As we shall see in a second, these two physical processes are
+at the base of the development of electromagnetic showers.
+
+
+\section{Electromagnetic showers}%
+\label{sec:em_showers}
+
+As explained in the previous section, high-energy electrons and photons
+produce in matter secondary photons by \bremss\ and electron-positron
+pairs by pair production. These secondaries, in turn, can produce other
+particles with progressively lower energy and start an
+\emph{electromagnetic shower} (or \emph{cascade}).
+The process continue until the average energy of the electron component falls
+below the critical energy of the material---at which point the rest of the
+energy is released via ionization.
+
+\begin{marginfigure}
+  \input{figures/em_shower_naive.pgf}
+  \caption{Sketch of the development of an electron-induced electromagnetic shower
+  in the simplest possible toy model.}
+  \label{fig:em_shower_naive}
+\end{marginfigure}
+
+A simple toy model for an electron-initiated shower is schematically represented
+in figure~\ref{fig:em_shower_naive}, where after $t$ radiation lengths of material,
+the cascade has developed in $2^t$ particles (a mix of electrons, positrons and
+photons, roughly in equal proportions) with an average energy of $\nicefrac{E_0}{2^t}$.
+The process continue until the latter reach the critical energy in the medium,
+at which point radiation losses become subdominant and the remaining energy
+degradation proceed by ionization.
+It goes without saying that this naive schematization is neglecting many of the
+salient features of the development of a real shower: the intrinsic stochasticity
+of the process, the the $\nicefrac{9}{7}$ term in~\eqref{eq:lambda_pair}, the fact
+that the electron can---and does---radiate multiple photons of different energy
+per radiation length, and the ionization losses, which are at play even when the
+radiation losses dominate. And yet, rough as this model is, it is able to reproduce
+one of the main features of electromagnetic showers, namely the fact that the
+position of the shower maximum scales logarithmically with the energy. In fact the
+stop condition reads
+\begin{align}
+  \frac{E_0}{2^{t_\text{max}}} \approx E_c
+  \quad\text{or}\quad
+  t_\text{max} \approx \ln \left(\frac{E_0}{E_c}\right).
+\end{align}
+
+\begin{marginfigure}
+  \input{figures/shower_longitudinal_profile.pgf}
+  \caption{Average longitudinal profile of the shower generated by a
+     $100$~GeV electron in a homogeneous slab of BGO.}
+  \label{fig:shower_longitudinal_profile}
+\end{marginfigure}
+
+At a slightly higher level of sophistication, the longitudinal profile of an
+electromagnetic shower can be effectively described as
+\begin{align}\label{eq:long_profile}
+  \frac{dE}{dt} = E_0 b \frac{(bt)^{a-1} e^{-bt}}{\Gamma(a)},
+\end{align}
+where $a$ and $b$ are parameters related to the nature of the incident particle
+(electron or photon) and to the characteristics of the medium ($b = 0.5$
+is a reasonable approximation in many cases of practical interest).
+The position of the shower maximum occurs at
+\begin{align}\label{eq:shower_max}
+  t_\text{max} = \frac{(a - 1)}{b} \approx
+  \ln \left(\frac{E_0}{E_c}\right) + t_0
+\end{align}
+where $t_0 = -0.5$ for electrons and $t_0 = 0.5$ for photons. For the sake
+of clarity, the way one typically uses these relation is to plug $E_0$, $E_c$
+and $t_0$ in \eqref{eq:shower_max} to find $a$ (assuming $b = 0.5$) and then
+use~\eqref{eq:long_profile} to describe the longitudinal profile of the shower.
+
+Figure~\ref{fig:shower_longitudinal_profile} shows the average shower profile for
+$100$~GeV in BGO. With a critical energy of $10.1$~MeV, the position of the shower
+maximum is located, according to equation~\eqref{eq:shower_max}, at $8.7~X_0$.
+
+We mention, in passing, that the transverse development of an electromagnetic
+shower, mainly due to the multiple scattering of electrons and positrons away
+from the shower axis, scales with the so-called the Moli\`ere radius, that can be
+empirically parameterized as
+\begin{align}
+  R_M \approx X_0 \frac{E_s}{E_c}
+  \quad\text{where}\quad
+  E_s = 21~\text{MeV}.
+\end{align}
+
+
+\section{Hadronic showers}%
+\label{sec:had_showers}
+
+While the development of electromagnetic showers is determined, as we have seen,
+by two well-understood QED processes, the energy degradation of hadrons proceeds
+through both strong and electromagnetic interactions in the medium. The complexity
+of the hadronic and nuclear processes produce a multitude of phenomena that make
+hadronic showers intrinsically more complicated than the electromagnetic ones.
+In other words for hadronic showers there is no such a thing as the toy model
+illustrated in figure~\ref{fig:em_shower_naive}.
+
+As a matter of fact hadronic showers consist in general of two distinctly different
+components: (i) an electromagnetic component due to $\pi^0$ and $\eta$ generated
+in the absorption process and decaying into photons (which in turn develop
+electromagnetic showers) before they have a chance to undergo a new strong interaction;
+and (ii) a non-electromagnetic component, which combines essentially everything
+else that takes place in the absorption process. Most importantly, the two components
+evolve with different length scales: the radiation length $X_0$ for the first and
+the nuclear interaction length $\lambda_I$ for the second.
+
+Interestingly enough, one can gain some useful insight into the latter by simple
+semi-quantitative arguments based on dimensional analysis. Since the volume of the
+nucleus is proportional to the mass number $A$, its radius will be
+\begin{align*}
+  r \approx r_0 A^\frac{1}{3}
+  \quad\text{where}\quad
+  r_0 \approx 10^{-15}~\text{m} = 1~\text{fm}.
+\end{align*}
+Now, since nuclear interactions are governed by the strong force, which is
+characterized by a short range, the nuclear cross section approaches the geometrical
+limit
+\begin{align*}
+  \sigma_N \propto r^2 \propto A^\frac{2}{3},
+\end{align*}
+and the corresponding interaction length (measured in~cm) can be written in terms
+of $\sigma_N$ and the number density $n$ of the nuclei\sidenote{Mind that, since
+$\sigma_N$ is the cross section of the nucleus, $n$ is  the number density of the
+\emph{nuclei} and not that of the \emph{nucleons}. As such, it scales with the
+theromidinamic properties of the medium, but does not depend on the mass number
+$A$.} as
+\begin{align*}
+  \lambda_I = \frac{1}{n \sigma_N} = \frac{A}{N_A \density \sigma_N}\propto
+  \begin{cases}
+    \displaystyle A^{-\frac{2}{3}} \quad\text{in~cm}\\
+    \displaystyle A^\frac{1}{3} \quad\text{in~g~cm}^{-2}.
+  \end{cases}
+\end{align*}
+
+A useful parameterization for $\lambda_I$, that can be used for actual calculations,
+is in fact
+\begin{align}\label{eq:param_intlen}
+  \lambda_I = 37.8~A^{0.312}~\text{g~cm}^{-2}
+\end{align}
+and the tabulated values for some relevant materials are shown in
+table~\ref{tab:exp_intlen}.
+
+%(which is at least on order of magnitude larger for $Z > 30$, as
+%shown in figure~\ref{fig:rad_int_len}) .
+
+% \begin{figure}
+%   \includegraphics[width=\linewidth]{rad_int_len}
+%   \caption{Approximate dependence of the radiation length $X_0$ and the
+%     nuclear interaction length $\lambda_I$ on the atomic number $Z$ of the
+%     material. The parameterizations used are those in equations
+%     \eqref{eq:param_radlen} and \eqref{eq:param_intlen}, with the additional
+%     assumption $A = 2Z$.}
+%   \label{fig:rad_int_len}
+% \end{figure}
+
+\begin{table}[htb!]
+  \begin{tabular}{p{0.23\linewidth}p{0.21\linewidth}p{0.21\linewidth}%
+      p{0.21\linewidth}}
+    \hline
+    Material & $\lambda_I$~[g~cm$^{-2}$] & $\density$ [g~cm$^{-3}$] &
+    $\lambda_I$ [cm]\\
+    \hline
+    \hline
+    Pb & 199.6 & 11.350 & 17.6 \\
+    BGO & 159.1 & 7.130 & 22.3 \\
+    CsI & 171.5 & 4.510 & 38.0\\
+    W & 191.9 & 19.3 & 9.94\\
+    C (graphite) & 85.8 & 2.210 & 38.8\\
+    Si & 108.4 & 2.329 & 46.5\\
+    Air & 90.1 & $1.2 \times 10^{-3}$ & 75,000\\
+    \hline
+  \end{tabular}
+  \caption{Tabulated values of the nuclear interaction length for some materials
+    of interest.}
+  \label{tab:exp_intlen}
+\end{table}
+
+The fractional non-electromagnetic component of a hadronic shower $F_h$ (as
+opposed to electromagnetic component $F_e = 1 - F_h$) decreases with energy and
+is generally~\cite{PDG} parameterized as
+\begin{align}
+  F_h(E) = \left( \frac{E}{E_0} \right)^{k-1},
+\end{align}
+where typical values are $E_0 \approx 1$~GeV and $k \approx 0.8$ (roughly
+speaking, the fraction of energy the non-electromagnetic component accounts
+for is of the order of $50\%$ at $100$~GeV and $30\%$ at $1$~TeV).
+
+In broad terms, hadronic showers tend to start developing at relatively large
+depths in the material and they are typically larger and more irregular when
+compared with electromagnetic showers. All these differences are customarily used
+in modern space-based imaging calorimeters for particle identification.
+
+
+\section{\Cheren\ radiation}%
+\label{sec:cherenkov_rad}
+
+\begin{marginfigure}
+  \input{figures/cherenkov_effect.pgf}
+  \caption{Sketch of the \Cheren\ effect. When a particle moves at a speed that
+  exceeds the speed of the light in the medium, the radiation adds up coherently
+  to generate a wavefront.}
+  \label{fig:cherenkov_effect}
+\end{marginfigure}
+
+\Cheren\ radiation is emitted when a charged particle moves in a medium at a speed
+greater than the speed of light \emph{in that medium}
+\begin{align}
+  \beta > \frac{1}{n}.
+\end{align}
+(Here $\beta$ refers to the incident particle and $n$ is the index of
+refraction of the material.) In the ideal case of a non-dispersive medium, the
+Cherencov wave front form an acute angle with respect to the particle velocity
+given by
+\begin{align}
+  \cos\theta_c = \frac{1}{n\beta}
+\end{align}
+as sketched in figure~\ref{fig:cherenkov_effect}.
+
+The (double differential) spectrum of the photons produced per unit path length
+and wavelength is given by
+\begin{align}\label{eq:cherenkov_loss}
+  \frac{d^2N}{dxd\lambda} = \frac{2\pi\alpha z^2}{\lambda^2}
+  \left(1 -  \frac{1}{\beta^2 n^2(\lambda)}\right) =
+  \frac{2\pi\alpha z^2}{\lambda^2}
+  \left(1 - \frac{1 + \beta^2\gamma^2}{\beta^2\gamma^2n^2(\lambda)}\right),
+\end{align}
+where $z$ is the charge of the projectile, and the index of refraction $n$
+is evaluated at the generic photon wavelength $\lambda$.
+Equation~\eqref{eq:cherenkov_loss} cannot be readily translated into a detector
+signal as, in practice, one has to convolve it with the response of the
+transducer and integrate over the photon wavelengths of interest.

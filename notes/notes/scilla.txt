@@ -1,0 +1,61 @@
+---Lezione 1
+
+(Anno precedente, concetti generali).
+Magnitudine, parallasse.
+Dispense del Paolicchi
+
+---Lezione 2 (16 Feb)
+https://unipiit.sharepoint.com/sites/a__td_53406/_layouts/15/stream.aspx?id=%2Fsites%2Fa%5F%5Ftd%5F53406%2FShared%20Documents%2FGeneral%2FRecordings%2F20230216%2Emp4&referrer=OneDriveForBusiness&referrerScenario=OpenFile
+
+Gas: H ed He
+Polveri: grani, silicati, acqua, CO2 (1/1000 mm)
+Stelle di campo e stelle in gruppi (ammassi stellari).
+
+Ammassi: nati dalla stessa nube, i.e., hanno in prima approx la stessa età e stessa
+composizione chimica, stessa distanza da noi, ma masse diverse (popolazione stellare
+semplice, relativamente facile da studiare). Nubi in equilibrio complesso: G, pressione
+del gas, moti di rotazione, B. Le stelle si formano dal collasso delle parti più fredde
+della nube.
+
+Disco della galassia, lunghezze di scala per la diminuzione (esponenziale) della densità:
+2 kpc radialmente, 50--300 pc verticalmente (dipende dall'età delle stelle che considero).
+Alone: poco gas, stelle di campo ed ammassi. Gli ammassi nell'alone si chiamano
+globular cluster (simmetria sferica, molto legati). Gli ammassi nel disco si chiamano
+ammassi aperti (sparsi, poco legati). Gli ammassi del disco e dell'alone hanno
+caratteristiche diverse. LMC and SMC galassie gemelle più vicine---bellissima immagine di Gaia.
+
+Masse: Andromeda 1e12 M_sun. Via lattea, 1e11. Globluar clusters 1e5--6.
+
+Globular clusters: 1e5--6 M_sun. Le stelle più luminose sono rosse. Distribuzione
+bimodale di metallicità, i.e., due generazioni, da 1e-5 a 1e-3.
+
+Open clusters: 100-10000 stelle. Le stelle più luminose sono blu. Distribuzione
+unimodale di metallicità, relativamente grande (picco a 1%).
+
+Velocità radiale da effetto doppler. Velocità trasversale dal moto proprio. Cinematica
+del disco dai dati di Gaia: rivoluzione per la fisica stellare.
+
+
+
+---Lezione 2 (18 Feb)
+https://unipiit.sharepoint.com/sites/a__td_53406/_layouts/15/stream.aspx?id=%2Fsites%2Fa%5F%5Ftd%5F53406%2FShared%20Documents%2FGeneral%2FRecordings%2F20230217%2Emp4&referrer=OneDriveForBusiness&referrerScenario=OpenFile
+
+Curva universale delle abbondanze nel disco della galassia. Si si misura bene
+nelle meteoriti. Abbondanze relative sono simili in tutte le stelle (con dipendenza
+da T), le abbondanze relative (metallicità) variano molto.
+
+Come si osservano le abbondanze: analisi degli spettri, intensità righe di
+assorbimento ed emissione. Misure indirette: le righe dipendono dalla temperatura
+e dalla perssione e gravità superficiale (vedere dispense del Paolicchi e lezioni di PPM),
+per cui servono modelli di atmosfera stellare. Problema: quanto la composizione
+chimica della fotosfera è rappresentativa di quella iniziale della stella al
+momento della formazione, che è la cosa rilevante? Dipende dalla presenza di moti
+convettivi. Diffusione microscopica per stelle relativamente piccole: H tende ad
+andare in superificie, ed i metalli verso il centro. Morale: misura difficile e
+model-dependent. Nel caso del Sole abbiamo anche misure indipendenti (e.g., meteoriti
+rappresentative della nebulosa protostellare), eppure anche qui la composizione
+non è nota al meglio del 10%.
+
+Misura di CNO resa più difficile dal fatto che questi elementi si uniscono in molecole,
+limitate dall'abbondanza dell'elemento meno comune. He non si vede tipicamente,
+perché servirebbero T > 10000 K.

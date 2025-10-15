@@ -1,0 +1,69 @@
+\documentclass{kaobook}
+
+\setchapterstyle{kao}
+\usepackage{tikz-feynman}
+\usepackage{aas_macros}
+\usepackage{hyperref}
+\usepackage{euler}
+\usepackage{physics}
+\usepackage{mhchem}
+\usepackage{cancel}
+\usepackage[nice]{nicefrac}
+\usetikzlibrary{arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{pgfplots}
+
+\newcommand{\adsabstract}[1]{
+  ADS abstract: \href{https://ui.adsabs.harvard.edu/abs/#1/abstract}{#1}
+  }
+\newcommand{\adspdf}[2][ADS]{
+  \adsabstract{#2}
+  (\href{https://ui.adsabs.harvard.edu/link_gateway/#2/#1_PDF}{pdf})
+}
+\newcommand{\farcsec}{\ensuremath{.\!\!^{\prime\prime}}}
+
+\input{preamble/misc.tex}
+\input{preamble/math.tex}
+\input{preamble/physics.tex}
+
+% I don't know why I need this, but page numbers were not showing up, otherwise.
+\renewcommand{\chapterpagestyle}{pagenum.scrheadings}
+\usepackage{etoolbox}
+\preto\chapter{\pagestyle{pagenum.scrheadings}}
+
+
+\author{Luca Baldini}
+\title{Astroparticle Physics: Lecture Notes}
+
+
+
+\begin{document}
+
+\maketitle
+
+\input{preface}
+\input{resources}
+
+\tableofcontents
+
+\input{universe}
+\input{cr}
+\input{nu}
+\input{cosmo}
+
+\appendix
+
+\input{rel}
+\input{xsec}
+\input{pass}
+\input{mag}
+\input{thermo}
+\input{fluid}
+\input{qstat}
+\input{sw}
+
+\bibliography{astropart}{}
+\bibliographystyle{plain}
+
+
+\end{document}

@@ -1,0 +1,178 @@
+\chapter{Thermodynamics}\label{chap:thermodynamics}
+
+
+We review some basic facts of thermodynamics that will be useful in specific
+sections of these notes.
+
+From a thermodynamical standpoint, a homogeneous fluid is essentially described
+by its pressure $\pressure$, its volume $V$ and its temperature $T$. These
+three quantities are not independent, and related to each other by the
+\emph{equation of state} of the sistem which, in the most general form, can
+be written as
+\begin{align}\label{eq:equation_of_state}
+  f(\pressure, V, T) = 0.
+\end{align}
+
+
+\section{The first law}
+
+The first law of thermodynamics encapsulates the conservation of energy for an
+infinitesimal transformation in the form
+\begin{align}\label{eq:thermo_first_law}
+  dU + W = \delta Q
+  \quad\text{or, equivalently,}\quad
+  dU + \pressure dV = \delta Q.
+\end{align}
+For a given equation of state~\eqref{eq:equation_of_state} we can express the internal
+energy (and the first law) in terms of any of the three possible sets of independent
+variables:
+\begin{align*}
+  \parderr{U}{T}{V} dT + \left[ \parderr{U}{V}{T} + \pressure\right] dV = \delta Q
+  \quad \{T, V\}\\
+  \left[ \parderr{U}{T}{\pressure} + \pressure\parderr{V}{T}{\pressure} \;\; \right] dT +
+  \left[ \parderr{U}{\pressure}{T} + \parderr{V}{\pressure}{T} \;\; \right] d\pressure = \delta Q
+  \quad \{T, \pressure\}\\
+  \parderr{U}{V}{\pressure} + \left[ \parderr{U}{\pressure}{V} + p \right] dV = \delta Q
+  \quad \{V, \pressure\}
+\end{align*}
+
+The heat capacity is defined as the amount of heat to be supplied to an object to
+produce a unit change in its temperature, and it is different depending
+on whether the transformation takes place at constant volume or pressure. In
+the first case
+\begin{align}
+  C_V = \left. \frac{\delta Q}{dT} \right|_V = \parderr{U}{T}{V}
+\end{align}
+while in the second
+\begin{align}
+  C_\pressure = \left. \frac{\delta Q}{dT} \right|_\pressure =
+    \parderr{U}{T}{\pressure} + \pressure\parderr{V}{T}{\pressure}
+\end{align}
+
+We note that, while the heat capacity is an extensive quantity, it is customary
+to use $C_V$ and $C_\pressure$ as the molar heat capacities, or the heat capacities
+for  1~mol of substance.
+
+
+
+\section{Ideal gases}
+
+You might remember from high school the equation of state for a perfect gas, sometimes
+referred to as the ideal gas law\sidenote{Note calligraphic $\mathcal{n}$ used to
+indicate the number of moles, which should not be confused with $n$, indicating
+the number density throughout these lecture notes.}
+\begin{align*}
+  \pressure V = \mathcal{n} RT = \mathcal{n} N_A \kT,
+\end{align*}
+where $R = N_A \kB$ is the ideal gas constant, that is, the product of the Boltzmann
+constant and the Avogadro number.
+
+Generally speaking, we don't like talking moles unless it is strictly necessary
+to do so, and we prefer writing the ideal gas law in terms of the total number of
+particles $N$
+\begin{align*}
+  \pressure V = N \kT,
+\end{align*}
+or, even better, in terms of the number density, since the latter is an intensive
+quantity:
+\begin{align}
+  \pressure = \frac{N}{V} \kT = n\kT.
+\end{align}
+Now, according to the kinetic theory of gas, each degree of freedom provides
+a contribution $\nicefrac{1}{2}kT$ to the internal energy, and therefore the latter
+can be written as
+\begin{align}\label{eq:ideal_gas_internal_energy}
+  U = \frac{f}{2} N \kT \quad\text{and}\quad
+  u = \frac{U}{V} = \frac{f}{2} \frac{N}{V} \kT = \frac{f}{2} n \kT,
+\end{align}
+where $f$ is the number of degrees of freedom for the single particle. For a monoatomic
+gas ()$f = 3$) we recover the well know non-relativistic relation between the pressure
+and the energy density
+\begin{align}
+  u = \frac{3}{2} n \kT = \frac{3}{2} \pressure.
+\end{align}
+We note that the internal energy per unit mass (as opposed to unit volume) $\mathcal{u}$,
+which is also useful at times, reads
+\begin{align}
+  \mathcal{u} = \frac{U}{m} = \frac{U}{\density V} =
+  \frac{3}{2} \frac{n \kT}{\density} = \frac{3}{2} \frac{\pressure}{\density}.
+\end{align}
+
+Since for an ideal gas the internal energy~\label{eq:ideal_gas_internal_energy} is
+proportional to the temperature, the molar heat capacities are temperature
+independent\sidenote{Note that the equation of state and the internal energy for
+$1$~mole of perfect gas read
+\begin{align*}
+  \pressure V = RT \quad\text{and}\quad U = \frac{f}{2}RT.
+\end{align*}}
+\begin{align*}
+  \begin{cases}
+    C_V = \dv{U}{T} = \frac{f}{2}R\\[10pt]
+    C_p = \dv{U}{T} + \pressure \parderr{V}{T}{\pressure} = C_V + R.
+  \end{cases}
+\end{align*}
+The ratio between the specific heat at constant volume and pressure, generally referred
+to as the \emph{adiabatic index} often comes up in calculations, and can
+be explicitely written down as\sidenote{For a monoatomic gas, with only the three
+translational degrees of freedom, $f = 3$ and therefore
+\begin{align*}
+  C_V = \frac{3}{2}R, \quad C_\pressure = \frac{5}{2}R
+  \quad\text{and}\quad
+  \adiabaticindex = \frac{5}{3}.
+\end{align*}
+}
+\begin{align}
+  \adiabaticindex = \frac{C_\pressure}{C_V} = \frac{C_V + R}{C_V} = \frac{f + 2}{f}.
+\end{align}
+
+
+
+\subsection{Adiabatic transformations}
+
+Adiabatic transformations are reversible tranformations that happen with no
+heat exchange with the external world. In this case the first law reads
+\begin{align*}
+  dU + \pressure dV = C_V dT + \pressure dV = 0,
+\end{align*}
+and, using the equation of state for a mole of ideal gas $\pressure V = RT$ to
+eliminate the pressure, we have
+\begin{align*}
+  C_V dT + \frac{RT}{V} dV = 0
+  \quad\text{or}\quad
+  \frac{dT}{T} + \frac{R}{C_V} \frac{dV}{V} = 0.
+\end{align*}
+This can be easily integrated, and noting that $\nicefrac{R}{C_V} = \gamma - 1$,
+yields the basic equation for adiabatic tranformations
+\begin{align*}
+  TV^{\gamma - 1} = \text{const},
+\end{align*}
+which, using again the equation of state, can be recasted in twe two equivalent
+forms
+\begin{align}
+  \pressure V^\gamma = \text{const}
+  \quad\text{or}\quad
+  T\pressure^{-\frac{\gamma - 1}{\gamma}} = \text{const}.
+\end{align}
+
+
+\section{The second law}
+
+The entropy is defined for an infinitesimal reversible transformation by
+\begin{align}
+  dS = \frac{\delta Q_\text{rev}}{T},
+\end{align}
+which can be integrated along any reversible transformation to calculate the
+entropy difference between two arbitrary states $A$ and $B$
+\begin{align*}
+  S(B) - S(A) = \int_A^B \frac{\delta Q_\text{rev}}{T}.
+\end{align*}
+(The integral is independent from the particular tranformation as long as the latter
+is reversible, and therefore the entropy is a function of state.)
+
+In the general case (i.e., including irreversible tranformation) we have
+\begin{align}
+  S(B) - S(A) \geq \int_A^B \frac{\delta Q}{T},
+\end{align}
+from which it follows that for any tranformation of isolated system ($\delta Q = 0$),
+the entropy cannot decrease---and it remains constant for a reversible
+transformation.

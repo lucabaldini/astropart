@@ -1,0 +1,530 @@
+\chapter{Quantum Statistics}
+\label{chap:qstat}
+
+
+
+\section{All the wonders of the $\zeta$ function}
+\label{sec:riemann_zeta}
+
+Well, some of them. The Riemann zeta function can be defined on the real line with
+$x > 1$ as
+\begin{align}
+  \zeta(x) = \frac{1}{\Gamma(x)} \int_0^\infty \frac{z^{x-1}}{e^z - 1} dz,
+\end{align}
+where $\Gamma(x)$ is the gamma function. When the argument is an integer $n > 1$,
+the definition can be rewritten as
+\begin{align*}
+  \zeta(n) = \frac{1}{(n - 1)!} \int_0^\infty \frac{z^{n-1}}{e^z - 1} dz,
+\end{align*}
+which can in turn be inverted to provide a closed expression for the entire class
+of integrals
+\begin{align}
+  \int_0^\infty \frac{z^{n-1} dz}{e^z - 1} = (n - 1)! \zeta(n).
+\end{align}
+In addition, a related result can be demonstrated for the similar situation where
+the sign at the denominator is swapped
+\begin{align}
+  \int_0^\infty \frac{z^{n-1} dz}{e^z + 1} = (1 - 2^{1 - n}) (n - 1)! \zeta(n).
+\end{align}
+(If you are wondering what this has to do with the title of this section, bear with
+me one more second, as this kind of integrals will pop up very shortly when
+dealing with the Bose-Einstein, Fermi-Dirac, and Planck distributions.)
+
+As it turns out, the other important parametrization of the Riemann zeta function
+is in the form of the infinite sum
+\begin{align*}
+  \zeta(n) = \sum_{k=1}^\infty \frac{1}{n^k}
+\end{align*}
+and, amusingly enough, this can be actually summed in closed form for all even
+integers, but not for for odd numbers, in which case one has to resort to
+numerical estimates, e.g.
+\begin{align*}
+  \zeta(2) = \frac{\pi^2}{6}, \quad \zeta(3) \approx 1.2020569032
+  \quad \text{and} \quad \zeta(4) = \frac{\pi^4}{90}.
+\end{align*}
+
+We can piece things together to calculate a couple of notable definite integrals
+we shall make extensive use of in the following:
+\begin{align}\label{eq:qstats_notable_integrals}
+  \int_0^\infty \frac{z^2}{e^z \mp 1} = 2\zeta(3)
+  \begin{cases}
+    \times 1\\
+    \times \frac{3}{4}
+  \end{cases}
+  \quad \text{and} \quad
+  \int_0^\infty \frac{z^3}{e^z \mp 1} = \frac{\pi^4}{15}
+  \begin{cases}
+    \times 1\\
+    \times \frac{7}{8}
+  \end{cases}.
+\end{align}
+(The case with the non trivial multiplicative factor is for a $+$ sign at the
+denominator.)
+
+
+
+\section{Quantum distribution functions}
+\label{sec:quantum_statistics}
+
+\begin{marginfigure}
+  \input{figures/quantum_statistics.pgf}
+  \caption{Illustration of the Bose-Einstein and Fermi-Dirac distributions, for
+    $\mu = 10 \kT$. Note that for the Fermi-Dirac distribution the chemical
+    potential corresponds to the energy where the differential number density is
+    50\% of the maximum value. In the Bose-Einstein case, instead $E \geq \mu$ for
+    the distribution to be positive-defined.}
+  \label{fig:quantum_statistics}
+\end{marginfigure}
+
+A system of $N$ identical, non interacting bosons/fermions in thermodynamic equilibrium
+follows the Bose-Einstein/Fermi-Dirac distribution, respectively, according to which
+the density of particles per unit volume in the phase space is
+\begin{align*}
+  \frac{dN}{\nicefrac{d^3p\,dV}{h^3}} = \frac{g}{e^\frac{E - \mu}{\kT} \mp 1} =
+  \begin{cases}
+    \frac{\displaystyle g}{\displaystyle e^\frac{E - \mu}{\kT} - 1} &
+    \quad\text{for bosons (Bose-Einstein)}\\[12pt]
+    \frac{\displaystyle g}{\displaystyle e^\frac{E - \mu}{\kT} + 1} &
+    \quad\text{for fermions (Fermi Dirac)},
+  \end{cases}
+\end{align*}
+where $T$ is the temperature, $\mu$ is the chemical potential\sidenote{The chemical
+potential is fixed by the condition that the total number of particle in the system
+is given by integrating the density function over the entire phase space.}, and $g$
+is the number of internal degrees of freedom of the single particle\sidenote{This
+is, in general, $2s + 1$ for a spin-$s$ particle. For a spin $\nicefrac{1}{2}$ fermion
+such an electron $g = 2$, which encapsulates the usual Pauli exclusion principle,
+stating that no two such particles can occupy the same quantum state.}. Since it
+is generally more convenient to work with intensive quantities, we shall recast
+the expression in terms of the number density $n = \nicefrac{N}{V}$. In addition,
+in an isotropic setting, the differential momentum is more conveniently written in
+polar coordinates, where the angular part is trivial, i.e., $d^3p = 4\pi p^2 dp$.
+With that, the probability density function for the number density in momentum space,
+at a fixed temperature and chemical potential is given by
+\begin{align}\label{eq:qstats}
+  \frac{dn}{dp}(p; T, \mu) =
+  \frac{4\pi g}{h^3} \frac{p^2}{e^\frac{E - \mu}{\kT} \mp 1},
+\end{align}
+with the usual convention that we take the $-$~sign for bosons and the $+$~sign
+for fermions. (Make sure you understand the implications of the $p^2$ at the
+numerator, here, because the distributions in $\abs{p}$ space does not look at all
+like the plots in figure~\ref{fig:quantum_statistics}.)
+
+Equation~\eqref{eq:qstats} is the starting point for many of the topics we shall
+touch upon, and we shall use it extensively. The overall number density and internal
+energy density of an arbitrary gas of particles are readily calculated
+\begin{align*}
+  n = \int_0^\infty \frac{dn}{dp}(p) dp \quad \text{and} \quad
+  u = \frac{U}{V} = \int_0^\infty E_k(p) \frac{dn}{dp}(p) dp
+\end{align*}
+once the dispersion relation, relating the kinetic energy to the corresponding
+momentum, is known
+\begin{align*}
+  E_k = mc^2 \left[ \sqrt{1 + \left(\frac{p}{mc} \right)^2} - 1\right] \approx
+  \begin{cases}
+    \frac{p^2}{2m} & \quad \text{(non-relativistic)} \\
+    pc & \quad \text{(ultra-relativistic)}.
+  \end{cases}
+\end{align*}
+
+The pressure is slightly more complicated, but essentially it can be defined as
+the flux of momentum per unit surface, integrated over all particles\sidenote{By
+unit surface we mean a surface of unit area oriented in an arbitrary direction,
+e.g., any of the axes in a given orthogonal reference frame. Since the velocity
+momentum distributions are isotropic we have
+\begin{align*}
+  \ave{v_x p_x} = \ave{v_y p_y} = \ave{v_z p_z} = \frac{1}{3} vp.
+\end{align*}
+(And if you are unsure about the $\nicefrac{1}{3}$, remember that both $v$ and $p$
+get their own factor $\nicefrac{1}{\sqrt{3}}$.)
+}:
+\begin{align*}
+  \pressure = \frac{1}{3} \int_0^\infty v(p) p \frac{dn}{dp}(p) dp.
+\end{align*}
+The only additional piece of information that we need is the relation between the
+momentum, and the velocity, which is readily calculated
+\begin{align*}
+  v = \frac{pc^2}{E} =
+  \frac{p}{m} \left[1 + \left(\frac{p}{mc} \right)^2 \right]^{-\frac{1}{2}} \approx
+  \begin{cases}
+    \frac{p}{m} & \quad \text{(non-relativistic)} \\
+    c & \quad \text{(ultra-relativistic)}.
+  \end{cases}
+\end{align*}
+
+All of this is trivial in principle, quite convoluted in practice. In the non-relativistic
+limit, where $E_k \approx \nicefrac{p^2}{2m}$ and $v \approx \nicefrac{p}{m}$
+the expression for the energy density and the pressure read
+\begin{align*}
+  u = \int_0^\infty \frac{p^2}{2m} \frac{dn}{dp}(p) dp \quad \text{and} \quad
+  \pressure = \frac{1}{3} \int_0^\infty \frac{p^2}{m} \frac{dn}{dp}(p) dp,
+\end{align*}
+while in the ultra-relativistic limit, where $E_k \approx E \approx pc$ and $v \approx c$
+\begin{align*}
+  u = \int_0^\infty pc \frac{dn}{dp}(p) dp \quad \text{and} \quad
+  \pressure = \frac{1}{3} \int_0^\infty pc \frac{dn}{dp}(p) dp.
+\end{align*}
+Take note of the asymptotic relations between the pressure and the energy
+density\sidenote{Note that, although they typically expressed in different units,
+pressure (force per unit surface) and energy density (energy per unit volume) are
+homogeneous quantities.} in
+the two cases
+\begin{align}
+  P =
+  \begin{cases}
+    \frac{2}{3} u \quad \text{(non-relativistic)}\\
+    \frac{1}{3} u \quad \text{(ultra-relativistic)}
+  \end{cases}
+\end{align}
+because we shall encounter them again and again. The most familiar example of this
+relation between pressure and energy density might very well be that of an ideal
+gas, where
+\begin{align*}
+  P = n\kB T \quad\text{and}\quad u = \frac{3}{2} \kB T.
+\end{align*}
+
+
+
+\subsection{The degenerate Fermi gas}
+\label{sec:fermi_gas}
+
+This is the right time to spend a moment on a topic that will turn out to be handy
+when discussing degenerate stars---that is, the degenerate Fermi gas.
+Let us imagine a system of $N$ identical fermions (e.g., electrons) at the absolute
+zero. Since the Pauli exclusion principle dictates that no more than 2 such electrons
+can occupy the same energy level, the system possess a finite kinetic energy (and,
+therefore, pressure) even for $T = 0$. The resulting pressure, which has no classical
+counterpart, is customarily referred to as the \emph{degeneracy pressure}.
+
+\begin{marginfigure}
+  \input{figures/fermi_dirac.pgf}
+  \caption{Fermi-Dirac distribution for $\kT = \nicefrac{\mu}{10}$ and
+    $\kT = \nicefrac{\mu}{100}$. As the temperature approaches absolute zero,
+    the distribution approaches a step function.}
+  \label{fig:fermi_dirac_vs_temp}
+\end{marginfigure}
+
+In our language, as the temperature goes to zero, the exponential at the denominator
+of the Fermi-Dirac distribution tends to become very large when the argument is
+positive ($E > \mu$) and very small when the argument is negative ($E < \mu$).
+Conversely, the number density in the phase space tends to a step function, as
+illustrated in figure~\ref{fig:fermi_dirac_vs_temp}, i.e.,
+\begin{align*}
+  \lim_{T \rightarrow 0} \dv{n}{p}{(p; T)} =
+  \begin{cases}
+    \frac{4\pi g}{h^3} p^2 \quad & (E \leq \mu)\\
+    0 \quad & (E > \mu)
+  \end{cases}
+\end{align*}
+From a physical standpoint, what happens is that the electrons start filling all
+the available energy levels starting from the lowest one (with two electrons per
+level, one spin-up and one spin-down) until all of them have a seat. The maximum
+electron momentum, which is the equivalent in momentum space of the chemical
+potential, is called \emph{Fermi momentum} and can be readily calculated by simply
+integrating~\eqref{eq:qstats} and imposing that the result amounts to the total
+number density (which is known once $N$ and $V$ are set)
+\begin{align}\label{eq:fermi_momentum}
+  n = \int_0^{\pF} \dv{n}{p}{(p)}dp = \frac{4\pi g \pF^3}{3h^3}
+  \quad \text{or} \quad
+  \pF = h \left( \frac{3n}{4\pi g} \right)^\frac{1}{3}.
+\end{align}
+
+All we have said before still holds and our degenerate Fermi gas posses a non-zero
+energy density and, as a consequence, a non-zero pressure\sidenote{This is at odds to what
+happens in a classical setting (or, for what matters, with a system of non-interacting
+bosons), where at absolute zero all the particles sit happily in the lowest energy
+level and the pressure vanishes.}.
+The energy density reads
+\begin{align*}
+  u = \int_0^{p_F} E_k \dv{n}{p} dp = \frac{4\pi g}{h^3} \times
+  \begin{cases}
+    \displaystyle\int_0^{p_F} \frac{p^4}{2m} dp = \frac{p_F^5}{10 m}
+    & \quad\text{(non-relativistic)}\\[8pt]
+    \displaystyle\int_0^{p_F} p^3 c dp = \frac{P_F^4 c}{4}
+    & \quad\text{(ultra-relativistic)}.
+  \end{cases}
+\end{align*}
+It is interesting to close the loop and express things back in terms of the number
+density, which is the physical parameter we have direct access to
+\begin{align}
+  u =
+  \begin{cases}
+    \displaystyle %\frac{2\pi}{5} \frac{g p_F^5}{h^3 m} =
+    \frac{3}{10} \left(\frac{3}{4\pi g}\right)^\frac{2}{3} \frac{h^2}{m} n^\frac{5}{3}
+    = \frac{3}{2} P
+    & \quad\text{(non-relativistic)}\\[8pt]
+    \displaystyle %\pi \frac{g p_F^4 c}{h^3} =
+    \frac{3}{4} \left(\frac{3}{4\pi g}\right)^\frac{1}{3} hc\; n^\frac{4}{3}
+    = 3 P
+    & \quad\text{(ultra-relativistic)}.
+  \end{cases}
+\end{align}
+Note the different exponent of the dependence on the number density $n$ in the
+two cases ($\nicefrac{5}{3}$ vs. $\nicefrac{4}{3}$), because it will turn out to
+be very important for the equilibrium of degenerate stars. Also note that, in the
+non-relativistic case, the degeneracy pressure is inversely proportional to the
+mass of the fermion, i.e., it will be roughly 2,000 times smaller for protons or
+neutrons with respect to electrons.
+
+
+
+\section{The Maxwell-Boltzmann distribution}
+\label{sec:maxwel_boltzmann_dist}
+
+In the non-relativistic limit, if we assume that $E - \mu \ll \kT$\sidenote{Note this
+is a subtle assumption, as in this context $E$ is a random variable, whose average
+value is of the order of $\kT$. What we are asking is that the fluctuations of
+$E$ around the chemical potential are much smaller than the temperature.}, both the
+Bose-Einstein and the Fermi-Dirac distributions reduce to
+\begin{align*}
+  \dv{n}{p}{(p; T, \mu)} = \frac{4\pi g}{h^3} p^2 e^{-\frac{E - \mu}{\kT}} =
+  \frac{4\pi g}{h^3} e^{\frac{\mu}{\kT}} p^2 e^{-\frac{p^2}{2m \kT}}.
+\end{align*}
+The normalization of this probability density function is readily calculated
+\begin{align*}
+  \int_0^\infty \dv{n}{p}{(p)} dp = &
+  \frac{4\pi g}{h^3} e^{\frac{\mu}{\kT}} \int_0^\infty p^2 e^{-\frac{p^2}{2m \kT}} dp =\\
+   = & \frac{4\pi g}{h^3} e^{\frac{\mu}{\kT}} (2m \kT)^\frac{3}{2}
+   \underbrace{\int_0^\infty z^2 e^{-z^2} dz}_{\nicefrac{\sqrt{\pi}}{4}} =
+   \frac{g}{h^3} e^{\frac{\mu}{\kT}} (2 \pi m \kT)^\frac{3}{2},
+\end{align*}
+and we can rewrite the previous expression as a proper probability density function
+normalized to unity, in momentum space, as
+\begin{align*}
+  p_p(p; T) = \frac{4\pi}{(2 \pi m \kT)^\frac{3}{2}} p^2 e^{-\frac{p^2}{2m \kT}}.
+\end{align*}
+A simple change of variables\sidenote{This is the first of many change of variables
+we shall do in this section, and you should always pay attention not to forget the
+Jacobian of the transformation, or you will get the wrong numerical value. In this
+case you need to multiply by $m^3$ in order to get the correct mass dependence, and
+a factor $m^2$ comes from the $p^2$, while the extra $m$ comes from the Jacobian
+$$
+  \abs{\dv{p}{v}} = m.
+$$} allows to recast this in velocity space
+\begin{align}
+  p_v(v; T) = \qty(\frac{m}{2\pi \kT})^\frac{3}{2} 4\pi v^2 e^{-\frac{mv^2}{2\kT}}
+\end{align}
+which is the usual form of the Maxwell-Boltzmann distribution you find in every
+textbook.
+
+The very same distribution can be expressed in (kinetic) energy space
+\begin{align}
+  p_E(E_k; T) =
+  \frac{2}{\sqrt{\pi}} \qty(\frac{1}{\kT})^\frac{3}{2} \sqrt{E_k} e^{-\frac{E_k}{\kT}},
+\end{align}
+and we shall occasionally use it in this last form. We note that the average kinetic
+energy reads
+\begin{align}
+  \ave{E_k} = \int_0^\infty E_k p_E(E_k) dE =
+  \frac{2}{\sqrt{\pi}} \kT \underbrace{\int_0^\infty z^\frac{3}{2} e^{-z} dz}_{\frac{3\sqrt{\pi}}{4}} =
+  \frac{3}{2} \kT.
+\end{align}
+
+
+
+\section{The Planck distribution}
+\label{sec:planck_distribution}
+
+A photon gas is described by a Bose-Einstein distribution~\eqref{eq:qstats} with the
+understanding that \emph{photons have 2 degrees of freedom\sidenote{The photon has
+spin~$s = 1$, so formally comes with $2s + 1 = 3$ internal degrees of freedom, but
+the fact that it is massless reduces the number by one unity. Classically, this
+is related to the fact that electromagnetic radiation only comes with two independent
+states of polarization, since the electric and magnetic fields are bound to oscillate
+in the plane transverse to the direction of propagation.} and zero chemical potential}.
+
+Let us spend a second clearing this last bit of information out, for the sake of
+completeness. Formally, the chemical potential is the partial derivative of the
+free energy of the system with respect to the number of elements of a particular
+species, and from a physical standpoint it represents the energy that is absorbed
+or released by a system when the number of particles of that particular species
+is changed. In an ordinary gas the total number $N$ of particles is fixed, and that,
+as we have seen, provides the condition determining the chemical potential $\mu$.
+Photons are different in that they are extremely cheap to create and
+destroy\sidenote{If you think about for a second, photons do not really interact
+a lot with each other, and the typical mechanism by which they reach equilibrium
+is absorption and emission by matter, which is essentially free.}, and so in typical
+conditions they number is not fixed, but is free to vary, with no real cost in terms
+of energy. How does it vary? Well, in such a way that the free energy $F$ of the
+system is minimum, or
+\begin{align*}
+  \left(\pdv{F}{N}\right)_{T, V} \!\!\!\!\!\! = 0 = \mu.
+\end{align*}
+(Ok, we agree this is hand-waving. If you are not satisfied, you are welcome to
+dig into the issue more, or accept the fact that Plank derived the
+distribution~\eqref{eq:planck_spec_density_nu} bearing his name from first principles.)
+
+With that, since the dispersion relation for photons is $E = h\nu = pc$
+we can rewrite the Bose-Einstein distribution, with $g = 2$ and $\mu = 0$, as
+\begin{align*}
+  \frac{dn}{dp}(p; T) =
+  \frac{8\pi}{h^3} \frac{p^2}{e^\frac{pc}{\kT} - 1} \quad\text{or}\quad
+  \frac{dn}{d\nu}(\nu; T) =
+  \frac{8\pi}{c^3} \frac{\nu^2}{e^\frac{h\nu}{\kT} - 1},
+\end{align*}
+and if we multiply by $E = h\nu$ we get the spectral energy density\sidenote{To be
+precise this is the energy density per unit frequency interval and unit volume,
+and is measured in erg~Hz$^{-1}$~cm$^{-3}$ (or erg~s~cm$^{-3}$) in the cgs system.},
+which is the standard form in which the Plank distribution is found on textbooks
+(and illustrated in figure~\ref{fig:planck_distribution})
+\begin{align}\label{eq:planck_spec_density_nu}
+  \dv{u}{\nu}{(\nu; T)} = u_\nu(\nu; T) =
+  \frac{8\pi h}{c^3} \frac{\nu^3}{e^\frac{h\nu}{\kT} - 1}.
+\end{align}
+(And of course Plank derived this expression in 1900, while it was not until
+25~years later that Bose begin developing his quantum statistics, but in the grand
+scheme of things it is more conceptually inexpensive to let things flow this way.)
+
+By simple changes of variables, the distribution can be rewritten in a number of
+ways, that are all useful in different contexts. The Planck distribution in wavelength
+space, e.g., reads
+\begin{align}\label{eq:planck_spec_density_lambda}
+  \dv{u}{\lambda}{(\lambda; T)} = u_\lambda(\lambda; T) =
+  8\pi h c \frac{\lambda^{-5}}{e^\frac{hc}{\lambda\kT} - 1}
+\end{align}
+which, due to the Jacobian of the transformation $\nu = \nicefrac{c}{\lambda}$
+has a different functional form than its counterpart in frequency space.
+Similarly, if we take $E = h\nu$ as our dynamical variable, the spectral
+energy density can be rewritten as
+\begin{align}\label{eq:planck_spec_density_E}
+  \dv{u}{E}{(E; T)} = u_E(E; T) =
+  \frac{8\pi}{(hc)^3} \frac{E^3}{e^\frac{E}{\kT} - 1},
+\end{align}
+and is we now we take a step back toward where we started from, we can write the
+number density in energy space just dividing by $E$
+\begin{align}
+  \dv{n}{E}{(E; T)} = n_E(E; T) =
+  \frac{8\pi}{(hc)^3} \frac{E^2}{e^\frac{E}{\kT} - 1}.
+\end{align}
+
+\begin{marginfigure}
+  \input{figures/planck_distribution_nu.pgf}
+  \input{figures/planck_distribution_lambda.pgf}
+  \caption{Universal shape of the Planck spectral density in
+  frequency~\eqref{eq:planck_spec_density_nu} and wavelength~\eqref{eq:planck_spec_density_lambda}
+  space.}
+  \label{fig:planck_distribution}
+\end{marginfigure}
+
+
+
+\subsection{Wien's displacement law}
+\label{sec:wien_law}
+
+Planck's formulation of the theory of blackbody radiation bears a number of important
+consequences. The spectral energy density in frequency space can be written, e.g., as
+\begin{align*}
+  u_\nu(\nu; T) \propto \frac{x^3}{e^x - 1}
+  \quad\text{with}\quad
+  x = \frac{h\nu}{\kT},
+\end{align*}
+and the peak of the distribution satisfies the condition
+\begin{align*}
+  \dv{x} (\frac{x^3}{e^x - 1}) = 0
+  \quad\text{or}\quad
+  e^{-x} + \frac{1}{3}x - 1 = 0.
+\end{align*}
+This is a transcendental equation that can only be solved numerically, yielding
+$x_\text{peak} \approx 2.82144$, or
+\begin{align}
+  \nu_\text{peak} = b_\nu T
+  \quad\text{with}\quad
+  b_\nu \approx \frac{2.82144~\kB}{h} \approx
+  5.879 \times 10^{10}~\text{s}^{-1}~^\circ \text{K}^{-1},
+\end{align}
+which is historically knows as Wien's displacement law: the frequency $\nu_\text{peak}$
+at which the spectral energy distribution peaks is proportional to the temperature
+$T$ of the radiating body.
+
+The same exact reasoning in wavelength space
+\begin{align*}
+  u_\lambda(\lambda; T) \propto \frac{x^5}{e^x - 1}
+  \quad\text{with}\quad
+  x = \frac{hc}{\lambda\kT},
+\end{align*}
+provides a similar trascendental equation, yielding $x_\text{peak} \approx 4.96511$,
+which allows to recast Wien's displacement law as
+\begin{align}
+  \lambda_\text{peak} = \frac{b_\lambda}{T}
+  \quad\text{with}\quad
+  b_\nu \approx \frac{hc}{4.96511~\kB} \approx
+  0.2898~\text{cm}~^\circ \text{K}.
+\end{align}
+
+
+
+\subsection{The Stefan-Boltzmann law}
+\label{sec:stefan_boltzmann_law}
+
+If we integrate the spectral energy distribution, in any of the equivalent representations,
+we get the total energy per unit volume
+\begin{align}
+  u(T) & = \int_0^\infty u_E(E; T)\diff{E} =
+  \frac{8\pi}{(hc)^3} \int_0^\infty \frac{E^3}{e^\frac{E}{\kT} - 1} \diff{E} =\\\nonumber
+  & = \frac{8\pi \kB^4 T^4}{h^3 c^3}
+  \underbrace{\int_0^\infty \frac{z^3}{e^z - 1} \diff{z}}_{\nicefrac{\pi^4}{15}} =
+  \frac{8\pi^5 \kB^4}{15 h^3 c^3} T^4,
+\end{align}
+which, notably, is proportional to the fourth power of the temperature. Since, in
+the same vein, the total number density reads
+\begin{align}
+  n(T) & = \int_0^\infty \dv{n}{E}{(E; T)}\diff{E} =
+  \frac{8\pi}{(hc)^3} \int_0^\infty \frac{E^2}{e^\frac{E}{\kT} - 1} \diff{E} =\\\nonumber
+  & = \frac{8\pi \kB^3 T^3}{h^3 c^3}
+  \underbrace{\int_0^\infty \frac{z^2}{e^z - 1} \diff{z}}_{2 \zeta(3)} =
+  \frac{16\pi \zeta(3) \kB^3}{h^3 c^3} T^3,
+\end{align}
+the average photon energy at a given temperature $T$ is readily calculated by
+dividing the total energy by the total number of photons
+\begin{align}
+  \ave{E} = \frac{u(E)}{n(E)} = \frac{\pi^4}{30 \zeta(3)} \kT = 2.7012 \; \kT.
+\end{align}
+This is close (but not quite identical) to the peak of the spectral energy distribution
+in energy space.
+
+It is worth noting that, in this context, there are at least three tightly related
+concepts we should distinguish:
+\begin{itemize}
+  \item the overall energy density $u(T)$ we have just calculated;
+  \item the \emph{radiance} $I(T)$, which represents the energy flux per unit area,
+    solid angle and time;
+  \item the \emph{radiant emittance} $M(T)$, which represents the energy flux crossing
+    a given unit area from all possible directions per unit time\sidenote{This is
+    a fundamental concept for us, because whenever we have a blackbody (e.g., a star)
+    at a given temperature, we get the overall radiated power (energy output per
+    unit time) by just multiplying the radiant emittance by the emitting surface.}.
+\end{itemize}
+
+Since everything, in our discussion, is isotropic, the radiance is related to the
+energy density by the simple relation
+\begin{align}
+  I(T) = \frac{c}{4\pi} u(T).
+\end{align}
+(You need a velocity to make the units right, and that has to be the speed of light,
+at which the radiation travels, while $4\pi$ is the total solid angle.)
+
+The radiant emittance, on the other hand, is readily calculated by integrating over
+the solid angle the component of the radiance orthogonal to a given unit surface
+\begin{align*}
+  M(T) = \int_\Omega I(T) \cos\theta d\Omega =
+  I(T) \int_0^{2\pi} d\phi \int_0^{\frac{\pi}{2}} \cos\theta \sin\theta d\theta = \pi I (T)
+\end{align*}
+We have therefore the fundamental relation between the energy density and the
+radiant emittance
+\begin{align}
+  M(T) = \frac{c}{4} u(T) =
+  \frac{2\pi^5 \kB^4}{15 h^3 c^2} T^4 = \sigma T^4,
+\end{align}
+which represents the well-known Stefan-Boltzmann law. The constant $\sigma$ is called the
+Stefan-Boltzmann constant, and in the cgs system is
+\begin{align*}
+  \sigma = \frac{2\pi^5 \kB^4}{15 h^3 c^2} =
+    5.67 \times 10^{-5}~\text{erg}~\text{cm}^{-2}~\text{s}^{-1}~^\circ~\text{K}^{-4}.
+\end{align*}
+
+For completeness, we can put everything together and derive compact and useful
+expression for the energy density and pressure of a photon gas at the thermal
+equilibrium
+\begin{align}
+  u(T) = \frac{4\sigma}{c} T^4 \quad\text{and}\quad \pressure(T) = \frac{4\sigma}{3c} T^4.
+\end{align}

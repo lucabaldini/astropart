@@ -1,0 +1,424 @@
+Lecture 1: February 15, 2023 (2 h)
+==================================
+
+- Intro and logistics
+- Program (see syllabus)
+- Material: Perkins, Longair, Kippenhan and Weigert, Mohapatra, Weinberg,
+  Bergstroem and Goodbar, Fermi (Nuclear Physics)
+
+Astrphysics and particles: rotation curves for spiral galaxies, structure of a
+galaxy, charachteristic length ~ kp (= 3 ly).
+
+--- Evidences for the existence of dark matter
+
+Newtonian dynamics: naive model of a shpere with constant density + disk with no
+mass,  v \propto r inside the bulge and v \propto r ^ -0.5 outside. Observation
+does not match -> need to add a halo to have the velocity ~const al large radii
+
+plot -> Rotation curve of NGC 3196
+plot -> Abell 2744 (Pandora): mass and light distribution does not match
+plot -> Cosmic microwave background, blackbody at 2.725 K, needs to be inserted in
+  our model of the universe
+
+Definition of Galactic coordinates, nice drawing!
+
+Anisotropies of the CMB. Decomposition in sherical armonics. Subtract constant,
+origin of dipole due to the Earth motion, subtraction of the dipole, and residual
+fluctations.
+
+--- CR phenomenology
+
+Experiments with electroscopes, discovery by Hess. Impossible to eliminate: some
+ionizing radiation pervades our environment. Natural radioactivity? Not only:
+it increase with altitude.
+
+plot -> Kohlhorster experiment
+
+Millikan and experiments under water. Definition of grammage. Cosmic rays were
+named by Millikan
+
+plot -> Millikan underwater experiments
+
+1930: discovery of the positron
+1947: pions and kaons (quark/antiquark, some decays of interest to us)
+
+Emulsions.
+
+Since the '60 particle Physics switches to accelerators.
+
+plot -> accelerators and energy in the center of mass vs. year. Exponential at the
+  beginning, now flattening.
+
+plot -> cosmic-ray spectrum. Interesting: atmospheric neutrinos overlaid! Bilog,
+  almost a power law, but a few features: knee at 10^15--16 eV, ankle at 10^19 eV.
+
+plot -> same spectrum, multiplied by E^3
+
+Difference between energy in the center of mass and single particle.
+
+Simple calculation in special relativity, see notes. (Special relativity is given
+for granted.) Invariants are independent from the reference system.
+
+LHC = 10^13 ev in CM
+UHECR = 10^15 ev in CM (xcheck!!!)
+
+A CR gives the same CM energy as the LHC @ 5e16
+
+CR composition: first measurements with emulsions
+
+plot -> ionization density
+
+plot -> modern chemical composition
+
+Production of antimatter during propagation.
+
+Low-energy cosmic rays: solar modulation at low energy. Differential spectrum
+peaking at 300 MeV. We concentrate in high energies, as we are not interested
+in solar physics.
+
+
+--- CR measurements
+
+Nice schematic representation (neutrinos not included)
+
+             Charged                             <->     neutral
+
+heavy        protons, nuclei, pions, muons               neutron
+light        electrons                                   photons (x, gamma)
+
+dE/dx for heavy particles, Bethe-Block
+
+x is the reduced length, L \rho. Only depends on beta -> means to identify a
+particle if I measure p.
+
+Electrons and radiation losses.
+
+chart -> dependence on Z (Z vs Z^2) and E (ln E vs E)
+
+Critical energy, definition and parametrization.
+
+Photon interactions.
+
+chart -> dependence on A and E, pair production threshold.
+
+EM showers, simple model.
+
+
+
+Lecture 2: February 16, 2023 (1 h)
+==================================
+
+Definition of the cross section. Look carefully at the derivation, because it
+is not very clear.
+
+1 / X = \sigma \rho and interaction length
+
+Conversion between number density and mass density, Avogadro number.
+
+Feynman diagrams for pair production and breemsstralhung. Z^2 dependence and
+vertex in the diagram. Similarity of the diagrams, and 7/9, due to the phase
+space factor.
+
+Radiation length, simplified model for an EM shower.
+
+Hadronic showers, characteristic scalings.
+
+
+
+Lecture 3: February 17, 2023 (2 h)
+==================================
+
+--- Ground-based detectors
+
+EAS: working principle, E > 1e14 eV Auger, Argo
+
+Hi altitude (2--3 km), shower maximum at ~10 km altitude, and we want to be as high as
+possible, since we only have one sampling. (Counter-example: Gran Sasso, with
+EM component on surface and muons underground.)
+
+Sampling in time and position, direction from temporal information with 1 deg accuracy.
+Energy from r(600), i.e., signal deposited in a circle of 600 m radius (really?
+Only 600 m? Is it possible?). Energy on statistical basis, but ancillary information
+(muon and electron components, fluorescence).
+
+Slide about the Auger site. 3000 km^2, 875 g/cm^3, 1400 asl. 1600 water tanks
+with 1.5 km spacing, use the Cherenkov effect + fluorescence detectors in
+four sites.
+
+---> Add some numbers. Atmosphere interaction length? Typical extension of the
+shower? Time resolution?
+
+Cherenkov tanks: water + photomultiplier + readout electronics + GPS, with
+antennas to transmit the information. Cherenkov angle in angle is 42 degrees,
+mirror on the bottom and one PMT on the top. Explain the need for coincidences.
+
+Example of an event display in Auger.
+
+Also some sensitivity at Z.
+
+Another example: KASKADE in Germany. 200 x 200 m, with 252 detectors + one
+central hadronic calorimeter to measure the core of the shower + muon detector.
+Showers better measured, but limited in energy on the high end.
+
+---> Investigate the relationship between A and the muon content.
+
+Completely different principle: fluorescence light. N in the atmosphere is
+excited by charged particles, and emit radiation at 300--400 nm. Parabolic mirrors
+can focus fluorescence light on a pixelized focal plane detector. This images the
+entire shower, as opposed to the surface detectors, that sample the shower on a
+plane.
+
+Pro: purely calorimetric measurement.
+
+Cons: don't work with bad weather, of with moon, low duty cycle.
+
+Need a nice drawing of fluorescence detectors.
+
+And yet another principle: Cherenkov telescopes, using the Cherencov effect in
+air.
+
+Need a nice compilation of all the instruments.
+
+
+--- Space-based detectors
+
+Small, but very precise measurements. See the CR *before* they interact with the
+atmosphere.
+
+Some features:
+- limited dimensions (~m)
+- determine the charge sign with a magnetic field;
+-
+
+Spectrometer: tracker + B, MDR, need TOF to tell upward/downward
+
+p (beta) + dE/dx allows to measure the mass of the particle, i.e., distinguish
+protons, pions, and electrons.
+
+Also measure Z -> proton vs. nuclei.
+
+Calorimeter: measure the energy, distinguish EM and hadronic showers.
+
+Pair-conversion telescopes, Fermi. (And CR, and separation of electrons and
+positrons with the Earth magnetic field.)
+
+Slides finished. Back to the blackboard.
+
+
+--- Motion in B
+
+B uniform, helix solution, gyroradius. Definition of rigidity.
+
+Application to a spectrometer, calculate the MDR, 2 TeV with L = 1 m, B = 1 T and sigma = 10 um.
+(I suspect that the point can be made in a less involuted way than the one in the
+recording. Cross check.)
+
+Another example: a 1 TeV proton from the Sun to the Earth is essentially
+undeflected. (B ~ 10 uG).
+
+Another example: gyrofrequency and non relativistic electron in a atom, 21 cm line
+and Zeman splitting 29 GHz / T, or 29 Hz at 10 uG. Cannot be seen, but
+measuring the polarization allows to map B.
+
+Uniform field -> slowly variable field: adiabatic invariants. In the non relativistic
+case for a field that is uniform in space and changes slowly in time, the bottomline
+is that the magnetic moment is conserved, or BR^2 is conserved. This is at the
+basis of the motion of trapped radiation and magnetic mirrors, and the
+Fermi second order acceleration mechanism.
+
+
+
+Lecture 4: February 24, 2023 (2 h)
+==================================
+
+--- Fermi acceleration of second order
+
+Reflection on magnetic mirrors. Elastic collision in the mirror reference frame,
+two Lorentz transformation. Average over the proper cos(theta) distribution.
+
+Calculation of the energy spectrum. (This can be reused later for other mechanisms).
+
+Power law! Cannot predict the index, but can calculate the escape probability.
+Acceleration time of the order of 10% of the life of the Universe, way too long.
+
+
+--- Acceleration of first order
+
+Elements of fluidodynamic. Observables and conservation laws: mass, momentum and
+energy.
+
+
+Lecture 5: March 1, 2023 (2 h)
+==============================
+
+Very long introduction about non-relativistic fluidodynamic, with continuity
+equation and Euler equation in 3D, and energy conservation in 1D.
+Importance of the entalpy.
+
+Example of small perturbations in a fluid and speed of sound. Application to the air.
+
+Full treatment of the first-order acceleration and derivation of the
+spectral index.
+
+
+Lecture 6: March 2, 2023 (1 h)
+==============================
+
+Places for acceleration of CR. Galactivc SNR nearby, speed of the shock ~10,000 km/s
+
+- Tycho 1572, SN Ia at 10 kly
+- Crab, 1052, SN II
+- Kepler, 1603, SN Ia at 20 kly
+
+With charged CR it is hard because they do not proceed in a straight line -> use
+neutral. Neutrinos, or pi0 decay in 2 gamma. Science paper by Fermi. Spectral shape
+at low energy distinguish bremms from pi0 decay.
+
+--- Energetic balance of CR
+
+Spectrum of CR = 2e4 (E/E0)^-gamma, can integrate between 1 GeV and infty,
+multiply by 4pi, E, c (to convert in Energy per cubic m) (see calculation at min 20:00)
+= 8e5 eV /m^3, or 1 MeV/m^3
+
+CR contained within our Galaxy by magnetic fields, or cylinder of 10 kp x 700 pc
+i.e., 1e61 m^3 for 10^7 years (containment time). If I assume one SNR every 30 years
+
+epsilonCR x VG / t_conf = ESN / TSN
+
+Can calulate ESN, which turns out 5e49 erg, which is about 2% of the energy
+in the filaments (1e51 erg).
+
+
+---Acceleration sites
+
+Hillas plot (1984). SNR can accelerate up to 1e15--16 eV.
+
+
+--- Acceleration in pulsars
+
+Pulsars, discovered in radio, with periods of ms -> s. Contraction from 1e6 km
+to 10 km. In the process B scales as r^-2, i.e., BR^2 is conserved just like
+in the adiabatic invariant, although this is not adiabatic. The process is
+completely different, but the scaling is the same. The physical reason is that
+plasma in this condition is very conductive,
+
+Consider a spira
+
+L di/dt + Ri = -d phi_ext/dt
+
+R = 0 -> phi_i + phi_ext = const, and BR^2 is conserved.
+
+Magnetic field becomes 10^4--10^9 T, pulsating because the axes are not aligned.
+
+Syrovatskii argument: E_max ~ 1e20 eV -> see plot at 39:50. Electric field
+created by variation of B (rotation)
+
+4EL = omega / c B L^2
+
+If omega = c / L -> eBL/4
+
+
+--- AGN and jets
+
+Effetto pinza: v x B pushes toward the inner region.
+
+Starburst galaxies, due to collision between galaxies. Collective SNR much larger.
+
+
+
+--- Additional remarks on CR
+
+Balistic vs. diffusion. Gamma 2 -> 2.7 due to diffusion and escape, more probable
+at high energy.
+
+Increase of the average mass around the knee. E_cut ~ Ze: protons escape first.
+
+1e18 -> ankle, extra-galactic CR kicking in. Order of magnitude of the gyroradius
+vs. galactic radius.
+
+Auger and dipole anisotropy. See the paper. And link with the astrophysical
+neutrinos above 1 PeV (2018). One event corresponding to an AGN flare.
+
+Sharp cutoff at 1e20 eV. GZK cutoff.
+
+
+Lecture 15: March 15, 2023 (1 h)
+================================
+
+Universe opaque for high-energy charged particles.
+
+p + gamma -> Delta+ -> N pi
+
+Delta+: hadronic bound state. Cross section is Lorentian (resonance).
+
+sigma ~ 1e28 cm^2
+
+(pp + pgamma)^2 = (mDelta c^2)^2 -> see derivation at 10 min
+
+2(Ep Egamma) (1 - cos theta) = (mdelta^2 - mp^2) c^4
+
+2.7 deg K -> kT = 2.7 /12000 = 1/4000 eV
+
+Threshold for the process is Ep > 4.4e20 eV. Right order of magnitude!
+
+
+m_pion is 10% of m_p, that is, the p looses 10% of its energy at any
+collision, and stops in 10 collision.
+
+lambda = 1/nsigma
+
+n = 400 cm^-3 (CMB)
+
+lambda = 0.25 10^24 cm ~ 10 Mpc
+
+The proton can at maximum travel 10 x 10 = 100 Mpc
+
+
+End of the CR part at 22 min.
+
+
+
+
+
+
+Short synopsis of the last part of the course
+=============================================
+
+Cosmological principle, isotropy and uniformity of the universe.
+
+Hubble law, and naive interpretation.
+
+Calculation of the critical density in a Newtonian setting.
+
+Equivalence principle.
+
+Four-vectors. Transformation laws, covariant and controvariant vectors, higher-rank
+tensors. Scalar products.
+
+Geodesic equation. Connection. Metric tensor.
+
+Newtonian limit.
+
+Metric for a isotropic universe.
+
+Covariant derivative and parallel transport.
+
+Riemann tensor. Ricci tensor. Ricci scalar. Curvature.
+
+FLRW metric.
+
+Energy momentum tensor.
+
+Einstein equation.
+
+Friedman-Lamaitre equations. Continuity equation.
+
+Evolution of the scale factor.
+
+Toy universes.
+
+Redshift.
+
+Luminosity distance.
+
+Thermodinamic of the Universe. Distribution functions. Fermi-Dirac, Bose Einstein.

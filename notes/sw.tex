@@ -1,0 +1,59 @@
+\chapter{Software and data}
+\label{chap:software}
+
+
+Since this writeup is intended for people to do useful stuff with its content,
+we provide here a (biased and non comprehensive) list of open-source projects and
+data sources that are related to the content of the document. The vast majority
+of the figures in the writeup have been crafted using one or more of the packages
+and sources described in this appendix.
+
+
+\section{Python packages}
+
+Since Python is by far the most popular scripting language for scientific applications,
+we provide a list of useful Python packages intendend as easy-access resources
+to the relevant data.
+
+
+\subsection{\texttt{crdb} (\href{https://github.com/crdb-project/crdb}{code},
+  \href{https://crdb.readthedocs.io/en/latest/}{docs})}
+
+Python interface to the cosmic-ray database, compiling cosmic-ray data and meta-data
+from $10^6$ to $10^{21}$~eV, for protons, nuclei and leptons.
+
+
+\subsection{\texttt{pdg} (\href{https://github.com/particledatagroup/api}{code},
+  \href{https://pdgapi.lbl.gov/doc/pythonapi.html}{docs})}
+
+The PDG Python API provides a high-level tool for programmatically accessing PDG
+data. This mainly includes particle data, such as particle properties and branching
+fractions.
+
+Atomic and nuclear properties of materials, such as stopping power for muons
+between 1~MeV and 1~PeV, radiation and interaction lengths, critical energies, and
+much more are available in machine-readable form from
+\url{https://pdg.lbl.gov/2023/AtomicNuclearProperties/index.html}.
+
+
+\subsection{\texttt{xcom} and \texttt{star} (\href{https://github.com/Zelenyy/nist-calculators}{code})}
+
+Python interfaces to the NIST XCOM and STAR databases. The former provides
+photon cross section data in elements and compounds from 1~keV to 100~GeV, while
+the latter includes stopping-power and range tables for electrons, protons and He ions
+between 1~keV and 10~GeV.
+
+
+\subsection{\texttt{xraydb} (\href{https://github.com/xraypy/XrayDB}{code},
+  \href{https://xraypy.github.io/XrayDB/}{docs})}
+
+XrayDB provides atomic data, characteristic X-ray energies, and X-ray cross sections
+(taylored for energues between 250~eV and 250~keV) for the elements.
+
+
+
+%%% Candidates for addition
+
+% astropy.cosmo
+% pint https://pint.readthedocs.io/en/stable/ (units)
+% uncertainties 

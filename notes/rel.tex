@@ -1,0 +1,141 @@
+\chapter{Special relativity}\label{chap:relativity}
+
+
+\section{Four-momentum}
+
+Relativistic kinematics is naturally formulated in terms of the
+four-momentum\sidenote{Since we shall note use the four-vector notation a lot,
+and in the spirit of avoiding confusion, we shall use the funny-looking
+calligraphic~$\mathcal{p}$ to indicate it, leaving the old, plain $p$ for the
+norm of the three-dimensional momentum
+\begin{align*}
+  p = \abs{\vb{p}} = \gamma \beta mc.
+\end{align*}}
+\begin{align}
+  \mathcal{p} = \qty(\frac{E}{c}, \vb{p}),
+\end{align}
+where
+\begin{align*}
+  E = \gamma m c^2, \quad
+  \vb{p} = \gamma m \vb{v} \quad\text{and}\quad
+  p = \gamma\beta m c.
+\end{align*}
+Here and in the following, for completeness, the relativistic $\beta$ and $\gamma$
+are defined as\sidenote{The definition for $\gamma$ can be inverted, yielding
+\begin{align*}
+  \beta = \sqrt{1 - \frac{1}{\gamma^2}} = \sqrt{\frac{\gamma^2 - 1}{\gamma^2}},
+\end{align*}
+which is sometimes useful.}
+\begin{align*}
+  \beta = \frac{v}{c}
+  \quad\text{and}\quad
+  \gamma = \frac{1}{\sqrt{1 - \beta^2}}.
+\end{align*}
+
+It is trivial to show that norm squared of the four momentum is a Lorentz-invariant
+quantity---more specifically, the proper mass of the particle squared. If we choose the
+$(1, -1, -1, -1)$ metric signature, e.g., we have
+\begin{align*}
+  \mathcal{p}^2 = \frac{E^2}{c^2} - \abs{\vb{p}}^2 =
+  m^2 \gamma^2 c^2 - m^2 \gamma^2 \beta^2 c^2 =
+  m^2 \gamma^2 c^2 (1 - \beta^2) = m^2c^2,
+\end{align*}
+which represents the usual dispersion relation for a generic particle of mass $m$
+\begin{align}
+  m^2 c^4 = E^2 - p^2c^2.
+\end{align}
+The kinetic energy reads
+\begin{align}
+  E_k = E - mc^2.
+\end{align}
+
+With some trivial algebra one can derive some useful relations for $\gamma$ and
+$\beta$, once $E$ and $p$ are known:
+\begin{align*}
+  \gamma = \frac{E}{mc^2}, \quad
+  \beta = \frac{pc}{E} \quad\text{and}\quad
+  \gamma\beta = \frac{p}{mc}.
+\end{align*}
+
+
+\section{Lorentz tranformations}
+
+The Lorentz transformations for a generic contravariant four-vector can
+be conveniently written in matrix form as:
+\begin{equation}
+{a'}^\mu = \Lambda^\mu_\nu a^\nu
+\end{equation}
+where the explicit form of $\Lambda^\mu_\nu$ is, in the particular case of
+a boost in the direction of the $x$-axis with velocity $\beta c$, is:
+\begin{equation}
+  \Lambda^\mu_\nu =
+  \begin{pmatrix}
+    \gamma & -\beta\gamma & 0 & 0\\
+    -\beta\gamma & \gamma & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & 1\\
+  \end{pmatrix}
+\end{equation}
+
+The relativistic formula for the addition of velocities in the simple case of
+collinear motion reads
+\begin{equation}
+u' = \frac{u + v}{1 + uv/c^2}.
+\end{equation}
+
+
+\section{Four momentum: lab and CM frames}
+
+As a useful application of the Lorentz transformation in special relativity, we
+shall calculate the energy available in the center of mass for a collision
+between a particle of mass $m$ and energy $E$ approaching an identical particle
+at rest (in a given reference system).
+
+\begin{marginfigure}
+  \begin{tikzpicture}
+    \node at (0, 0) {$\left(\frac{E}{c},~\vb{p}\right)$};
+    \node at (0, -0.5) [circle,fill,inner sep=1.5pt]{};
+    \node at (-1, -0.5) {Lab};
+    \draw[arrows = {-Computer Modern Rightarrow[line cap=butt]}] (0, -0.5)--(1, -0.5);
+    \node at (2, 0) {$\left(mc,~\vb{0}\right)$};
+    \node at (2, -0.5) [circle,fill,inner sep=1.5pt]{};
+    \node at (0, -2.25) {$\left(\frac{E_\text{CM}}{2c},~\vb{p}_\text{CM}\right)$};
+    \node at (0, -1.5) [circle,fill,inner sep=1.5pt]{};
+    \draw[arrows = {-Computer Modern Rightarrow[line cap=butt]}] (0, -1.5)--(0.75, -1.5);
+    \node at (2, -2.25) {$\left(\frac{E_\text{CM}}{2c},~-\vb{p}_\text{CM}\right)$};
+    \node at (2, -1.5) [circle,fill,inner sep=1.5pt]{};
+    \node at (-1, -1.5) {CM};
+    \draw[arrows = {-Computer Modern Rightarrow[line cap=butt]}] (2, -1.5)--(1.25, -1.5);
+  \end{tikzpicture}
+  \caption{Cinematic of the collision between two identical particles of mass $m$
+    in the reference frames of the laboratory and of the center of mass. (Note
+    $E_\text{CM}$ is the \emph{total} energy in the center of mass system.)}
+  \label{fig:relativistic_collision}
+\end{marginfigure}
+
+The four momentum conservation in the lab and the center-of-mass reference
+systems, as shown in figure~\ref{fig:relativistic_collision}, reads
+\begin{align*}
+  \overbrace{\left(\frac{E}{c} + mc, \vb{p}\right)^2}^\text{Lab} =
+  \overbrace{\left(\frac{E_\text{CM}}{c}, \vb{0}\right)^2}^\text{CM},
+\end{align*}
+(here $E_\text{CM}$ indicates the \emph{total} energy in the center of mass).
+Taking the modulo squared of both sides yields
+\begin{align*}
+  E^2 + m^2c^4 + 2Emc^2 - p^2c^2 = E_\text{CM}^2,
+\end{align*}
+and, noting that $E^2 - p^2c^2 = m^2$, we have
+\begin{align*}
+  2m^2c^4 + 2Emc^2 = E_\text{CM}^2.
+\end{align*}
+In the ultra-relativistic limit, where $E \gg mc^2$, this reads
+\begin{align}
+  E = \frac{E_\text{CM}^2}{2mc^2}
+  \quad\text{or}\quad
+  E_\text{CM} = \sqrt{2Emc^2}.
+\end{align}
+
+A proton-proton collision at LHC, with a total energy $E_\text{CM} = 13.6$~TeV in the
+center-of-mass reference frame, is kinematically equivalent to a collision
+of a $9.3 \times 10^{16}$~eV proton (right above the knee in the cosmic-ray spectrum)
+with another proton at rest.
