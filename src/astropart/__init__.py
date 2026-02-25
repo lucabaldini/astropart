@@ -35,9 +35,9 @@ __url__ = f'https://bitbucket.org/lbaldini/{__pkgname__}'
 
 # Basic package structure.
 ASTROPART_ROOT = Path(__file__).parent
-ASTROPART_BASE = ASTROPART_ROOT.parent
+ASTROPART_BASE = ASTROPART_ROOT.parent.parent
 ASTROPART_DATA = ASTROPART_ROOT / 'data'
-ASTROPART_LATEX = ASTROPART_BASE / 'latex'
+ASTROPART_LATEX = ASTROPART_BASE / 'notes'
 ASTROPART_MACRO = ASTROPART_LATEX / 'macro'
 ASTROPART_FIGURES = ASTROPART_LATEX / 'figures'
 

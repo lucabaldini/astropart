@@ -1,4 +1,4 @@
-# Copyright (C) 2024, Luca Baldini (luca.baldini@pi.infn.it)
+# Copyright (C) 2026, Luca Baldini (luca.baldini@pi.infn.it)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,62 +14,45 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-"""Plot some relevant quantities specific to the Earth atmosphere.
+"""Plot the particle gyroradius as a function of rigidity for different magnetic field strengths.
 """
 
 import astropy.constants as const
 import astropy.units as u
 import numpy as np
 
-from astropart.plot import plt, margin_figure, setup_ca, save_cf, add_yaxis, subplot_vertical_stack
-
-u.eV_c = u.def_unit('eV / c', u.eV / const.c)
+from astropart.plot import plt, standard_figure, setup_ca, save_cf
 
 
 
-# import astropy.units as u
-# from astropy.constants import m_e, e  # Electron mass and charge
-
-# def gyroradius(m, q, v_perp, B):
-#     """
-#     Calculate the gyroradius (Larmor radius) of a charged particle.
-
-#     Parameters:
-#     m : astropy.Quantity
-#         Mass of the particle (with units)
-#     q : astropy.Quantity
-#         Charge of the particle (with units)
-#     v_perp : astropy.Quantity
-#         Perpendicular velocity (with units)
-#     B : astropy.Quantity
-#         Magnetic field strength (with units)
-
-#     Returns:
-#     astropy.Quantity
-#         Gyroradius (with units)
-#     """
-#     return (m * v_perp) / (abs(q.si) * B)
-
-# # Example: Electron in a 1 Tesla field, moving at 1e6 m/s perpendicular velocity
-# B_field = 1 * u.T  # 1 Tesla
-# v_perp = 1e6 * u.m / u.s  # 1 million m/s
-
-# r_g = gyroradius(m_e, e, v_perp, B_field)
-# print(f"Gyroradius: {r_g.to(u.mm)}")
-
-
-#margin_figure('gyroradius', height=2.25)
-
-p = 1.e9 * u.eV_c
+R = 1.e9 * u.V
 B = 1. * u.T
-print(p, B)
+rho = R / B / const.c
+print(R, B, rho.to(u.m))
 
-rho = p.to(u.g * u.m / u.s) / const.e.si / B
-print(rho.to(u.m))
+R = 1.e15 * u.V
+B = 1. * u.G
+rho = R / B / const.c
+print(R, B, rho.to(u.m))
 
-#r = np.linspace(1.e9, 1.e21) * u.GV
-#B = 1. * u.G
-#rho = p * const.c / const.e.to(u.C) / B.to(u.T)
-#plt.plot(p, rho.to(u.cm), color='k')
-#setup_ca(xlog=True, ylog=True, xlabel='Momentum [eV/c]', ylabel='Gyroradius [cm]')
-#plt.show()
+
+standard_figure("Gyroradius")
+R = np.linspace(1.e9, 1.e21) * u.V
+x = 9.e12
+for B in [1. * u.uG, 1. * u.G, 1. * u.T, 1. * u.MG, 1. * u.TG]:
+    rho = R / B / const.c
+    plt.plot(R.to(u.V), rho.to(u.m), label=f'B={B}', color='black')
+    y = 2. * (x * u.V / B / const.c).to(u.m).value
+    plt.text(x, y, f'{B}', color='black', fontsize=8, rotation=24., va="top", ha="center")
+setup_ca(logx=True, logy=True, xlabel='Rigidity [V]', ylabel='Gyroradius [m]',
+         ymin=1.e-5, ymax=1.e18)
+
+y = 1. * u.au.to(u.m)
+plt.axhline(y, color='black', ls='--')
+plt.text(1.e17, 1.5 * y, "1 au")
+y = 1. * u.pc.to(u.m)
+plt.axhline(y, color='black', ls='--')
+plt.text(1.e17, 1.5 * y, "1 pc")
+
+save_cf()
+plt.show()

@@ -1,19 +1,42 @@
+%
+% Last reviewed on February 25, 2026
+%
+
 \chapter{Motion in a magnetic field}\label{chap:bmotion}
 
 In this chapter we briefly revise some basic facts about the motion of a charged
-particle in a magntic field. This is relevant for several different subjects
-covered in this book, such as the rigidity measurement in a magnetic spectrometer,
-the geomagnetically trapped radiation and the acceleration of cosmic rays.
+particle in a magnetic field. This is relevant for several different topics that are
+covered in this book, including the rigidity measurement in a magnetic spectrometer
+(section~\ref{sec:cr_exp_techniques}), the geomagnetically trapped radiation
+(section~\ref{sec:geomagnetic_field}) and the stochastic acceleration of cosmic rays
+(section~\ref{sec:cr_acceleration}), in both the second-order and first-order
+settings.
 
 The equation of motion in a (purely) magnetic field is of a particle with charge
 $q$ is dictated by the expression of the Lorentz force\sidenote{Since the
-Lorentz force is orthogonal to the velocity, it classically does not do work, that,
+Lorentz force is orthogonal to the velocity, classically it does not do work, that,
 is, it does not change the magnitude of $\vb{v}$, nor the relativistic $\gamma$
 factor
 \begin{align*}
   \dv{\vb{p}}{t} = \cancel{m \dv{\gamma}{t}\vb{v}} + \gamma m \dv{\vb{v}}{t} =
   \gamma m \dv{\vb{v}}{t}
-\end{align*}}, which in the cgs system reads
+\end{align*}}, which in the cgs\sidenote{Be advised that it is very easy to get
+confused when switching between the cgs and the MKS systems, here. The Lorentz
+force in MKS reads
+$$
+\dv{\vb{p}}{t} = q (\vb{v} \cross \vb{B})
+$$
+and the extra factor $c$ at the denominator in cgs propagates to all the other
+relevant equations, including the expression for the gyroradius and the definition
+of the rigidity. In a nutshell: in MKS electric and magnetic fields have different
+dimensions (with the latter measured in Tesla) and Maxwell's equations contain
+the $\epsilon_0$ and $\mu_0$ constants. In cgs Maxwell's equations are symmetric
+in $\vb{E}$ and $\vb{B}$, and the latter is measured in Gauss, with
+$$
+1~\text{T} = 10^{4}~\text{G}.
+$$
+Since astronomers like to measure magnetic fields in G and experimental particle
+physicist in T, there isn't a clear winner here.} system reads
 \begin{align}
   \dv{\vb{p}}{t} = \gamma m \dv{\vb{v}}{t} = \frac{q}{c} (\vb{v} \cross \vb{B}).
 \end{align}
@@ -21,8 +44,8 @@ factor
 
 \section{Motion in a uniform magnetic field}
 
-Let us consider a uniform and stationary magnetic field $\vb{B}$. In this case the
-motion can be decomposed into a part parallel to the magnetic field, whose
+Let us consider a uniform and stationary magnetic field $\vb{B}$. In this case
+the motion can be decomposed into a part parallel to the magnetic field, whose
 solution is trivial
 \begin{align*}
   \dv{\vb{p}_\parallel}{t} = 0
@@ -42,44 +65,62 @@ that the centrifugal force balances the Lorentz force
   m \gamma \frac{v_\perp^2}{\gyrorad} = \frac{qv_\perp B}{c}
   \quad\text{or}\quad
   \gyrorad = \frac{m\gamma v_\perp c}{qB} = \frac{p_\perp c}{qB} =
-  \frac{pc}{q} \frac{\sin\theta}{B}.
+  \frac{pc\sin\theta}{qB}.
 \end{align}
-This is customarily called the cyclotron radius or  the \emph{gyroradius}, and it
+This is customarily called the cyclotron radius or  the \emph{gyroradius}\sidenote{The
+corresponding formula in MKS is
+$$
+\gyrorad = \frac{p\sin\theta}{qB}.
+$$}, and it
 is an important parameter characterizing the motion of a particle into a magnetic
 field. The angle $\theta$ between the velocity and the magnetic field is usually
 referred to as the \emph{pitch angle}. The quantity
 \begin{align}
-  \rigidity = \frac{pc}{q}
+  \rigidity = \frac{pc}{q}~\text{[V]}
 \end{align}
-is called the \emph{rigidity}\sidenote{The rigidity is an important concept because
-two particles with the same rigidity behave the same way in a magnetic field, no
-matter what the specific values of the momentum and charge are. A magnetic spectrometer,
-as we shall see, measures the rigidity.} of the particle, and allows to rewrite the
-expression for the gyroradius as
+is called the \emph{rigidity}\sidenote{The rigidity is an important concept
+because two particles with the same rigidity behave in the same way in a magnetic
+field, no matter what the specific values of the momentum and charge are. Most
+notablly, a magnetic spectrometer measures the rigidity. By the way: in MKS
+the rigidity is naturally defined as
+$$
+\rigidity = \frac{p}{q}~\text{[T~m]}
+$$}
+of the particle, and allows to rewrite the expression for the gyroradius as
 \begin{align*}
   \gyrorad = \rigidity \frac{\sin\theta}{B}.
 \end{align*}
 
+\begin{figure}[htbp!]
+	\input{figures/gyroradius.pgf}
+	\caption{The gyroradius of a particle with unitary charge (e.g., a proton)
+    in a magnetic field as a function of its rigidity for different magnetic
+    field strengths, and assuming a pitch angle of $90^\circ$ ($\sin\theta=1$).
+    For reference, the gyroradius of a particle with rigidity of 1 GV in a
+    magnetic field of 1~T is about 3.3~m}
+\end{figure}
+
+
 As we shall see in a second, the concept of gyroradius is in fact important not
 only for the case of a uniform magnetic field, since even in inhomogeneous fields
 particles tend to exhibit a characteristic gyromotion, coupled to a drift along the
-field lines. The period of this motion is given by
+field lines. For completeness, the period, frequency and angular frequency of
+this motion are given by
 \begin{align}
   T_\gyrorad = \frac{2\pi \gyrorad}{v_\perp} = \frac{2\pi m \gamma c}{qB}, \quad
   \nu_\gyrorad = \frac{qB}{2\pi m \gamma c} \quad\text{and}\quad
   \omega_\gyrorad = \frac{qB}{m \gamma c}.
 \end{align}
 
+
+\section{Adiabatic invariants}
+
 The motion of a particle in a inhomogeneous magnetic field gets typically complicated
 very quickly, and in most cases the only complete solution of the problem is via
-a numerical ray-tracing of the particle. Adiabatic invariants, however, that we shall
-briefly review in the next section, provide a useful way of understanding the basic
-properties of the motion in a simple fashion.
+a numerical ray-tracing of the particle. Adiabatic invariants, however, provide
+a useful way of understanding the basic properties of the motion in a simple fashion.
 
-
-\section{Digression: adiabatic invariants}
-
-It is knwow from classical mechanics that when the Hamiltonian of a one-dimensional,
+It is known from classical mechanics that when the Hamiltonian of a one-dimensional,
 periodic system depends on one or more parameters that change
 \emph{slowly}\sidenote{By slow, here we mean that the fractional change of the
 energy of the system in one period is much smaller than unity.} in time, the line
@@ -87,11 +128,11 @@ integral
 \begin{align}\label{eq:adiabaitic_invariant_1d}
   J = \oint p \diff{q}
 \end{align}
-is approximately constant. Here $p$ and $q$ are a pair of canonically coniugate
+is approximately constant. Here $p$ and $q$ are a pair of canonically conjugate
 variables, the integral is performed over a closed orbit of the system, and
 the action $J$ is called an \emph{adiabatic invariant}. From a geometrical standpoint,
 $J$ represents the area of the phase space enclosed in a closed orbit, and it is
-easy to see that the line intergral~\eqref{eq:adiabaitic_invariant_1d} can be
+easy to see that the line integral~\eqref{eq:adiabaitic_invariant_1d} can be
 expressed in the equivalent form
 \begin{align*}
   J = \int\int \diff{p} \diff{q}.
@@ -99,8 +140,7 @@ expressed in the equivalent form
 
 \begin{marginfigure}
   \input{figures/adiabatic_invariant.pgf}
-  \caption{Trajectory of the periodic motion of a harmonic oscillator in the phse
-  space.}
+  \caption{Trajectory of the periodic motion of a harmonic oscillator in the phase space.}
   \label{fig:adiabatic_invariant}
 \end{marginfigure}
 
@@ -118,20 +158,22 @@ $\sqrt{2mE}$, and the area of the ellipse is
 that is, when $\omega$ changes adiabatically, the energy $E$ changes of the same
 fractional amount.
 
-We emphasize that it is sometimes the case that a system has more than one periodicity,
-and in that case at each periodicity corresponds a distinct adiabatic invariant.
+This can be generalized to systems with more than one degree of freedom, and to
+systems with more than one periodicity. In the latter case at each periodicity
+corresponds a distinct adiabatic invariant.
 
 
 \section{Motion in inhomogeneous magnetic fields}
 
 In plasma physics it is customary to define two invariants for the motion of a
-charged particle in a magnetic field: the first is related to the the gyrantion
+charged particle in a magnetic field: the first is related to the the gyration
 motion around the field lines, and the second is related to the periodic bouncing
 between magnetic mirroring points, when they exist. This also applies to geomagnetically
-trapped radiation, where a third periodic motion (a slow east-west drift about the Earth),
-and therefore a third invariant can be defined. Since the trajectory of a particle
-in a inhomogeneous magnetic field can be arbitrarily complicated, adiabatic invariants
-are extremely useful to characterize in simple terms the properties of a system.
+trapped radiation, where a third periodic motion (a slow east-west drift about
+the Earth), and therefore a third invariant can be defined. Since the trajectory
+of a particle in a inhomogeneous magnetic field can be arbitrarily complicated,
+adiabatic invariants are extremely useful to characterize in simple terms the
+properties of a system.
 
 For illustrative purpose we shall calculate explicitly the first plasma adiabatic
 invariant $J_1$ deriving from the gyration motion around the field lines, which
@@ -173,7 +215,8 @@ easy to show that it reduces to the actual magnetic moment of the current loop
 induced by the particle gyromotion in the non-relativistic limit\sidenote{Here
 $i = \nicefrac{q}{T\gyrorad}$ denotes the current associated to the moving change,
 and $S = \pi \gyrorad^2$ is the surface of the loop. Note that, in the expression
-for the gyroradius we have set $\gamma = 1$ since we are in the non-relativistics case.}
+for the gyroradius we have set $\gamma = 1$ since we are in the non-relativistic
+case.}
 \begin{align*}
   \mu_\text{NR} = \frac{iS}{c} = \frac{q \pi \gyrorad^2}{T_\gyrorad c} =
   \frac{m v_\perp^2 }{2 B} = \frac{\kine_\perp}{B}
@@ -236,13 +279,13 @@ decrease---\emph{charged particles feel a net repulsive force when moving in
 the direction of a magnetic field gradient} at the point that, under suitable
 conditions, the parallel velocity can get to zero and change sign, and a magnetic
 field gradient can act as a magnetic mirror. This is the very principle at the basis
-of plasma confinement, it is one of the fundamental mechenism at the base of the
+of plasma confinement, it is one of the fundamental mechanisms at the base of the
 geomagnetically trapped radiation, and is one of the ingredients of the Fermi
 first order acceleration mechanism.
 
 The parallel with the magnetic moment is actually more profound that we have
 sketched here, as a particle undergoing gyration motion acts like a small loop
-of current, and the component of the foce parallel to the magnetic field is
+of current, and the component of the force parallel to the magnetic field is
 essentially that of a inhomogeneous magnetic field acting on a magnetic moment
 \begin{align}
   F_\parallel = -\frac{\mu}{\gamma c}\pdv{B}{s}
