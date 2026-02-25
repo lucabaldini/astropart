@@ -1,5 +1,8 @@
 \documentclass{kaobook}
 
+% Workaround for kaobook + KOMA-Script (2025 updates): prevents caption recursion
+\usepackage[disablepatch=caption]{tocbasic}
+
 \setchapterstyle{kao}
 \usepackage{tikz-feynman}
 \usepackage{aas_macros}
@@ -34,7 +37,6 @@
 
 \author{Luca Baldini}
 \title{Astroparticle Physics: Lecture Notes}
-
 
 
 \begin{document}
