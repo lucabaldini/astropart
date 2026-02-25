@@ -7,4 +7,5 @@ notes/*.out
 notes/*.toc
 notes/*.mw
 notes/astropart.pdf
+notes/astropart.out.ps
 src/astropart/__pycache__/
