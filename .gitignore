@@ -1,0 +1,10 @@
+.vscode
+notes/*.aux
+notes/*.bbl
+notes/*.blg
+notes/*.log
+notes/*.out
+notes/*.toc
+notes/*.mw
+notes/astropart.pdf
+src/astropart/__pycache__/
