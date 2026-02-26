@@ -24,7 +24,7 @@ from astropart.plot import plt, margin_figure, setup_ca, setup_ca_drawing,\
     save_cf, draw_line, draw_arrow, draw_rectangle, draw_arc, _srcp
 
 
-def draw_cloud(label: str, speed: float):
+def draw_cloud(label: str, head_on: bool, beta: float = 0.3):
     """Draw the basic setup for the sketch of the cloud.
     """
     l = 0.9
@@ -38,22 +38,22 @@ def draw_cloud(label: str, speed: float):
     draw_line((0.7, 0.), (1.,0.))
     plt.text(0.7, -0.075, '$x$', va='top', ha='center')
     y = 0.75
-    x = speed
+    x = 0.3
     text = '$\\beta c$'
-    if speed < 0:
-        x -= 0.325
-        text = '$-\\beta c$'
+    #if speed < 0:
+    #    x -= 0.325
+    #    text = '$-\\beta c$'
     plt.text(x , y, text, va='center', ha='left')
-    draw_arrow((0., y), (speed, y))
+    draw_arrow((0., y), (beta, y))
     draw_particle()
-    if speed > 0:
-        draw_arc((0., 0.), 0.2, 0., np.degrees(np.arctan(1.25 * speed / y)))
-        plt.text(0.3, 0.025, '$\\theta$')
-        plt.text(0.95, 0.5, '$v_x = -c\\cos\\theta$', ha='right')
-    else:
-        draw_arc((0., 0.), 0.2, -np.degrees(np.arctan(1.25 * speed / y)), 180.)
-        plt.text(-0.25, 0.2, '$\\theta$')
-        plt.text(0.95, 0.5, '$v_x = c\\cos\\theta$', ha='right')
+    # if beta > 0:
+    #     draw_arc((0., 0.), 0.2, 0., np.degrees(np.arctan(1.25 * beta / y)))
+    #     plt.text(0.3, 0.025, '$\\theta$')
+    #     plt.text(0.95, 0.5, '$v_x = -c\\cos\\theta$', ha='right')
+    # else:
+    #     draw_arc((0., 0.), 0.2, -np.degrees(np.arctan(1.25 * beta / y)), 180.)
+    #     plt.text(-0.25, 0.2, '$\\theta$')
+    #     plt.text(0.95, 0.5, '$v_x = c\\cos\\theta$', ha='right')
 
 def draw_velocity(label: str, x1: float, x2: float, y: float = 0.5):
     """Draw an annotated arrow representing the gas velocity.
@@ -71,12 +71,12 @@ def draw_particle(y: float = 0.5):
 
 margin_figure('fermi_accel_headon', height=2., left=0.05, bottom=0.05, right=0.95)
 setup_ca_drawing()
-draw_cloud('head-on $(\\cos\\theta > 0)$', 0.3)
+draw_cloud('head-on $(\\cos\\theta > 0)$', head_on=True)
 save_cf()
 
 margin_figure('fermi_accel_follow', height=2., left=0.05, bottom=0.05, right=0.95)
 setup_ca_drawing()
-draw_cloud('following $(\\cos\\theta < 0)$', -0.3)
+draw_cloud('following $(\\cos\\theta < 0)$', head_on=False)
 save_cf()
 
 margin_figure('fermi_accel_average', height=2.)

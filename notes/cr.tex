@@ -848,24 +848,31 @@ frame and vice versa.
 Let us assume that, in the laboratory frame, the cloud is moving along the $x$-axis and
 the test particle (e.g., a proton) is impinging on the hard wall at an angle $\theta$,
 measured from the direction of motion of the cloud, as shown in figure~\ref{fig:fermi_accel}.
-(Note that in our setup the particle is always moving toward negative $x$ values,
+Note that in our setup the particle is always moving toward negative $x$ values,
 so that $\cos\theta < 0$ when the cloud is moving in the negative $x$ direction, i.e.,
-for a following collision.) The relevant Lorentz transformations involve the particle
-energy $E$ and the momentum component $p_x$ along the $x$-axis. The first transformation,
-from the laboratory frame to the cloud frame, is given by\sidenote{Note again that, here
-and in the rest of this section, $\beta$ and $\gamma$ refer to the velocity of the
-cloud, not that of the particle, which, as we said, is relativistic.}
+for a following collision. The relevant Lorentz transformations involve the particle
+energy $E$ and the momentum component $p_x$ parallel to the boost, but since our test
+particle is relativistic, we will make our life easier by assuming that
+$$
+  \abs{p_x c} = \abs{pc \cos\theta} \approx \abs{E \cos\theta},
+$$
+ans express everything in terms of energy---before and after the collision, and
+in both reference frames.
+
+The first transformation, from the laboratory to the cloud frame, reads\sidenote{Note
+again that, here and in the rest of this section, $\beta$ and $\gamma$ refer to
+the velocity of the cloud, not that of the particle!}
 \begin{align}
   \begin{cases}
-    E_i' = \gamma(E_i + \beta p_i c\cos\theta)\\
-    cp_i'\cos\theta' = \gamma(p_i c \cos\theta + \beta E_i).
+    E_i' = \gamma E_i (1 + \beta \cos\theta)\\
+    E_i' \cos\theta' = \gamma E_i (\cos\theta + \beta).
   \end{cases}
-  \tag{lab $\rightarrow$ cloud}
+  \tag{Lab $\rightarrow$ Cloud}
 \end{align}
-(Make sure you understand the $+$ on the right-hand side of both equations is due
-to the fact that the particle is moving toward negative $x$ values. The equations
-hold both for head-on and following collisions, as for the latter two minus
-signs---for $\beta$ and $\cos\theta$---cancel out.)
+(Take a deep breath and make sure you understand the plus sign on the right-hand
+side of both equations. The result is consistent with our intuition that the
+energy in the cloud reference frame is larger than in the laboratory for head-on
+collisions.)
 
 Since the collision is elastic in the cloud reference frame, the energy
 $E_f'$ and momentum $p_f'$ after the collision in the primed system are

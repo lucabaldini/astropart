@@ -236,7 +236,7 @@ def draw_arc(p0, radius, theta1, theta2, **kwargs):
     """
     #kwargs.setdefault('edgecolor', 'black')
     #kwargs.setdefault('facecolor', 'white')
-    arc = Arc(p0, 2. * radius, 2. * radius, 0., theta1, theta2, **kwargs)
+    arc = Arc(p0, 2. * radius, 2. * radius, angle=0., theta1=theta1, theta2=theta2, **kwargs)
     plt.gca().add_patch(arc)
 
 def add_yaxis(x : float, ymin : float, ymax : float, **kwargs):
