@@ -800,8 +800,8 @@ stochastic fashion.
 As we shall see, both are viable mechanisms, and both are likely at play in different
 kinds of astronomical acceleration sites: unipolar inductors associated to the
 rotating magnetic field in pulsars and magnetic reconnection are examples of regular
-acceleration\sidenote{We stress, howvwer, that owing to the high electrical conductivity
-of astrophysical plasmas, achieving large-scale elctrical fields in astrophysical
+acceleration\sidenote{We stress, however, that owing to the high electrical conductivity
+of astrophysical plasmas, achieving large-scale electrical fields in astrophysical
 environments is non trivial.}, while supersonic astrophysical shocks, as we shall
 see, provide the natural setting for stochastic acceleration.
 
@@ -828,15 +828,14 @@ to generate the broadband spectrum.
 
 The basic idea is that cosmic rays undergo multiple reflections from ideal magnetic
 mirrors\sidenote{If you are not familiar with the concept of a magnetic mirror, and
-why a magnetic field gradient exerts a repulsive on a charged particle, this is
+why a magnetic field gradient exerts a repulsive force on a charged particle, this is
 probably a good moment to have a look at appendix~\ref{chap:bmotion}.} (or clouds),
 representing irregularities in the Galactic magnetic field, which we model as plane
 fronts of infinite mass moving at a constant velocity $\beta c$, isotropically
 distributed in the Galaxy. This implies that the collision is elastic in the cloud
 reference frame, and the calculation of the change of energy in a single collision
 proceeds via two Lorentz transformation---from the laboratory frame to the cloud
-frame and vice versa. As we said, we shall consider the cosmic ray to be accelerated
-as a relativistic test particle.
+frame and vice versa.
 
 \begin{marginfigure}
   \input{figures/fermi_accel_headon.pgf}
@@ -846,24 +845,29 @@ as a relativistic test particle.
   \label{fig:fermi_accel}
 \end{marginfigure}
 
-Let us assume that, in the laboratory frame, the cloud is moving along the $x$-axis
-and the test particle is impinging on the hard wall at an angle $\theta$, measured
-from the direction of the direction of motion of the cloud, as shown in
-figure~\ref{fig:fermi_accel}. (Note that in our setup the test particle is always
-moving toward negative $x$ values, and $\cos\theta < 0$ when the cloud is moving
-in the negative $x$ direction.)
-The energy $E_i'$ and momentum $p_i'$ before the collision in the reference frame
-of the cloud (primed) can be written in terms of the corresponding quantities $E_i$
-and $p_i$ in the reference frame of the laboratory as\sidenote{Note again that, here
+Let us assume that, in the laboratory frame, the cloud is moving along the $x$-axis and
+the test particle (e.g., a proton) is impinging on the hard wall at an angle $\theta$,
+measured from the direction of motion of the cloud, as shown in figure~\ref{fig:fermi_accel}.
+(Note that in our setup the particle is always moving toward negative $x$ values,
+so that $\cos\theta < 0$ when the cloud is moving in the negative $x$ direction, i.e.,
+for a following collision.) The relevant Lorentz transformations involve the particle
+energy $E$ and the momentum component $p_x$ along the $x$-axis. The first transformation,
+from the laboratory frame to the cloud frame, is given by\sidenote{Note again that, here
 and in the rest of this section, $\beta$ and $\gamma$ refer to the velocity of the
 cloud, not that of the particle, which, as we said, is relativistic.}
-\begin{align*}
+\begin{align}
   \begin{cases}
     E_i' = \gamma(E_i + \beta p_i c\cos\theta)\\
     cp_i'\cos\theta' = \gamma(p_i c \cos\theta + \beta E_i).
   \end{cases}
-\end{align*}
-Since the collision is assumed to be elastic in the cloud reference frame, the energy
+  \tag{lab $\rightarrow$ cloud}
+\end{align}
+(Make sure you understand the $+$ on the right-hand side of both equations is due
+to the fact that the particle is moving toward negative $x$ values. The equations
+hold both for head-on and following collisions, as for the latter two minus
+signs---for $\beta$ and $\cos\theta$---cancel out.)
+
+Since the collision is elastic in the cloud reference frame, the energy
 $E_f'$ and momentum $p_f'$ after the collision in the primed system are
 \begin{align*}
   \begin{cases}
