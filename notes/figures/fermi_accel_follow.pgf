@@ -19,10 +19,22 @@
 %%   \import{<path to file>}{<filename>.pgf}
 %%
 %% Matplotlib used the following preamble
-%%   \usepackage{fontspec}
-%%   \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/usr/share/matplotlib/mpl-data/fonts/ttf/}]
-%%   \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/usr/share/matplotlib/mpl-data/fonts/ttf/}]
-%%   \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/usr/share/matplotlib/mpl-data/fonts/ttf/}]
+%%   \def\mathdefault#1{#1}
+%%   \everymath=\expandafter{\the\everymath\displaystyle}
+%%   \IfFileExists{scrextend.sty}{
+%%     \usepackage[fontsize=9.000000pt]{scrextend}
+%%   }{
+%%     \renewcommand{\normalsize}{\fontsize{9.000000}{10.800000}\selectfont}
+%%     \normalsize
+%%   }
+%%   
+%%   \ifdefined\pdftexversion\else  % non-pdftex case.
+%%     \usepackage{fontspec}
+%%     \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/home/lbaldini/.local/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/home/lbaldini/.local/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/home/lbaldini/.local/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%   \fi
+%%   \makeatletter\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}\makeatother
 %%
 \begingroup%
 \makeatletter%
@@ -56,11 +68,11 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetstrokeopacity{0.200000}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.139286in}{0.254107in}}%
-\pgfpathlineto{\pgfqpoint{0.975000in}{0.254107in}}%
+\pgfpathmoveto{\pgfqpoint{0.975000in}{0.254107in}}%
+\pgfpathlineto{\pgfqpoint{1.810714in}{0.254107in}}%
+\pgfpathlineto{\pgfqpoint{1.810714in}{1.758393in}}%
 \pgfpathlineto{\pgfqpoint{0.975000in}{1.758393in}}%
-\pgfpathlineto{\pgfqpoint{0.139286in}{1.758393in}}%
-\pgfpathlineto{\pgfqpoint{0.139286in}{0.254107in}}%
+\pgfpathlineto{\pgfqpoint{0.975000in}{0.254107in}}%
 \pgfpathclose%
 \pgfusepath{}%
 \end{pgfscope}%
@@ -74,11 +86,11 @@
 \pgfsetdash{}{0pt}%
 \pgfpathrectangle{\pgfqpoint{0.097500in}{0.128750in}}{\pgfqpoint{1.755000in}{1.755000in}}%
 \pgfusepath{clip}%
-\pgfpathmoveto{\pgfqpoint{0.139286in}{0.254107in}}%
-\pgfpathlineto{\pgfqpoint{0.975000in}{0.254107in}}%
+\pgfpathmoveto{\pgfqpoint{0.975000in}{0.254107in}}%
+\pgfpathlineto{\pgfqpoint{1.810714in}{0.254107in}}%
+\pgfpathlineto{\pgfqpoint{1.810714in}{1.758393in}}%
 \pgfpathlineto{\pgfqpoint{0.975000in}{1.758393in}}%
-\pgfpathlineto{\pgfqpoint{0.139286in}{1.758393in}}%
-\pgfpathlineto{\pgfqpoint{0.139286in}{0.254107in}}%
+\pgfpathlineto{\pgfqpoint{0.975000in}{0.254107in}}%
 \pgfpathclose%
 \pgfusepath{clip}%
 \pgfsys@defobject{currentpattern}{\pgfqpoint{0in}{0in}}{\pgfqpoint{1in}{1in}}{%
@@ -114,7 +126,7 @@
 \pgfusepath{stroke}%
 \end{pgfscope}%
 }%
-\pgfsys@transformshift{0.139286in}{0.254107in}%
+\pgfsys@transformshift{0.975000in}{0.254107in}%
 \pgfsys@useobject{currentpattern}{}%
 \pgfsys@transformshift{1in}{0in}%
 \pgfsys@transformshift{-1in}{0in}%
@@ -133,11 +145,11 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.124497in}{1.080999in}}%
-\pgfpathcurveto{\pgfqpoint{1.107662in}{1.114669in}}{\pgfqpoint{1.079935in}{1.141684in}}{\pgfqpoint{1.045839in}{1.157639in}}%
-\pgfpathcurveto{\pgfqpoint{1.011743in}{1.173593in}}{\pgfqpoint{0.973236in}{1.177571in}}{\pgfqpoint{0.936598in}{1.168922in}}%
-\pgfpathcurveto{\pgfqpoint{0.899961in}{1.160273in}}{\pgfqpoint{0.867298in}{1.139495in}}{\pgfqpoint{0.843937in}{1.109976in}}%
-\pgfpathcurveto{\pgfqpoint{0.820575in}{1.080457in}}{\pgfqpoint{0.807857in}{1.043895in}}{\pgfqpoint{0.807857in}{1.006250in}}%
+\pgfpathmoveto{\pgfqpoint{1.142143in}{1.006250in}}%
+\pgfpathcurveto{\pgfqpoint{1.142143in}{1.041846in}}{\pgfqpoint{1.130772in}{1.076528in}}{\pgfqpoint{1.109696in}{1.105214in}}%
+\pgfpathcurveto{\pgfqpoint{1.088620in}{1.133900in}}{\pgfqpoint{1.058921in}{1.155116in}}{\pgfqpoint{1.024952in}{1.165754in}}%
+\pgfpathcurveto{\pgfqpoint{0.990982in}{1.176392in}}{\pgfqpoint{0.954487in}{1.175906in}}{\pgfqpoint{0.920814in}{1.164366in}}%
+\pgfpathcurveto{\pgfqpoint{0.887140in}{1.152826in}}{\pgfqpoint{0.858018in}{1.130825in}}{\pgfqpoint{0.837714in}{1.101588in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -151,19 +163,6 @@
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.975000in}{0.254107in}}%
 \pgfpathlineto{\pgfqpoint{0.975000in}{1.758393in}}%
-\pgfusepath{stroke}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.097500in}{0.128750in}}{\pgfqpoint{1.755000in}{1.755000in}}%
-\pgfusepath{clip}%
-\pgfsetrectcap%
-\pgfsetroundjoin%
-\pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{currentstroke}%
-\pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.560000in}{1.006250in}}%
-\pgfpathlineto{\pgfqpoint{1.810714in}{1.006250in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -192,7 +191,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.810714in}{1.424107in}%
+\pgfsys@transformshift{0.306429in}{1.457536in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -205,7 +204,7 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.810714in}{1.424107in}}%
+\pgfpathmoveto{\pgfqpoint{0.306429in}{1.457536in}}%
 \pgfpathlineto{\pgfqpoint{0.975000in}{1.006250in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
@@ -213,7 +212,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.975000in,y=1.883750in,,base]{\color{textcolor}\rmfamily\fontsize{9.000000}{10.800000}\selectfont following \(\displaystyle (\cos\theta < 0)\)}%
+\pgftext[x=0.975000in,y=1.883750in,,base]{\color{textcolor}{\rmfamily\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}following $(\cos\theta < 0)$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetroundcap%
@@ -222,8 +221,8 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.167091in}{1.006250in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{0.870537in}{1.006250in}}{\pgfqpoint{1.558455in}{1.006250in}}%
+\pgfpathmoveto{\pgfqpoint{0.167060in}{1.006250in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{0.975005in}{1.006250in}}{\pgfqpoint{1.767422in}{1.006250in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -233,80 +232,74 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.508455in}{1.031250in}}%
-\pgfpathlineto{\pgfqpoint{1.558455in}{1.006250in}}%
-\pgfpathlineto{\pgfqpoint{1.508455in}{0.981250in}}%
-\pgfusepath{stroke}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=1.560000in,y=0.943571in,,top]{\color{textcolor}\rmfamily\fontsize{9.000000}{10.800000}\selectfont \(\displaystyle x\)}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=0.452679in,y=1.633036in,left,]{\color{textcolor}\rmfamily\fontsize{9.000000}{10.800000}\selectfont \(\displaystyle -\beta c\)}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\pgfsetroundcap%
-\pgfsetroundjoin%
-\pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{currentstroke}%
-\pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.947241in}{1.633036in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{0.849658in}{1.633036in}}{\pgfqpoint{0.767602in}{1.633036in}}%
-\pgfusepath{stroke}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\pgfsetroundcap%
-\pgfsetroundjoin%
-\pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{currentstroke}%
-\pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.817602in}{1.608036in}}%
-\pgfpathlineto{\pgfqpoint{0.767602in}{1.633036in}}%
-\pgfpathlineto{\pgfqpoint{0.817602in}{1.658036in}}%
-\pgfusepath{stroke}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\pgfsetroundcap%
-\pgfsetroundjoin%
-\pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{currentstroke}%
-\pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.999866in}{0.993817in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{1.392856in}{0.797322in}}{\pgfqpoint{1.771957in}{0.607772in}}%
-\pgfusepath{stroke}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\pgfsetroundcap%
-\pgfsetroundjoin%
-\pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{currentstroke}%
-\pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{1.738416in}{0.652493in}}%
-\pgfpathlineto{\pgfqpoint{1.771957in}{0.607772in}}%
-\pgfpathlineto{\pgfqpoint{1.716055in}{0.607772in}}%
+\pgfpathmoveto{\pgfqpoint{1.717422in}{1.031250in}}%
+\pgfpathlineto{\pgfqpoint{1.767422in}{1.006250in}}%
+\pgfpathlineto{\pgfqpoint{1.717422in}{0.981250in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.766071in,y=1.173393in,left,base]{\color{textcolor}\rmfamily\fontsize{9.000000}{10.800000}\selectfont \(\displaystyle \theta\)}%
+\pgftext[x=1.727143in,y=0.964464in,,top]{\color{textcolor}{\rmfamily\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$x$}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetroundcap%
+\pgfsetroundjoin%
+\pgfsetlinewidth{1.003750pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{1.002759in}{1.607964in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{1.100342in}{1.607964in}}{\pgfqpoint{1.182398in}{1.607964in}}%
+\pgfusepath{stroke}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetroundcap%
+\pgfsetroundjoin%
+\pgfsetlinewidth{1.003750pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{1.132398in}{1.632964in}}%
+\pgfpathlineto{\pgfqpoint{1.182398in}{1.607964in}}%
+\pgfpathlineto{\pgfqpoint{1.132398in}{1.582964in}}%
+\pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.768929in,y=1.424107in,right,base]{\color{textcolor}\rmfamily\fontsize{9.000000}{10.800000}\selectfont \(\displaystyle v_x = c\cos\theta\)}%
+\pgftext[x=1.225714in,y=1.607964in,left,]{\color{textcolor}{\rmfamily\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\beta c$}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetroundcap%
+\pgfsetroundjoin%
+\pgfsetlinewidth{1.003750pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.951944in}{0.990687in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{0.640711in}{0.780605in}}{\pgfqpoint{0.342348in}{0.579210in}}%
+\pgfusepath{stroke}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfsetroundcap%
+\pgfsetroundjoin%
+\pgfsetlinewidth{1.003750pt}%
+\definecolor{currentstroke}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.397777in}{0.586462in}}%
+\pgfpathlineto{\pgfqpoint{0.342348in}{0.579210in}}%
+\pgfpathlineto{\pgfqpoint{0.369803in}{0.627905in}}%
+\pgfusepath{stroke}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=0.766071in,y=1.173393in,left,base]{\color{textcolor}{\rmfamily\fontsize{9.000000}{10.800000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\theta$}}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
