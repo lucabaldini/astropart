@@ -42,9 +42,24 @@ def draw_cloud(head_on: bool, beta: float = 0.3, hspan: float = 1., vspan: float
     draw_arrow((-hspan, 0.), (hspan, 0.))
     plt.text(hspan - 0.1, -0.05, "$x$", va="top", ha="center")
     # Draw the velocity of the cloud.
-    y = 0.75
+    y = 0.8 * vspan
     draw_arrow((0., y), (beta, y))
     plt.text(beta , y, "$\\beta c$", va='center', ha='left')
+    # Draw the test particle trajectory.
+    x = 0.8 * hspan
+    if not head_on:
+        x = -x
+    y = 0.6 * vspan
+    plt.plot(x, y, 'o', color='black', ms=4)
+    draw_line((x, y), (0., 0.))
+    draw_arrow((0., 0.), (x, -y))
+    # Draw the angle arc.
+    if head_on:
+        draw_arc((0., 0.), 0.2, 0., np.degrees(np.arctan(1.25 * beta / y)))
+        plt.text(0.3, 0.05, '$\\theta$')
+    else:
+        draw_arc((0., 0.), 0.2, -np.degrees(np.arctan(1.25 * beta / y)), 180.)
+        plt.text(-0.25, 0.2, '$\\theta$')
 
     #if speed < 0:
     #    x -= 0.325
@@ -59,11 +74,11 @@ def draw_cloud(head_on: bool, beta: float = 0.3, hspan: float = 1., vspan: float
     #     plt.text(-0.25, 0.2, '$\\theta$')
     #     plt.text(0.95, 0.5, '$v_x = c\\cos\\theta$', ha='right')
 
-def draw_velocity(label: str, x1: float, x2: float, y: float = 0.5):
-    """Draw an annotated arrow representing the gas velocity.
-    """
-    draw_arrow((x1, y), (x2, y))
-    plt.text(0.5 * (x1 + x2), y - 0.05, label, va='top', ha='center')
+# def draw_velocity(label: str, x1: float, x2: float, y: float = 0.5):
+#     """Draw an annotated arrow representing the gas velocity.
+#     """
+#     draw_arrow((x1, y), (x2, y))
+#     plt.text(0.5 * (x1 + x2), y - 0.05, label, va='top', ha='center')
 
 def draw_particle(y: float = 0.5):
     """Draw the particle.
