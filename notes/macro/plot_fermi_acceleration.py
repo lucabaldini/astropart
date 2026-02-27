@@ -83,7 +83,7 @@ plt.plot(x, p_even(x), color='k')
 plt.plot(x, 1.e3 * p_odd(x), color='k', ls='dashed')
 plt.text(-0.6, 0.4, '$p_\\mathrm{even}$')
 plt.text(-0.1, -0.2, '$p_\\mathrm{odd} \\times 10^3$')
-setup_ca(xlabel='$x = \\cos\\theta$', ylabel='$p(x)$', ymin=-0.25)
+setup_ca(xlabel='$\\mu = \\cos\\theta$', ylabel='$p(\\mu)$', ymin=-0.25)
 save_cf()
 
 margin_figure('fermi_accel_efficiency', height=2.)
