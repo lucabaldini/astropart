@@ -28,10 +28,10 @@ def draw_cloud(head_on: bool, beta: float = 0.3, hspan: float = 1., vspan: float
     """Draw the basic setup for the sketch of the cloud.
     """
     if head_on:
-        label = "head-on $(\\cos\\theta > 0)$"
+        label = "head-on $(\\mu = \\cos\\theta > 0)$"
         xrect = -hspan
     else:
-        label = "following $(\\cos\\theta < 0)$"
+        label = "following $(\\mu = \\cos\\theta < 0)$"
         xrect = 0.
     draw_line((0., -vspan), (0., vspan))
     # See this interesting post as to why we need to set the alpha value explicitly
@@ -72,18 +72,6 @@ save_cf()
 margin_figure('fermi_accel_follow', height=2., left=0.05, bottom=0.05, right=0.95)
 setup_ca_drawing()
 draw_cloud(head_on=False)
-save_cf()
-
-margin_figure('fermi_accel_average', height=2.)
-p_even = lambda x, beta=1.e-4: np.abs(x)
-p_odd = lambda x, beta=1.e-4: np.sign(x) * beta * (1. - x**2.)
-p = lambda x, beta=1.e-4: p_even(x, beta) + p_odd(x, beta)
-x = np.linspace(-1., 1., 1000)
-plt.plot(x, p_even(x), color='k')
-plt.plot(x, 1.e3 * p_odd(x), color='k', ls='dashed')
-plt.text(-0.6, 0.4, '$p_\\mathrm{even}$')
-plt.text(-0.1, -0.2, '$p_\\mathrm{odd} \\times 10^3$')
-setup_ca(xlabel='$\\mu = \\cos\\theta$', ylabel='$p(\\mu)$', ymin=-0.25)
 save_cf()
 
 margin_figure('fermi_accel_efficiency', height=2.)

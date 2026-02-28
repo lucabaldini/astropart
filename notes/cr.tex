@@ -847,17 +847,22 @@ frame and vice versa.
 
 Let us assume that, in the laboratory frame, the cloud is moving along the $x$-axis
 in the direction of positive $x$ values, with velocity $\beta c$, and that the test
-particle (e.g., a proton) is impinging on the hard wall at an angle $\theta$, as
-illustrated in figure~\ref{fig:fermi_accel}. (Note that $\cos\theta > 0$ for head-on
-collisions and $\cos\theta < 0$ for following collisions.)
+particle (e.g., a proton) is impinging on the hard wall at a pitch angle $\theta$, as
+illustrated in figure~\ref{fig:fermi_accel}. As is customary, we shall refer to
+the cosine of the pitch angle as
+\begin{align*}
+  \mu = \cos\theta,
+\end{align*}
+noting that, with our conventions, $\mu > 0$ for head-on collisions and $\mu < 0$
+for following collisions.
 The relevant Lorentz transformations involve the particle energy $E$ and the momentum
 component $p_\parallel$ parallel to the boost, but since our test
 particle is relativistic, we will make our life easier by assuming that
 $$
-  p_\parallel = -pc \cos\theta \approx -E \cos\theta,
+  p_\parallel = -pc \cos\theta = -pc\mu \approx -E \mu,
 $$
 and express everything in terms of energy---before and after the collision, and
-in both reference frames. (make sure you understand minus sign: $p_\parallel < 0$
+in both reference frames. (Make sure you understand minus sign: $p_\parallel < 0$
 for head-on collisions and $p_\parallel > 0$ for following collisions.)
 
 The first transformation, from the laboratory to the cloud frame, reads\sidenote{Note
@@ -865,8 +870,8 @@ again that, here and in the rest of this section, $\beta$ and $\gamma$ refer to
 the velocity of the cloud, not that of the particle!}
 \begin{align}
   \begin{cases}
-    E'_i = \gamma E_i (1 + \beta \cos\theta)\\
-    E'_i \cos\theta'_i = \gamma E_i (\cos\theta + \beta).
+    E'_i = \gamma E_i (1 + \beta \mu)\\
+    E'_i \mu' = \gamma E_i (\mu + \beta).
   \end{cases}
   \tag{Lab $\rightarrow$ Cloud}
 \end{align}
@@ -880,22 +885,19 @@ and the parallel momentum component is reversed, so we have
 \begin{align*}
   \begin{cases}
     E'_f = E'_i\\
-    \cos\theta' \rightarrow - \cos\theta',
+    \mu' \rightarrow - \mu',
   \end{cases}
-  \tag{Elastic collision}
 \end{align*}
 and by transforming back into the laboratory system, we have
 \begin{align*}
-  E_f = \gamma E'_i (1 + \beta \cos\theta') =
-  \gamma E'_i + \gamma \beta E'_i \cos\theta',
+  E_f = \gamma E'_i (1 + \beta \mu'),
   \tag{Cloud $\rightarrow$ Lab}
 \end{align*}
 which can be expressed in terms of the quantities in the laboratory frame using the
 initial transformations
 \begin{align*}
-  E_f &=
-  \gamma^2 E_i (1 + \beta \cos\theta) + \gamma^2\beta E_i (\cos\theta + \beta) =\\
-  &= \gamma^2 E_i (1 + 2 \beta \cos\theta + \beta^2).
+  E_f = \gamma^2 E_i (1 + \beta \mu) + \gamma^2\beta E_i (\mu + \beta) =
+  \gamma^2 E_i (1 + 2 \beta \mu + \beta^2).
 \end{align*}
 
 Now, since typical values of the cloud velocity inferred from the observations are
@@ -906,8 +908,8 @@ series\sidenote{We are using the expansion of the Lorentz factor $\gamma$
 \end{align*}
 } up to terms in $\beta^2$
 \begin{align*}
-  E_f \approx E_i (1 + \beta^2)(1 + 2 \beta \cos\theta + \beta^2) \approx
-  E_i (1 + 2 \beta \cos\theta + 2 \beta^2).
+  E_f \approx E_i (1 + \beta^2)(1 + 2 \beta \mu + \beta^2) \approx
+  E_i (1 + 2 \beta \mu + 2 \beta^2).
 \end{align*}
 It follows that the approximate expression for the fractional energy variation in
 a single collision is\sidenote{If you are wondering why we have retained the term
@@ -917,11 +919,11 @@ pitch angle, and the leading term ($\propto \beta$) can be either positive or ne
 so it is not immediately obvious what happens when we average over all values of
 $\theta$.}
 \begin{align}\label{eq:energy_change}
-  \frac{\Delta E}{E} = \frac{E_f - E_i}{E_i} \approx 2 \beta \cos\theta + 2 \beta^2.
+  \frac{\Delta E}{E} = \frac{E_f - E_i}{E_i} \approx 2 \beta \mu + 2 \beta^2.
 \end{align}
-If you wonder what is the origin of the change in energy, since magnetic fields
+(If you wonder what is the origin of the change in energy, since magnetic fields
 do not do work, recall that a moving magnetic field induces an electric field in
-lab frame, and the latter is the very cause of the acceleration.
+lab frame, and the latter is the very cause of the acceleration.)
 
 The expression~\eqref{eq:energy_change} is interesting, in that it contains a leading
 term $\propto \beta$ that can be positive or negative, depending on whether the
@@ -934,76 +936,46 @@ are going!}
 \begin{align*}
   \frac{\Delta E_\perp}{E} = 2\beta^2.
 \end{align*}
+
 Of course this is generally negligible with respect to the other term, and what we
 are really interested in is the \emph{mean} energy gain, that we can calculate by
-performing the proper average over the isotropic distribution of cloud velocity.
-
-If you don't particularly care about tedious algebra you can go directly to
-equation~\eqref{eq:fermi_average}, but the interesting fact here, which was pointed
-out by Fermi, is that the rate of encounter at any given angle $\theta$ is proportional
-to the relative velocity between the cloud and the particle along the direction of motion
-of the cloud, and is therefore slightly larger for head-on collisions than for following
-collisions\sidenote{This is essentially the reason why when we drive on the highway
-and the traffic is the same on both directions, we are more likely to encounter a
-car coming towards us than going in the same direction.}.
-Although this seems to be overlooked in many textbooks, we maintain that for an
-ultra-relativistic particle we have to use the relativistic formula for the composition
-of velocities, that we can write and expand in series for the two cases of head-on
-and following collisions\sidenote{One should note that these expressions behave as
-expected in the limiting cases: $v_\text{rel} = c$ for both $\cos\theta = 1$ and
-$\cos\theta = -1$, while for $\cos\theta = 0$ there is a discontinuity, and
-$v_x^\text{rel} = \pm \beta c$ depending on whether the collision is head-on or following.}
+performing the proper average over the isotropic distribution of cloud velocities
 \begin{align*}
-  v_\text{rel} = c \times
-  \begin{cases}
-  \displaystyle\frac{\cos\theta + \beta }{1 + \beta\cos\theta} \approx
-  \cos\theta + \beta (1 - \cos^2\theta)
-  & \quad(\cos\theta \geq 0)\\[10pt]
-  \displaystyle\frac{-\cos\theta - \beta}{1 + \beta\cos\theta} \approx
-  -\cos\theta - \beta (1 - \cos^2\theta)
-  & \quad(\cos\theta < 0)
-  \end{cases}
+  \ave{\frac{\Delta E}{E}} = \ave{2\beta \mu + 2\beta^2} = 2\beta \ave{\mu} + 2\beta^2.
 \end{align*}
-
-\begin{marginfigure}
-  \input{figures/fermi_accel_average.pgf}
-  \caption{Even and odd components of the probability density function over which
-    we average the fractional energy loss per collision. Note that the odd part
-    $p_\text{odd}(x)$ is multiplied by $10^3$ to make it visible.}
-  \label{fig:fermi_accel_average}
-\end{marginfigure}
-
-If we now let $\cos\theta = \mu$, it is easy to show that the probability density
-function for $x$, which is proportional to the relative velocity we have just calculated,
-is\sidenote{If you are not convinced that $p(\mu)$ in~\eqref{eq:fermi_average_pdf}
-is properly normalized, remember that $p_\text{odd}$ does not contribute to the
-normalization since the integration domain is symmetric with respect to $0$.}
-\begin{align}\label{eq:fermi_average_pdf}
-  p(\mu) = \overbrace{\abs{\mu}}^\text{even} +
-  \overbrace{\beta (1 - \mu^2) \; \text{sign}(\mu)}^\text{odd} =
-  p_\text{even}(\mu) + p_\text{odd}(\mu),
+All we need is the proper probability density function for $\mu$, and the interesting
+fact, which was pointed out by Fermi, is that the rate of encounter at any given angle
+is proportional to the relative velocity between the cloud and the particle, and is
+therefore slightly larger for head-on than for following collisions\sidenote{This is
+essentially the same thing as saying that when we drive on the highway and the traffic
+is the same in both directions, we are more likely to encounter a car coming towards us
+than one traveling on our own lane.}. The probability density function for $\mu$, is
+given by
+\begin{align}\label{eq:fermi_mu_pdf}
+  p(\mu) \approx \frac{1}{2} (1 + \beta \mu)  + O(\beta^2).
 \end{align}
-which is the sum of an even and a (much smaller) odd term. The average fractional
-energy loss per collision is
+We shall not provide a full derivation, but do not let the appearance fool you.
+This is \emph{not} the Galilean addition of velocities---which would clearly be
+inappropriate here, as our test particle is ultra-relativistic---but rather the
+proper limit of the invariant flux factor, also known as the Møller velocity.
+Equation~\eqref{eq:fermi_mu_pdf} is consistent with our intuition that the
+probability is almost constant (the sweeping is controlled by the particle velocity,
+which is much larger than $\beta c$) but slightly enhanced for head-on collisions
+($\mu > 0$) and slightly suppressed for following collisions ($\mu < 0$). You can
+check for yourself that the distribution is properly normalized.
+
+The average is now trivial to calculate, noting that only the odd term in $p(\mu)$
+contributes
 \begin{align*}
-  \ave{\frac{\Delta E}{E}} = \ave{2\beta \mu + 2\beta^2} = 2\beta \ave{\mu} + 2\beta^2
+  \ave{\mu} = \int_{-1}^1 \mu p(\mu) \diff{\mu} =
+  \cancel{2} \int_{0}^1 \frac{1}{\cancel{2}} \beta \mu^2 \diff{\mu} =
+  \beta \int_0^1 \mu^2 \diff{\mu} =
+  \frac{1}{3} \beta,
 \end{align*}
-and the only interesting quantity that is left to calculate is $\ave{\mu}$. It is
-worth noting that the average would rigorously vanish if $p(\mu)$
-was even, but the odd term provides a non-zero contribution instead
-\begin{align*}
-  \ave{\mu} =
-  \int_{-1}^1 \mu p(\mu) \diff{\mu} =
-  2\int_0^1 \mu p_\text{odd}(\mu) \diff{\mu} =
-  2\beta \int_{0}^1 \mu (1 - \mu^2) \diff{\mu} =
-  \frac{\beta}{2},
-\end{align*}
-which, in turn, yields\sidenote{For what it's worth, in many textbooks, where
-the non-relativistic formula for the addition of velocities is used, the result
-is $\nicefrac{8}{3} \beta^2$ instead of $3\beta^2$.}
+which, in turn, yields
 \begin{align}\label{eq:fermi_average}
-  \left< \frac{\Delta E}{E} \right> = 2 \beta^2 + \beta^2 =
-  3 \beta^2 \coloneqq \xi.
+  \left< \frac{\Delta E}{E} \right> = 2 \beta \ave{\mu} + \beta^2 =
+  \frac{8}{3} \beta^2 \coloneqq \xi.
 \end{align}
 
 This confirms that the proper average is indeed positive, i.e., particles are accelerated,
