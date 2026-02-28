@@ -984,15 +984,15 @@ but on the other hand the mean energy gain per collision is proportional to $\be
 small, the process is highly inefficient. For $\beta \sim 10^{-4}$ this only gives
 an average fractional energy increase of $\xi \sim 3 \times 10^{-8}$, and it will
 take many many collisions for the particle to experience a noticeable fractional
-energy increase. In fact the energy $E(n)$ after $n$ collisions, assuming an initial
+energy increase. In fact the energy $E$ after $n$ collisions, assuming an initial
 energy $E_0$, will be
 \begin{align*}
-  E(n) = E_0 \left( 1 + \xi \right)^n,
+  E = E_0 \left( 1 + \xi \right)^n,
 \end{align*}
 which can be inverted to calculate the average number of collisions it takes to
-accelerate the particle from $E_0$ to $E_n$
+accelerate the particle from $E_0$ to $E$
 \begin{align}\label{eq:fermi_accel_num_collisions}
-  n(E) = \frac{\ln(E / E_0)}{\ln(1 + \xi)} \approx \frac{\ln(E / E_0)}{\xi}.
+  n = \frac{\ln(E / E_0)}{\ln(1 + \xi)} \approx \frac{\ln(E / E_0)}{\xi}.
 \end{align}
 
 \begin{marginfigure}
@@ -1037,10 +1037,10 @@ $n$ of collisions leading to escape is essentially a negative binomial
 \begin{align}\label{eq:num_collisions_pmf}
  P(n) = P_E(1 - P_E)^n.
 \end{align}
-We can use~\eqref{eq:fermi_accel_num_collisions} to translate this into the corresponding
-probability density function for the energy $E$ at the escape\sidenote{There is a
-few subtleties involved, here: $n$ is a discrete variable, and~\eqref{eq:num_collisions_pmf}
-is normalized as
+We could use this to calculate the probability density function of the energy at escape
+$E$ by a change of variable using \eqref{eq:fermi_accel_num_collisions}\sidenote{There is
+a few subtleties involved, here: $n$ is a discrete variable,
+and~\eqref{eq:num_collisions_pmf} is normalized as
 \begin{align*}
   \sum_{n=0}^\infty P(n) = 1,
 \end{align*}
@@ -1048,30 +1048,36 @@ as one can easily verify (the normalization is the sum of a geometric series). S
 we shall treat $E$ as a continuous variable, we want treat $n$ in the same fashion;
 amusingly
 \begin{align*}
-  \int_0^\infty P_E(1 - P_E)^n \diff{n} = -\frac{P_e}{\ln(1 - P_E)}
+  \int_0^\infty P_E(1 - P_E)^n \diff{n} = -\frac{P_E}{\ln(1 - P_E)}
 \end{align*}
 which tends to $1$ when $P_E$ is small. In other words, in our case \eqref{eq:num_collisions_pmf}
-is properly normalized when seen as a continuous distribution, too.}
+is properly normalized when seen as a continuous distribution, too.
+After the change of variable you will need to use the limit
+$$
+  \lim_{x \rightarrow 0} (1 - x)^{\frac{c}{x}} = e^{-c}.
+$$}, but it is actually easier to calculate the cumulative distribution function first.
+Given an initial number of test particles $N_0$, the fraction of them still in the
+acceleration process after $n$ collisions is
 \begin{align*}
-  p(E) = \dv{n(E)}{E} P_E (1 - P_E)^{\frac{\ln(E / E_0)}{\xi}} =
-  \frac{1}{\xi E_0} \qty(\frac{E}{E_0})^{-1} P_E (1 - P_E)^{\frac{\ln(E / E_0)}{\xi}}.
+  \frac{N}{N_0} = (1 - P_E)^n \quad\text{and therefore}\quad
+  n = \frac{\ln(N / N_0)}{\ln(1 - P_E)} \approx -\frac{\ln(N / N_0)}{P_E}.
 \end{align*}
-This might seem overly convoluted, but noting that
+If we now equate to \eqref{eq:fermi_accel_num_collisions} we get
 \begin{align*}
-  \lim_{P_E \rightarrow 0} (1 - P_E)^{\frac{\ln(E / E_0)}{\xi}} =
-  %\lim_{P_E \rightarrow 0} (1 - P_E)^{\frac{P_E\ln(E / E_0)}{P_E \xi}} =
-  \lim_{P_E \rightarrow 0} (1 - P_E)^{\frac{\ln(E / E_0)^\frac{P_E}{\xi}}{P_E}} =
-  \qty(\frac{E}{E_0})^{-\frac{P_E}{\xi}},
+  \ln(N / N_0) = -\frac{P_E}{\xi} \ln(E / E_0).
 \end{align*}
-we get the much simpler expression (that the user can verify being correctly normalized
-between $E_0$ and $\infty$)
+We are almost there---we only have to recognize that (i) $N$ represents the fraction of
+particles that will end up with an energy greater than $E$, i.e., is the cumulative
+function of the probability density we are looking for; and (ii) a linear relation
+between the logarithms translates into a power law in the underlying quantities, so that
 \begin{align*}
-  p(E) \approx \frac{P_E}{\xi E_0} \qty(\frac{E}{E_0})^{-\left(1 + \frac{P_E}{\xi}\right)}.
+  \text{cdf}(E) \propto  \left( \frac{E}{E_0} \right)^{-\frac{P_E}{\xi}}
+  \quad\text{or}\quad
+  p(E) \propto \left( \frac{E}{E_0} \right)^{-\left(1 + \frac{P_E}{\xi}\right)}.
 \end{align*}
-In other words, the the differential energy spectrum is a power law
+That is, the resulting energy spectrum of the accelerated particles is a power law, with
+a spectral index
 \begin{align}
-  p(E) \propto \left( \frac{E}{E_0} \right)^{-\Gamma}
-  \quad\text{with}\quad
   \Gamma = 1 + \frac{P_E}{\xi}.
 \end{align}
 
