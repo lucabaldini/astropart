@@ -220,7 +220,7 @@ is interesting from the point of view of the study of the near-Sun environment,
 we shall not elaborate further.
 
 
-\subsection{Composition}
+\subsection{Composition}\label{sec:cr_composition}
 
 \begin{figure}[!htbp]
   \input{figures/cr_composition.pgf}
@@ -1625,6 +1625,46 @@ gradual change in the chemical composition of cosmic rays, which should transiti
 from a proton-dominated to an iron-dominated mixture around the knee. Measurements
 seem to be roughly consistent with this picture.}. It is clear, though, that
 UHECR acceleration is likely to be the result of a different mechanism.
+
+
+\section{Propagation of cosmic rays}
+
+
+Most of what we know about the propagation of cosmic rays in our Galaxy comes
+from the study of secondary elements such as Li, Be and B. They were produced in very
+small quantities ($10^{-5}$--$10^{-6}$) in the primordial nucleosynthesis, and, as
+opposed to other elements such as C, they are not produced in significant quantities
+in stars either. And yet, as we have seen in section~\ref{sec:cr_composition}, they are
+much more abundant in cosmic rays than in the solar system, which we take as an
+indication that they are mostly produced by the spallation of heavier nuclei
+(mostly C, N and O) on the interstellar medium.
+
+Let us consider a typical spallation reaction, such as
+\begin{align*}
+  \overbrace{[C,~N,~O]}^{\text{primaries}} + p \rightarrow
+  \overbrace{[Li,~Be,~B]}^{\text{secondaries}} + X.
+\end{align*}
+The rate of production per unit length of secondary particles is proportional to
+the number $N_p$ of primaries, the number density $n_\text{ISM}$ of the interstellar
+and the cross-section $\sigma$ of the spallation process
+\begin{align*}
+  \dv{N_s}{\ell} = \sigma n_\text{ISM} N_p.
+\end{align*}
+This is more conveniently rewritten in terms of our old acquaintance, the grammage
+$\diff{\grammage} = \density_\text{ISM} \diff{\ell} = \ave{m} n_\text{ISM} \diff{\ell}$
+\begin{align}
+  \dv{N_s}{\grammage} = \frac{\sigma}{\ave{m}} N_p,
+\end{align}
+where $\ave{m}$ is the average mass of an interstellar medium particle. For every
+secondary particle produced, a primary particle is destroyed, so that the rate of
+change of the number of primaries is given by
+\begin{align*}
+  \dv{N_p}{\grammage} = -\frac{\sigma}{\ave{m}} N_p \quad\text{or}\quad
+  N_p(\grammage) = N_p(0) \exp\qty(-\frac{\sigma}{\ave{m}} \grammage).
+\end{align*}
+
+
+
 
 
 \section{The transparency of the Universe}
