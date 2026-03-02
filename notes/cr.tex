@@ -1101,7 +1101,7 @@ idea of stochastic acceleration to work in practice.
 
 \subsection{The basis of the supernov\ae~paradigm}
 
-In the late seventies, almost 30~years after the original paper by E.~Fermi, the
+In the late 1970s, almost 30~years after the original paper by E.~Fermi, the
 realization that shock fronts could efficiently accelerate particles stirred a renewed
 interest in the topic, originating a line of research very much active to these days.
 There is nowadays substantial consensus that the bulk of Galactic cosmic rays, at
@@ -1111,7 +1111,12 @@ that generally goes under the name of \emph{diffusive shock acceleration}, or DS
 As we have seen, Supernov\ae\ exploding in our Galaxy liberate a typical kinetic
 energy $E_\text{SN} \approx 10^{51}$~erg (weakly dependent on the SN type) in the
 form of moving ejecta at a rate of about one every 30~yr, or
-$R_\text{SN} \approx \nicefrac{1}{30}~\text{yr}^{-1}$, for an overall power output of
+$R_\text{SN} \approx 0.03~\text{yr}^{-1}$\sidenote{Historical records include at least
+5 supernov\ae\ over the last 1000~yr (that is, 1 every 200~yr), which is a strict lower
+limit due to the fact that most of the Galaxy is oscured by dust. The most accurate
+estimates come from counting supernova remnants and pulsars, as well as the study
+of galactic star formation and from calibration with other galaxies.}, for an overall
+power output of
 \begin{align*}
   P_\text{SN} = E_\text{SN} R_\text{SN} \approx 10^{42}~\text{erg~s}^{-1}.
 \end{align*}
@@ -1122,8 +1127,8 @@ and height $h_\text{halo} \approx 6$~kp we end up with a confinement volume of
 \begin{align*}
   V_\text{conf} = \pi R_\text{MW}^2 h_\text{halo} \approx 10^{68}~\text{cm}^3.
 \end{align*}
-The other two things that we need are the fact that 1~eV corresponds to
-$1.6 \times 10^{-12}$~erg and 1~yr corresponds to $3.16 \times 10^7$~s.}
+The other thing that we need are the fact that 1~eV corresponds
+to~$1.6 \times 10^{-12}$~erg.}
 and dividing by the escape time
 \begin{align*}
   P_\text{CR} = \frac{u_\text{CR} V_\text{conf}}{\tau_\text{esc}}
@@ -1162,9 +1167,9 @@ supersonic\sidenote{The sound speed in the interstellar medium can be estimated 
 for $kT \approx 10^4~^\circ$~K. The SN ejecta have an initial Mach number
 $\machnum \approx 1000$.}.
 In this section we shall illustrate the idea of DSA in the simplest possible setting:
-an infinite, parallel, supersonic shock propagating at a constant velocity parallel
-to the magnetic field lines, as first described in~\cite{1978MNRAS.182..147B},
-and schematically represented in figure~\ref{fig:shock_cartoon}.
+an infinite shock propagating at a constant speed parallel to the magnetic field
+lines, as first described in~\cite{1978MNRAS.182..147B}, and schematically represented
+in figure~\ref{fig:shock_cartoon}.
 
 \begin{marginfigure}
   \input{figures/shock_cartoon.pgf}
@@ -1175,8 +1180,7 @@ and schematically represented in figure~\ref{fig:shock_cartoon}.
 \end{marginfigure}
 
 Before we start analyzing the problem, let us spell out our assumption clearly.
-We are primarily interested in the acceleration of protons, so we shall model
-the insterstellar medium upstream the shock front as an ideal gas of protons
+We shall model the interstellar medium upstream the shock front as an ideal gas of protons
 (i.e., an ideal monoatomic gas, with adiabatic index $\adiabatidx = \nicefrac{5}{3}$)
 with density~$\density_1$, pressure~$\pressure_1$ and temperature~$T_1$. Since
 the shock is supersonic, it cannot possibly modify the gas upstream, but it can
@@ -1184,7 +1188,7 @@ the shock is supersonic, it cannot possibly modify the gas upstream, but it can
 density~$\density_2$, pressure~$\pressure_2$ and temperature~$T_2$. (We shall see
 in a second how the two set of thermodynamic quantities are related to each other.)
 In any event, both the upstream and the downstream media can be described using
-standard non-relativistic fluidodynamics, whose basic concepts are reviewed in
+standard non-relativistic fluid dynamics, whose basic concepts are reviewed in
 appendix~\ref{chap:fluidodynamics}.
 
 We shall assume that a number of relativistic\sidenote{Once again: we shall not elaborate
@@ -1215,7 +1219,7 @@ of energy at each passage.
 \end{marginfigure}
 
 Let us start analyzing the problem in the reference frame where the shock is at rest,
-as shown in figure~\ref{fig:shock_cartoon_front}. The system is unidimensional
+as shown in figure~\ref{fig:shock_cartoon_front}. The system is uni-dimensional
 (i.e., the thermodynamic quantities are only function of $x$). The gas upstream
 is moving in the negative direction of the $x$ axis with a velocity $u_1$ that is
 equal (in absolute value) to the velocity $\beta c$ of the shock front, while the gas
@@ -1261,9 +1265,8 @@ discontinuous at $x = 0$, that is
 The algebra is quite convoluted here, but, beside the trivial solution where all
 the quantities are constant across the shock (which is not physically interesting),
 the system admits the discontinuous solution\sidenote{The fact that the Mach number
-$\machnum_1$ is appearing here should not come a surprise since, as show in
-section~\ref{sec:fluid_waves}, the speed of sound for an ideal monoatomic
-gas is given by
+$\machnum_1$ is appearing here should not come a surprise since the speed of sound
+for an ideal monoatomic gas is given by
 \begin{align*}
   c_s^2 = \frac{5\pressure}{3\density}
 \end{align*}
@@ -1321,34 +1324,38 @@ Let us now consider a high-energy test particle crossing the shock from the upst
 region to the downstream region, as shown in figure~\ref{fig:shock_cartoon_upstream}
 with an angle $\theta$ with respect to the normal to the shock. In the reference
 frame where the upstream gas is stationary, the downstream region is moving with
-a velocity $\nicefrac{3}{4} \beta c$, and the Lorentz-transformed energy of the particle after
-the crossing is, just like for the original Fermi mechanism
+a velocity $\nicefrac{3}{4} \beta c$, and the Lorentz-transformed energy of the
+particle after the crossing is, just like for the original Fermi mechanism
 \begin{align*}
-  E' = \gamma \qty(E + \frac{3}{4}\beta pc \cos\theta) \approx
-  E \qty(1 + \frac{3}{4}\beta \cos\theta).
+  E' = \gamma E \qty(1 + \frac{3}{4}\beta \mu) \approx
+  E \qty(1 + \frac{3}{4}\beta \mu).
 \end{align*}
-(Here, we repeat one more time, $\gamma$ and $\beta$ refer to the velocity of the
-shock, and, since the particle is ultra-relativistic, we can assume that $pc \approx E$
-for the latter.) The fractional energy gain in a single collision reads
+(As usual, $\mu = \cos\theta$, $\gamma$ and $\beta$ refer to the velocity of the shock,
+and, since the test particle is ultra-relativistic, we can assume that $pc \approx E$
+for the latter. In addition, for reasons that will become clear in a second, we
+are not interested in higher-order terms in $\beta$, and we can assume $\gamma \approx 1$.)
+
+The fractional energy gain in a single collision reads
 \begin{align*}
-  \frac{\Delta E}{E} = \frac{3}{4} \beta \cos\theta,
+  \frac{\Delta E}{E} = \frac{3}{4} \beta \mu,
 \end{align*}
 and the new fact is that this is always positive, as, unlike in the case of the
-Fermi second-order acceleration, $\cos\theta > 0$ by definition. The averaging over
+Fermi second-order acceleration, $\mu > 0$ by definition. The averaging over
 all the possible directions, in fact, proceeds essentially like before, with the
 notable difference that we are only dealing with head-on collisions, the integration
-over $x = \cos\theta$ is limited to positive values of $x$, and since the even term
-in~\eqref{eq:fermi_average_pdf} does not average to zero over the new domain, the
-odd term proportional to $\beta$ can be neglected, and to first order we
-have\sidenote{The reader can easily verify that this probability density function
-is correctly normalized between 0 and 1.}
+over $\mu = \cos\theta$ is limited to positive values of $\mu$ (that is,
+$-\pi/2 \leq \theta \leq \pi/2$), and the probability density distribution for $\mu$
+is proportional to the component of the particle velocity along the $x$ axis,
+which incidentally is proportional to $\mu$ itself\sidenote{The reader can easily verify
+that this probability density function is correctly normalized between 0 and 1.}
 \begin{align*}
-  p(x) = 2 x.
+  p(\mu) = 2 \mu.
 \end{align*}
-Most importantly, the average energy gain per crossing is
+We now have all the ingredients to compute the average energy gain per crossing, that
+turns out to be
 \begin{align}
   \ave{\frac{\Delta E}{E}}_\text{single} \!\!\!\!\!\! =
-  \int_0^{1} \frac{3}{2} \beta x^2 \diff{x} =
+  \int_0^{1} \frac{3}{2} \beta \mu^2 \diff{\mu} =
   \frac{1}{2} \beta \quad\text{(single crossing)}.
 \end{align}
 
@@ -1376,15 +1383,20 @@ in a full cycle is
   \frac{1}{2} \beta + \frac{1}{2} \beta =
   \beta \coloneqq \xi \quad\text{(full cycle)}.
 \end{align}
-The energy gain in a full cycle is proportional to the $\beta$ of the shock
+The energy gain in a full cycle is equal to the $\beta$ of the shock
 (as opposed to $\beta^2$), which is why this mechanism is generally referred to as
-\emph{first order} Fermi acceleration. The fundamental difference with respect to
-the original mechanism proposed by Fermi is that here there is a definite energy
-gain at each cycle. If we go back to~\eqref{eq:fermi_accel_num_collisions} for a
-second, we immediately realize that the basic figure for second order acceleration
-($\sim 2.3 \times 10^8$ collisions for a factor of 1000 in energy) is now beat down
-to a few hundreds, that is, shock acceleration is vastly more efficient than the
-original Fermi argument.
+\emph{first order} Fermi acceleration. Another fundamental difference with respect to
+the original mechanism proposed by Fermi is that here there is a net energy
+gain at each cycle, and no energy loss.
+If we go back to~\eqref{eq:fermi_accel_num_collisions} for a second, we immediately
+realize that the basic figure for second order acceleration ($\sim 2.3 \times 10^8$
+collisions for a factor of 1000 in energy) is now beat down to a few
+hundreds\sidenote{If, for a moment, we take our figures seriously, we have
+$$
+  n = \frac{\ln(E / E_0)}{\xi} \approx 230,
+$$
+for $\xi = 0.03$.}---that is, shock acceleration is vastly more efficient
+than the original Fermi argument.
 
 There is another twist to the story---the fact that in our new setup we can provide
 an estimate of the escape probability for the process, which in turn allows to close
