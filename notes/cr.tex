@@ -1080,11 +1080,26 @@ a spectral index
 \begin{align}
   \Gamma = 1 + \frac{P_E}{\xi}.
 \end{align}
+The importance of this result can be hardly overstated, as the power-law shape of the
+spectrum is a distinctive feature of stochastic acceleration, which can be more
+effectively re-casted in terms of acceleration and escape characteristic time scales
+$t_A$ and $t_E$\sidenote{It our simplistic model, it is quite obvious that
+$$
+t_A \propto \frac{1}{\xi} \quad\text{and}\quad t_E \propto \frac{1}{P_E}.
+$$}
+\begin{align}\label{eq:cr_stochastic_index}
+  \Gamma = 1 + \frac{t_A}{t_E}.
+\end{align}
+If we gloss for a second over the fact that $t_A$ presumably increases while $t_E$
+decreases with energy (and therefore is not obvious how we sustain, even approximately,
+a power law over many decades in energy), the observed cosmic-ray spectral index would
+seem to indicate that, whatever physical mechanism is responsible for the acceleration,
+the two time scales must be of the same order of magnitude, or $t_A \sim t_E$.
 
-In the case of Fermi second-order acceleration we have a rough estimate for $\xi$,
-but we have literally no idea about what $P_E$ might amount to. We know, however,
-that experimentally $\Gamma \approx 2.75$, and we can try and use this to gauge
-the escape probability
+In fact, for the case of Fermi second-order acceleration we have a rough estimate
+for $\xi$, but we have literally no idea about what $P_E$ might amount to, and we can
+try and use the observed spectral index $\Gamma \approx 2.75$ to gauge the escape
+probability
 \begin{align*}
   P_E = \xi (\Gamma - 1) \approx 5 \times 10^{-8},
 \end{align*}
@@ -1383,7 +1398,7 @@ in a full cycle is
   \frac{1}{2} \beta + \frac{1}{2} \beta =
   \beta \coloneqq \xi \quad\text{(full cycle)}.
 \end{align}
-The energy gain in a full cycle is equal to the $\beta$ of the shock
+The energy gain in a full cycle is proportional to the $\beta$ of the shock
 (as opposed to $\beta^2$), which is why this mechanism is generally referred to as
 \emph{first order} Fermi acceleration. Another fundamental difference with respect to
 the original mechanism proposed by Fermi is that here there is a net energy
@@ -1496,20 +1511,19 @@ the right-hand side we have the flux through the surface of a quantity that, in 
 rough approximation, is constant
 \begin{align*}
   \int_S \frac{1}{c}\pdv{\vb{B}}{t} \cdot d\vb{S} \sim
-  \pi R^2 \frac{B\omega}{2\pi} = \frac{R^2 B \omega}{2},
+  \frac{1}{c} \pi R^2 \frac{B\omega}{2\pi} = \frac{R^2 B \omega}{2c},
 \end{align*}
 and if we multiply both hands by $Ze$\sidenote{Since this just a back of the envelope
 calculation, we can also drop the factor of two at the denominator.} we get a closed
 expression for the overall electromotive force
-\begin{align*}
+\begin{align}\label{eq:pulsar_emf}
   \text{emf} = \frac{\omega}{c} Ze B R^2.
-\end{align*}
+\end{align}
 If $B \sim 10^{12}$~G, and $\omega \sim 200$~rad~s$^{-1}$ (as for the Crab pulsar),
-a circuit connected between pole and equator would see an emf of $\sim 10^{18}$~eV.
-Although in practice it is hard to imagine that this limit could be fully realized
+a circuit connected between pole and equator would see an emf of $\sim 10^{18}$~eV,
+although in practice it is hard to imagine that this limit could be fully realized
 due to the large electrical conductivity of the plasma, the order of magnitude that
 we obtain is indubitably interesting.
-
 
 
 \subsection{Maximum energy and the Hillas plot}
@@ -1517,29 +1531,69 @@ we obtain is indubitably interesting.
 Given the physical characteristics of the acceleration site (e.g., the magnetic
 field $B$ and the linear dimensions $L$), and no matter what is the specific acceleration
 mechanism at play, there must be a maximum energy up to which particles can be
-effectively accelerated. Naively one would expect that when the gyroradius of the
-particle, which in ultra-relativistic regime reads
+effectively accelerated.
+
+For one thing, one would expect that when the gyroradius of the particle, which in
+the ultra-relativistic regime reads
 \begin{align*}
-  \gyrorad = \frac{pc}{ZeB} \approx \frac{E}{ZeB}
+  \gyrorad = \frac{pc}{ZeB} \approx \frac{E}{ZeB},
 \end{align*}
-exceeds the linear dimensions of the accelerator, then it becomes virtually impossible
-to magnetically confine the particle itself, which inevitably escapes. Simply requiring
-that $\gyrorad < L$ would yield the condition
+exceeds the linear dimensions of the accelerator, then it becomes impossible to
+magnetically confine the particle itself, and the latter inevitably escapes. This is in
+fact true, and simply requiring $\gyrorad < L$ yields the condition
 \begin{align*}
-  E_\text{max} = ZeBL \quad\text{(wrong!)}
+  E_\text{max} = ZeBL \quad\text{(geometrical limit)}.
 \end{align*}
-which, as it turns out, is not quite right. It was A.~M.~Hillas in a seminal paper~\cite{1984ARA&A..22..425H} who first pointed out, in the context of diffusive
-shock acceleration, that the characteristic velocity $\beta c$ of the scattering
-centers in the acceleration region plays a vital role in the argument, and the
-correct condition reads
+As it turns out, this is a generous upper limit more than anything else, as we have
+neglected the fact that confining the particle is only part of the story---\emph{we also
+need enough time to accelerate it up to $E_\text{max}$}\sidenote{And this
+might be a good time to go back to our cursory discussion about the characteristic
+acceleration and escape time scales, summarized by~\eqref{eq:cr_stochastic_index}}.
+In the context of stochastic acceleration, the electric field responsible for the
+energy gain is generated by the time variation of the magnetic field, and it is ultimately
+the motion of the magnetic scattering centers (e.g., the velocity $\beta$ of the
+shock in our simple DSA setting) that makes this happen\sidenote{In a sense, you can
+imagine that the effective electric field $E$ generated by a moving magnetic field
+$B$ is given by
+$$
+E \sim \beta B,
+$$
+but~\cite{1984ARA&A..22..425H} provides a more sound argument based on the actual
+expressions for the acceleration and escape characteristic time scales.}. If the shock
+was not moving relative to the ISM we would have no acceleration at all,
+and our geometrical limit would be hardly relevant. Which brings us to the correct
+expression for the maximum achievable energy
 \begin{align}\label{eq:hillas_emax}
-  E_\text{max} = \beta ZeBL,
+  E_\text{max} = \beta ZeBL.
 \end{align}
-which is customarily referred to as the \emph{Hillas criterion}. This is very useful,
-as, for any given maximum energy, provides a simple geometrical constraint on the
-combination of physical size and magnetic field strength that a putative acceleration
-site needs to possess in order to accelerate particles up to that energy, as shown
-in the \emph{Hillas plot} in figure~\ref{fig:hillas_plot}.
+This is customarily referred to as the \emph{Hillas criterion}, after a seminal
+paper~\cite{1984ARA&A..22..425H} by A.~M.~Hillas.
+
+Before we turn to the practical implications, it is worth noting that the relevance of
+the Hillas criterion is by no means limited to stochastic acceleration. If we go back
+for a second to our na\"ive picture of regular acceleration by a pulsar, we could
+argue, as we have done in section~\ref{sec:pulsars}, that the maximum possible energy
+that is not physically prohibited is obtained when a point on the equatorial surface
+of the pulsar moves at the speed of light
+\begin{align*}
+  \omega = \frac{c}{R}
+\end{align*}
+which, once plugged into the expression for the emf~\eqref{eq:pulsar_emf}, yields
+\begin{align*}
+  \text{emf}_\text{max} = Ze B R
+\end{align*}
+Curiously enough, this has the very same structure of the geometrical limit for
+stochastic acceleration, and one might even argue that, also in this case, a factor
+$\beta \ll 1$ should be included to account for the fact that it is hard to imagine that
+regular acceleration in pulsars might be 100\% efficient (see, e.g., the previous remark
+on the electrical conductivity of the plasma).
+
+The Hillas criterion provides a very simple and yet powerful condition providing
+physical insight into the necessary combination of physical size and magnetic field
+strength that a putative acceleration site needs to possess in order to accelerate
+particles up to that energy. Equipped with our small list of candidate sources
+(e.g., SN shocks and pulsars) we can display the criterion very effectively on the
+\emph{Hillas plot} in figure~\ref{fig:hillas_plot}.
 
 \begin{figure}[!htbp]
   \input{figures/hillas_plot.pgf}
@@ -1569,28 +1623,8 @@ species (from proton to iron) progressively cutting off, with some harder differ
 component eventually kicking it at the ankle\sidenote{This scenario predicts a
 gradual change in the chemical composition of cosmic rays, which should transition
 from a proton-dominated to an iron-dominated mixture around the knee. Measurements
-seem to be roughly consistent with this picture.}.
-
-The Hillas criterion is not limited to stochastic acceleration. In the case or regular\
-acceleration by a pulsar, from instance, one could argue, as we have done in
-section~\ref{sec:pulsars} that the maximum possible energy that is not physically
-prohibited is obtained when a point on the equatorial surface of the pulsar moves
-at the speed of light
-\begin{align*}
-  \omega = \frac{c}{R}
-  \quad\text{or}\quad
-  \text{emf} = Ze B R
-\end{align*}
-which, incidentally, has the same structure of the corresponding expression we have
-derived in the case of stochastic acceleration\sidenote{One might even argue that,
-also in this case, a factor $\beta \ll 1$ might be included to account for the fact
-that it is hard to imagine that regular acceleration in pulsars might be 100\% efficient
-(see the previous remark on the electrical conductivity of the plasma).}.
-In any event, the Hillas plot provides important insight into what kind of astrophysical
-objects might act as cosmic accelerators. It is clear that, while SNR can account
-for the bulk of Galactic cosmic rays, UHECR need a different class of
-sources.
-
+seem to be roughly consistent with this picture.}. It is clear, though, that
+UHECR acceleration is likely to be the result of a different mechanism.
 
 
 \section{The transparency of the Universe}
