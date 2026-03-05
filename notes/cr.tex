@@ -1697,6 +1697,72 @@ and this is the reason why they accumulate the grammage we observe!
 
 \subsection{Digression: the micro-physics of diffusion}
 
+Although a complete, universally accepted, microscopic description of cosmic ray
+diffusion is still subject of active research, at the very fundamental level we can
+model the diffusive halo as a magnetized plasma filled with \emph{Alfven waves}---transverse
+waves that propagate along the direction of the regular field.
+
+Let us start by stating the ingredients of our setup. We shall assume that we have a
+regular field $\vb{B}_0$, e.g., along the $z$ axis, and small transverse perturbations
+$\delta \vb{B}_k \ll \vb{B}_0$ in the $xy$ plane, propagating along the $z$ axis at the
+Alfven speed, so that the complete magnetic field is given by
+\begin{align}
+  \vb{B} = \vb{B}_0 + \delta \vb{B}_k.
+\end{align}
+We shall consider a (ultra-relativistic) charged particle traveling at a pitch-angle
+$\theta$ with respect to the direction of the regular magnetic field, and as usual we
+shall set $\mu = \cos\theta$. (This setup is customarily referred to as quasi-linear
+theory (QLT) of pitch-angle scattering.)
+
+If there was no perturbation, we know that the particle would describe an helix around
+the magnetic field that, modulo an arbitrary phase that we can set to zero, can be
+written as
+\begin{align*}
+  \begin{cases}
+  v_x = v_\perp \cos(\Omega_\gyrorad t) = c \sqrt{1 - \mu^2} \cos(\Omega_\gyrorad t)\\
+  v_y = v_\perp \sin(\Omega_\gyrorad t) = c \sqrt{1 - \mu^2} \sin(\Omega_\gyrorad t) \\
+  v_z = v_\parallel  = c\mu
+  \end{cases}
+\end{align*}
+with a gyroradius and a gyro-frequency (see appendix~\ref{chap:bmotion}) given by
+\begin{align*}
+    \gyrorad = \frac{p\sin\theta}{qB} \quad\text{and}\quad
+    \Omega_\gyrorad = \frac{qB}{m \gamma c}.
+\end{align*}
+
+When we turn on the perturbation, the components of the magnetic field on the $xy$ plane
+can be written as\sidenote{Note there is not time, here---the Alfven velocity $v_A$ is
+of the order of $\sim 10$~km~s$^{-1}$ and since the cosmic ray is relativistic, it
+feels the perturbations of the magnetic fields as if they were static.}
+\begin{align*}
+  \begin{cases}
+    \delta B_x = \abs{\delta B_k} \sin(kz + \psi)\\
+    \delta B_y = \abs{\delta B_k} \cos(kz + \psi),
+  \end{cases}
+\end{align*}
+and the equation of motion along the regular field reads
+\begin{align*}
+  \dv{p_\parallel}{t} =
+  \frac{q}{c} v_\perp \abs{\delta B_k}
+  \left\{
+    \cos(\Omega_\gyrorad t) \cos(kz + \psi) +
+    \sin(\Omega_\gyrorad t) \sin(kz + \psi)
+  \right\}.
+\end{align*}
+This can be simplified by writing everything in terms of the modulus of the momentum
+$p$, which is time-independent
+\begin{align*}
+  \dv{p_\parallel}{t} = \dv{}{t}\ (p \mu) = p \dv{\mu}{t} \quad \text{and}\quad
+  v_\perp = \frac{p}{m \gamma} \sqrt{1 - \mu^2},
+\end{align*}
+yielding
+\begin{align*}
+  \dv{\mu}{t} = \frac{q \sqrt{1 - \mu^2}}{m \gamma c} \abs{\delta B_k}
+  \left\{
+    \cos(\Omega_\gyrorad t) \cos(kz + \psi) +
+    \sin(\Omega_\gyrorad t) \sin(kz + \psi)
+  \right\}.
+\end{align*}
 
 
 \subsection{Effect on the energy spectrum}
