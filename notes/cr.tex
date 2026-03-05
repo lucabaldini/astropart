@@ -1633,15 +1633,17 @@ and a typical spallation cross section of 50~mb, we get a grammage
   \grammage_\text{obs} \approx \frac{B}{C} \frac{m_p}{\sigma_{P\rightarrow S}}
   \sim 10~\text{g~cm}^{-2} \quad @\ 10~\text{GeV}.
 \end{align*}
-(It goes without saying, the corresponding figure will be smaller at higher
-energies, and in fact the data suggests above a few~GeV the grammage decreases
-as a power law with index $\delta \approx 0.3$--$0.5$.)
+It goes without saying, the corresponding figure will be smaller at higher
+energies, as the observations seem to suggest a B/C ratio that decreases with
+energy as a power law
+\begin{align}
+  \frac{B}{C} \propto E^{-\delta} \quad\text{with}\quad \delta \approx 0.3\text{--}0.5,
+\end{align}
 
 \begin{marginfigure}
   \input{figures/cr_bc_ratio.pgf}
   \caption{Energy dependence of the B/C ratio measured by AMS-02~\cite{2021PhR...894....1A}.
-    This is one of the main observables for constraining the cosmic-ray
-    confinement time in our Galaxy.}
+    The data are consistent with a power law in energy above a few GeV.}
   \label{fig:cr_bc_ratio}
 \end{marginfigure}
 
@@ -1683,12 +1685,12 @@ diffusion.}
 \end{align*}
 which translates into an escape time of the order of $\tau_\text{esc} \approx 80~$Myr
 at 10~GeV\sidenote{Again: mileage may vary, and you will find different numbers in the
-literature, ranging from 10 to 100~Myr, depending on the underlying assumptions.},
-which is exceeding the ballistic propagation time
+literature, ranging from 10 to 100~Myr, depending on the underlying assumptions.}.
+This is exceeding the ballistic propagation time
 \begin{align*}
   \tau_\text{ballistic} = \frac{h_\text{halo}}{c} \approx 20~\text{kyr}
 \end{align*}
-by more than three orders of magnitude. This means that the diffusive motion in the
+by more than three orders of magnitude, meaning that the diffusive motion in the
 halo is such that cosmic rays traverse the halo thousands of times before escaping,
 and this is the reason why they accumulate the grammage we observe!
 
@@ -1699,17 +1701,40 @@ and this is the reason why they accumulate the grammage we observe!
 
 \subsection{Effect on the energy spectrum}
 
-The energy dependence of the B/C ratio indicates that the
-grammage, and therefore the cosmic-ray escape time, can be parameterized as simple
-power laws
+If we go back for a second to our discussion about cosmic-ray diffusion and escape
+time, the simplest description of the process we can provide is that of a
+\emph{leaky box}, obeying
+\begin{equation}\label{eq:leaky_box}
+  \pdv{N_p(E, t)}{t} + \frac{N_p(E, t)}{\tau_\text{esc}(E)} = Q(E),
+\end{equation}
+where $N_p$ is the number of confined primary particles, and $Q$ is the source
+term\sidenote{It is straightforward to verify that, if we pretend for a second that
+we can switch off the source (i.e., we set $Q = 0$), the solution of the equation is
+an exponential decay
+\begin{align*}
+  N_p(E, t) = N_{p,0}(E) e^{-t / \tau_\text{esc}(E)},
+\end{align*}
+which is consistent with our interpretation of $\tau_\text{esc}$ as the escape time.}.
+We can easily calculate the steady-state solution by setting to zero the time
+derivative, which yields
+\begin{align*}
+  N_p(E) = Q(E) \tau_\text{esc}(E),
+\end{align*}
+and if both the source term and the escape time are power laws in energy
+\begin{align*}
+  Q(E) \propto E^{-\Gamma} \quad\text{and}\quad \tau_\text{esc}(E) \propto E^{-\delta},
+\end{align*}
+the spectrum measured by an observer in the Galaxy is given by\sidenote{It is interesting
+to note that secondaries get a factor of $2\delta$---one due to the primaries they are
+generated from, and one due to their own diffusion. And we have closed the circle and
+got back where we started from: you play this game with carbon and boron, and you get a
+B/C ratio that decreases as a power law with index $\delta$.}
 \begin{align}
-  X(E) \propto E^{-\delta}
-  \quad\text{and}\quad
-  \tau_\text{esc}(E) \propto E^{-\delta}
+  N_p(E) \propto E^{-(\Gamma + \delta)}.
 \end{align}
-but the available data at high energy are not precise enough to constraint $\delta$
-very well, beyond the relatively large interval $\delta \approx 0.3$--$0.6$.
-
+If we put everything together we get an spectral index at the observer
+of $2.5$---not quite the $2.75$ we are actually measuring, but given
+the crudeness of our assumptions, this is not too bad.
 
 
 \section{The transparency of the Universe}
