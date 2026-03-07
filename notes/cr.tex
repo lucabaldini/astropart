@@ -2,7 +2,6 @@
 %
 % MDR for a magnetic spectrometer.
 % Gyroradius for a 1 TeV proton in Bsun = 10 uG
-% Faraday rotation?
 % Earth magnetic field and radiation belts.
 % Ground based measurements
 % TOF for space-based
@@ -544,7 +543,7 @@ The key feature of magnetic spectrometers is their ability of distinguishing
 the charge sign---e.g., separating electrons and positrons or protons and
 antiprotons. In addition, they are typically equipped with additional
 sub-detectors (\cherenkov\ detectors and/or transition radiation detectors) aimed
-at particle identification, e.g., for isotopical composition studies. This all
+at particle identification, e.g., for isotopic composition studies. This all
 comes at a cost, in that the magnet is a passive element (and typically a heavy one)
 contributing to the mass budget and limiting the field of view (not even mentioning the
 potential issue of the background of secondary particles). Both effect conspire
@@ -1594,10 +1593,10 @@ Let us consider a typical spallation reaction, such as
   \overbrace{(Li,~Be,~B)}^{\text{secondaries}} + X.
 \end{align*}
 The rate of production per unit length of secondary particles is proportional to
-the number $N_p$ of primaries, the number density $n_\text{ISM}$ of the interstellar
+the number $n_p$ of primaries, the number density $n_\text{ISM}$ of the interstellar
 and the cross-section $\sigma_{P\rightarrow S}$ of the spallation process
 \begin{align*}
-  \dv{N_s}{\ell} = \sigma_{P\rightarrow S} n_\text{ISM} N_p.
+  \dv{n_s}{\ell} = \sigma_{P\rightarrow S} n_\text{ISM} N_p.
 \end{align*}
 This is more conveniently rewritten in terms of the grammage, which we have already
 encountered in section~\ref{eq:earth_atmosphere}, and which in this context
@@ -1611,7 +1610,7 @@ ISM is made of pure hydrogen.}
 \end{align*}
 By a trivial change of variables we can rewrite the rate of production of secondaries as
 \begin{align*}
-  \dv{N_s}{\grammage} = \frac{\sigma_{P\rightarrow S}}{m_p} N_p,
+  \dv{n_s}{\grammage} = \frac{\sigma_{P\rightarrow S}}{m_p} n_p,
 \end{align*}
 and, if we assume for a second that the number of primaries does not change significantly
 in the process, which is typically true especially at high energies\sidenote{The peak value
@@ -1623,7 +1622,7 @@ equations describing all the processes at play for all the nuclear species, but 
 with me---this toy model is enough to get a sensible picture of the situation.}, this
 can be readily integrated to yield
 \begin{align}
-  \frac{N_s}{N_p} = \frac{\sigma_{P\rightarrow S}}{m_p} \grammage.
+  \frac{n_s}{n_p} = \frac{\sigma_{P\rightarrow S}}{m_p} \grammage.
 \end{align}
 That is, \emph{the ratio of secondaries to primaries measures the grammage
 traversed by the cosmic rays}---commit that to memory. If we take the peak value
@@ -1699,70 +1698,216 @@ and this is the reason why they accumulate the grammage we observe!
 
 Although a complete, universally accepted, microscopic description of cosmic ray
 diffusion is still subject of active research, at the very fundamental level we can
-model the diffusive halo as a magnetized plasma filled with \emph{Alfven waves}---transverse
-waves that propagate along the direction of the regular field.
+model the diffusive halo as a magnetized plasma filled with \emph{Alfv\'en waves}---that
+is, transverse waves that propagate along the direction of the regular field.
 
-Let us start by stating the ingredients of our setup. We shall assume that we have a
-regular field $\vb{B}_0$, e.g., along the $z$ axis, and small transverse perturbations
-$\delta \vb{B}_k \ll \vb{B}_0$ in the $xy$ plane, propagating along the $z$ axis at the
-Alfven speed, so that the complete magnetic field is given by
+Let us start by stating the ingredients of our setup, which is customarily referred
+to as quasi-linear theory (QLT) of pitch-angle scattering. We shall assume that we have
+a regular field $\vb{B}_0$, e.g., along the $z$ axis, and small\sidenote{And in fact
+this is "small" as in "quasi linear".} transverse perturbations in the $xy$
+plane\sidenote{Note a component of the perturbation along the $z$ axis would not
+do much anyway, due to the "quasi linear" clause.}, propagating along the $z$ axis
+at the Alfv\'en speed, so that the complete magnetic field is given by
 \begin{align}
-  \vb{B} = \vb{B}_0 + \delta \vb{B}_k.
+  \vb{B} = \vb{B}_0 + \delta \vb{B} \quad\text{with}\quad
+  \vb{B_0} = B_0 \vb{z} \quad\text{and}\quad
+  \abs{\delta \vb{B}} \ll \abs{\vb{B}_0}.
 \end{align}
-We shall consider a (ultra-relativistic) charged particle traveling at a pitch-angle
-$\theta$ with respect to the direction of the regular magnetic field, and as usual we
-shall set $\mu = \cos\theta$. (This setup is customarily referred to as quasi-linear
-theory (QLT) of pitch-angle scattering.)
 
-If there was no perturbation, we know that the particle would describe an helix around
-the magnetic field that, modulo an arbitrary phase that we can set to zero, can be
-written as
+Let us consider a charged particle traveling at a pitch-angle $\theta$ with respect
+to the direction of the regular magnetic field, and as usual we shall set
+$\mu = \cos\theta$. If there was no perturbation, we know that the particle
+shall set $\mu = \cos\theta$. If there was no perturbation, we know that the particle
+would describe an helix around the magnetic field (see appendix~\ref{chap:bmotion})
+that, modulo an arbitrary phase that we can set to zero, can be explicitly written as
 \begin{align*}
   \begin{cases}
-  v_x(t) = v_\perp \cos(\Omega_\gyrorad t) = c \sqrt{1 - \mu^2} \cos(\Omega_\gyrorad t)\\
-  v_y(t) = v_\perp \sin(\Omega_\gyrorad t) = c \sqrt{1 - \mu^2} \sin(\Omega_\gyrorad t) \\
-  v_z(t) = v_\parallel  = c\mu
+  \velocity_x(t) = \velocity_\perp \cos(\Omega_\gyrorad t) =
+  \velocity \sqrt{1 - \mu^2} \cos(\Omega_\gyrorad t)\\
+  \velocity_y(t) = \velocity_\perp \sin(\Omega_\gyrorad t) =
+  \velocity \sqrt{1 - \mu^2} \sin(\Omega_\gyrorad t) \\
+  \velocity_z(t) = \velocity_\parallel  = \velocity\mu
   \end{cases}
-\end{align*}
-with a gyroradius and a gyro-frequency (see appendix~\ref{chap:bmotion}) given by
-\begin{align*}
-    \gyrorad = \frac{p\sin\theta}{qB} \quad\text{and}\quad
-    \Omega_\gyrorad = \frac{qB}{m \gamma c}.
+  \quad\text{with}\quad
+  \Omega_\gyrorad = \frac{qB_0}{m \gamma c}.
 \end{align*}
 
-When we turn on the perturbation, the components of the magnetic field on the $xy$ plane
-can be written as\sidenote{Note there is not time, here---the Alfven velocity $v_A$ is
-of the order of $\sim 10$~km~s$^{-1}$ and since the cosmic ray is relativistic, it
-feels the perturbations of the magnetic fields as if they were static.}
+We can imagine the perturbation as a superposition of Fourier modes with a characteristic
+wave energy density $P(k)$ in wave number space\sidenote{As it turns our, when seen in
+physical space, the waves associated to the turbolence of the magnetic field have
+non-zero power at wildly different spatial scales, from $\sim 1$~au to tens or hundreds
+of pc. We shall get back to this in a second.}, and if we focus for an instance to a
+particular Fourier mode with wave number $k$, the components of the magnetic field on
+the $xy$ plane can be written as\sidenote{Note there is no explicit time dependence,
+here---the Alfv\'en velocity $v_A$ is of the order of $\sim 10$~km~s$^{-1}$ and since
+the cosmic ray is relativistic, it feels the perturbations of the magnetic fields as
+if they were static. Also, if you expected the $\cos$ to be applied to the $x$ component,
+keep in mind that you can control that by changing the phase $\psi$.}
 \begin{align*}
   \begin{cases}
-    \delta B_x = \abs{\delta B_k} \sin(kz + \psi)\\
-    \delta B_y = \abs{\delta B_k} \cos(kz + \psi),
+    \delta B_{kx} = \abs{\delta B_k} \sin(kz + \psi)\\
+    \delta B_{ky} = \abs{\delta B_k} \cos(kz + \psi),
   \end{cases}
 \end{align*}
 and the equation of motion along the regular field reads
 \begin{align*}
-  \dv{p_\parallel}{t} =
-  \frac{q}{c} v_\perp \abs{\delta B_k}
+  \dv{p_\parallel}{t} & =
+  \frac{q}{c} \left(\velocity_x \delta B_{ky} - \velocity_y \delta B_{kx}\right) =\\
+  & = \frac{q}{c} \velocity_\perp \abs{\delta B_k}
   \left\{
-    \cos(\Omega_\gyrorad t) \cos(kz + \psi) +
+    \cos(\Omega_\gyrorad t) \cos(kz + \psi) -
     \sin(\Omega_\gyrorad t) \sin(kz + \psi)
   \right\}.
 \end{align*}
 This can be simplified by writing everything in terms of the modulus of the momentum
-$p$, which is time-independent
+$p$, which is time-independent since the magnetic field does not do work on the particle
 \begin{align*}
   \dv{p_\parallel}{t} = \dv{}{t}\ (p \mu) = p \dv{\mu}{t} \quad \text{and}\quad
-  v_\perp = \frac{p}{m \gamma} \sqrt{1 - \mu^2},
+  \velocity_\perp = \frac{p}{m \gamma} \sqrt{1 - \mu^2},
 \end{align*}
 yielding
 \begin{align*}
-  \dv{\mu}{t} = \frac{q \sqrt{1 - \mu^2}}{m \gamma c} \abs{\delta B_k}
+  \dv{\mu}{t} & = \frac{q \sqrt{1 - \mu^2}}{m \gamma c} \abs{\delta B_k}
   \left\{
-    \cos(\Omega_\gyrorad t) \cos(kz + \psi) +
+    \cos(\Omega_\gyrorad t) \cos(kz + \psi) -
     \sin(\Omega_\gyrorad t) \sin(kz + \psi)
-  \right\}.
+  \right\} =\\
+  & = \frac{q \sqrt{1 - \mu^2}}{m \gamma c} \abs{\delta B_k}
+  \cos(\Omega_\gyrorad t - kz - \psi).
 \end{align*}
+Noting that the perturbation does not affect the longitudinal momentum and therefore
+$z = \velocity_\parallel t = \velocity\mu t$, and using the expression for the
+gyro-frequency, this can be also rewritten as
+\begin{align}\label{eq:pitch_angle_motion}
+  \dv{\mu}{t} =
+  \sqrt{1 - \mu^2} \; \frac{\abs{\delta B_k}}{B_0}
+  \cos \left[ (\Omega_\gyrorad - k\velocity\mu) t - \psi \right].
+\end{align}
+
+At this point we have to realize that, for any given Fourier components, we have
+Alfv\'en waves with all possible arbitrary phases $\psi$---the latter should in fact
+be regarded as a stochastic variable, and what we really care about is the
+average of the relevant quantities over an ensemble of waves with different phases.
+One obvious thing that we are interested in is the change $\Delta \mu$ in the
+pitch-angle over a time interval $\Delta t$ that is long compared to the scales of the
+problem (e.g., the inverse of the gyro-frequency)
+\begin{align*}
+  \Delta \mu = \int_{\Delta t} \dv{\mu}{t} \diff{t} \quad\text{over long times}.
+\end{align*}
+It is easy to see from the equation of motion~\eqref{eq:pitch_angle_motion} that the
+average of $\Delta \mu$ over all the phases $\psi$ vanishes
+\begin{align}\label{eq:pitch_angle_mean}
+  \ave{\Delta \mu}_\psi = 0,
+\end{align}
+(we are averaging a cosine over a random phase) and the next thing that we can turn
+our attention to is the the variance
+\begin{align*}
+  \ave{\Delta \mu \Delta \mu}_\psi = &
+  (1 - \mu^2) \; \frac{\abs{\delta B_k}^2}{B_0^2}
+  \left<
+    \int_{\Delta t} \!\!\!\!\!
+    \diff{t'} \cos \left[ (\Omega_\gyrorad - k\velocity\mu) t' - \psi \right]
+    \times\right. \\
+    & \left. \int_{\Delta t} \!\!\!\!\!
+    \diff{t''} \cos \left[ (\Omega_\gyrorad - k\velocity\mu) t'' - \psi \right]
+  \right>_\psi.
+\end{align*}
+Boy, this looks daunting. This is probably a good time to pull out the high-school
+trigonometry book, as by using the product-to-sum identities\sidenote{Bonus tip:
+the one identity we do care about is
+\begin{align*}
+\cos\alpha \cos\beta = \\
+& \hspace*{-16pt}
+\frac{1}{2} \left[ \cos(\alpha + \beta) + \cos(\alpha - \beta) \right].
+\end{align*}}
+we can rearrange this into a more manageable form
+\begin{align*}
+  \ave{\Delta \mu \Delta \mu}_\psi =
+  \frac{(1 - \mu^2)}{2} \; \frac{\abs{\delta B_k}^2}{B_0^2}
+  \left<
+  \int_{\Delta t} \!\!\!\!\!
+  \diff{t'} \int_{\Delta t} \!\!\!\!\!
+  \diff{t''}   \right. & \\
+  & \hspace*{-190pt} \left. \left\{
+    \underbrace{\cos \left[ (\Omega_\gyrorad - k\velocity\mu) (t' + t'') - 2\psi \right]}_{\text{vanishes}} +
+    \underbrace{\cos \left[ (\Omega_\gyrorad - k\velocity\mu) (t' - t'') \right]}_{\text{contributes a }\delta}
+  \right\} \right>_\psi.
+\end{align*}
+And now you might start seeing that magic that is happening before your eyes: the
+first term vanishes because, again, we are averaging a cosine over a random phase,
+while the second brings in a delta function\sidenote{You might remember that the
+delta function can be defined as
+$$
+\delta(a) = \frac{1}{\pi} \int_0^{+\infty} \cos(at) \diff{t},
+$$
+which is actually quite intuitive if you think about it: the Fourier transform of a
+pure cosine is a delta.} when integrated over one of the two differentials. At this
+point the other integral in time is trivial, producing a factor $\Delta t$,
+and we are left with a much simpler expression for the variance of the pitch-angle
+change\sidenote{And, at the cost of a slight possibility of confusion, we take this
+chance to restore the factor $P(k)$ that we have dropped a few equations ago in
+order not to overcrowd the notation more than absolutely necessary.}
+\begin{align}\label{eq:pitch_angle_variance}
+  \frac{\ave{\Delta \mu \Delta \mu}_\psi}{\Delta t} =
+  \frac{\pi}{2} (1 - \mu^2) \; \frac{\abs{\delta B_k}^2}{B_0^2} P(k)
+  \; \delta(\Omega_\gyrorad - kc\mu).
+\end{align}
+You might need a few more seconds in order to realize it, but this is nothing short
+of spectacular: equations~\eqref{eq:pitch_angle_mean} and~\eqref{eq:pitch_angle_variance}
+combined tell you that the variation in time of the pitch angle has zero average, and
+a variance that is linear in time---if this is not a random walk\sidenote{To be precise,
+at this point this is not yet a random walk in physical space, it is a random walk in
+pitch angle space. We shall get back to this in a second}, then I don't know what is.
+
+The other crucial piece of information, here, is the \emph{resonant} nature of the
+scattering. If we introduce the resonant wave number
+\begin{align*}
+  k_\text{res} = \frac{\Omega_\gyrorad}{\velocity\mu} = \frac{1}{\gyrorad \mu},
+\end{align*}
+we can rewrite the variance of the pitch-angle change as
+\begin{align*}
+  \frac{\ave{\Delta \mu \Delta \mu}_\psi}{\Delta t} =
+  \frac{\pi}{2} (1 - \mu^2) \; \frac{\abs{\delta B_{k_\text{res}}}^2}{B_0^2}
+  \Omega_\gyrorad k_\text{res} P(k) \; \delta(k - k_\text{res}),
+\end{align*}
+which means that the scattering is dominated by the Fourier modes of the perturbation
+whose spatial scale is of the order of the gyroradius of the particle itself. This has
+a simple physical interpretation: the particle is effectively scattered when it encounters
+a perturbation that is "in phase" with its own gyration around the regular magnetic field.
+If the spatial variation of the perturbation is much smaller than the gyroradius,
+the particle will see the perturbation as a rapidly oscillating field that averages to zero,
+while if the spatial variation is much larger than the gyroradius, the particle will
+just "surf" the regular field, with no net effect on its pitch angle.
+
+In random-walk language, our variance is related to the so-called
+\emph{diffusion coefficient}\sidenote{One way to commit this to memory is to remember
+that, for an ordinary random walk in space
+$$
+\ave{x^2} = 2 D t.
+$$}
+in pitch-angle space $D_{\mu\mu}$ by
+\begin{align*}
+  \frac{\ave{\Delta \mu \Delta \mu}_\psi}{\Delta t} \coloneqq 2 D_{\mu\mu},
+\end{align*}
+which implicitly defines a characteristic time scale $\tau$ associated to the
+process, and a corresponding characteristic length scale $\lambda = \velocity \tau$ by
+\begin{align*}
+  \tau = \frac{1}{D_{\mu\mu}} \propto
+  \frac{1}{\Omega_\gyrorad k_\text{res} P(k)}
+  \quad\text{and}\quad
+  \lambda = \velocity \tau \propto \frac{\velocity}{\Omega_\gyrorad k_\text{res} P(k)}.
+\end{align*}
+We shall not go into a full calculation of how the diffusion in pitch-angle space
+translates into a diffusion in physical space, but it is reasonable to expect that
+the diffusion coefficient in physical space $D_{xx}$ will take the form
+\begin{align*}
+  D_{xx} \propto \frac{\lambda^2}{\tau} = \velocity^2 \tau = \frac{\velocity^2}{D_{\mu\mu}} \propto
+  \frac{\velocity^2}{\Omega_\gyrorad k_\text{res} P(k)}.
+\end{align*}
+
+We shall leave it it this, in the hope that this short incursion into the micro-physics
+of diffusion has given you rough idea of how the propagation of cosmic rays in our Galaxy
+is really pointing to a rich underlying physics.
 
 
 \subsection{Effect on the energy spectrum}
@@ -1771,20 +1916,20 @@ If we go back for a second to our discussion about cosmic-ray diffusion and esca
 time, the simplest description of the process we can provide is that of a
 \emph{leaky box}, obeying
 \begin{equation}\label{eq:leaky_box}
-  \pdv{N_p(E, t)}{t} + \frac{N_p(E, t)}{\tau_\text{esc}(E)} = Q(E),
+  \pdv{n_p(E, t)}{t} + \frac{n_p(E, t)}{\tau_\text{esc}(E)} = Q(E),
 \end{equation}
-where $N_p$ is the number of confined primary particles, and $Q$ is the source
+where $n_p$ is the number density of confined primary particles, and $Q$ is the source
 term\sidenote{It is straightforward to verify that, if we pretend for a second that
 we can switch off the source (i.e., we set $Q = 0$), the solution of the equation is
 an exponential decay
 \begin{align*}
-  N_p(E, t) = N_{p,0}(E) e^{-t / \tau_\text{esc}(E)},
+  n_p(E, t) = n_{p,0}(E) e^{-t / \tau_\text{esc}(E)},
 \end{align*}
 which is consistent with our interpretation of $\tau_\text{esc}$ as the escape time.}.
 We can easily calculate the steady-state solution by setting to zero the time
 derivative, which yields
 \begin{align*}
-  N_p(E) = Q(E) \tau_\text{esc}(E),
+  n_p(E) = Q(E) \tau_\text{esc}(E),
 \end{align*}
 and if both the source term and the escape time are power laws in energy
 \begin{align*}
@@ -1796,7 +1941,7 @@ generated from, and one due to their own diffusion. And we have closed the circl
 got back where we started from: you play this game with carbon and boron, and you get a
 B/C ratio that decreases as a power law with index $\delta$.}
 \begin{align}
-  N_p(E) \propto E^{-(\Gamma + \delta)}.
+  n_p(E) \propto E^{-(\Gamma + \delta)}.
 \end{align}
 If we put everything together we get an spectral index at the observer
 of $2.5$---not quite the $2.75$ we are actually measuring, but given
@@ -1914,7 +2059,7 @@ order of $\sim 1$~Gpc. This is still a measurable fraction of the dimensions of 
 universe, which means that pair production is not a very efficient energy-loss
 mechanism for ultra-high-energy protons, even on cosmological scales.
 
-The case of pion photoproduction is more interesting. The cross section at the
+The case of pion photo-production is more interesting. The cross section at the
 peak of the $\Delta$ resonance is $\sim 0.5$~mb, and the associated length scale
 for energy loss is \emph{only} $\sim 10$~Mpc. This is cosmologically small,
 which implies that the flux should be strongly suppressed above the threshold: this is
