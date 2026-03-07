@@ -155,14 +155,16 @@ figure~\ref{fig:cr_intensity}, for instance, which represents a simple unweighte
 fit to the data between $10^{10}$ and $10^{18}$~eV, has parameters
 \begin{align*}
   \Gamma \approx 2.75 \quad\text{and}\quad
-  J_0(E) \approx 2.5 \times 10^4~\text{m}^{-2}~\text{s}^{-1}~\text{sr}^{-1}~\text{GeV}^{-1}
+  J_0 \approx 2.5 \times 10^4~\text{m}^{-2}~\text{s}^{-1}~\text{sr}^{-1}~\text{GeV}^{-1}
 \end{align*}
 assuming a reference energy $E_0 = 1$~GeV. Once we have a sensible parametrization
 for the cosmic-ray spectrum we can easily calculate the integral flux above any
-given energy
+given energy\sidenote{Note that, under the assumption that the particle flux is
+isotropic, we need to multiply by the total solid angle $\Delta\Omega$ subtended
+by the detector we are observing with in order to get rid of the sr$^{-1}$ in the units.}
 \begin{align}\label{eq:cr_integral_flux}
-  I_J(E) = \Delta\Omega \int_E^\infty J(E') \diff{E'} \diff{\Omega} =
-  \Delta\Omega\frac{J_0}{\Gamma - 1} \qty(\frac{E}{E_0})^{1 - \Gamma},
+  I_J(E) = \Delta\Omega \int_E^\infty J(E') \diff{E'} =
+  \Delta\Omega \; \frac{J_0 E_0}{(\Gamma - 1)} \qty(\frac{E}{E_0})^{1 - \Gamma},
 \end{align}
 which is one of the most important metrics when it comes to design an experiment,
 as it sets the scale for the necessary effective area of the detector and the
@@ -194,9 +196,9 @@ $0$ to $\infty$, but due to the rollover of the spectrum when the protons become
 non relativistic, the part below $\sim 1$~GeV does not contribute much,
 and we can start the integration from our reference energy $E_0$, yielding
 \begin{align}
-  u_\text{CR} = \frac{4\pi}{c} \int_{E_0}^\infty E J(E) \diff{E} =
-  \frac{4\pi}{c} \int_{E_0}^\infty E J_0 \qty(\frac{E}{E_0})^{-\Gamma} \diff{E} =
-  \frac{4\pi}{c} J_0 E_0^2.
+  u_\text{CR} = \frac{4\pi}{c} \int_{E_0}^\infty E J(E)  \diff{E} =
+  \frac{4\pi}{c} \int_{E_0}^\infty E J_0 \qty(\frac{E}{E_0})^{-\Gamma} \!\!\!\! \diff{E} =
+  \frac{4\pi}{c} \; \frac{J_0 E_0^2}{(\Gamma - 2)}.
 \end{align}
 If we plug in the numbers from or toy parametrization, this turns out to be
 $u_\text{CR} \approx 1~\text{eV~cm}^3$, which was troubling for the early studies
