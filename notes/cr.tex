@@ -231,7 +231,8 @@ is interesting from the point of view of the study of the near-Sun environment,
 we shall not elaborate further.
 
 
-\subsection{Chemical composition}\label{sec:cr_composition}
+\subsection{Chemical composition}
+\label{sec:cr_composition}
 
 \begin{figure}[!htbp]
   \input{figures/cr_composition.pgf}
@@ -334,23 +335,92 @@ catalog, based on 12~years of data between 50~MeV and 1~TeV and dubbed
 4FGL-DR4~\cite{2023arXiv230712546B}, includes 7194~distinct sources,
 sampling all the known source classes (most notably AGNs and gamma-ray pulsars).
 By contrast, the TeVCat includes almost 300~sources know to emit gamma rays at the
-highest energies that can be detected.\todo{The TevCas has a lot of review papers
-that might be interesting.}
+highest energies that can be detected.
+%\todo{The TevCas has a lot of review papers that might be interesting.}
 
 Just as gamma rays, neutrinos point back to their sources, but, as it turns out,
 measuring precisely their direction is much more difficult and neutrino astronomy
 is not yet a mature diagnostic tools, although we might be on the verge of a
-breakthrough\todo{Write something on multi-messenger astrophysics.}.
+breakthrough.
+%\todo{Write something on multi-messenger astrophysics.}.
 
 
-\section{Experimental techniques}\label{sec:cr_exp_techniques}
+\section{Experimental techniques}
+\label{sec:cr_exp_techniques}
 
 Over the century since the discovery of cosmic rays, the basic observables described
 in the previous section have been measured to a great degree of accuracy with
 a surprisingly variety of experimental techniques.
 
+\begin{marginfigure}
+  \begin{center}
+  \begin{tikzpicture}
+    \tikzset{every node/.style={outer sep=5pt}}
+    \node{Cosmic rays}
+      child {node [xshift=-0.52cm] (space) {Space}}
+      child {node [xshift=0.52cm] (ground) {Ground}
+      };
 
-\subsection{Instrument response: basic concepts}\label{sec:irf}
+      \node[above=1.75 cm of space] (lowe) {Low energy};
+      \node at (lowe.south) {(Large flux)};
+      \node[above=1.75 cm of ground] (highe) {High energy};
+      \node at (highe.south) {(Small flux)};
+
+      \node (direct) at (space.south) {(direct)};
+      \node (indirect) at (ground.south) {(indirect)};
+  \end{tikzpicture}
+  \end{center}
+  \caption{Basic sketch of the fundamental dichotomy (space- vs. ground-based) of
+    experimental techniques for cosmic-ray studies.}
+\end{marginfigure}
+
+When talking about experimental techniques for cosmic-ray studies, the first
+fundamental dichotomy that we encounter is between space-based and ground-based
+measurements. At relatively low energies (say below a few tens of TeV) the
+cosmic-ray flux is sufficiently high that it can be measured \emph{directly}
+from space---this is to say that we put in orbit complex particle detectors that
+intercept and absorb primary cosmic rays to measure their characteristics.
+Above $\sim 1$~PeV the cosmic-ray intensity is so meager that this approach
+becomes unfeasible, as the launch of big-enough detectors is still technologically
+impractical\sidenote{As we shall see in a moment, going up in energy from space
+is quadratically difficult: not only we have to fight with a steeply falling spectrum,
+which requires a larger and larger effective area, but we also need thicker and
+thicker detectors to absorb the more and more energetic particles. (More on this in
+section~\ref{sec:cr_space_detectors}).}, and we need to resort to \emph{indirect}
+measurements from the ground, where we detect the secondary products of the interaction
+of primary cosmic rays with the atmosphere. It is amusing to note that the possibility
+of measuring cosmic rays from the ground relies on the fact that, as we shall see
+in sections~\ref{sec:atmosphere_calorimeter} and~\ref{sec:eas}, the thickness of
+the Earth's atmosphere is large enough to absorb primary cosmic rays up to the highest
+energies, and yet not so large to prevent the secondary products from reaching the
+ground, at least at the energies of interest---in a sense, our atmosphere is just
+right for ground-based cosmic-ray studies to be possible.
+
+Within these two broad categories, a diverse zoology of experimental techniques exists,
+and we shall have a cursory look at some of the most important ones---and we shall
+need to accumulate some more common vocabulary before we do that. But we can list
+up front a number of key differences between direct and indirect measurements.
+Space detectors are small, while ground detectors are large, and sometime \emph{very}
+large. (This is just a different way to express the fact that the cosmic-ray flux
+decreases rapidly with energy, and it is hardly a surprise.) Space detectors generally
+allow for a more precise measurement of the energy\sidenote{With most of the spectra
+of interest being power laws with no prominent features, one might argue that this is
+not the most important performance metrics, but there are definitely nieche applications
+where the energy resolution is paramount.}, owing in part to the underlying detection
+techniques, and in part to the fact that, unlike the Earth atmosphere, they can be
+calibrated with particle beams. The same thing is true most of the times for the
+angular resolution (Cherenkov telescopes being a notable exception in this respect),
+but particle identification is where space detectors really shine: direct measurements
+allow for very detailed studies of the cosmic-ray chemical composition, up to the
+isotopical abundances, while distinguishing between different nuclei from the
+ground is \emph{much} more difficult.
+
+In the rest of this section we shall explore all of these generic statements in
+some detail.
+
+
+\subsection{Instrument response: basic concepts}
+\label{sec:irf}
 
 Up to this point we have discussed the properties of cosmic rays in terms of their
 intrinsic physical characteristic, e.g., the differential intensity. What one
@@ -523,6 +593,7 @@ information about the tails of the distribution.
 
 
 \subsection{Space-born detectors}
+\label{sec:cr_space_detectors}
 
 Direct cosmic-ray measurements from space have the only distinct disadvantage that,
 given the severe limits to the physical dimensions, mass and power that one can
@@ -541,6 +612,9 @@ magnetic spectrometers or calorimetric experiments. Strictly speaking all
 the advanced magnetic spectrometers feature an electromagnetic calorimeter
 for energy measurement, so the basic difference between the two is really the
 presence of the magnet.
+
+\subsubsection{Magnetic spectrometers}
+
 The key feature of magnetic spectrometers is their ability of distinguishing
 the charge sign---e.g., separating electrons and positrons or protons and
 antiprotons. In addition, they are typically equipped with additional
@@ -550,6 +624,9 @@ comes at a cost, in that the magnet is a passive element (and typically a heavy 
 contributing to the mass budget and limiting the field of view (not even mentioning the
 potential issue of the background of secondary particles). Both effect conspire
 to make the acceptance of this kind of instrument relatively smaller.\sidenote{Add sketch.}
+
+
+\subsubsection{Imaging calorimeters}
 
 Calorimetric experiments, on the other hand, typically feature a larger acceptance
 and energy reach---and are best suited for measuring, e.g., the inclusive $e^+ + e^-$
@@ -567,6 +644,9 @@ exploiting a passive low-Z target (as done, e.g., in the CREAM and ATIC
 detectors) to promote a nuclear interaction and then recover the energy from
 the electromagnetic component of the shower.\sidenote{Add sketch.}
 
+
+\subsubsection{Pair conversion telescopes}
+
 In the basic scheme laid out in the previous section gamma-ray pair conversion
 telescopes are essentially calorimetric experiments featuring a dedicated
 tracker-converter stage in which foils of high-$Z$ materials are interleaved
@@ -582,10 +662,12 @@ magnitude in typical low-Earth orbit. EGRET~\cite{1988SSRv...49...69K} on-board
 the CGRO mission, AGILE and the Fermi-LAT~\cite{2009ApJ...697.1071A} are
 prototypical examples of pair-conversion telescopes.\sidenote{Add sketch.}
 
-\todo{Add compton telescopes?}
+
+\subsubsection{Compton telescopes}
 
 
 \subsection{The Earth atmosphere as a calorimeter}
+\label{sec:atmosphere_calorimeter}
 
 \begin{marginfigure}
   \input{figures/atmospheric_scales.pgf}
@@ -654,6 +736,7 @@ yielding
 
 
 \subsection{Extensive air showers}
+\label{sec:eas}
 
 A succinct but enlightening review of the generation of particle showers from the
 interaction of cosmic-rays in the high atmosphere is provided in~\cite{2018PrPNP..98...85M},
