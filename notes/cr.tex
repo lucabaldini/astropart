@@ -88,10 +88,16 @@ Cosmic rays can be broadly defined as high-energy particles of extraterrestrial
 origin\sidenote{Interestingly enough, most of the cosmic rays that we observe on the
 surface of the Earth are secondary particles produced in the interaction of primary
 cosmic rays with the atmosphere---mostly muons. We shall come back to that in a little
-while.}.
-If you think about for a second, for any give particle, you can ask yourself four very
-fundamental questions\sidenote{You might argue that polarization should be included in
-this list, but that is beyond the scope of these notes.}:
+while.}. Depending on who you ask, additional conditions might apply. By "cosmic rays"
+many people really mean "charged cosmic rays", while others are more liberal and
+include $\gamma$-rays, or even neutrinos, in the mix. This is largely an issue of
+semantics, and we shall try and stay away from any political stance, but be advised
+this is a potential source of confusion when browsing the literature.
+
+Whatever your definition of cosmic rays is, for any given particle, at the very
+top level, you can ask yourself four fundamental questions\sidenote{You might argue
+that polarization should be included in this list, but that is beyond the scope
+of these notes.}:
 \begin{enumerate}
   \item What its energy?
   \item What particle is it? (e.g., is it a proton? an electron? a gamma-ray?)
@@ -617,7 +623,6 @@ exactly 2 in the gaussian case, and typically larger in real life) gives
 information about the tails of the distribution.
 
 
-
 \subsection{Space-born detectors}
 \label{sec:cr_space_detectors}
 
@@ -625,19 +630,48 @@ Direct cosmic-ray measurements from space have the only distinct disadvantage th
 given the severe limits to the physical dimensions, mass and power that one can
 practically place outside the Earth atmosphere, we run out of statistics relatively
 soon: $\sim 10$~TeV is a reasonable figure as to what the maximum proton energy can
-be measure in space to date. On the plus side, within the accessible energy range
-we get all the benefits of a direct measurement: the energy or momentum scale is
-calibrated on the ground with monochromatic beams, without any additional burden
-due to the modeling of interaction of primary cosmic rays with the atmosphere and,
-more importantly, we can isolate the different particle species, be them nuclei,
-leptons, or gamma rays. (Actually, if we really want, we can also measure the
-isotopic composition of cosmic-ray nuclei.)
+be measure in space to date. (Less abundant species are more severely limited.)
+On the plus side, within the accessible energy range we get all the benefits of
+a direct measurement: the energy or momentum scale is calibrated on the ground
+with monochromatic beams, without any additional burden due to the modeling of
+interaction of primary cosmic rays with the atmosphere and, more importantly,
+we can isolate the different particle species, be them nuclei, leptons, or gamma
+rays. (And, as we have already noted in passing, we can also measure the isotopic
+composition of cosmic-ray nuclei if we are really motivated.)
+
+\begin{figure}[htb!]
+  \begin{center}
+  \begin{tikzpicture}
+    \tikzset{every node/.style={outer sep=5pt}}
+    \node{Space-born detectors}
+      child {node [xshift=-0.8cm] (magspec) {Magnetic spectrometers}}
+      child {node [xshift=0.8cm] (cal) {\phantom{g}Calorimeters}
+        child {node [xshift=-1.2cm] (cherenkov) {Imaging calorimeters}}
+        child {node [xshift=-0.8cm, yshift=-0.9cm] (pair) {Pair conversion telescopes}}
+        child {node [xshift=0.2cm] (compton) {Compton telescopes}}
+      };
+      \node at (magspec.south) {(charge separation)};
+  \end{tikzpicture}
+  \end{center}
+  \caption{Top-level zoology of the experimental techniques for space-born
+    cosmic-ray studies.}
+  \label{fig:cr_space_detectors}
+\end{figure}
 
 Most modern space-born cosmic-ray detectors fall in either of the two categories:
-magnetic spectrometers or calorimetric experiments. Strictly speaking all
-the advanced magnetic spectrometers feature an electromagnetic calorimeter
+magnetic spectrometers or calorimetric experiments\sidenote{Strictly speaking, all
+modern magnetic spectrometers are equipped with an electromagnetic calorimeter
 for energy measurement, so the basic difference between the two is really the
-presence of the magnet.
+presence of the magnet.}, and this is the first level of classification, as
+illustrated in figure~\ref{fig:cr_space_detectors}. The former offer the distinct
+advantage of charge separation, which is key for some applications, at the expense
+of a generally smaller acceptance. Calorimetric experiments can be be more easily
+optimized for a large acceptance and energy reach, and, as we shall see in the
+following, can be declined in several different flavors, some of which are
+specifically tailored for gamma-ray measurements. All modern instruments are equipped
+with ancillary systems for particle identifications, and it is fair to say that the
+different techniques are largely complementary.
+
 
 \subsubsection{Magnetic spectrometers}
 
