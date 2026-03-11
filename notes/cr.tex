@@ -665,25 +665,63 @@ for energy measurement, so the basic difference between the two is really the
 presence of the magnet.}, and this is the first level of classification, as
 illustrated in figure~\ref{fig:cr_space_detectors}. The former offer the distinct
 advantage of charge separation, which is key for some applications, at the expense
-of a generally smaller acceptance. Calorimetric experiments can be be more easily
-optimized for a large acceptance and energy reach, and, as we shall see in the
-following, can be declined in several different flavors, some of which are
-specifically tailored for gamma-ray measurements. All modern instruments are equipped
-with ancillary systems for particle identifications, and it is fair to say that the
-different techniques are largely complementary.
+of a generally smaller acceptance\sidenote{The magnet is a passive element, and
+typically a heavy one, contributing to the mass budget and limiting the field of view,
+not even mentioning the potential issue of the background of secondary particles that
+it can create}. Calorimetric experiments can be be more easily optimized for a large
+acceptance and energy reach, and, as we shall see in the following, can be declined
+in several different flavors, some of which are specifically tailored for gamma-ray
+measurements. All modern instruments are equipped with ancillary systems for particle
+identifications (ionization detectors, \cherenkov\ detectors and/or transition
+radiation detectors), and it is fair to say that the different techniques are
+largely complementary.
 
 
 \subsubsection{Magnetic spectrometers}
 
-The key feature of magnetic spectrometers is their ability of distinguishing
-the charge sign---e.g., separating electrons and positrons or protons and
-antiprotons. In addition, they are typically equipped with additional
-sub-detectors (\cherenkov\ detectors and/or transition radiation detectors) aimed
-at particle identification, e.g., for isotopic composition studies. This all
-comes at a cost, in that the magnet is a passive element (and typically a heavy one)
-contributing to the mass budget and limiting the field of view (not even mentioning the
-potential issue of the background of secondary particles). Both effect conspire
-to make the acceptance of this kind of instrument relatively smaller.\sidenote{Add sketch.}
+Spectrometers measure the rigidity by measuring the deflection of the charged-particle
+trajectory in a magnetic field\sidenote{At a close look, there are actually two
+slightly different concepts of magnetic spectrometers: those measuring the deflection
+angle and those measuring the sagitta---in the first case the tracking detectors are
+arranged in two arms outside of the deflecting magnet, while in the second case
+they are placed \emph{inside} the magnet. The latter approach generally allows for
+a more compact design, and is the typical choice in space.}
+
+We shall focus our discussion on the simple case where a magnet generates a
+uniform magnetic field $B$ in a region on length $L$, equipped with a number of
+tracking planes\sidenote{Add sketch}. The deflection angle $\theta_B$ is related
+to $L$ by the relation
+\begin{align*}
+  \frac{L}{2} = \gyrorad \sin\left(\frac{\theta_B}{2}\right) \approx
+  \frac{\gyrorad \theta_B}{2} \quad\text{or}\quad
+  \theta_B \approx \frac{L}{\gyrorad}.
+\end{align*}
+Now, the details of the measurement depend somewhat on the detector setup (e.g.,
+the number of measurements and relative spacing of the tracking planes, not to
+mention the pattern recognition and track-fitting algorithms) but essentially what
+we measure is the sagitta $s$ (or, equivalently, the maximum displacement
+$\Delta b = 4s$) of the trajectory in the bending plane, which is given by
+\begin{align*}
+  s = \gyrorad \left(1 - \cos\left(\frac{\theta_B}{2}\right)\right) \approx
+  \frac{\gyrorad \theta_B^2}{8} \approx \frac{L^2}{8\gyrorad} =
+  \frac{B L^2}{8 \rigidity_\perp}.
+\end{align*}
+Note in the last manipulation we have used the expression~\ref{eq:gyrorad} for the
+gyroradius in terms of the rigidity of the particle in the bending plane.
+
+The quantity $B L^2$ is customarily referred to as the \emph{bending power} and it
+is one of the basic figures of merit for a magnetic spectrometer: for a given
+rigidity the sagitta of the track is proportional to the bending power, and
+we want it to be as large as possible\sidenote{This brings our back to our original
+point: the most obvious way to achieve a large beging power is to make $L$ large,
+which points toward a detector with a small aspect ratio (i.e., high and skinny)
+limiting the acceptance.}.
+At this point it is instructive to plug in some numbers: at a rigidity of 1~TV
+and with a magnetic field of 1~T over a length of 1~m (believe me: achieving such
+a high magnetic field over a cubic meter in space is highly non-trivial) the sagitta
+that one aims to measure ranges is the tens of $\mu$m, which is at the limit of a
+typical solid-state tracking detector.
+
 
 
 \subsubsection{Imaging calorimeters}
