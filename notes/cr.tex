@@ -672,9 +672,9 @@ it can create}. Calorimetric experiments can be be more easily optimized for a l
 acceptance and energy reach, and, as we shall see in the following, can be declined
 in several different flavors, some of which are specifically tailored for gamma-ray
 measurements. All modern instruments are equipped with ancillary systems for particle
-identifications (ionization detectors, \cherenkov\ detectors and/or transition
-radiation detectors), and it is fair to say that the different techniques are
-largely complementary.
+identifications (time of flight, ionization detectors, \cherenkov\ detectors and/or
+transition-radiation detectors), and it is fair to say that the different techniques
+are largely complementary.
 
 
 \subsubsection{Magnetic spectrometers}
@@ -708,7 +708,6 @@ $\Delta b = 4s$) of the trajectory in the bending plane, which is given by
 \end{align*}
 Note in the last manipulation we have used the expression~\ref{eq:gyrorad} for the
 gyroradius in terms of the rigidity of the particle in the bending plane.
-
 The quantity $B L^2$ is customarily referred to as the \emph{bending power} and it
 is one of the basic figures of merit for a magnetic spectrometer: for a given
 rigidity the sagitta of the track is proportional to the bending power, and
@@ -716,21 +715,41 @@ we want it to be as large as possible\sidenote{This brings our back to our origi
 point: the most obvious way to achieve a large beging power is to make $L$ large,
 which points toward a detector with a small aspect ratio (i.e., high and skinny)
 limiting the acceptance.}.
+
 At this point it is instructive to plug in some numbers: at a rigidity of 1~TV
 and with a magnetic field of 1~T over a length of 1~m (believe me: achieving such
 a high magnetic field over a cubic meter in space is highly non-trivial) the sagitta
 that one aims to measure ranges is the tens of $\mu$m, which is at the limit of a
-typical solid-state tracking detector.
-
+typical solid-state tracking detector. If we invert the relation for the sagitta
+we can readily calculate the uncertainty on the rigidity measurement
+\begin{align}
+  \rigidity_\perp = \frac{B L^2}{8 s} \quad\text{and therefore}\quad
+  \frac{\sigma_\rigidity}{\rigidity} = \frac{\sigma_s}{s} =
+  \frac{8 \sigma_s \rigidity_\perp}{B L^2} \propto \rigidity_\perp.
+\end{align}
+This is enlightening: the relative uncertainty on the rigidity measurement increases
+linearly with the rigidity itself. As we shall see in a second, this is at odds
+with the scaling of the uncertainty on the energy measurement in a calorimeter,
+and constitutes one of the most prominent differences between the two techniques.
+At some point the uncertainty on the rigidity measurement becomes equal to the
+rigidity itself (or, equivalently, the relative uncertainty on the measurement
+becomes 100\%). Physically this means that the particle track looks basically straight
+to our tracking system, and we can no longer provide a meaningful rigidity estimate.
+This condition defines the so-called \emph{maximum detectable rigidity} (MDR),
+which is another key figure of merit for a magnetic spectrometer
+\begin{align}
+  \text{MDR} = \frac{B L^2}{8 \sigma_s}.
+\end{align}
 
 
 \subsubsection{Imaging calorimeters}
 
-Calorimetric experiments, on the other hand, typically feature a larger acceptance
+Calorimetric experiments typically feature a relatively large acceptance
 and energy reach---and are best suited for measuring, e.g., the inclusive $e^+ + e^-$
 spectrum or the proton and nuclei spectra up to the highest energies---but cannot
 readily separate charges (see, however, section~\ref{sec:geomeg_charge_sep} for
 yet another twist to the story).
+
 Modern electromagnetic imaging calorimeters, be they homogeneous or sampling,
 provide excellent electron/hadron discrimination and are typically instrumented
 with some kind of external active layer for the measurement of the absolute
@@ -742,16 +761,53 @@ exploiting a passive low-Z target (as done, e.g., in the CREAM and ATIC
 detectors) to promote a nuclear interaction and then recover the energy from
 the electromagnetic component of the shower.\sidenote{Add sketch.}
 
+The energy resolution of an electromagnetic calorimeter is usually parameterized as
+\begin{align}\label{eq:cal_energy_resolution}
+  \frac{\sigma_E}{E} = \frac{a}{\sqrt{E}} \oplus \frac{b}{E} \oplus c.
+\end{align}
+The stochastic term $a$ is due to the intrinsic fluctuations related to the
+physical development of the shower. For homogeneous calorimeters, assuming that
+the shower is fully contained, the total energy deposited does not fluctuate and
+the stochastic term is smaller than one would expect based on counting statistics
+by the so called Fano factor. In this case $a$ is typically of the order of a
+few \% at 1~GeV. (For sampling calorimeters the stochastic term is more likely to
+be of the order of  5--20\% at 1~GeV.) The noise term $b$ is due to the electronic
+noise of the readout chain and can dominate at low energy, especially when one
+operates at high rate (i. e. when a large bandwidth is needed). The constant
+term $c$ includes the effect of response non-uniformities and represents the
+value at which the energy resolution levels off when the stochastic term becomes
+negligible.
+
+In real life there are additional contributions to the energy resolution of an
+electromagnetic calorimeter, such as the longitudinal and lateral leakage, the
+upstream energy losses in other detectors and the effect of the cracks and dead
+regions. The longitudinal leakage, particularly, is one of the most important
+limiting factor, as the depth at which the maximum of the shower is located
+increases with energy, up to the point~\eqref{eq:cal_energy_resolution} simply
+breaks down and the calorimeter does not provide a meaningful energy measurement
+anymore. This is particularly relevant is space, where the mass budget limits
+the depth of the calorimeter.
+
 
 \subsubsection{Pair conversion telescopes}
 
 In the basic scheme laid out in the previous section gamma-ray pair conversion
 telescopes are essentially calorimetric experiments featuring a dedicated
-tracker-converter stage in which foils of high-$Z$ materials are interleaved
-with position sensitive detection planes. The basic detection principle is
-easy: the conversion foils serve the purpose to promote the conversion of
-high-energy (say above $\sim 20$~MeV) gamma rays into an electron-positron pair
-which is in turn tracked to recover the original photon direction.
+tracker-converter stage in which foils of high-$Z$ materials\sidenote{This is one
+of the most complex trade-offs that the design of a pair conversion telescope implies.
+If you talk to your fellow particle-physicist friend, they will tell you that
+much of the effort involved in the design of a tracker for an experiment at
+accelerators goes into making it as \emph{light} as possible, as any passive
+material produces multiple scattering that, in turn, hurts the tracking resolution.
+In out case, though, we need to convert the photon first (i.e., we need material)
+and to track the resulting electron-positron pair (at which point we would like
+the material to magically disappear). No easy.} are interleaved with position
+sensitive detection planes.
+
+The basic detection principle is easy: the conversion foils serve the purpose
+to promote the conversion of high-energy (say above $\sim 20$~MeV) gamma rays
+into an electron-positron pair which is in turn tracked to recover the original
+photon direction.
 The pair is then absorbed into the calorimeter for the measurement of the
 gamma-ray energy. Last but not least, pair conversion telescopes feature some
 kind of anti-coincidence detector for the rejection of the charged-particle
@@ -760,8 +816,33 @@ magnitude in typical low-Earth orbit. EGRET~\cite{1988SSRv...49...69K} on-board
 the CGRO mission, AGILE and the Fermi-LAT~\cite{2009ApJ...697.1071A} are
 prototypical examples of pair-conversion telescopes.\sidenote{Add sketch.}
 
+The basic performance metrics for a pair-conversion telescope are a complex function
+of the overall arrangements of the different subsystem. The calorimeter, as one
+might expect, is the main driver for the energy resolution, but its design is
+also driven by the need to maximize the acceptance. The tracker layout and
+underlying technology determine the angular resolution (or point-spread function),
+which is generally a strong function of the energy, decreasing as $\propto 1/E$
+at low energy, where the measurement is dominated by the multiple scattering, and
+leveling off at high energy at a value that is only determined by the hit resolution
+of the detectors and the spacing between adjacent planes.
+
 
 \subsubsection{Compton telescopes}
+
+Compton telescopes are designed to measure gamma rays in the energy range where
+Compton scattering is the dominant interaction process, i.e., between a few
+hundred keV to several hundred MeV, and they typically include a tracker and a
+calorimeter section\sidenote{Add sketch.}.
+
+The basic detection principle is that of measuring the position and energy of
+the Compton scattering interaction (from the recoil electron) and then absorb
+the scattered photon in the calorimeter, measuring its energy and position.
+As it turns out, unless the recoil electron is energetic enough to be tracked,
+the available information is not enough to close the kinematics of the event,
+and one can only get an estimate of the energy and a circular crown in the
+sky (as opposed to an actual direction). The trick is then to use the information
+from a large number of events to reconstruct the image of the source in the sky,
+exploiting the intersection between many Compton circles.
 
 
 \subsection{The Earth atmosphere as a calorimeter}
@@ -911,6 +992,27 @@ which is about $3$~GeV for $h \sim 20$~km.
 
 \subsection{Ground-based detectors}
 
+
+\begin{figure}[htb!]
+  \begin{center}
+  \begin{tikzpicture}
+    \tikzset{every node/.style={outer sep=5pt}}
+    \node{Ground-based detectors}
+      child {node [xshift=-1.8cm] (charge) {Charge}}
+      child {node [xshift=0cm] (radio) {Radio}}
+      child {node [xshift=1.8cm] (light) {Light}
+        child {node [xshift=-1.2cm] (cherenkov) {\cherenkov}}
+        child {node [xshift=1.2cm] (fluorescence) {Fluorescence}}
+        %child {node [xshift=-0.8cm, yshift=-0.9cm] (pair) {Pair conversion telescopes}}
+        %child {node [xshift=0.2cm] (compton) {Compton telescopes}}
+      };
+      %\node at (magspec.south) {(charge separation)};
+  \end{tikzpicture}
+  \end{center}
+  \caption{Top-level zoology of the experimental techniques for space-born
+    cosmic-ray studies.}
+  \label{fig:cr_space_detectors}
+\end{figure}
 
 
 \section{Acceleration of cosmic rays}\label{sec:cr_acceleration}
