@@ -16,20 +16,20 @@ incorporated by Fermi a few years later into its effective theory of the process
 and detected experimentally\sidenote{To be precise, that was the antineutrino.} in 1956.
 As the two heavier leptons (first the $\mu$ and then the $\tau$) were discovered, it
 was postulated that they would come with their fellow neutrinos, and in fact $\nu_\mu$
-was observed in 1962, and $\nu_\tau$ in 2000. We now have a fairly precise understading
+was observed in 1962, and $\nu_\tau$ in 2000. We now have a fairly precise understanding
 of the three generations (or \emph{flavors}) of neutrino, their properties and
 mixing, although a number of open problems is still object of active investigation.
 
 In this section we shall use a hybrid approach, where we shall partially follow
 the historical development of our understanding of the neutrinos, staring from the
 saga of the solar neutrinos, which has its own special place in the history of science
-as an endevour undertaken by a relatively small number of key people when that particular
+as an endeavor undertaken by a relatively small number of key people when that particular
 subject of study was not fashionable and the very idea that the Sun could provide
-quantitative information into the basic costituents of the matter was met with skepticism.
+quantitative information into the basic constituents of the matter was met with skepticism.
 We shall interleave the history of the solar neutrino problem with the basic treatment
 of two-flavor neutrino oscillation and neutrino propagation in matter (also know as
 MSW effect), cover the atmospheric neutrinos, and the try and put everything into the
-big picture of our current understading of three-flavor mixing, with a final outlook
+big picture of our current understanding of three-flavor mixing, with a final outlook
 to future developments and open problems.
 
 % Interesting review on all neutrino measurements by Lino Miramonti (Milan)
@@ -96,87 +96,104 @@ bound (at least for such a light nucleus), running at 7.074~MeV per nucleon or
 
 Back to the Sun, we already have all the basic ingredients to make a
 back-of-the-envelope calculation of the total neutrino flux we expect.
-The main mechanism generating energy in the Sun is the fusion of $H$ into $He$,
-and the basic reaction by which the Sun shines is the conversion of \emph{four}
+The main mechanism generating energy in the Sun is the conversion of \emph{four}
 protons into an helium nucleus
-\begin{align*}
+\begin{align}\label{eq:ppq}
   4p + 2 e^- \rightarrow \ce{^4He} + 2\nu_e + Q
-  \quad\text{with} \quad
-  Q = (4m_p + 2m_e - m_{\ce{^4He}}) c^2.
+  \quad\text{with}\quad Q \approx 26.732~\text{MeV}.
+\end{align}
+Incidentally, we note that the $Q$ value for this reaction that reads
+\begin{align*}
+  Q = (4m_p + 2m_e - m_{\ce{^4He}}) c^2
 \end{align*}
-The $Q$ value of this reaction can be readily calculated noting that it can be
-simply rewritten as a function of the total binding energy of the $\ce{^4He}$
-nucleus, which we know is
+and its numerical value can be readily calculated noting that~\eqref{eq:ppq}
+can be easily rewritten as a function of the total binding energy of the
+$\ce{^4He}$ nucleus, which we know is
 \begin{align*}
   2 m_p + 2 m_n - m_{\ce{^4He}} \approx 28.296~\text{MeV},
 \end{align*}
 and two other famous numbers from any nuclear physics textbook--the neutron-proton
-mass difference ($m_n - m_p \approx 1.293$~MeV) and the electron mass
-($m_e \approx 0.511$~MeV)
+mass difference ($m_n - m_p \approx 1.293$~MeV) and the electron rest mass
 \begin{align*}
   Q = (2 m_p + 2 m_n - m_{\ce{^4He}}) c^2 + 2 m_e^2 - 2 (m_n - m_p) c^2
   \approx 26.732~\text{MeV}.
 \end{align*}
 (So much for balancing reactions, but you do get the point.)
 
-This is a complex process, going under the name of $pp$ chain, which proceeds
-via a chain of reactions (more on this in section~\ref{sec:nu_production_sun})
-but the key point is that, owing to the conservation of the leptonic number,
-proceeds with the creation of exactly two neutrinos for each
-reaction\sidenote{What we are doing here is essentially to transform two out of
-four protons in neutrons,
+The $pp$ chain illustrated in~\eqref{eq:ppq} is actually a complex process,
+which proceeds via a chain of reactions with different time scales
+(more on this in section~\ref{sec:nu_production_sun}) but the key point is that,
+owing to the conservation of the leptonic number, it is accompanied by the creation
+of exactly two neutrinos for each reaction\sidenote{What we are doing here is essentially
+to transform two out of four protons in neutrons via inverse beta decay
 $$
-p + e^- \rightarrow n + \nu_e,
+  p + e^- \rightarrow n + \nu_e,
 $$
-which is the inverse of the neutron beta decay, and produce one neutrino along
-with each neutron.}.
-The difference between the sum of the masses in the initial state and that in the
-final state is in this case $Q = 26.73$~MeV, and we can rephrase this by saying
-that that we have an energy release of $26.73$~MeV associated to each pair of
-neutrino being produced. These two simple facts bears important consequences,
-because the \emph{total} neutrino flux at Earth can be related to the solar
-constant\sidenote{In reality the situation is more complicted, as the proton fusion
-can proceed via several different avenues, and a precise estimate requires an accurate
-modeling of the Sun interior, but it is amusing to know that this simple calculation
-is correct to the 10\% level.} (that is, the electromagnetic energy flux per unit
-area at a distance $d = 1$~au from the Sun) by
-\begin{align}
-  \Phi_\nu = \frac{2 L_\odot}{4\pi d^2 Q_\text{heat}}.
-\end{align}
-If we now assume that the majority of the energy from the nuclear fusion goes into
-heat, i.e., $Q_\text{heat} \sim Q$ we arrive to the astonishing figure of
-$\Phi_\nu \approx 6.5 \times 10^{10}$~cm$^{-2}$~s$^{-1}$. In any given second, any
-1~cm$^2$ surface orthogonal to the direction to the Sun is traversed by some
-65~billion neutrinos. In the remaining of this section we shall elaborate on this
-basic facts, and the reader is referred to~\cite{2021ARNPS..71..491O} for a more
-in-depth, forward-looking review of neutrino production in the Sun.
+and produce one neutrino along with each neutron.}.
 
-
-\subsection{Neutrino production in nuclear fusion}
-
-The archetypal neutrino production process in the Sun is the fusion of two protons
-into a deuton (a stable hydrogen isotope consisting into a bound state of a
-proton and a neutron), which takes place via the weak interaction, with the production
-of a positron and a neutrino
+Now, the main question is: what happens to these extra $\sim 27$~MeV of energy that
+are available in the reaction? Well, to really answer we would need to go through
+all the reactions of the $pp$ chain (which we shall do in a second), but a cursory
+look at the first step of the process, which is the fusion of two protons into a
+deuton\sidenote{At this point you should be able to calculate $Q$ by yoursef.}
 \begin{align}\label{eq:deuton_fusion}
-  p + p \rightarrow \ce{^2H} + e^+ + \nu_e + 0.423~\text{MeV}.
+  p + p \rightarrow \ce{^2H} + e^+ + \nu_e +  0.423~\text{MeV}
 \end{align}
+turns out to be quite instructive. There are three body in the final state, which
+means that the neutrino comes out with a continuous spectrum with a maximum
+energy of 423~keV. (And, in reality, the average neutrino energy is only about
+265~keV.) Let's now turn to the positron that is produced in the process. Can
+you guess its fate? Well, as soon as it encounters an ambient electron, it will
+annihilate into two gamma rays. And the interesting part is that, while neutrinos
+are notoriously good at not interacting with matter and happily escape the Sun,
+the mean free path for photons in such a dense and hot environment is so short
+that they have to find their way to the surface by a random walk, through which
+their energy is degraded into heat and eventually emitted in the form of blackbody
+radiation from the photosphere.
+
+Zooming out, we can rephrase this by saying that the vast majority of the
+overall $Q$ value for the $pp$~chain is actually radiated away in the form of
+ordinary sunlight, with the neutrinos carrying away a comparatively small fraction,
+of the order of a few \%.
+(We shall cross check this statement in section~\ref{sec:nu_production_sun} when
+we will go through the details of the $pp$~chain.) Take a deep breath and think
+about it for a second, because this is heavy: if we neglect the kinetic energy
+they carry away, the \emph{total} flux\sidenote{Make sure you understand the units:
+this is a flux per unit area and time, expressed in cm$^{-2}$~s$^{-1}$.} of neutrinos
+at Earth can be related to the solar luminosity by
+\begin{align}
+  \Phi_\nu = \frac{2 L_\odot}{4\pi d^2 Q} \approx
+  6.5 \times 10^{10}~\text{cm}^{-2}~\text{s}^{-1}.
+\end{align}
+You did not misread that. In any given second, any 1~cm$^2$ surface orthogonal to
+the direction to the Sun is traversed by some 65~billion neutrinos. Compare it
+with the rate of cosmic rays (one per hand per second) at sea level.
 
 
+\subsection{Nuclear fusion basics}
+\label{sec:nuclear_fusion}
 
-
-Now, in order for two nuclei to be able to undergo nuclear fusion---despite the
+If we want to make more quantitative progress about the neutrino production in the
+Sun, we need understand a few basic facts about nuclear fusion.
+In order for two nuclei to be able to undergo nuclear fusion---despite the
 fact that the latter is energetically favored---they have to first overcome the
 Coulomb potential barrier and get close enough to each other for the (short-range)
 strong force to take over. This happens at a distance $r \leq r_0 \sim 1$~fm
-of the order of the proton radius. We can model the problem in a very crude way
-by assuming that the nucleus-nucleus interaction potential is given by the Coulomb
-potential at large distances, and collapses into a well at $r_0 \sim A^\frac{1}{3}$~fm,
-that is, we can write the potential energy as\sidenote{Note we are neglecting the
-angular momentum, which is legitimate here, as we are interested in nuclear interactions
-with a small impact parameter (otherwise the two nuclei would not get close enough
-to each other), and the $s$-wave contribution is the only important term in the
-partial-wave expansion.}
+of the order of the proton radius\sidenote{If you are really picky, this would be a
+good time to remember that the average radius $r_0$ of a nucleus with a mass number $A$
+scales as
+$$
+  r_0 \propto A^\frac{1}{3}.
+$$
+We are not going to worry about this here, but keep it in mind.}
+
+We can model the problem in a very crude way by assuming that the nucleus-nucleus
+interaction potential is given by the Coulomb potential at large distances, and
+collapses into a well at $r_0$, that is, we can write the potential energy
+as\sidenote{Note we are neglecting the angular momentum, which is legitimate here,
+as we are interested in nuclear interactions with a small impact parameter
+(otherwise the two nuclei would not get close enough to each other), and the
+$s$-wave contribution is the only important term in the partial-wave expansion.}
 \begin{align*}
   U(r) =
   \begin{cases}
@@ -196,37 +213,41 @@ partial-wave expansion.}
 
 In a classical description, a nucleus is simply forbidden from entering the potential
 well (and undergo the fusion process) unless its kinetic energy is larger than $U_\text{max}$.
-If we plug in the numbers, this turns out to be about $1.44$~MeV for proton-proton
+If we plug in the numbers, this turns out to be about $1.5$~MeV for proton-proton
 fusion, and larger for heavier nuclei. The question is now: what are the chances
-for a nucleus (e.g., a proton) in the core of the Sun to have a kinetic energy in
-excess this value?
+for a nucleus (e.g., a proton) inside the Sun to have a kinetic energy in excess of
+this value?
 
 If we model the core of the Sun as a non-relativistic perfect gas (or, more
 precisely, as a plasma of protons and electrons, since the atoms are completely
 ionized), the probability density function for the proton velocity is given by the
 Maxwell-Boltzmann distribution
 \begin{align}
-  p_v(v) = \qty(\frac{m}{2\pi kT})^\frac{3}{2} 4\pi v^2 e^{-\frac{mv^2}{2kT}}
+  p_\velocity(\velocity) =
+  \qty(\frac{m}{2\pi \kB T})^\frac{3}{2} 4\pi \velocity^2 e^{-\frac{m\velocity^2}{2\kB T}},
 \end{align}
-(with $kT \approx 1.5$~keV), which can be easily recasted in energy space by a simple
-change of variables
+which can be easily rewritten in energy space via a simple change of variables
 \begin{align}\label{eq:maxwell_boltzmann_dist_energy}
-  p_E(E) = \frac{2}{\sqrt{\pi}} \qty(\frac{1}{kT})^\frac{3}{2} \sqrt{E} e^{-\frac{E}{kT}}.
+  p_E(E) = \frac{2}{\sqrt{\pi}} \qty(\frac{1}{\kB T})^\frac{3}{2} \sqrt{E} e^{-\frac{E}{\kB T}}.
 \end{align}
+For a standard temperature at the core of the Sun of about 15~million K, corresponding to
+$\kB T \approx 1.3$~keV, the average kinetic energy of the protons is
+$\nicefrac{3}{2} \kB T \approx 2$~keV.
 
 We are now facing a distinct problem: we have a potential barrier to cross for the fusion
 to take place that is of the order of $U_\text{max} \approx 1.5$~MeV (or more, if we
-consider heavier nuclei), but the protons at the center of the Sun only have $kT \approx 1.5$~keV
-of kinetic energy available on average. Formally the probability for any given proton
-to have enough energy to cross the barrier is calculated by integrating the Maxwell-Boltzmann
-distribution~\eqref{eq:maxwell_boltzmann_dist_energy} from $x_0 = \nicefrac{U_\text{max}}{kT}$
-to infinity
+consider heavier nuclei), but the protons at the center of the Sun only have
+$\kB T \approx 2$~keV of kinetic energy available on average.
+Formally the probability for any given proton to have enough energy to cross the barrier
+is calculated by integrating the Maxwell-Boltzmann
+distribution~\eqref{eq:maxwell_boltzmann_dist_energy} from
+$x_0 = \nicefrac{U_\text{max}}{\kB T}$ to infinity
 \begin{align*}
   P_\text{cross} = \frac{2}{\sqrt{\pi}} \int_{x_0}^\infty \sqrt{x} e^{-x} \diff{x} =
   \text{erfc}\qty(\sqrt{x_0}) + 2 \sqrt{\frac{x_0}{\pi}} e^{-x_0} \approx
   2 \sqrt{\frac{x_0}{\pi}} e^{-x_0}
 \end{align*}
-(the last approximation holds for large $x_0$), and for $x_0 = 1000$ the crossing
+(the last approximation holds for large $x_0$), and for $x_0 \sim 10^3$ the crossing
 it is of the order of $10^{-436}$ which means that, even considering that the number of
 protons in the Sun $N_p \approx N_A M_\odot~\text{[g]} \approx 1.2 \times 10^{57}$,
 the process is classically forbidden.
@@ -242,7 +263,11 @@ a proton-proton fusion) and $r_1$ is defined by the condition\sidenote{It is imp
 to note that figure~\ref{fig:pp_fusion} is not quite to scale: since the kinetic
 energy $E$ of the nucleus is typically much smaller than the height of the Coulomb
 barrier $U_\text{max}$, we have $r_0 \ll r_1$ or, equivalently, $\nicefrac{r_0}{r_1} \ll 1$.}
-$U(r_1) = E$. We can then rewrite our probability as
+\begin{align*}
+  U(r_1) = E \quad\text{or}\quad
+  r_1 = \frac{Z_1 Z_2 e^2}{E}.
+\end{align*}
+We can then rewrite our probability as
 \begin{align*}
   P_\text{cross} = \exp\qty{-2 \sqrt{\frac{2m_r Z_1 Z_2 e^2}{\hbar^2}}
   \int_{r_0}^{r_1} \sqrt{\frac{1}{r} - \frac{1}{r_1}} \diff{r}},
@@ -250,27 +275,29 @@ $U(r_1) = E$. We can then rewrite our probability as
 which, by virtue of the change of variable $x = \nicefrac{r}{r_1}$, becomes
 \begin{align*}
   \int_{r_0}^{r_1} \sqrt{\frac{1}{r} - \frac{1}{r_1}} \diff{r} =
-  \frac{e}{\sqrt{E}} \int_\frac{r_0}{r_1}^{1} \sqrt{\frac{1}{x} - 1} \diff{x}
-  \approx \frac{e}{\sqrt{E}} \int_0^1 \sqrt{\frac{1}{x} - 1} \diff{x} =
-  \frac{\pi}{2} \frac{e}{\sqrt{E}}.
+  \sqrt{\frac{Z_1 Z_2 e^2}{E}} \int_{x_0}^{1} \sqrt{\frac{1}{x} - 1} \diff{x}.
 \end{align*}
-(in the penultimate passage we have used the fact that $\nicefrac{r_0}{r_1}$ is
-small to change the lower limit if the integration to zero). The crossing probability
-can be estimated as
+Since $x_0 = \nicefrac{r_0}{r_1} \ll 1$, we can start the integration from zero, and
+approximate the quantity we are trying to calculate as
+\begin{align*}
+  \sqrt{\frac{Z_1 Z_2 e^2}{E}} \int_0^1 \sqrt{\frac{1}{x} - 1} \diff{x} =
+  \frac{\pi}{2} \sqrt{\frac{Z_1 Z_2 e^2}{E}}.
+\end{align*}
+Putting everything back together, the crossing probability can be estimated as
 \begin{align}
-  P_\text{cross} = \exp\qty{-\pi e^2 Z_1 Z_2 \sqrt{\frac{2m_r}{\hbar^2 E}}}
+  P_\text{cross} \approx \exp\qty{-\pi e^2 Z_1 Z_2 \sqrt{\frac{2m_r}{\hbar^2 E}}}
   \quad\text{or}\quad
   P_\text{cross} = e^{-\sqrt{\frac{E_G}{E}}},
 \end{align}
 where we have introduced the \emph{Gamow energy}
 \begin{align}
-  E_G = \frac{2m_r \pi^2 e^4 Z_1^2 Z_2^2}{\hbar^2},
+  E_G = \frac{2m_r \pi^2 e^4 Z_1^2 Z_2^2}{\hbar^2}.
 \end{align}
-which turns out to be of the order of $493$~keV for a proton-proton fusion. The corresponding
-crossing probability, assuming an average proton energy of 1.5~keV, is now of the
-order of $10^{-8}$---this is still small for a single proton, but when we fold in
-the number of protons available in the Sun, this is more than enough for the process
-to actually take place.
+For completeness, the Gamow energy turns out to be of the order of $493$~keV for
+a proton-proton fusion, and the corresponding crossing probability, assuming an average
+proton energy of 2~keV, is now of the order of $10^{-8}$---this is still small for a
+single proton, but when we fold in the number of protons available in the Sun, it
+is more than enough for the process to actually take place.
 
 Although we will not go into all the gory details of a complete calculation of the
 neutrino flux from nuclear fusion, we note the thermonuclear reaction rate is
@@ -289,7 +316,7 @@ precisely, the nuclear cross section is written as
 and the energy at the denominator cancels with the product of the $\sqrt{E}$ in the
 Maxwell-Boltzmann distribution times the relative velocity, which also scales as
 $\sqrt{E}$. Away from resonances, the $S$-factor is only slowly dependent on the energy.}.
-We note explicitely that one of the terms that go into the relevant integral is
+We note explicitly that one of the terms that go into the relevant integral is
 the product of the exponential in the Maxwell-Boltzmann distribution and the tunneling
 probability, which is generally referred to as the \emph{Gamow peak} and is shown
 for reasonable values of the parameters in figure~\ref{fig:gamow_peak}.
@@ -342,7 +369,7 @@ peak with a Gaussian with mean $\mu = E_0$ and standard deviation
 
 The standard deviation of our approximate Gaussian is germane to the harmonic mean
 of $kT$ and $E_0$, and always smaller than the latter---in the two-proton case it
-turns out to be $3.7$~keV, so that the left intergration extreme is about
+turns out to be $3.7$~keV, so that the left integration extreme is about
 $2\sigma$ away from the mean, and we are not very far off if we perform the integration
 over the entire real axis, which now can be done analytically and amounts to
 \begin{align*}
@@ -363,9 +390,7 @@ to do is calculate the logarithmic derivative
 \end{align}
 For the two-proton case, where $\tau \approx 14$, the neutrino production rate scales
 roughly as the fourth power of the temperature; for heavier nuclei the scaling is
-even more violent, and we shall get back to this in the next section.\todo{We should
-clarify the connection between this and the scaling of the different neutrino
-spectra with temperature.}
+even more violent, and we shall get back to this in the next section.
 
 
 \subsection{Neutrino production in the Sun}
