@@ -430,19 +430,19 @@ ground is \emph{much} more difficult.
     Experiment & Technique & Energy range & Operation\\
     \hline
     \hline
-    AMS-02 & Spectrometer & $1$~GeV--$1$~TeV & 2011--\\
-    PaMeLa & Spectrometer & $1$~GeV--$1$~TeV & 2006--2011\\
-    CALET & Calorimeter & $1$~GeV--$1$~PeV & 2015--\\
-    DAMPE~\cite{2017APh....95....6C} & Calorimeter & $1$~GeV--$1$~PeV & 2015--\\
-    Comptel & Compton & $1$~MeV--$20$~MeV & 1991--2000\\
+    AMS-02 & Spectrometer & & 2011--\\
+    PaMeLa & Spectrometer & & 2006--2011\\
+    CALET & Calorimeter & & 2015--\\
+    DAMPE~\cite{2017APh....95....6C} & Calorimeter &  & 2015--\\
+    Comptel & Compton & & 1991--2000\\
     Fermi-LAT~\cite{2009ApJ...697.1071A} & Pair-conversion & $20$~MeV--$1$~TeV & 2008--\\
     CTAO & Air Cherenkov & $20$~GeV--$300$~TeV & ? \\
     % https://indico.ict.inaf.it/event/2661/contributions/19387/attachments/8648/17916/225_Casanova.pdf
-    HAWC & Water Cherenkov & $100$~GeV--$100$~TeV & 2015--\\
-    LHAASO & Water Cherenkov & $1$~TeV--$1$~PeV & 2019--\\
-    IceCube & Ice Cherenkov & $1$~TeV--$1$~PeV & 2010--\\
-    ARGO-YBJ & Surface array & $1$~TeV--$1$~PeV & 2007--2013\\
-    AUGER & Various & $1$~PeV--$1$~EeV & 2008--\\
+    HAWC & Water Cherenkov & & 2015--\\
+    LHAASO & Water Cherenkov & & 2019--\\
+    IceCube & Ice Cherenkov &  & 2010--\\
+    ARGO-YBJ & Surface array &  & 2007--2013\\
+    AUGER & Various & & 2008--\\
     \hline
   \end{tabular}
 \end{table}
@@ -1001,12 +1001,13 @@ which is about $3$~GeV for $h \sim 20$~km.
       child {node [xshift=-1.8cm] (charge) {Charge}}
       child {node [xshift=0cm] (radio) {Radio}}
       child {node [xshift=1.8cm] (light) {Light}
-        child {node [xshift=-1.2cm] (cherenkov) {\cherenkov}}
+        child {node [xshift=-1.2cm] (cherenkov) {\cherenkov}
+          child {[xshift=-0.5cm, yshift=-0.2cm] node {Water}}
+          child {[xshift=0cm, yshift=-0.2cm] node {Ice}}
+          child {[xshift=0.5cm, yshift=-0.2cm] node {Air ($\gamma$ rays)}}
+        }
         child {node [xshift=1.2cm] (fluorescence) {Fluorescence}}
-        %child {node [xshift=-0.8cm, yshift=-0.9cm] (pair) {Pair conversion telescopes}}
-        %child {node [xshift=0.2cm] (compton) {Compton telescopes}}
       };
-      %\node at (magspec.south) {(charge separation)};
   \end{tikzpicture}
   \end{center}
   \caption{Top-level zoology of the experimental techniques for space-born
