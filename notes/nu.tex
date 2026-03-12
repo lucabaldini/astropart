@@ -1,10 +1,20 @@
 \chapter{Massive Neutrinos}
 
 The electron neutrino was was first hypothesized, although under a different name,
-by W. Pauli in 1930 in order to save the energy conservation law in $\beta$ decay,
+by W. Pauli in 1930 in order to save the energy conservation law in $\beta$
+decay\sidenote{In a hypothetical two-body decay
+$$
+n \rightarrow p + e^-
+$$
+the elecron in the final state would be monochromatic, and the fact that electrons
+from $\beta$ decay were observed to have a continuous spectrum was a puzzle for
+the physicists of the time.}
+\begin{align}
+  n \rightarrow p + e^- + \overline{\nu}_e
+\end{align}
 incorporated by Fermi a few years later into its effective theory of the process,
 and detected experimentally\sidenote{To be precise, that was the antineutrino.} in 1956.
-As the two hevier leptons (first the $\mu$ and then the $\tau$) were discovered, it
+As the two heavier leptons (first the $\mu$ and then the $\tau$) were discovered, it
 was postulated that they would come with their fellow neutrinos, and in fact $\nu_\mu$
 was observed in 1962, and $\nu_\tau$ in 2000. We now have a fairly precise understading
 of the three generations (or \emph{flavors}) of neutrino, their properties and
@@ -29,35 +39,97 @@ to future developments and open problems.
 
 
 \section{Solar neutrinos}
+\label{sec:solar_neutrinos}
 
 %https://www.fe.infn.it/radioactivity/fiorentini/materials/courses/astronuc_en/5.%20Nuclear%20reactions%20in%20the%20sun.pdf
 
 Solar neutrinos, produced in the core of the Sun via various nuclear fusion process,
 make up for the vast majority of the neutrinos reaching the Earth and, since, unlike
-photons, they can largely travel unperturned through the Sun, they provide crucial
+photons, they can largely travel unperturbed through the Sun, they provide crucial
 information about the inner functioning of our star---as well as about the neutrinos
 themselves, as we shall see in a second. The saga of the \emph{solar neutrino problem}
-is a long and torned one, and one where the detailed study of a mundane astrophysical
+is a long and torn one, and one where the detailed study of a mundane astrophysical
 object such as the Sun proved to be carrier of a breakthrough related to the fundamental
 constituents of matter, developing at the same time what is known as the standard
 solar model~\cite{2003nipb.conf...15B}.
 
-If we accept that the main mechanism generating energy in the Sun is the fusion
-of $H$ into $He$---which is in agreement with the state of the art of our
-understanding---then, by first principles, we have to assume that the basic reaction
-by which the Sun shines is the conversion of \emph{four} protons into an $\alpha$
-particle
+
+\subsection{Nuclear binding energy}
+\label{sec:nuclear_binding_energy}
+
+\begin{figure}[!htbp]
+  \input{figures/nucleon_binding_energy.pgf}
+  \caption{Average binding energy per nucleon as a function of the mass number.}
+  \label{fig:nucleon_binding_energy}
+\end{figure}
+
+Before we start discussing the actual details of the neutrino production in the
+Sun, it is useful to review some basic facts about how the atomic nuclei are
+held together. The fusion of light nuclei into heavier ones, at least when the
+atomic number is not too large, is energetically favored because \emph{the mass
+of the product of the fusion is generally smaller than the sum of the masses of
+the reagents}. (Incidentally, the energy $Q$ equivalent to this mass defect is
+available to create secondary particles.)
+
+This basic notion is customarily expressed in quantitative terms by
+the \emph{average binding energy per nucleon}
 \begin{align*}
-  4p + 2 e^- \rightarrow \ce{^4He} + 2\nu_e + Q_\text{heat}
+  \ave{E_B} = \frac{(m_p Z + m_n(A - Z) - m_N)c^2}{A} > 0,
 \end{align*}
-which, in virtue of the conservation of the leptonic number, proceeds with the
-creation of exactly two neutrinos for each reaction\sidenote{What we are doing here is
-essentially to transform two out of four protons in neutrons, which is the inverse
-of the neutron beta decay
+which is shown as a function of the mass number $A$ in
+figure~\ref{fig:nucleon_binding_energy}.
+
+We are not going to insist too much on this, but the basic message you should
+take home from this is twofold: (i) the average binding energy per nucleon is
+of the order of 1--10~MeV, and relatively constant at the value of 8--9~MeV for
+elements heavier than oxygen; and (ii), the average binding energy per nucleon
+tends to increase with the mass number up to the iron, and then decreases for
+heavier elements---this is why nuclear fusion is an efficient mechanism to
+generate heavy nuclei only up to this element. Note that the \emph{deuton}
+$\ce{^1H}$, with a binding energy of about 2.225~MeV (or 1.112~MeV per nucleon),
+is the least bound nucleus. $\ce{^4He}$, on the other hand, is very tightly
+bound (at least for such a light nucleus), running at 7.074~MeV per nucleon or
+28.296~MeV in total. Keep these two figures in mind.
+
+
+\subsection{Estimating the solar neutrino flux}
+
+Back to the Sun, we already have all the basic ingredients to make a
+back-of-the-envelope calculation of the total neutrino flux we expect.
+The main mechanism generating energy in the Sun is the fusion of $H$ into $He$,
+and the basic reaction by which the Sun shines is the conversion of \emph{four}
+protons into an helium nucleus
 \begin{align*}
-  n \rightarrow p + e^- + \overline{\nu}_e
+  4p + 2 e^- \rightarrow \ce{^4He} + 2\nu_e + Q
+  \quad\text{with} \quad
+  Q = (4m_p + 2m_e - m_{\ce{^4He}}) c^2.
 \end{align*}
-and is bound to produce two neutrinos.}.
+The $Q$ value of this reaction can be readily calculated noting that it can be
+simply rewritten as a function of the total binding energy of the $\ce{^4He}$
+nucleus, which we know is
+\begin{align*}
+  2 m_p + 2 m_n - m_{\ce{^4He}} \approx 28.296~\text{MeV},
+\end{align*}
+and two other famous numbers from any nuclear physics textbook--the neutron-proton
+mass difference ($m_n - m_p \approx 1.293$~MeV) and the electron mass
+($m_e \approx 0.511$~MeV)
+\begin{align*}
+  Q = (2 m_p + 2 m_n - m_{\ce{^4He}}) c^2 + 2 m_e^2 - 2 (m_n - m_p) c^2
+  \approx 26.732~\text{MeV}.
+\end{align*}
+(So much for balancing reactions, but you do get the point.)
+
+This is a complex process, going under the name of $pp$ chain, which proceeds
+via a chain of reactions (more on this in section~\ref{sec:nu_production_sun})
+but the key point is that, owing to the conservation of the leptonic number,
+proceeds with the creation of exactly two neutrinos for each
+reaction\sidenote{What we are doing here is essentially to transform two out of
+four protons in neutrons,
+$$
+p + e^- \rightarrow n + \nu_e,
+$$
+which is the inverse of the neutron beta decay, and produce one neutrino along
+with each neutron.}.
 The difference between the sum of the masses in the initial state and that in the
 final state is in this case $Q = 26.73$~MeV, and we can rephrase this by saying
 that that we have an energy release of $26.73$~MeV associated to each pair of
@@ -90,28 +162,8 @@ of a positron and a neutrino
   p + p \rightarrow \ce{^2H} + e^+ + \nu_e + 0.423~\text{MeV}.
 \end{align}
 
-\begin{figure}[!htbp]
-  \input{figures/nucleon_binding_energy.pgf}
-  \caption{Caption.}
-  \label{fig:nucleon_binding_energy}
-\end{figure}
 
-The fusion of light nuclei into heavier ones, at least when the atomic number is
-not too large, is energetically favored because the mass of the product of the fusion
-is generally smaller than the sum of the masses of the reagents, and the mass
-defect is available to create secondary particles, such as the positron and the
-neutrino in the previous case. This basic notion is customarily expressed in
-quantitative terms by the \emph{average binding energy per nucleon} as a function
-of the mass number
-\begin{align*}
-  \ave{E_B} = \frac{(m_p Z + m_n(A - Z) - m_N)c^2}{A}.
-\end{align*}
-Generally speaking, the average binding energy per nucleon increases up to the iron,
-which is why fusion is an efficient mechanism to generate heavy nuclei only up
-to this element. The deuton binding energy is about 2.2~MeV (or 1.1~MeV per nucleon),
-while for ${^4}He$ the binding energy is roughly 28.3~MeV, or 7.1~MeV per nucleon.
-For most of the elements, the average binding energy per nucleon is comprised
-between 8 and 9~MeV.
+
 
 Now, in order for two nuclei to be able to undergo nuclear fusion---despite the
 fact that the latter is energetically favored---they have to first overcome the
@@ -317,6 +369,7 @@ spectra with temperature.}
 
 
 \subsection{Neutrino production in the Sun}
+\label{sec:nu_production_sun}
 
 Neutrinos are produced in the Sun via thermonuclear reactions primarily via the
 so-called $pp$~cycle, with a subdominant contribution from the fusion of heavier
