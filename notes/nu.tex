@@ -303,9 +303,9 @@ Although we will not go into all the gory details of a complete calculation of t
 neutrino flux from nuclear fusion, we note the thermonuclear reaction rate is
 customarily written as
 \begin{align}
-  N_A \ave{\sigma v} = N_A \qty(\frac{8}{\pi m_r})^\frac{1}{2} \qty(\frac{1}{kT})^{\frac{3}{2}}
+  N_A \ave{\sigma v} = N_A \qty(\frac{8}{\pi m_r})^\frac{1}{2} \qty(\frac{1}{\kB T})^{\frac{3}{2}}
   \int_0^\infty S(E)
-  \overbrace{\exp\qty{-\qty(\sqrt{\frac{E_G}{E}} + \frac{E}{kT})}}^\text{Gamow peak} \diff{E},
+  \overbrace{\exp\qty{-\qty(\sqrt{\frac{E_G}{E}} + \frac{E}{\kB T})}}^\text{Gamow peak} \diff{E},
 \end{align}
 where $S(E)$, also known as the $S$-\emph{factor} or the \emph{astrophysical factor}
 is motivated by a common parametrization of the nuclear cross section\sidenote{More
@@ -323,27 +323,27 @@ for reasonable values of the parameters in figure~\ref{fig:gamow_peak}.
 
 \begin{marginfigure}
   \input{figures/gamow_peak.pgf}
-  \caption{Illustration of the Gamow peak for $E_G = 600$~keV and $kT = 1.5$~keV.}
+  \caption{Illustration of the Gamow peak for $E_G = 600$~keV and $\kB T = 1.5$~keV.}
   \label{fig:gamow_peak}
 \end{marginfigure}
 
 Trying to gauge the temperature dependence of the neutrino flux is an interesting
 exercise for several reasons that will be clear in a second. If we let
 \begin{align*}
-  -f_G(E) = \sqrt{\frac{E_G}{E}} + \frac{E}{kT},
+  -f_G(E) = \sqrt{\frac{E_G}{E}} + \frac{E}{\kB T},
 \end{align*}
 it is easy to show that the function has a minimum (and therefore the Gamow peak
 has a maximum) for
 \begin{align}
-  E_0 = E_G^\frac{1}{3} \qty(\frac{kT}{2})^\frac{2}{3}
+  E_0 = E_G^\frac{1}{3} \qty(\frac{\kB T}{2})^\frac{2}{3}
   \quad\text{with}\quad
-  -f(E_0) = \frac{3E0}{kT} = 3 \qty(\frac{E_G}{4kT})^\frac{1}{3} \coloneqq \tau.
+  -f(E_0) = \frac{3E0}{\kB T} = 3 \qty(\frac{E_G}{4\kB T})^\frac{1}{3} \coloneqq \tau.
 \end{align}
 We note that $E_0 \approx 6.5$~keV, and therefore $\tau \approx 13$, for a two-proton reaction.
 Under the assumption that the astrophysical factor does not vary significantly within
 the energy range subtended by the Gamow peak, we can take $S(E)$ out of the integral
 \begin{align*}
-  N_A \ave{\sigma v} = N_A \qty(\frac{8}{\pi m_r})^\frac{1}{2} \qty(\frac{1}{kT})^{\frac{3}{2}}
+  N_A \ave{\sigma v} = N_A \qty(\frac{8}{\pi m_r})^\frac{1}{2} \qty(\frac{1}{\kB T})^{\frac{3}{2}}
   S(E_0) \int_0^\infty e^{f_G(E)} \diff{E}.
 \end{align*}
 This is still too difficult to solve analytically, but we can expand $f_G(E)$ in a
@@ -357,23 +357,23 @@ from which it appears evident that all we have done is to approximate the Gamow
 peak with a Gaussian with mean $\mu = E_0$ and standard deviation
 \begin{align*}
   \sigma = \frac{2E_0}{\sqrt{\tau}} =
-  \frac{2}{3} kT \sqrt{\tau} = \frac{2}{\sqrt{3}} (E_0 kT)^\frac{1}{2}.
+  \frac{2}{3} \kB T \sqrt{\tau} = \frac{2}{\sqrt{3}} (E_0 \kB T)^\frac{1}{2}.
 \end{align*}
 
 \begin{marginfigure}
   \input{figures/gamow_peak_gaussian.pgf}
   \caption{Illustration of the Gaussian approximation of the Gamow peak for
-  $E_G = 600$~keV and $kT = 1.5$~keV.}
+  $E_G = 600$~keV and $\kB T = 1.5$~keV.}
   \label{fig:gamow_peak_gaussian}
 \end{marginfigure}
 
 The standard deviation of our approximate Gaussian is germane to the harmonic mean
-of $kT$ and $E_0$, and always smaller than the latter---in the two-proton case it
+of $\kB T$ and $E_0$, and always smaller than the latter---in the two-proton case it
 turns out to be $3.7$~keV, so that the left integration extreme is about
 $2\sigma$ away from the mean, and we are not very far off if we perform the integration
 over the entire real axis, which now can be done analytically and amounts to
 \begin{align*}
-  \int_0^\infty e^{f_G(E)} \diff{E} = \sqrt{\pi} e^{-\tau} \frac{2E_0}{\sqrt{\tau}}.
+  \int_{=-\infty}^\infty e^{f_G(E)} \diff{E} = \sqrt{\pi} e^{-\tau} \frac{2E_0}{\sqrt{\tau}}.
 \end{align*}
 This all said, we have an expression for our reaction rate in the form\sidenote{The
 relevant scalings here, are $\tau \propto T^{-\frac{1}{3}}$, and
