@@ -450,7 +450,7 @@ sometimes written as
 \begin{align*}
   p + e^- + p \rightarrow \ce{^2H} + \nu_e + 2\gamma + 1.442~\text{MeV},
 \end{align*}
-where the $Q$ value of the reaction now explicitely includes the energy going into
+where the $Q$ value of the reaction now explicitly includes the energy going into
 the two photons in the final state, whereas the maximum neutrino energy is still
 $0.423$~MeV\sidenote{Interestingly enough, a deuton can be also formed by electron
 capture in the so called $pep$ reaction
@@ -459,14 +459,14 @@ capture in the so called $pep$ reaction
 \end{align*}
 which proceeds with no photons in the final state, producing monochromatic neutrinos
 at $1.44$~MeV. Being a real three-body reaction, it is much less frequent in the Sun.}.
-We note that the annihilation gamma rays are not always explicitely indicated in
+We note that the annihilation gamma rays are not always explicitly indicated in
 the reaction because, as opposed to the neutrinos (which can traverse the Sun largely
 undisturbed), they are quickly degraded in energy and contribute to the thermonuclear
 heat being generated.
 
 Being mediated by the weak nuclear interaction, the deuton production is comparatively
 slow. Once created, though, the deuton does not last very long, producing a $\ce{^3He}$
-isotope via a reaction meadiated by the strong nuclear force (and therefore much faster)
+isotope via a reaction mediated by the strong nuclear force (and therefore much faster)
 \begin{align*}
   \ce{^2H} + p \rightarrow \ce{^3He} + \gamma + 5.494~\text{MeV}.
 \end{align*}
@@ -477,7 +477,7 @@ isotope via a reaction meadiated by the strong nuclear force (and therefore much
   completeness the neutrino spectra from the CNO cycle are also shown with dashed
   lines. Note that continuous spectra are shown in units of cm$^{-2}$~s$^{-1}$~(100~keV)$^{-1}$,
   while lines from electron-capture reactions are shown in units of cm$^{-2}$~s$^{-1}$,
-  so any visual comparison between the correspon normalization should be done
+  so any visual comparison between the corresponding normalization should be done
   \emph{cum grano salis}.}
   \label{fig:sun_neutrino_spectra}
 \end{figure}
@@ -532,6 +532,92 @@ producing again a continuous spectrum extending to almost 20~MeV.
   \label{fig:sun_neutrino_location}
 \end{figure}
 
+
+\subsection{Neutrino cross sections}
+\label{sec:nu_cross_sections}
+
+If you talk to your fellow quantum field theorist, they will give you the standard
+lecture about the how neutrinos interact with matter via the weak force, exchanging
+a $W$ or a $Z$ vector boson. Of you are proficient in the art of Feynman diagrams,
+you are all set.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{feynman}
+  \diagram [horizontal=a to b] {
+    i1 [particle=\(\nu\)] -- [fermion] a -- [fermion] f1 [particle=\(\nu\)],
+    i2 [particle=\(f\)]  -- [fermion] b -- [fermion] f2 [particle=\(f\)],
+    a -- [boson, edge label=\(Z^0\)] b,
+  };
+
+  \begin{scope}[xshift=3cm]
+  \diagram [horizontal=a to b] {
+    i1 [particle=\(\nu_\ell\)] -- [fermion] a -- [fermion] f1 [particle=\(\ell^-\)],
+    i2 [particle=\(n\)]       -- [fermion] b -- [fermion] f2 [particle=\(p\)],
+    a -- [boson, edge label=\(W^+\)] b,
+  };
+  \end{scope}
+
+  \begin{scope}[xshift=6cm]
+  \diagram [horizontal=a3 to b3] {
+    i5 [particle=\(\bar{\nu}_\ell\)] -- [anti fermion] a3 -- [anti fermion] f5 [particle=\(\ell^+\)],
+    i6 [particle=\(p\)]              -- [fermion]      b3 -- [fermion]      f6 [particle=\(n\)],
+    a3 -- [boson, edge label=\(W^-\)] b3,
+  };
+  \end{scope}
+\end{feynman}
+
+\end{tikzpicture}
+\caption{Feynman diagrams for neutrino neutral- and charged-current interactions.}
+\end{figure}
+
+Interestingly enough, the first theoretical description of neutrino interactions (by
+Enrico Fermi in 1934) treated the interaction as a contact interaction, where the
+strength of the interaction is parametrized as an effective coupling constant
+$$
+  G_F \approx 1.166 \times 10^{-5}~\text{GeV}^{-2}.
+$$
+This is a good approximation at low energy ($E_\nu \ll m_{W,Z}$), and since all the
+neutrinos we shall be dealing with \emph{are} low-energy, this is all we need. We
+shall still need to bring into the mix the vector bosons to keep track of when neutral-
+and charged-current interactions are involved, but as fas as the cross section goes,
+the Fermi approximation is good enough for us.
+
+% \begin{figure}[h]
+% \centering
+% \begin{tikzpicture}
+% \begin{feynman}
+%   \diagram [horizontal=v to o1] {
+%     i1 [particle=\(\nu_\ell\)] -- [fermion] v -- [fermion] o1 [particle=\(\ell^-\)],
+%     i2 [particle=\(n\)]       -- [fermion] v -- [fermion] o2 [particle=\(p\)],
+%   };
+%   \node at ($(v)+(0,0.9)$) {\(\displaystyle \frac{G_F}{\sqrt{2}}\)};
+% \end{feynman}
+% \end{tikzpicture}
+% \caption{Charged-current Fermi interaction: \(\nu_\ell n \to \ell^- p\).}
+% \end{figure}
+
+Now, of you accept this simple picture, you are left with no choice as to how you
+would write the neutrino scattering cross section: you have a factor $G_F$ at the
+vertex, which becomes $G_F^2$ when you calculate the amplitude squared, and
+dimensionally this counts as $E^{-4}$. The only other energy scale in the problem
+is the neutrino energy $E_\nu$, and if you want to get something with the
+dimension of an area, you have basically exhausted your degrees of freedom.
+For a nuclear, beta-type transition
+\begin{align*}
+  \nu_e + n \rightarrow p + e^-,
+\end{align*}
+the interaction cross-section necessarily has to scale as\sidenote{For coherent
+nuclear scattering on a nucleus with $N = A - Z$ neutrons, the cross section is
+enhanced by a factor $N^2$.}
+\begin{align*}
+  \sigma \sim (\hbar c)^2 G_F^2 E_\nu^2
+  \approx 10^{-44} \qty(\frac{E_\nu}{1~\text{MeV}})^2~\text{cm}^2 =
+  10^{-17} \qty(\frac{E_\nu}{1~\text{MeV}})^2~\text{mb}.
+\end{align*}
+We don't have a big repertoire of cross sections in our bag, but by all metrics this
+is tiny compared to what we have seen, e.g., when discussing cosmic rays.
 
 
 \subsection{Solar neutrino experiments}
