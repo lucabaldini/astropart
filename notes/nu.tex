@@ -396,22 +396,27 @@ even more violent, and we shall get back to this in the next section.
 \subsection{Neutrino production in the Sun}
 \label{sec:nu_production_sun}
 
-Neutrinos are produced in the Sun via thermonuclear reactions primarily via the
-so-called $pp$~cycle, with a subdominant contribution from the fusion of heavier
-elements---the CNO~cycle, that is only important for stars heavier than the Sun
-and we shall not describe in any detail here. The $pp$~cycle consist in the fusion
-of protons into He~nuclei to the chain of reactions listed in table~\ref{tab:pp_cycle},
-that we shall briefly describe in the remaining of this section.
+We can now turn back to the original problem of neutrino production in the Sun,
+and look at the our $pp$ cycle\sidenote{In more massive stars than the Sun
+neutrino production proceeds mainly through the fusion of heavier elements,
+e.g., in the so-called CNO cycle. Since this constitutes a subdominant
+contribution for the Sun, we shall not discuss it here.}
+\begin{align*}
+  4p + 2e^- \rightarrow \ce{^4He} + 2\nu_e + 26.732~\text{MeV}
+\end{align*}
+in more details. Table~\ref{tab:pp_cycle} provides a detail breakout of the
+different reactions involved, along with the corresponding $Q$ values and
+associated time scales.
 
 \bgroup
 \def\arraystretch{1.25}
 \begin{table}[!htbp]
   \begin{tabular}{lllll}
     \hline
-    No. & Reaction & Q [MeV] & $\nu_e$ energy [MeV] & $\tau$~[yr]\\
+    \# & Reaction & Q [MeV] & $\nu_e$ energy [MeV] & $\tau$~[yr]\\
     \hline
     \hline
-    1 & $\ce{^1H} (p,~e^+ \nu_e) \ce{^2H}$ & 1.442 & $< 0.423~\ave{0.265}$ & $10^{10}$\\
+    1 & $\ce{^1H} (p,~e^+ \nu_e) \ce{^2H}$ & 0.423 & $< 0.423~\ave{0.265}$ & $10^{10}$\\
     2 & $\ce{^1H} (pe^-,~\nu_e) \ce{^2H}$ & 1.442 & 1.442 & $10^{12}$\\
     3 & $\ce{^2H} (p,~\gamma) \ce{^3He}$ & 5.494 & - & $10^{-8}$\\
     4 & $\ce{^3He} (p,~e^+ \nu_e) \ce{^4He}$ & 19.795 & $< 19.795~\ave{9.625}$ & $10^{12}$\\
@@ -438,40 +443,39 @@ that we shall briefly describe in the remaining of this section.
 \end{table}
 \egroup
 
-As we said, the simplest nuclear fusion process is the fusion of two protons into a
-deuterium nucleus (i.e., a nucleus comprise of a proton and a neutron)
-\begin{align*}
-  p + p \rightarrow \ce{^2H} + e^+ + \nu_e + 0.423~\text{MeV},
-\end{align*}
-producing a netrino with a continuous spectrum ($pp$) extending to 0.423~MeV and
-and average energy of 0.265~MeV. Since the positron annihilates immediately with
-an electron of the environment into two gamma rays, the very same reaction is
-sometimes written as
+As we already said, the first step in the chain is the fusion of two protons into
+a deuterium nucleus (i.e., a nucleus comprise of a proton and a neutron), or deuton
+\begin{align}
+  \text{[1]} \quad p + p \rightarrow \ce{^2H} + e^+ + \nu_e + 0.423~\text{MeV},
+  \tag{pp}
+\end{align}
+producing a neutrino with a continuous spectrum ($pp$) extending to 0.423~MeV and
+and average energy of 0.265~MeV. We note, in passing, that since the positron
+annihilates immediately with an electron of the environment into two gamma rays,
+the very same reaction is sometimes written as
 \begin{align*}
   p + e^- + p \rightarrow \ce{^2H} + \nu_e + 2\gamma + 1.442~\text{MeV},
 \end{align*}
 where the $Q$ value of the reaction now explicitly includes the energy going into
 the two photons in the final state, whereas the maximum neutrino energy is still
-$0.423$~MeV\sidenote{Interestingly enough, a deuton can be also formed by electron
+$0.423$~MeV. Interestingly enough, a deuton can be also formed by electron
 capture in the so called $pep$ reaction
-\begin{align*}
-  p + e^- + p \rightarrow \ce{^2H} + \nu_e + 1.442~\text{MeV}
-\end{align*}
+\begin{align}
+  \text{[2]} \quad  p + e^- + p \rightarrow \ce{^2H} + \nu_e + 1.442~\text{MeV}
+  \tag{pep}
+\end{align}
 which proceeds with no photons in the final state, producing monochromatic neutrinos
-at $1.44$~MeV. Being a real three-body reaction, it is much less frequent in the Sun.}.
-We note that the annihilation gamma rays are not always explicitly indicated in
-the reaction because, as opposed to the neutrinos (which can traverse the Sun largely
-undisturbed), they are quickly degraded in energy and contribute to the thermonuclear
-heat being generated.
+at $1.44$~MeV. Being a real three-body reaction, it is much less frequent in the Sun.
 
 Being mediated by the weak nuclear interaction, the deuton production is comparatively
 slow. Once created, though, the deuton does not last very long, producing a $\ce{^3He}$
 isotope via a reaction mediated by the strong nuclear force (and therefore much faster)
 \begin{align*}
-  \ce{^2H} + p \rightarrow \ce{^3He} + \gamma + 5.494~\text{MeV}.
+  \text{[3]} \quad \ce{^2H} + p \rightarrow \ce{^3He} + \gamma + 5.494~\text{MeV}.
 \end{align*}
+(Note there is no neutrino production involved in this step.)
 
-\begin{figure}[!htbp]
+\begin{figure}[!tbp]
   \input{figures/sun_neutrino_spectra.pgf}
   \caption{Summary of all the neutrino spectral components from the $pp$ cycle. For
   completeness the neutrino spectra from the CNO cycle are also shown with dashed
@@ -482,45 +486,59 @@ isotope via a reaction mediated by the strong nuclear force (and therefore much 
   \label{fig:sun_neutrino_spectra}
 \end{figure}
 
-At this point the chain of fusion reactions can proceed via different avenues, all
-ending up with a $\ce{^2He}$, whose relative importance is determined by the temperature
-at which the process takes place. In the Sun, the most probable reaction is the so
-called $pp$-I branch, or
-\begin{align*}
-  \ce{^3He} + \ce{^3He} \rightarrow \ce{^4H} + p + p + 12.860~\text{MeV}.
-\end{align*}
-The entire branch $p$-$p$-I is sometimes written more compactly as a single
-reaction with the proper sum of the $Q$ values
-\begin{align*}
-  4p + 2e^- \rightarrow \ce{^4H} + 2\nu_e + 26.73~\text{MeV}.
-\end{align*}
-It is worth noting that, out of the $26.73$~MeV available, at most $0.84$~MeV can
-go into neutrinos, and $0.53$~MeV (or 2\%) on average, which is consistent with the
-assumption we have made at the beginning of the section when estimating the total
-neutrino flux from the Sun electromagnetic luminosity.
+At this point the chain of fusion reactions can proceed via different avenues,
+whose relative importance is determined by the temperature at which the process
+takes place, all ending up with a $\ce{^4He}$. In the Sun, the most probable
+reaction is the so called $pp$-I branch, or
+\begin{align}
+  \text{[5]} \quad \ce{^3He} + \ce{^3He} \rightarrow \ce{^4He} + p + p + 12.860~\text{MeV}.
+  \tag{pp\text{-I}}
+\end{align}
+Again, there is no neutrino production here, and at this point it is worth noting
+that, out of the $26.732$~MeV available, at most $0.846$~MeV (and $0.530$~MeV on
+average) go into neutrinos through the $pp$-I branch. That is, the basic
+assumption behind the estimate of the total neutrino flux in
+section~\ref{sec:nu_production_sun} is actually quite a good one.
 
-The other two branches of the $pp$ chain, customarily referred as $pp$-II and $pp$-II,
-proceed via the synthesis of heavier nuclei, with two distinct reactions producing
-electron neutrinos: the electronic capture by $\ce{^7Be}$
-\begin{align*}
+The other two branches of the $pp$ chain, customarily referred as $pp$-II and
+$pp$-III, proceed via the synthesis of heavier nuclei, with two distinct reactions
+producing electron neutrinos: the electronic capture by $\ce{^7Be}$
+\begin{align}
+  \text{[7]} \quad
   \ce{^7Be} + e^- \rightarrow \ce{^7Li} + \nu_e + 0.384~\text{or}~0.862~\text{MeV},
-\end{align*}
+  \tag{pp\text{-II}}
+\end{align}
 producing monochromatic\sidenote{The neutrino spectrum is a sharp line because this
 process has two bodies in the final states, as opposed to channels with three bodies
 in the final state, producing continuous spectra.} neutrinos at two distinct energies,
 corresponding to the ground state and an excited (metastable) state of the daughter
 $\ce{^7Li}$ nucleus, and the decay of $\ce{^8B}$
-\begin{align*}
+\begin{align}
+  \text{[10]} \quad
   \ce{^8B} \rightarrow \ce{^8Be} + e^+ + \nu_e + 17.980~\text{MeV},
-\end{align*}
+  \tag{pp\text{-III}}
+\end{align}
 producing a continuous spectrum extending to almost 20~MeV.
 
 There is one last reaction producing neutrino that we have left out (number~4 in
-table~\ref{tab:pp_cycle}), which goes under the name of $hep$, or $pp$-IV
-\begin{align*}
+table~\ref{tab:pp_cycle}), which goes under the name of hep, or $pp$-IV
+\begin{align}
+  \text{[4]} \quad
   \ce{^3He} + p \rightarrow \ce{^4He} + e^+ + \nu_e + 19.795~\text{MeV}
-\end{align*}
+  \tag{pp\text{-IV}}
+\end{align}
 producing again a continuous spectrum extending to almost 20~MeV.
+
+Figure~\ref{fig:sun_neutrino_spectra} provides a summary of all the neutrino spectral
+components from the $pp$ cycle, along with the corresponding fluxes at Earth.
+If you are not planning on working with neutrinos professionally, you don't need
+to commit to memory all the reactions, just keep in mind that the vast majority
+(more than 90\%) of the solar neutrinos are produced in the (relatively simple)
+$pp$-I branch, with a characteristic continuos spectrum with an endpoint at
+423~keV. The other branches of the $pp$ cycle produce neutrinos with higher energies,
+both in the form of more continuos spectra (most notably those from $\ce{^8B}$
+decay, extending up to $\sim 20$~MeV) and monochromatic lines (for the reactions
+with two bodies in the final state, i.e., the electronic capture by $\ce{^7Be}$).
 
 \begin{figure}[!htbp]
   \input{figures/sun_neutrino_location.pgf}
@@ -531,6 +549,18 @@ producing again a continuous spectrum extending to almost 20~MeV.
   is higher.}
   \label{fig:sun_neutrino_location}
 \end{figure}
+
+Before we move on, there is another important piece of information that fits
+perfectly at this point of the discussion: figure~\ref{fig:sun_neutrino_location}
+shows the radial profiles of the neutrino production for the most important
+components of the $pp$ cycle. This comes for a detailed modeling of the Sun, and
+the underlying details are largely beyond the scope of these notes, but the
+main features are quite intuitive: as we know, you need a high temperature for the
+fusion to take place, and since the temperature is higher towards the center of
+the Sun, it is there that most of the neutrinos are produced---and, more
+specifically, \emph{higher energy neutrinos are produced deeper in the Sun}.
+Keep this in mind, because this will be important when we discussion neutrino
+oscillations in matter.
 
 
 \subsection{Neutrino cross sections}
@@ -603,14 +633,20 @@ would write the neutrino scattering cross section: you have a factor $G_F$ at th
 vertex, which becomes $G_F^2$ when you calculate the amplitude squared, and
 dimensionally this counts as $E^{-4}$. The only other energy scale in the problem
 is the neutrino energy $E_\nu$, and if you want to get something with the
-dimension of an area, you have basically exhausted your degrees of freedom.
-For a nuclear, beta-type transition
+dimension of an area, you have basically exhausted your degrees of
+freedom. For a nuclear, beta-type transition\sidenote{We are not picking this one
+randomly: this commonly happens in nuclei
+\begin{align*}
+  \nu_e + (A,~Z) \rightarrow (A,~Z+1) + e^-,
+\end{align*}
+where a neutrino capture changes one neutron in to a proton, with the emission
+of an electron.}
 \begin{align*}
   \nu_e + n \rightarrow p + e^-,
 \end{align*}
-the interaction cross-section necessarily has to scale as\sidenote{For coherent
-nuclear scattering on a nucleus with $N = A - Z$ neutrons, the cross section is
-enhanced by a factor $N^2$.}
+the interaction cross-section necessarily has to scale as\sidenote{If you happen
+to talk natural units, this is even simpler: a length is the inverse of an energy,
+and a cross section counts as $E^{-2}$, so you need $E_\nu^2$ to balance things out.}.
 \begin{align*}
   \sigma \sim (\hbar c)^2 G_F^2 E_\nu^2
   \approx 10^{-44} \qty(\frac{E_\nu}{1~\text{MeV}})^2~\text{cm}^2 =
@@ -623,45 +659,57 @@ is tiny compared to what we have seen, e.g., when discussing cosmic rays.
 \subsection{Solar neutrino experiments}
 
 The fact that the Sun was an ideal source to study neutrinos was widely accepted in
-the 1960s, although accompanyied by a distinct skeptikism that the knowledge of the
+the 1960s, although accompanied by a distinct skepticism that the knowledge of the
 underlying physical processes and the environmental conditions in the Sun would
 ever be known to the precision necessary for a meaningful comparison with the theory.
+
+\subsubsection{Chlorine experiments}
 
 The history of the measurement of Solar neutrino is a long and difficult one, and
 begins with the Brookhaven Solar Neutrino Experiment, performed in the Homestake
 gold mine (South Dakota) in the late 1960s, under the lead of Raymond Davis and
 John Bahcall. The experimental setup was based on 615~ton of perchloroethylene
 ($\ce{C_2Cl_4}$), placed $\sim 1500$~m underground to mitigate the large cosmic-ray
-background, and the basic reaction exploited was
-\begin{align*}
-  \nu_e + \ce{^37Cl} \rightarrow \ce{^37Ar} + e^-,
-\end{align*}
-with a kinematic threshold of 814~keV on the neutrino energy. This is a particular
-case of the radiochemical detection method\sidenote{The fact that the inverse beta
+background, and the basic reaction exploited was\sidenote{The fact that the inverse beta
 decay could be used to detect neutrinos via the radiactive decay of the dauther nucleus
 was originally proposed by B.~Pontecorvo in 1946~\cite{1946PontecorvoInvBeta}.
 Interestingly enough, the original paper lists all the necessary characteristic of
 the active medium to be used: it has to be cheap, due to the large volumes involved,
-the lifetime of the radiactive nuclide produced in the process must be long enough,
-the separation of the radiactive atoms from the bulk of the medium must be simplem
-and the threshold for the reaction must be as low as possible (clorine was identified
-as a prime candidate).}, that relies on nuclear neutrino capture
-(or \emph{inverse $\beta$ decay})
+the lifetime of the radioactive nuclide produced in the process must be long enough,
+the separation of the radioactive atoms from the bulk of the medium must be simple
+and the threshold for the reaction must be as low as possible (chlorine was identified
+as a prime candidate).}
 \begin{align*}
-  \nu_e + (A,~Z) \xrightarrow[\text{decay}]{\text{capture}} (A,~Z+1) + e^-,
+  \nu_e + \ce{^37Cl} \rightarrow \ce{^37Ar} + e^-.
 \end{align*}
-where the product nuclide then experiments $\beta$ decay back to the original one
-with some characteristic half-life $T_\frac{1}{2}$ (about 35~days for $\ce{^37Ar}$).
-Radiochemical experiments are peculiar in that they are run in \emph{batch} mode
-(as opposed to \emph{real time} mode): the target is exposed to neutrinos for periods
-of time of the order of $T_\frac{1}{2}$, and then the products of neutrino captures
-are separated and removed through chemical methods (e.g., bubbling He in the case
-of Homestake), and need to be converted in suitable gaseous form for the subsequent
-$\beta$ decays to be measured by proportional counters in low-radioactivity environments.
-The challenges connected with the choice of the target nucleus---beyond the fact
-for it to be amenable to inverse $\beta$ decay---are availability in large quantities
-(and with high enough purity) as well as the need for practical threshold and
-half-life values.
+This process has a kinematic threshold of 814~keV on the neutrino energy. The
+emitted electron has too low of an energy to be detected (or at least that was
+the case back then), but the product $\ce{^37Ar}$ nuclide then experiments
+$\beta$ decay with a characteristic half-life of about 35~days, and that can be
+in principle registered, provided that one has a way to retrieve the daughter
+radioactive nuclei\sidenote{Radiochemical experiments are peculiar in that they
+are run in \emph{batch} mode (as opposed to \emph{real time} mode): the target
+is exposed to neutrinos for periods of time of the order of $T_\frac{1}{2}$, and
+then the products of neutrino captures are separated and removed through chemical
+methods (e.g., bubbling He in the case of Homestake), and need to be converted in
+suitable gaseous form for the subsequent $\beta$ decays to be measured by
+proportional counters in low-radioactivity environments.}.
+
+Before we move on, let us stop for a second and see if we can come up with a
+back-of the envelope calculation of the expected rate of neutrino interactions
+in a reasonable setup. With a threshold of 814~keV, $pp$ neutrinos are physically
+not accessible, and so is the 384~keV Be line. The highest Be line at 862~keV
+is technically above threshold, but the kinematically accessible phase space is
+so small that the sensitivity of the reaction is basically zero. All we are left
+with are the $^8B$ neutrinos, which amount to less than 1\% of the total
+solar neutrino flux. We can provide a rough estimate of the expected count rate
+as a function of the total number $N_t$ of target $\ce{^37Cl}$ nuclei as
+\begin{align*}
+  R = \Phi_B \sigma N_t,
+\end{align*}
+which, for a cross section of $10^{-44}$~cm$^2$ and a flux of boron neutrinos of
+$10^8$cm$^{-2}$~s$^{-1}$, requires $10^{36}$ targets (yes, this is more than
+$10^{12}$ moles).
 
 In the case of Homestake, with about $10^{31}$ target Cl atoms, the expected rate
 was of the order of a few tens of neutrino interactions per months---that is, a
@@ -676,12 +724,15 @@ in a given experimental setup.}, to be compared with a prediction of $7.8$~SNU (
 a relatively large uncertainty, of the order of 20\%), that is, a deficit of a factor
 of $\sim 3$. This constitutes the beginning of the
 so called \emph{solar neutrino problem}, although in the early days, given the relatively
-large uncertainities on both the measurements and the theoretical predictions, the
+large uncertainties on both the measurements and the theoretical predictions, the
 concern of the actors involved was quite limited.
+
+
+\subsubsection{Gallium experiments}
 
 The next chapter in the saga coincides with the gallium experiments: Gallex, running
 between 1991 and 1997 in Italy, and SAGE (1989--2011) in Russia. These are radiochemical
-experiments expoiting the reaction
+experiments exploiting the reaction
 \begin{align*}
   \nu_e + \ce{^71Ga} \rightarrow \ce{^71Ge} + e^-,
 \end{align*}
@@ -689,24 +740,30 @@ which provides an exceptionally low kinematic threshold of 233.2~keV. Most notab
 such a low threshold allows access to the $pp$ neutrinos, constituting the vast
 majority of the solar neutrino flux, and guarantees much higher rates of neutrino
 interactions. The gallium experiments qualitatively confirmed the deficit measured
-by Homestake, altough the ratio between the measured rate (77.5~SNU) and the
-expected one (128~SNU) was of the order of $\sim 0.6$, almost twice the value measured
-with clorine\cite{1999PhLB..447..127H}.\todo{Expand and put some reference.}
+by Homestake, although the ratio between the measured rate (77.5~SNU) and the
+expected one (128~SNU) was of the order of $\sim 0.6$---still a definite deficit,
+but almost twice the value measured with chlorine\cite{1999PhLB..447..127H}.
+
+
+\subsubsection{Water \cherenkov\ experiments}
 
 The next step is the advent of the water \cherenkov\ experiments, championed by
-Kamiokande and Super-Kamiokande, an deep-underground tank containing 50~kton of
+Kamiokande and Super-Kamiokande, a deep-underground tank containing 50~kton of
 pure water equipped with $11,200$ photomultiplier tubes, operated in Japan between
-1996 and 2007. The detection principle is interesting: as the nuclear neutrino
-capture is suppressed in oxygen, the basic interaction mechanism for neutrinos is
-the elastic scattering on the atomic electrons. This is qualitatively different from
-the radiochemical experiments\sidenote{Historically, another notable difference is
-that water \cherenkov\ experiments were the first to detect neutrino in real time.}
+1996 and 2007.
+
+The detection principle is interesting: as the nuclear neutrino capture is suppressed
+in oxygen, the basic interaction mechanism for neutrinos is the elastic scattering
+on the atomic electrons. This is qualitatively different from the radiochemical
+experiments\sidenote{Historically, another notable difference is that water \cherenkov\
+experiments were the first to detect neutrino in real time.}
 in that, while the latter are only sensitive to $\nu_e$, \emph{water \cherenkov\
 experiments are sensity to all three generations of neutrinos} via the reactions:
 \begin{align*}
   \nu_{e, \mu, \tau} + e^- \rightarrow  \nu_{e, \mu, \tau} + e^-
 \end{align*}
 (provided, of course, that the neutrino flavor is conserved at the vertex).
+
 This is not to say that the three flavors of neutrinos all interact \emph{in the same way}:
 there is a fundamental asymmetry due to the fact that ordinary matters includes
 electrons but not $\mu$ and $\tau$. As a consequence, while the elastic scattering
@@ -714,7 +771,6 @@ for $\nu_e$ proceeds both with through neutral current (NC) and charged current 
 interactions (i.e., with the exchange of a $Z^0$ or a $W$) for $\nu_\mu$ and
 $\nu_\tau$ only NC interactions are allowed---at least up to the kinematic threshold
 where inelastic interactions with the production of $\mu$ (or $\tau$) leptons.
-\todo{Add the relevant Feynman diagrams.}
 It follows that the elastic scattering cross section on electrons is about six times
 larger for electrons than for muons and tauons
 \begin{align*}
@@ -728,44 +784,22 @@ electron to emit \cherenkov\ light in water is only $\sim 260$~keV, one needs en
 light to be able to see a signal over the electronic noise, and the actual detection
 threshold for Super-Kamiokande is significantly higher---of the order of 5~MeV. It
 follows that we are basically only sensitive to the $\ce{^8B}$ neutrinos, as in the
-case of the clorine experiments. The range of a few-MeV electron in water is measured
+case of the chlorine experiments. The range of a few-MeV electron in water is measured
 in~cm (that is, much smaller than the size of the tank), which means that the \cherenkov\
 light manifests itself in the form of rings, as opposed to full circles. From the
 photomultiplier tubes, in addition to the physical location, we have access to the
 pulse-height and time information, which allows to recover the arrival time, energy
 and direction of the electrons. Since the neutrino energy $E \gg m_e c^2$, the electron
-is typically scattered in the forward direction, wich means that not only we are
+is typically scattered in the forward direction, which means that not only we are
 measuring neutrino in real time, but we can also project them back in the sky, and
 confirm directly their solar origin\sidenote{This is not only worth mentioning as the
 starting point of the neutrino astronomy, but it is also relevant for the background
 rejection.}. In addition, the topological characteristics of the signal pattern in
 the photomultiplier tubes allows for some level of discrimination between electrons
 (which radiate, and tend to produce more irregular patterns) and background muons,
-producing more regular circles.\todo{We might want to add a plot of the SK solar
-peak?} The Super-Kamiokande measurement of the flux of $\ce{^8B}$ neutrinos, amounting
-to some $0.45$ of the SSM prediction, constitutes a turning point in the solar neutrino
-saga.
-
-\begin{table}[!htbp]
-  \begin{tabular}{llll}
-    \hline
-    Experiment & Threshold & Measured flux & Flux deficit\\
-    \hline
-    \hline
-    Homestake & $814$~keV & $\Phi(\nu_e)$ & $0.33 \pm 0.02$~\cite{1998ApJ...496..505C}\\
-    Gallex & $233.2$~keV & $\Phi(\nu_e)$ & $0.60 \pm 0.06$~\cite{1999PhLB..447..127H}\\
-    SAGE & $233.2$~keV & $\Phi(\nu_e)$ & 0.$52 \pm 0.05$~\cite{1999PhRvL..83.4686A}\\
-    SK & $\sim 5$~MeV & $\Phi(\nu_e)$ + \nicefrac{1}{6} $\Phi(\nu_\mu,\nu_\tau)$ &
-    $0.451 \pm 0.002$~\cite{2001PhRvL..86.5656F} \\
-    \hline
-  \end{tabular}
-  \caption{Partial compilation of the relevant solar neutrino measurements available
-  at the end of the 1990s. (Note that the error bars are provided to allow for a
-  meaningful comparison between different experiments, but are largely inhomogeneous,
-  as the neutrino deficits are not necessarily referred to the same solar model,
-  and the systematic uncertainties on the latter are not properly included.)}
-  \label{tab:solar_nu_results}
-\end{table}
+producing more regular circles. The Super-Kamiokande measurement of the flux of
+$\ce{^8B}$ neutrinos, amounting to some $0.45$ of the SSM prediction, constitutes
+a turning point in the solar neutrino saga.
 
 All in all it is fair to say that, at the end of the 1990s the general solar neutrino
 deficit, compared with the prediction of the standard solar model, was well established
