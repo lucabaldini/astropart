@@ -207,7 +207,16 @@ $s$-wave contribution is the only important term in the partial-wave expansion.}
 \begin{marginfigure}
   \input{figures/pp_fusion.pgf}
   \caption{Schematic representation of the central potential describing the process
-  of nuclear fusion process fusion as a well and a Coulomb barrier.}
+  of nuclear fusion process fusion as a well and a Coulomb barrier. The radius
+  $r_1$ where the kinetic energy $E$ of the nucleus equals the potential energy $U(r)$ is
+  defined by the condition
+  \begin{align*}
+  U(r_1) = E \quad\text{or}\quad
+  r_1 = \frac{Z_1 Z_2 e^2}{E}.
+  \end{align*}
+  Note that for our particular case the figure is not quite to scale: since the kinetic
+  energy of the nucleus is typically much smaller than the height of the Coulomb barrier,
+  we have $r_0 \ll r_1$.}
   \label{fig:pp_fusion}
 \end{marginfigure}
 
@@ -256,34 +265,28 @@ Here is where quantum mechanics comes to rescue, as even if the crossing is clas
 forbidden, there is potentially a non-zero probability of quantum tunneling. The
 latter can be calculated in semi-classical (or WKB) approximation as
 \begin{align*}
-  P_\text{cross} = \exp\qty{-2\int_{r_0}^{r_1} \sqrt{\frac{2m_r}{\hbar^2} (U(r) - E)} \diff{r}},
+  P_\text{cross} =
+  \exp\qty{-2\int_{r_0}^{r_1} \sqrt{\frac{2m_r}{\hbar^2} (U(r) - E)} \diff{r}},
 \end{align*}
 where $m_r$ is the reduced mass of the two particle (i.e., $\nicefrac{m_p}{2}$ for
-a proton-proton fusion) and $r_1$ is defined by the condition\sidenote{It is important
-to note that figure~\ref{fig:pp_fusion} is not quite to scale: since the kinetic
-energy $E$ of the nucleus is typically much smaller than the height of the Coulomb
-barrier $U_\text{max}$, we have $r_0 \ll r_1$ or, equivalently, $\nicefrac{r_0}{r_1} \ll 1$.}
-\begin{align*}
-  U(r_1) = E \quad\text{or}\quad
-  r_1 = \frac{Z_1 Z_2 e^2}{E}.
-\end{align*}
-We can then rewrite our probability as
+a proton-proton fusion). In our case the tunnel probability reads
 \begin{align*}
   P_\text{cross} = \exp\qty{-2 \sqrt{\frac{2m_r Z_1 Z_2 e^2}{\hbar^2}}
-  \int_{r_0}^{r_1} \sqrt{\frac{1}{r} - \frac{1}{r_1}} \diff{r}},
+  \int_{r_0}^{r_1} \sqrt{\frac{1}{r} - \frac{1}{r_1}} \diff{r}}.
 \end{align*}
-which, by virtue of the change of variable $x = \nicefrac{r}{r_1}$, becomes
+By virtue of the change of variable $x = \nicefrac{r}{r_1}$, the integral becomes
 \begin{align*}
   \int_{r_0}^{r_1} \sqrt{\frac{1}{r} - \frac{1}{r_1}} \diff{r} =
-  \sqrt{\frac{Z_1 Z_2 e^2}{E}} \int_{x_0}^{1} \sqrt{\frac{1}{x} - 1} \diff{x}.
+  \frac{1}{\sqrt{r_1}} \int_{x_0}^{1} \sqrt{\frac{r_1}{r} - 1} \diff{r} =
+  \sqrt{r_1} \int_{x_0}^{1} \sqrt{\frac{1}{x} - 1} \diff{x},
 \end{align*}
-Since $x_0 = \nicefrac{r_0}{r_1} \ll 1$, we can start the integration from zero, and
+and, since $x_0 = \nicefrac{r_0}{r_1} \ll 1$, we can start the integration from zero, and
 approximate the quantity we are trying to calculate as
 \begin{align*}
-  \sqrt{\frac{Z_1 Z_2 e^2}{E}} \int_0^1 \sqrt{\frac{1}{x} - 1} \diff{x} =
+  \sqrt{r_1} \int_0^1 \sqrt{\frac{1}{x} - 1} \diff{x} = \frac{\pi}{2} \sqrt{r_1} =
   \frac{\pi}{2} \sqrt{\frac{Z_1 Z_2 e^2}{E}}.
 \end{align*}
-Putting everything back together, the crossing probability can be estimated as
+Putting everything back together, we get
 \begin{align}
   P_\text{cross} \approx \exp\qty{-\pi e^2 Z_1 Z_2 \sqrt{\frac{2m_r}{\hbar^2 E}}}
   \quad\text{or}\quad
@@ -295,7 +298,7 @@ where we have introduced the \emph{Gamow energy}
 \end{align}
 For completeness, the Gamow energy turns out to be of the order of $493$~keV for
 a proton-proton fusion, and the corresponding crossing probability, assuming an average
-proton energy of 2~keV, is now of the order of $10^{-8}$---this is still small for a
+proton energy of 2~keV, is now of the order of $10^{-8}$. This is still small for a
 single proton, but when we fold in the number of protons available in the Sun, it
 is more than enough for the process to actually take place.
 
@@ -602,6 +605,14 @@ you are all set.
 \caption{Feynman diagrams for neutrino neutral- and charged-current interactions.}
 \end{figure}
 
+%In our regime, where the typical energies are much smaller than the masses of the
+%vector bosons, the $Z^0$ and $W$ propagators simplify and the weak force can be
+%treated as a point interaction (a la Fermi) via the introduction of an effective
+%coupling constant
+%\begin{align*}
+%  G_F = \frac{g_w^2}{M_W^2}
+%\end{align*}
+
 Interestingly enough, the first theoretical description of neutrino interactions (by
 Enrico Fermi in 1934) treated the interaction as a contact interaction, where the
 strength of the interaction is parametrized as an effective coupling constant
@@ -709,7 +720,7 @@ as a function of the total number $N_t$ of target $\ce{^37Cl}$ nuclei as
 \end{align*}
 which, for a cross section of $10^{-44}$~cm$^2$ and a flux of boron neutrinos of
 $10^8$cm$^{-2}$~s$^{-1}$, requires $10^{36}$ targets (yes, this is more than
-$10^{12}$ moles).
+$10^{12}$ moles) for an expected rate of one interaction per second. A lot.
 
 In the case of Homestake, with about $10^{31}$ target Cl atoms, the expected rate
 was of the order of a few tens of neutrino interactions per months---that is, a
@@ -775,9 +786,92 @@ It follows that the elastic scattering cross section on electrons is about six t
 larger for electrons than for muons and tauons
 \begin{align*}
   \frac{\sigma_e(\nu_e)}{\sigma_e(\nu_\mu)} \approx
-  \frac{\sigma_e(\nu_e)}{\sigma_e(\nu_\tau)} \approx 6
+  \frac{\sigma_e(\nu_e)}{\sigma_e(\nu_\tau)} \approx 6.
 \end{align*}
-and, as we shall see in a second, this will be crucial when interpreting the results.
+Phrased in a slightly different way, a water \cherenkov\ experiment is sensitive to
+the peculiar combination
+\begin{align*}
+  \Phi_{\nu_e} + \frac{1}{6} \qty(\Phi_{\nu_\mu} + \Phi_{\nu_\tau})
+\end{align*}
+rather than the pure $\Phi_{\nu_e}$, like the radiochemical experiments.
+
+\begin{marginfigure}
+\begin{tikzpicture}[scale=0.55, line cap=round, line join=round]
+  % Parameters
+  \def\thetac{42}      % Cherenkov angle in water
+  \def\etrack{1.2}     % electron track length
+  \def\dscreen{4.7}    % distance to PMT wall along electron direction
+  \def\eAngle{15}      % electron angle wrt incoming neutrino
+  %-----------------------------
+  % Coordinates
+  %-----------------------------
+  \coordinate (V) at (0,0,0);  % interaction vertex
+  % Incoming neutrino along +x
+  \coordinate (NuIn) at (-1.8,0,0);
+  % Electron track: small angle wrt neutrino, in x-y plane
+  \coordinate (Eend) at ({\etrack*cos(\eAngle)}, {\etrack*sin(\eAngle)}, 0);
+  % Detector wall: plane perpendicular to electron direction, passing through C
+  \coordinate (C) at ({\dscreen*cos(\eAngle)},{\dscreen*sin(\eAngle)},0);
+  % Screen basis vectors:
+  % u = direction in x-y plane perpendicular to electron axis
+  % v = z direction
+  \coordinate (u) at ({-sin(\eAngle)},{cos(\eAngle)},0);
+  \coordinate (v) at (0,0,1);
+  % Ring radii from start and end of track
+  \pgfmathsetmacro{\Rout}{\dscreen*tan(\thetac)}
+  \pgfmathsetmacro{\Rin}{(\dscreen-\etrack)*tan(\thetac)}
+  %-----------------------------
+  % Incoming neutrino
+  %-----------------------------
+  \draw[thick,dashed,-{Latex[length=2.2mm]}] (NuIn) -- (V);
+  \node[above left] at (-1.0,0,0) {$\nu$};
+  %-----------------------------
+  % Electron track
+  %-----------------------------
+  \draw[very thick,-{Latex[length=2.2mm]}] (V) -- (Eend);
+  \node[above right] at ($(V)!0.65!(Eend)$) {$e^-$};
+  % Vertex and track end
+  \fill (V) circle (0.5pt);
+  \fill (Eend) circle (0.5pt);
+  %-----------------------------
+  % Cherenkov cones: only generators
+  % from start of track
+  %-----------------------------
+  \foreach \ang in {0,140} {
+    \draw[gray,thin,dashed]
+      (V) --
+      ($ (C)
+         + {\Rout*cos(\ang)}*(u)
+         + {\Rout*sin(\ang)}*(v) $);
+  }
+  % from end of track
+  \foreach \ang in {0,140} {
+    \draw[gray,thin,dashed]
+      (Eend) --
+      ($ (C)
+         + {\Rin*cos(\ang)}*(u)
+         + {\Rin*sin(\ang)}*(v) $);
+  }
+  %-----------------------------
+  % Ring on far detector wall
+  %-----------------------------
+  % Outer circle (from start of track)
+  \draw[very thick]
+    plot[smooth cycle,variable=\t,domain=0:360,samples=120]
+    ({\dscreen*cos(\eAngle) - \Rout*cos(\t)*sin(\eAngle)},
+     {\dscreen*sin(\eAngle) + \Rout*cos(\t)*cos(\eAngle)},
+     {\Rout*sin(\t)});
+  % Inner circle (from end of track)
+  \draw[very thick]
+    plot[smooth cycle,variable=\t,domain=0:360,samples=120]
+    ({\dscreen*cos(\eAngle) - \Rin*cos(\t)*sin(\eAngle)},
+     {\dscreen*sin(\eAngle) + \Rin*cos(\t)*cos(\eAngle)},
+     {\Rin*sin(\t)});
+\end{tikzpicture}
+\caption{Sketch of a neutrino elastic scattering in water, and the corresponding
+  Cherenkov ring away from the interaction point.}
+\label{fig:cherenkov_ring}
+\end{marginfigure}
 
 From an experimental point of view, although the kinetic energy threshold for an
 electron to emit \cherenkov\ light in water is only $\sim 260$~keV, one needs enough
@@ -786,38 +880,29 @@ threshold for Super-Kamiokande is significantly higher---of the order of 5~MeV. 
 follows that we are basically only sensitive to the $\ce{^8B}$ neutrinos, as in the
 case of the chlorine experiments. The range of a few-MeV electron in water is measured
 in~cm (that is, much smaller than the size of the tank), which means that the \cherenkov\
-light manifests itself in the form of rings, as opposed to full circles. From the
-photomultiplier tubes, in addition to the physical location, we have access to the
-pulse-height and time information, which allows to recover the arrival time, energy
-and direction of the electrons. Since the neutrino energy $E \gg m_e c^2$, the electron
-is typically scattered in the forward direction, which means that not only we are
-measuring neutrino in real time, but we can also project them back in the sky, and
+light manifests itself in the form of rings, as opposed to full circles (see
+figure~\ref{fig:cherenkov_ring}).
+From the photomultiplier tubes, in addition to the physical location, we have access
+to the pulse-height and time information, which allows to recover the arrival time,
+energy and direction of the electrons. Since the neutrino energy $E \gg m_e c^2$, the
+electron is typically scattered in the forward direction, which means that not only we
+are measuring neutrino in real time, but we can also project them back in the sky, and
 confirm directly their solar origin\sidenote{This is not only worth mentioning as the
 starting point of the neutrino astronomy, but it is also relevant for the background
 rejection.}. In addition, the topological characteristics of the signal pattern in
 the photomultiplier tubes allows for some level of discrimination between electrons
 (which radiate, and tend to produce more irregular patterns) and background muons,
-producing more regular circles. The Super-Kamiokande measurement of the flux of
-$\ce{^8B}$ neutrinos, amounting to some $0.45$ of the SSM prediction, constitutes
-a turning point in the solar neutrino saga.
+producing more regular circles.
 
-All in all it is fair to say that, at the end of the 1990s the general solar neutrino
-deficit, compared with the prediction of the standard solar model, was well established
-from an experimental standpoint. There was some evidence that the effect was
-energy-dependent, with the Gallium experiments (sensitive to the $pp$ component)
-measuring a significant higher flux than the other, sensitive to relatively high
-energy. We shall also note that, is we assume a $\nu_{\mu,\tau}$ flux comparable
-of that of $\nu_e$, the SK results is not incompatible with Homestake. In the next
-section we shall summarize the two pieces of information that allow to compose the
-puzzle: neutrino oscillation in vacuum and the MSW effect.
-
-%In our regime, where the typical energies are much smaller than the masses of the
-%vector bosons, the $Z^0$ and $W$ propagators simplify and the weak force can be
-%treated as a point interaction (a la Fermi) via the introduction of an effective
-%coupling constant
-%\begin{align*}
-%  G_F = \frac{g_w^2}{M_W^2}
-%\end{align*}
+The Super-Kamiokande measurement of the flux of $\ce{^8B}$ neutrinos, amounting to
+some $0.45$ of the SSM prediction, constitutes an important point in the solar neutrino
+saga. At the end of the 1990s the general solar neutrino deficit, compared with the
+prediction of the standard solar model, was well established from an experimental
+standpoint. There was some evidence that the effect was energy-dependent, with the
+Gallium experiments (sensitive to the $pp$ component) measuring a significant higher
+flux than the other, sensitive to relatively high energy.
+In the next section we shall summarize the two pieces of information that allow to
+compose the puzzle: neutrino oscillation in vacuum and the MSW effect.
 
 % https://www.slideserve.com/jalia/solar-neutrino-physics
 % Slide 3, status of the field:
