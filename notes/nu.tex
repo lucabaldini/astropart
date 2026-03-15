@@ -739,21 +739,33 @@ but almost twice the value measured with chlorine\cite{1999PhLB..447..127H}.
 \subsubsection{Water \cherenkov\ experiments}
 
 The next step is the advent of the water \cherenkov\ experiments, championed by
-Kamiokande and Super-Kamiokande, a deep-underground tank containing 50~kton of
-pure water equipped with $11,200$ photomultiplier tubes, operated in Japan between
-1996 and 2007.
+Kamiokande (and then Super-Kamiokande), a deep-underground tank containing 50~kton of
+pure water equipped with $11,200$ photomultiplier tubes, initially designed to find
+evidence for proton decay, and operated in Japan between 1996 and 2007.
 
-The detection principle is interesting: as the nuclear neutrino capture is suppressed
-in oxygen, the basic interaction mechanism for neutrinos is the elastic scattering
-on the atomic electrons. This is qualitatively different from the radiochemical
-experiments\sidenote{Historically, another notable difference is that water \cherenkov\
-experiments were the first to detect neutrino in real time.}
-in that, while the latter are only sensitive to $\nu_e$, \emph{water \cherenkov\
-experiments are sensitive to all three generations of neutrinos} via the reactions:
+The detection principle is interesting. Water is made of hydrogen and oxygen, and the
+former would be a sensible target for antineutrinos (which, unfortunately, are basically
+not produced in the Sun) through the reactions
 \begin{align*}
-  \nu_{e, \mu, \tau} + e^- \rightarrow  \nu_{e, \mu, \tau} + e^-
+  \bar{\nu}_e + p \rightarrow n + e^+,
 \end{align*}
-(provided, of course, that the neutrino flavor is conserved at the vertex).
+which has no equivalent for neutrinos. Capture on oxygen
+\begin{align*}
+  \nu_e + \ce{^{16}O} \rightarrow \ce{^{16}F} + e^-,
+\end{align*}
+is technically possible, but since oxygen is a very tightly bound nucleus, the reaction
+has a very high kinematic threshold ($\sim 15$~MeV) and is therefore basically
+irrelevant in this context. All we are left with is the elastic neutrino scattering
+on the atomic electrons\sidenote{Technically elastic scattering on the protons is also
+a thing, but detecting a protont with a MeV energy is much more challenging.}. This is
+qualitatively different from the radiochemical experiments in that, while the latter
+are only sensitive to $\nu_e$, \emph{water \cherenkov\ experiments are sensitive to all
+three generations of neutrinos} via the reactions:
+\begin{align*}
+  \nu_{e, \mu, \tau} + e^- \rightarrow  \nu_{e, \mu, \tau} + e^-.
+\end{align*}
+(We also note that, unlike the radiochemical experiments, here we are finally detecting
+the neutrinos in real time. This is another important difference, of course.)
 
 \begin{marginfigure}
   \begin{tikzpicture}
@@ -789,7 +801,7 @@ experiments are sensitive to all three generations of neutrinos} via the reactio
   elastic scattering on electrons.}
 \end{marginfigure}
 
-This is not to say that the three flavors of neutrinos all interact \emph{in the same way}:
+This is not to say that the three flavors of neutrinos all interact in the same way:
 there is a fundamental asymmetry due to the fact that ordinary matters includes
 electrons but not $\mu$ and $\tau$. As a consequence, while the elastic scattering
 for $\nu_e$ proceeds both with through neutral current (NC) and charged current (CC)
@@ -896,8 +908,8 @@ threshold for Super-Kamiokande is significantly higher---of the order of 5~MeV. 
 follows that we are basically only sensitive to the $\ce{^8B}$ neutrinos, as in the
 case of the chlorine experiments. The range of a few-MeV electron in water is measured
 in~cm (that is, much smaller than the size of the tank), which means that the \cherenkov\
-light manifests itself in the form of rings, as opposed to full circles (see
-figure~\ref{fig:cherenkov_ring}).
+light manifests itself in the form of rings, whose thickness depends on the energy of
+the electron, as illustrated in figure~\ref{fig:cherenkov_ring}).
 From the photomultiplier tubes, in addition to the physical location, we have access
 to the pulse-height and time information, which allows to recover the arrival time,
 energy and direction of the electrons. Since the neutrino energy $E \gg m_e c^2$, the
@@ -907,8 +919,8 @@ confirm directly their solar origin\sidenote{This is not only worth mentioning a
 starting point of the neutrino astronomy, but it is also relevant for the background
 rejection.}. In addition, the topological characteristics of the signal pattern in
 the photomultiplier tubes allows for some level of discrimination between electrons
-(which radiate, and tend to produce more irregular patterns) and background muons,
-producing more regular circles.
+(which radiate, and tend to produce more irregular patterns) and background muons at
+significantly higher energies, producing more regular circles.
 
 The Super-Kamiokande measurement of the flux of $\ce{^8B}$ neutrinos, amounting to
 some $0.45$ of the SSM prediction, constitutes an important point in the solar neutrino
