@@ -305,8 +305,9 @@ is more than enough for the process to actually take place.
 Although we will not go into all the gory details of a complete calculation of the
 neutrino flux from nuclear fusion, we note the thermonuclear reaction rate is
 customarily written as
-\begin{align}
-  N_A \ave{\sigma v} = N_A \qty(\frac{8}{\pi m_r})^\frac{1}{2} \qty(\frac{1}{\kB T})^{\frac{3}{2}}
+\begin{align}\label{eq:nusun_production_rate}
+  N_A \ave{\sigma v} =
+  N_A \qty(\frac{8}{\pi m_r})^\frac{1}{2} \qty(\frac{1}{\kB T})^{\frac{3}{2}}
   \int_0^\infty S(E)
   \overbrace{\exp\qty{-\qty(\sqrt{\frac{E_G}{E}} + \frac{E}{\kB T})}}^\text{Gamow peak} \diff{E},
 \end{align}
@@ -326,7 +327,9 @@ for reasonable values of the parameters in figure~\ref{fig:gamow_peak}.
 
 \begin{marginfigure}
   \input{figures/gamow_peak.pgf}
-  \caption{Illustration of the Gamow peak for $E_G = 600$~keV and $\kB T = 1.5$~keV.}
+  \caption{Illustration of the Gamow peak for $E_G = 600$~keV and $\kB T = 1.5$~keV.
+  The two dashed lines represent the two exponential terms in~\eqref{eq:nusun_production_rate},
+  while the solid line is the product of the two, scaled by an arbitrary factor.}
   \label{fig:gamow_peak}
 \end{marginfigure}
 
@@ -571,47 +574,32 @@ oscillations in matter.
 
 If you talk to your fellow quantum field theorist, they will give you the standard
 lecture about the how neutrinos interact with matter via the weak force, exchanging
-a $W$ or a $Z$ vector boson. Of you are proficient in the art of Feynman diagrams,
-you are all set.
+a $W$ or a $Z$ vector boson, as illustrated in figure~\ref{fig:nu_feynman}.
+Of you are proficient in the art of Feynman diagrams, you are all set.
 
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}
-\begin{feynman}
-  \diagram [horizontal=a to b] {
-    i1 [particle=\(\nu\)] -- [fermion] a -- [fermion] f1 [particle=\(\nu\)],
-    i2 [particle=\(f\)]  -- [fermion] b -- [fermion] f2 [particle=\(f\)],
-    a -- [boson, edge label=\(Z^0\)] b,
-  };
-
-  \begin{scope}[xshift=3cm]
-  \diagram [horizontal=a to b] {
-    i1 [particle=\(\nu_\ell\)] -- [fermion] a -- [fermion] f1 [particle=\(\ell^-\)],
-    i2 [particle=\(n\)]       -- [fermion] b -- [fermion] f2 [particle=\(p\)],
-    a -- [boson, edge label=\(W^+\)] b,
-  };
-  \end{scope}
-
-  \begin{scope}[xshift=6cm]
-  \diagram [horizontal=a3 to b3] {
-    i5 [particle=\(\bar{\nu}_\ell\)] -- [anti fermion] a3 -- [anti fermion] f5 [particle=\(\ell^+\)],
-    i6 [particle=\(p\)]              -- [fermion]      b3 -- [fermion]      f6 [particle=\(n\)],
-    a3 -- [boson, edge label=\(W^-\)] b3,
-  };
-  \end{scope}
-\end{feynman}
-
-\end{tikzpicture}
-\caption{Feynman diagrams for neutrino neutral- and charged-current interactions.}
-\end{figure}
-
-%In our regime, where the typical energies are much smaller than the masses of the
-%vector bosons, the $Z^0$ and $W$ propagators simplify and the weak force can be
-%treated as a point interaction (a la Fermi) via the introduction of an effective
-%coupling constant
-%\begin{align*}
-%  G_F = \frac{g_w^2}{M_W^2}
-%\end{align*}
+\begin{marginfigure}
+  \begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a)  at (0,-0.75);
+    \vertex (b)  at (0,-1.75);
+    \vertex (i1) at (-1.75,-0.75) {\(\nu_e\)};
+    \vertex (f1) at (1.75,-0.75) {\(e^-\)};
+    \vertex (i2) at (-1.75,-1.75) {\(n\)};
+    \vertex (f2) at (1.75,-1.75) {\(p\)};
+    \diagram* {
+      (i1) -- [fermion] (a) -- [fermion] (f1),
+      (i2) -- [fermion] (b) -- [fermion] (f2),
+      (a) -- [boson, edge label=\(W\)] (b),
+    };
+  \end{feynman}
+  \end{tikzpicture}
+\caption{Feynman diagram for the nuclear beta-type transition~\eqref{eq:nu_nuclear_transition}.
+  The layout of the diagram is horizontal: the initial states are on the left and
+  the final states are on the right. Purists will notice that the proton and the
+  neutron are not fundamental particles, and we should really have three fermion lines
+  with two spectator quarks and a $d \rightarrow u$ in the bottom vertex.}
+  \label{fig:nu_feynman}
+\end{marginfigure}
 
 Interestingly enough, the first theoretical description of neutrino interactions (by
 Enrico Fermi in 1934) treated the interaction as a contact interaction, where the
@@ -625,19 +613,6 @@ shall still need to bring into the mix the vector bosons to keep track of when n
 and charged-current interactions are involved, but as fas as the cross section goes,
 the Fermi approximation is good enough for us.
 
-% \begin{figure}[h]
-% \centering
-% \begin{tikzpicture}
-% \begin{feynman}
-%   \diagram [horizontal=v to o1] {
-%     i1 [particle=\(\nu_\ell\)] -- [fermion] v -- [fermion] o1 [particle=\(\ell^-\)],
-%     i2 [particle=\(n\)]       -- [fermion] v -- [fermion] o2 [particle=\(p\)],
-%   };
-%   \node at ($(v)+(0,0.9)$) {\(\displaystyle \frac{G_F}{\sqrt{2}}\)};
-% \end{feynman}
-% \end{tikzpicture}
-% \caption{Charged-current Fermi interaction: \(\nu_\ell n \to \ell^- p\).}
-% \end{figure}
 
 Now, of you accept this simple picture, you are left with no choice as to how you
 would write the neutrino scattering cross section: you have a factor $G_F$ at the
@@ -652,9 +627,9 @@ randomly: this commonly happens in nuclei
 \end{align*}
 where a neutrino capture changes one neutron in to a proton, with the emission
 of an electron.}
-\begin{align*}
+\begin{align}\label{eq:nu_nuclear_transition}
   \nu_e + n \rightarrow p + e^-,
-\end{align*}
+\end{align}
 the interaction cross-section necessarily has to scale as\sidenote{If you happen
 to talk natural units, this is even simpler: a length is the inverse of an energy,
 and a cross section counts as $E^{-2}$, so you need $E_\nu^2$ to balance things out.}.
@@ -736,7 +711,10 @@ a relatively large uncertainty, of the order of 20\%), that is, a deficit of a f
 of $\sim 3$. This constitutes the beginning of the
 so called \emph{solar neutrino problem}, although in the early days, given the relatively
 large uncertainties on both the measurements and the theoretical predictions, the
-concern of the actors involved was quite limited.
+concern of the actors involved was quite limited\sidenote{One of the main reasons why
+the community was relatively slow to take the problem seriously was the fact that
+the production rate of B neutrinos scales as $T^{24}$~\cite{1996PhRvD..53.4202B}, which
+means a small error on the temperature translates into a large error on the flux.}.
 
 
 \subsubsection{Gallium experiments}
@@ -750,7 +728,9 @@ experiments exploiting the reaction
 which provides an exceptionally low kinematic threshold of 233.2~keV. Most notably,
 such a low threshold allows access to the $pp$ neutrinos, constituting the vast
 majority of the solar neutrino flux, and guarantees much higher rates of neutrino
-interactions. The gallium experiments qualitatively confirmed the deficit measured
+interactions\sidenote{And one that is less dependent of the temperature of the Sun.}.
+
+The gallium experiments qualitatively confirmed the deficit measured
 by Homestake, although the ratio between the measured rate (77.5~SNU) and the
 expected one (128~SNU) was of the order of $\sim 0.6$---still a definite deficit,
 but almost twice the value measured with chlorine\cite{1999PhLB..447..127H}.
@@ -769,11 +749,45 @@ on the atomic electrons. This is qualitatively different from the radiochemical
 experiments\sidenote{Historically, another notable difference is that water \cherenkov\
 experiments were the first to detect neutrino in real time.}
 in that, while the latter are only sensitive to $\nu_e$, \emph{water \cherenkov\
-experiments are sensity to all three generations of neutrinos} via the reactions:
+experiments are sensitive to all three generations of neutrinos} via the reactions:
 \begin{align*}
   \nu_{e, \mu, \tau} + e^- \rightarrow  \nu_{e, \mu, \tau} + e^-
 \end{align*}
 (provided, of course, that the neutrino flavor is conserved at the vertex).
+
+\begin{marginfigure}
+  \begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a)  at (0,1.75);
+    \vertex (b)  at (0,0.75);
+    \vertex (i1) at (-1.75,1.75) {\(\nu_{e,\mu,\tau}\)};
+    \vertex (f1) at (1.75,1.75) {\(\nu_{e,\mu,\tau}\)};
+    \vertex (i2) at (-1.75,0.75) {\(e^-\)};
+    \vertex (f2) at (1.75,0.75) {\(e^-\)};
+    \diagram* {
+      (i1) -- [fermion] (a) -- [fermion] (f1),
+      (i2) -- [fermion] (b) -- [fermion] (f2),
+      (a) -- [boson, edge label=\(Z^0\)] (b),
+    };
+    \node at (0,2.25) {NC};
+
+    \vertex (a)  at (0,-0.75);
+    \vertex (b)  at (0,-1.75);
+    \vertex (i1) at (-1.75,-0.75) {\(\nu_e\)};
+    \vertex (f1) at (1.75,-0.75) {\(e^-\)};
+    \vertex (i2) at (-1.75,-1.75) {\(e^-\)};
+    \vertex (f2) at (1.75,-1.75) {\(\nu_e\)};
+    \diagram* {
+      (i1) -- [fermion] (a) -- [fermion] (f1),
+      (i2) -- [fermion] (b) -- [fermion] (f2),
+      (a) -- [boson, edge label=\(W\)] (b),
+    };
+    \node at (0,-0.25) {CC};
+\end{feynman}
+\end{tikzpicture}
+\caption{Feynman diagrams for neutral- and charged-current interactions neutrino
+  elastic scattering on electrons.}
+\end{marginfigure}
 
 This is not to say that the three flavors of neutrinos all interact \emph{in the same way}:
 there is a fundamental asymmetry due to the fact that ordinary matters includes
@@ -783,7 +797,9 @@ interactions (i.e., with the exchange of a $Z^0$ or a $W$) for $\nu_\mu$ and
 $\nu_\tau$ only NC interactions are allowed---at least up to the kinematic threshold
 where inelastic interactions with the production of $\mu$ (or $\tau$) leptons.
 It follows that the elastic scattering cross section on electrons is about six times
-larger for electrons than for muons and tauons
+larger for electrons than for muons and tauons\sidenote{There is no simple argument
+to calculate this factor of six other than calculating the relevant Feynman diagrams
+the associated cross section, so we shall just take it as a given fact.}
 \begin{align*}
   \frac{\sigma_e(\nu_e)}{\sigma_e(\nu_\mu)} \approx
   \frac{\sigma_e(\nu_e)}{\sigma_e(\nu_\tau)} \approx 6.
