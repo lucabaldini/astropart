@@ -1051,52 +1051,69 @@ what we are after is just
     \abs{\,\exp\qty{-i\frac{E_2}{\hbar}t} - \exp\qty{-i\frac{E_1}{\hbar}t}}^2 = \\
   & = \sin^2(2\theta)\sin^2 \qty(\frac{(E_2 - E_1)}{2 \hbar}t).
 \end{align*}
-Since neutrinos are ultrarelativistic in all the situations that we might come
-across, we can approximate the dispersion relation as\sidenote{In the last passage
-we have used the ultrarelativistic limit $pc \approx E$. Although it might be
-confusing to switch back and forth two times between energy and momentum, once we
-have isolated the relevant terms of the expansion the two are interchangeable, as
-this is the notation customarily used in the literature.}
+If we now assume that the neutrino masses are small, and therefore neutrinos are
+ultra-relativistic, we can expand in a Taylor series the dispersion relation
 \begin{align*}
   E_i = \sqrt{m_i^2 c^4 + p^2 c^2} =
-  pc \qty(1 + \frac{m_i^2 c^2}{p})^\frac{1}{2} \approx
-  pc + \frac{m_i^2 c^4}{2pc} \approx E + \frac{m_i^2 c^4}{2E},
+  pc \qty(1 + \frac{m_i^2 c^4}{p^2c^2})^\frac{1}{2} \approx
+  pc + \frac{m_i^2 c^4}{2pc},
 \end{align*}
-and can plug this into our probability to get the final formula for oscillation
-in vacuum
+so that the difference of the two energies in our phase turns out to be
+proportional to the \emph{difference of the two squared masses}\sidenote{Note
+we include a $c^4$ in $\Delta m^2$, so the latter is really an energy (not a
+mass) squared.}:
+\begin{align*}
+  E_2 - E_1 \approx \frac{(m_2^2 - m_1^2) c^4}{2pc} \coloneq
+  \frac{\Delta m^2}{2pc}
+  \quad\text{with}\quad
+  \Delta m^2 = (m_2^2 - m_1^2) c^4.
+\end{align*}
+This is in line with our expectations: if the two neutrinos have the same mass,
+then there is no non-trivial phase difference and no oscillation. At this point
+it is customary to switch back to the ultra-relativistic limit $pc \approx E$
+and write the the final formula for neutrino oscillation as a function of the
+neutrino energy $E$\sidenote{Make sure you master the orders of magnitude before
+you move on. The initial state is an eigestate of the momentum, not of the
+energy---strictly speaking $E$ is not the energy of the neutrino, but just another
+designation for $pc$. But if we are talking about a solar neutrino with a
+momentum of 1~MeV/c and $\Delta m^2$ is of the order of $10^{-5}~\text{eV}^2$,
+then $E_1$ and $E_2$ differ by less than a part in $10^{11}$. This tiny difference
+is what generates the oscillations, but for the only purpose of the denominator
+of our phase
+$$
+E_1 \approx E_2 \approx pc \coloneq E,
+$$
+and saying that the neutrino has an energy of 1~MeV is quite natural.} and
+the distance traveled $L = ct$
 \begin{align}\label{eq:nu_two_flavor_osc_prob}
   P(\nu_e \rightarrow \nu_\mu) =
-  %\sin^2 2\theta \sin^2 \qty(\frac{\Delta m^2 c^3 t}{4 \hbar p}) =
-  \sin^2(2\theta)\sin^2 \qty(\frac{\Delta m^2 L}{4 \hbar c E}),
+  \sin^2(2\theta)\sin^2 \qty(\frac{\Delta m^2 L}{4 \hbar c E}).
 \end{align}
-where we have defined\sidenote{Note that we include the $c^4$ here, so this
-is really an energy (as opposed to a mass) squared.}
-$\Delta m^2 = (m_2^2 - m_1^2) c^4$ and $L = ct$ is the distance traveled by the
-neutrino.
 
 Equation~\eqref{eq:nu_two_flavor_osc_prob} depends on two fundamental parameters
-that we have no control on and need to be gauged through measurements. The
-\emph{mixing angle} $\theta$ determines the specific mix of flavor eigenstates in
-the mass eigenestates: if $\theta = 0$, then the two are the same and oscillations
-do not occurr; for $\theta = 45^\circ$ the oscillation is maximal and there exist
-a point (or infinite points, really) on the line of flight of the neutrino beam
-where all the initial $\nu_e$ have oscillated to $\nu_\mu$. The other important
-parameter is the difference of the two squared masses $\Delta m^2$: \emph{for oscillations
-to occur at least of of the neutrinos must have non vanishing mass}\sidenote{The
-implications of this very basic fact can hardly be overstated, as the observation
-of neutrino oscillations per se is a direct proof that neutrinos are massive.}, and
-the two masses must be different---otherwise we are never going to generate a
-non-trivial phase difference during the propagation. It is also worth noting that,
-while $\Delta m^2$ can be positive or negative, since~\eqref{eq:nu_two_flavor_osc_prob}
-is even, the oscillation probability is rigorously the same if the change the sign
-of $\Delta m^2$: \emph{interferometric experiments are only sensitive to the absolute value
-of the difference of square masses but cannot resolve the mass hyerarchy}---we shall
-come back to this in a second.
+that we have no control on and need to be measured. The \emph{mixing angle} $\theta$
+determines the specific mix of flavor eigenstates in the mass eigenstates: as we
+said, if $\theta = 0$, then the two are the same and oscillations do not occur;
+for $\theta = 45^\circ$ the oscillation is maximal and there exists a point (or
+infinite points, really) on the line of flight of the neutrino beam where all the
+initial $\nu_e$ have oscillated to $\nu_\mu$. The other important parameter is
+the difference of the two squared masses $\Delta m^2$: \emph{for oscillations
+to occur at least of of the neutrinos must have non vanishing mass}\sidenote{That
+is: the observation of neutrino oscillations per se is a direct proof that
+neutrinos are massive.}, and \emph{the two masses must be different}.
+
+It is also worth noting that, while $\Delta m^2$ can be positive or negative,
+since~\eqref{eq:nu_two_flavor_osc_prob} is even, the oscillation probability is
+rigorously the same if the change the sign of $\Delta m^2$: \emph{interferometric
+experiments are only sensitive to the absolute value of the difference of squared
+masses but cannot resolve the mass hierarchy}. We shall come back to this in a
+second.
 
 \begin{marginfigure}
   \input{figures/nu_oscillation_length.pgf}
   \caption{Neutrino oscillation length as a function of energy for the two relevant
-  values of $\Delta m^2$, see section~\ref{sec:}}
+  values of $\Delta m^2$, $\Delta m^2_\odot$ and $\Delta m^2_\text{atm}$,
+  that we shall see in sections~\ref{sec:nu_solar_solution} and~\ref{sec:nu_atmospheric}.}
   \label{fig:nu_oscillation_length}
 \end{marginfigure}
 
@@ -1112,14 +1129,14 @@ neutrino oscillation is that of \emph{oscillation length}
 \begin{align*}
   L_\text{osc}(E) = \frac{1}{\pi} \frac{4\hbar c E}{\Delta m^2},
 \end{align*}
-using which the formula for the oscillation probability can can be recasted in the
-equivalent form
+using which the formula for the oscillation probability can can be rewritten in
+the equivalent form
 \begin{align*}
   P(\nu_e \rightarrow \nu_\mu) =\sin^2(2\theta)\sin^2 \qty(\pi \frac{L}{L_\text{osc}}).
 \end{align*}
 If, for a given energy $E$ and propagation length $L$, $\varphi \ll 1$, then there
 is no oscillation. The regime in which $\varphi \approx 1$ is where it is possible
-to study the minimum/maximum in the oscillation behaviour.
+to study the minimum/maximum in the oscillation behavior.
 
 \begin{figure}[!htbp]
   \input{figures/sun_neutrino_oscillation.pgf}
@@ -1132,25 +1149,22 @@ to study the minimum/maximum in the oscillation behaviour.
 \end{figure}
 
 An interesting situation arises when $\varphi$ is large. While for a monochromatic
-neutrino beam and fixed $L$ the oscillating behavior proceed as before (and the
-neutrino undergoes many oscillation cycles), in the typical case where we are dealing
+neutrino beam and fixed $L$ the oscillating behavior proceed as before, and the
+neutrino undergoes many oscillation cycles, in the typical case where we are dealing
 with a mixture of different energies or/and propagation lengths, what we see is
-effectively an average of a (quickly oscillating) trigonometric function
+effectively an average of a quickly oscillating trigonometric function
 \begin{align*}
   \ave{\sin^2\varphi(L, E)} = \frac{1}{2}.
 \end{align*}
 This is illustrated in figure~\ref{fig:sun_neutrino_oscillation} with values for the
 oscillating parameters appropriate for solar neutrinos: while a monochromatic 1~MeV
-beam oscillates coherently according to the basic formula, in the (largely academic)
-case of a gaussian beam with an energy dispersion of $10\%$, everything averages
-out in a few cycles. The oscillation probability at large distance is constant and
-only driven by the mixing angle
+beam oscillates coherently according to the basic formula, in the case of a gaussian
+beam with an energy dispersion of $10\%$, everything averages out in a few cycles.
+The oscillation probability at large distance is constant and only driven by the
+mixing angle
 \begin{align*}
-  P(\nu_e \rightarrow \nu_\mu) = \frac{1}{2} \sin^2 2\theta,
-\end{align*}
-and the corresponding probability of survival for the $\nu_e$ is
-\begin{align*}
-  P(\nu_e \rightarrow \nu_e) = 1 - P(\nu_e \rightarrow \nu_\mu) = 1 - \frac{1}{2} \sin^2 2\theta.
+  P(\nu_e \rightarrow \nu_\mu) = \frac{1}{2} \sin^2 2\theta
+  \quad\text{for}\quad L \gg L_\text{osc}.
 \end{align*}
 
 We are now starting to see on the horizon a viable solution to the solar neutrino
@@ -1159,15 +1173,17 @@ in the Sun to other flavors. If the mixing is maximal ($\theta \sim 45^\circ$) a
 the $\Delta m^2$ is such that, combined with the Sun-Earth distance results into an
 accumulated phase $\varphi \gg 1$, then it is not unconceivable that a faction of
 $\nu_e \lesssim 50\%$ might have oscillated, on average, before reaching the Earth.
-This would be in line with the Gallium experiments, but it cannnot possibly be the
-end of the story, as the discrepancy between the different experiments are still
-troubling, and incorporating any king of energy dependence into this seems hopeless
-at this point. The last piece of the puzzle, as we shall see in a moment, comes from
-the effect of the matter that neutrino have to traverse to the emerge over the Sun
-surface.
+
+This would be roughly in line with the Gallium experiments, but there is still one
+missing piece of the puzzle: the discrepancy between the different experiments are
+still troubling if we interpret them as an energy-dependent effect, because in
+our na\"ive picture everything is driven by the mixing angle, and the energy is
+just averaged out. And this is where we need to take a step back and see if the
+presence of dense matter in the Sun interior makes a difference.
 
 
-\subsection{Neutrino oscillation in the presence of matter}
+\subsection{Neutrino oscillation in matter}
+\label{sec:nu_oscillation_matter}
 
 When neutrino propagate in matter there is an additional important piece of the
 puzzle entering the game due to the fact that, as we have already seen, while all the
@@ -1392,6 +1408,7 @@ and example of such solution at the end of the next section.
 
 
 \subsection{The solution of the solar neutrino problem}
+\label{sec:nu_solar_solution}
 
 \todo{Start with a short recap at of the situation at the end of the 1990s.}
 One of the fundamental limitations of the early solar neautrino experiments was the
@@ -1498,6 +1515,7 @@ allow to improve the accuracy of the measurement of $\theta_{12}$ and $\Delta m^
 
 
 \section{Atmospheric neutrinos}
+\label{sec:nu_atmospheric}
 
 We have already covered the reactions taking place in the atmosphere when hit from
 primary cosmic rays, the dominant part of the decay chain involving neutrinos being
