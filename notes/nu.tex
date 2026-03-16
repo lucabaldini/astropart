@@ -536,7 +536,8 @@ table~\ref{tab:pp_cycle}), which goes under the name of hep, or $pp$-IV
 producing again a continuous spectrum extending to almost 20~MeV.
 
 Figure~\ref{fig:sun_neutrino_spectra} provides a summary of all the neutrino spectral
-components from the $pp$ cycle, along with the corresponding fluxes at Earth.
+components from the $pp$ cycle, along with the corresponding fluxes at Earth,
+according to the so called standard solar model (SSM).
 If you are not planning on working with neutrinos professionally, you don't need
 to commit to memory all the reactions, just keep in mind that the vast majority
 (more than 90\%) of the solar neutrinos are produced in the (relatively simple)
@@ -760,10 +761,11 @@ is technically possible, but since oxygen is a very tightly bound nucleus, and F
 significantly heavier, the reaction has a very high kinematic threshold ($\sim 15$~MeV)
 and is therefore basically irrelevant in this context. All we are left with is the elastic
 neutrino scattering on the atomic electrons\sidenote{Technically elastic scattering on
-the protons is also a thing, but detecting a protont with a MeV energy is much more
-challenging.}. This is qualitatively different from the radiochemical experiments in that,
-while the latter are only sensitive to $\nu_e$, \emph{water \cherenkov\ experiments are
-sensitive to all three generations of neutrinos} via the reactions:
+the protons is also a thing, but detecting a proton with a MeV-type energy is much more
+challenging, owing to the small range and the lack of correlation with the original
+neutrino direction.}. This is qualitatively different from the radiochemical experiments
+in that, while the latter are only sensitive to $\nu_e$, \emph{water \cherenkov\
+experiments are sensitive to all three generations of neutrinos} via the reactions:
 \begin{align*}
   \nu_{e, \mu, \tau} + e^- \rightarrow  \nu_{e, \mu, \tau} + e^-.
 \end{align*}
@@ -1122,7 +1124,8 @@ is the phase of the second term in~\eqref{eq:nu_two_flavor_osc_prob}, which
 can be conveniently rewritten as
 \begin{align}
   \varphi(L, E) = \frac{\Delta m^2 L}{4 \hbar c E} =
-  1.27\, \frac{\Delta m^2~[\text{eV}^2]~L~[\text{m}]}{E~[\text{MeV}]}.
+  1.27\, \frac{\Delta m^2~[\text{eV}^2]~L~[\text{m}]}{E~[\text{MeV}]} =
+  1.27\, \frac{\Delta m^2~[\text{eV}^2]~L~[\text{km}]}{E~[\text{GeV}]}.
 \end{align}
 A concept that is often found in literature and is helpful to grasp the meaning of
 neutrino oscillation is that of \emph{oscillation length}
@@ -1427,85 +1430,81 @@ although in this case the evolution equation needs to be solved numerically.
 \subsection{The solution of the solar neutrino problem}
 \label{sec:nu_solar_solution}
 
-One of the fundamental limitations of the early solar neautrino experiments was the
-lack of sensitivity to the neutrino flavors associated to the heavier leptons. Radiochemical
-experiments exploited CC interactions, and were only sensitive to $\nu_e$; water
-\cherenkov\ experiments exploiting the neutrino elastic scattering used both
-CC and NC currents, but had limited sensitivity to $\nu_\mu$ and $\nu_\tau$.
-It appeared clear that a possible key breakthrough to the solution of the solar
-neutrino problem would be an experiment sensitive to \emph{all} neutrino types. The
-elastic scattering off protons, for instance
-\begin{align*}
-  \nu_{e, \mu, \tau} + p \rightarrow  \nu_{e, \mu, \tau} + p
-  \quad\text{(NC)}
-\end{align*}
-would be a sensible candidate, but one where the enormous background effectively
-renders the approach hopeless: all we have a few-MeV proton in the final state,
-which is higly non relativistic and therefore not collinear with the incoming neutrino,
-and therefore would not allow to rely on the solar peak as in SK.
+One of the fundamental limitations of the early solar neutrino experiments was the
+lack of sensitivity to the neutrino flavors associated to the heavier leptons.
+Radiochemical experiments exploited CC interactions, and were only sensitive
+to $\nu_e$; water \cherenkov\ experiments exploiting the neutrino elastic scattering
+used both CC and NC currents, but had limited sensitivity to $\nu_\mu$ and $\nu_\tau$.
+It was clear in the mid 1990s that the key to a real breakthrough in the solution of
+the solar neutrino problem was the deployment of an experiment with sensitivity to
+\emph{all} neutrino flavors.
 
 Deuterium is peculiar, in this respect, in that its nucleus is only loosely bound
 (the binding energy is $\sim 2.2$~MeV) and, in addition to the charged-current reaction
 \begin{align*}
   \nu_e + d \rightarrow e^- + p + p \quad\text{(CC)},
 \end{align*}
-with a threshold of 1.4~MeV, and the ordinary elastic neutrino scattering off the
-atomic electrons
+sensitive to $\nu_e$ with a threshold of 1.4~MeV, and the ordinary elastic neutrino
+scattering off the atomic electrons
 \begin{align*}
   \nu_{e, \mu, \tau} + e^- \rightarrow  \nu_{e, \mu, \tau} + e^-
-  \quad\text{(ES)}
+  \quad\text{(CC + NC)}
 \end{align*}
-is amenable to the inelastic scattering reaction, mediated by neutral current
+(with limited sensitivity to $\nu_\mu$ and $\nu_\tau$) is amenable to the inelastic
+scattering reaction, mediated by neutral current
 \begin{align*}
   \nu_{e, \mu, \tau} + d \rightarrow  \nu_{e, \mu, \tau} + p + n
   \quad\text{(NC)}
 \end{align*}
-with a threshold of 2.2~MeV. In this case we have a neutron in the final state, that
-can be detected directly or via neutron capture by either the deuton itself (followed
-by the emission of a characteristic $\gamma$ ray of 6.25~MeV) or by some some additive
-(e.g., NaCl, with the emission of a $\gamma$ of 8.6~MeV).
+sensitive to all neutrino flavors with a threshold of 2.2~MeV. In this case we have
+a neutron in the final state, that can be detected directly or via neutron capture
+by either the deuton itself---followed by the emission of a characteristic $\gamma$
+ray of 6.25~MeV---or by some some additive, e.g., NaCl, with the emission of a
+$\gamma$ of 8.6~MeV.
 
-The Sudbury Neutrino Observatory (SNO), located 2100~m underground in Ontario, Canada,
+Located 2100~m underground in Ontario, Canada, the Sudbury Neutrino Observatory (SNO),
 was designed and operated between 1999 and 2006 with the precise intent of settling once
 and for all the solar neutrino problem. The detector target was similar in spirit,
-and technology, to SK, but the vessel was filled with heavy water---a form of water
-whose hydrogen atoms are in fact both deuterium\sidenote{Procuring 1~kton of heavy
-water is not a trivial undertake, and this one one of the difficulties connected
-with the deployment of the experiment.}. For the CC and ES channel is the electron
+and technology, to Super Kamiokande, but the vessel was filled with heavy water---a
+form of water whose hydrogen atoms are in fact both deuterium\sidenote{Procuring 1~kton
+of heavy water was not a trivial undertake, and this one one of the difficulties connected
+with the deployment of the experiment.}.
+For the charged-current and elastic scattering channels it is the electron
 in the final state being detected through its \cherenkov\ radiation, just like in
-SK. For the (chiefly interesting) NC channel, the gamma ray in the final state can
-Compton scatter off an atomic electron, with the latter having enough energy to trigger
-the detector\sidenote{We note, though, that since the $\gamma$ is emitted isotropically,
-the Compton electron bears no memory of the incoming direction of the neutrino, and
-the same holds for the electron in CC channel. The only channel with directional
-capabilities is the elastic scattering pioneered by SK.}
+Super Kamiokande. For the (chiefly interesting) neutral-current channel, the gamma
+ray in the final state can Compton scatter off an atomic electron, with the latter
+having enough energy to trigger the detector\sidenote{We note, though, that since
+the $\gamma$ is emitted isotropically, the Compton electron bears no memory of the
+incoming direction of the neutrino, and the same holds for the electron in the
+charged-current channel. The only channel with directional capabilities is the
+elastic scattering pioneered by Super Kamiokande.}
 
 The SNO results~\cite{2004PhRvL..92r1301A} constitute the first contemporaneous
-measurements of the solar $\nu_e$ flux (through the CC) and the \emph{total} neutrino
-flux (through the NC) above an effective threshold of $\sim 5.5$~MeV, yielding
+measurement of the solar $\nu_e$ flux and the \emph{total} neutrino flux (the
+latter through inelastic scattering mediated by neutral currents) above an
+effective threshold of about $5.5$~MeV, yielding
 \begin{align*}
-  \frac{\Phi_\text{CC}}{\Phi_\text{NC}} = 0.306 \pm 0.026~\text{(stat)} \pm 0.024~\text{(syst)}
+  \frac{\Phi_\text{CC}}{\Phi_\text{NC}} =
+  0.306 \pm 0.026~\text{(stat)} \pm 0.024~\text{(syst)}.
 \end{align*}
-which is in agreement with the findings by the Homestake experiment. Most importantly,
+This was in agreement with the findings by the Homestake experiment. Most importantly,
 a detailed analysis of all the available solar neutrino data showed that the SSM
 could be reconciled with all the available information, providing that neutrino
-oscillate and that the MSW mechanism is at play, the global best fits for the relevant
-parameters being
-\begin{align}
+oscillate \emph{and} that the MSW mechanism is at play, the global best fit for the
+relevant parameters being
+\begin{align*}
   \Delta m^2_\odot \approx 7.1 \times 10^{-5}~\text{eV}^2
   \quad\text{and}\quad
   \theta_\odot \approx 32.5^\circ
-\end{align}
-
-\todo{Include a combined plot of the electron survival probability, with a compilation
-of different measurements. The one from Borexino Nature (2018) is a good starting
-point.}
+\end{align*}
+This is customarily referred to in the literature as the Large Mixing Angle (LMA)
+solution to the solar neutrino problem, an expression that in the early days was
+used to distinguish this set of parameters from different regions in the phase space
+that are nowadays firmly excluded.
 
 More recent measurements include those by Borexino, but it is fair to say that, by
 the beginning of the years 2000s, the solar neutrino problem was solved and the
-very basic facts that neutrino have mass and oscillate accepted. In the next section
-we shall briefly present some more direct and complementary evidence obtained using
-neutrinos produced by nuclear reactors.
+very basic facts that neutrino have mass and oscillate accepted.
 
 
 \subsection{Verification with reactor neutrinos}
@@ -1517,7 +1516,7 @@ on average) through the reaction
   \overline{\nu_e} + p \rightarrow e^+ + n
 \end{align*}
 whose signature is a prompt signal from the electrons and a delayed signal from
-the gammas emitted when the neutron is captured after its termalization.
+the gammas emitted when the neutron is captured after its thermalization.
 
 At a distance of $\sim 1$~km from the reactor, given the value of $\Delta m^2$ from
 the solar neutrino experiments, the typical oscillation is $\sim 10^{-2}$, meaning
@@ -1527,7 +1526,6 @@ at the MeV energy becomes $O(1)$ and experiments are sensitive to the $\nu_1\nu_
 oscillation parameters. In fact Kamland observations~\cite{2005PhRvL..94h1801A} provide
 further support to the LMA solution and, combined with the solar neutrino experiments,
 allow to improve the accuracy of the measurement of $\theta_{12}$ and $\Delta m^2_{12}$.
-\todo{Consider adding a plot from Kamland.}
 
 
 \section{Atmospheric neutrinos}
@@ -1540,15 +1538,12 @@ primary cosmic rays, the dominant part of the decay chain involving neutrinos be
   \quad\text{and}\quad
   \mu^+ \rightarrow e^+ + \nu_e + \bar{\nu}_\mu,
 \end{align*}
-along with the charge coniugates. At moderate energies, where the pions and the
+along with the charge conjugates. At moderate energies, where the pions and the
 muons have a small $\gamma$ factor and therefore tend to decay relatively quickly,
 we have two muon neutrinos (or anti-neutrinos) for each electron neutrino (or anti-neutrino)
-and one expects\sidenote{This is actually more accurately verified by detailed
-Monte Carlo simulations than one would expect from a back-of-the envelope calculation.
-In real life the key metrics is the double ration $R_\text{data} / R_\text{sim}$
-where a number of systematic effects cancel out.}
+and one expects
 \begin{align*}
-  R = \frac{\nu_\mu + \bar{\nu}_\mu}{\nu_e + \bar{\nu}_e} \approx 2.
+  \frac{\Phi_{\nu_\mu} + \Phi_{\bar{\nu}_\mu}}{\Phi_{\nu_e} + \Phi_{\bar{\nu}_e}} \approx 2.
 \end{align*}
 
 \begin{marginfigure}
@@ -1561,45 +1556,49 @@ where a number of systematic effects cancel out.}
 
 Now, there are two notable differences between the solar and atmospheric neutrinos,
 beside the fact that in the first case we start with 100\% $\nu_e$, while in the latter
-we start with a mixture of $\nu_e$ and $\nu_\mu$: the energy is now significantly
+we start with a mixture of $\nu_e$ and $\nu_\mu$: (i) the energy is now significantly
 larger (we area dealing with a continuous spectrum peaking at the GeV scale), and
-the distances traveled by the neutrino from the creation to the detection site are
-much shorter. Atmospheric neutrinos are created in the high atmosphere and, since
-a typical detector has nearly full ($4\pi$) coverage, the actual path length depends
-on the arrival direction with respect to the local zenith angle and can vary from
-$\sim 10$~km (for neutrinos arriving from above) to more than $10,000$~km (for neutrinos
-arriving from below and traversing the Earth), in any case much less than the A.~U.
-that separates the Earth from the Sun. We should also note the the overall dynamics
-in terms of path length, here, is about three orders of magnitude, which is also
-much larger than the equivalent for Solar neutrinos.
+(ii) the distances traveled by the neutrino from the creation to the detection site are
+much shorter.
 
 \begin{marginfigure}
   \input{figures/atmospheric_nu_path.pgf}
   \caption{Distance traverse by atmospheric neutrinos between the creation and
   the detection site as a function of the cosine director with respect to the local
   zenith. The plot assumes an average altitude $h = 15$~km for the
-  neutrino creation and a detector $2.5$~km undergrund.}
+  neutrino creation and a detector $2.5$~km underground.}
   \label{fig:atmospheric_nu_sketch}
 \end{marginfigure}
 
-If we plug the $\Delta m^2$ found for solar neutrino into the oscillation formula,
-we get a typical phase $\varphi \approx 0.1$ for $E = 1$~GeV and $L = 1,000$~km,
-that is, electron neutrinos hardly have room to oscillate to different flavors.
-The fact that the neutrino energies are so much higher, though, opens the possibility
+Atmospheric neutrinos are created in the high atmosphere and, since a typical detector
+has nearly $4\pi$ coverage, the actual path length depends on the arrival direction
+with respect to the local zenith angle and can vary from $\sim 10$~km (for neutrinos
+arriving from above) to about $13,000$~km (for neutrinos arriving from below and
+traversing the Earth)\sidenote{Note that the overall dynamic range in terms of path
+length is about three orders of magnitude---much larger than the one for Solar
+neutrinos. This is an incredible opportunity to explore different oscillation regimes.}.
+If we plug the $\Delta m^2_\odot$ found for solar neutrino into the oscillation formula,
+we get a typical phase $\varphi \approx 1$ for $E = 1$~GeV and $L = 10,000$~km,
+that is, electron neutrinos hardly have room to oscillate to different flavors, and
+are basically decoupled from the other flavors.
+
+On a different note, the fact that the energies are so much higher opens the possibility
 of creating muons in the final state, and deep-underground water-\cherenkov~experiments
-such as SK can measure the flux ratio between $\nu_\mu$ and $\nu_e$ via CC interactions
-on nuclei
+such as Super Kamiokande can measure the flux ratio between $\nu_\mu$ and $\nu_e$ via
+charged-current interactions on nuclei
 \begin{align*}
   \nu_{e,~\mu} + N \rightarrow e~,\mu + X
 \end{align*}
-identifying the lepton in the final state. This, in conjuction with the ability to
+identifying the lepton in the final state. This, in conjunction with the ability to
 measure the neutrino energy and direction, opens the possibility of studying the
 separate $\nu_e$ and $\nu_\mu$ fluxes, as well as their ratio, as a function of the
-zenith angle---i.e., as a function of the distance $L$ traveled by the neutrino.
+zenith angle, i.e., as a function of the distance $L$ traveled by the neutrino,
+and as a function of the energy.
 
-The main SK results are that, while $\nu_e$ measurements agree reasonably well with
-expectations in absense of oscillations, we have a significant deficit of
-$\nu_\mu$, amounting to some $5\sim 0\%$ and extending to all zenith angle at low
+
+The main Super Kamiokande results are that, while $\nu_e$ measurements agree reasonably
+well with expectations in absence of oscillations, we have a significant deficit of
+$\nu_\mu$, amounting to some $\sim 50\%$ and extending to all zenith angle at low
 energy and to upward-going neutrinos above $\sim 1$~GeV. This basic findings can be
 interpreted naturally as $\nu_\mu \rightarrow \nu_\tau$ oscillations with
 \begin{align}
@@ -1610,9 +1609,9 @@ interpreted naturally as $\nu_\mu \rightarrow \nu_\tau$ oscillations with
 More specifically, if we plug the numbers into the formula for the oscillation phase,
 assuming an energy of 1~GeV, we have
 \begin{align*}
-  \varphi \approx \begin{cases}
-  0.04 & \quad\text{for } L = 10~\text{km (upward-going)}\\
-  50   & \quad\text{for } L = 13,000~\text{km (downward-going)}
+  \varphi_\text{atm} \approx \begin{cases}
+  0.04 & \quad\text{for } L = 10~\text{km (downward-going)}\\
+  50   & \quad\text{for } L = 13,000~\text{km (upward-going)}
 \end{cases}
 \end{align*}
 that is, moving across different bins of zenith angles we explore all the possible
@@ -1620,9 +1619,6 @@ regimes, from the situation where the oscillation phase is small $\varphi \ll 1$
 and oscillations do not take place, to that where the phase is large $\varphi \gg 1$
 and the oscillations terms averages out to the sine squared of the mixing angle,
 that in this case appears to be maximal.
-
-
-\subsection{Verification with accelerator neutrinos}
 
 
 \section{Three-flavor neutrino oscillations}
@@ -1703,7 +1699,7 @@ and spell out the PMNS mixing matrix in its full form
       -c_{12}s_{23} - s_{12}s_{13}c_{23}e^{i\delta_\text{CP}} & c_{13}c_{23}\\
   \end{pmatrix},
 \end{align}
-which gives an immediate idea of how the formulation is algebrically more complicated
+which gives an immediate idea of how the formulation is algebraically more complicated
 in the three-generation case, compared to the two-generation one.
 
 Several global analyses of all available neutrino data exist, a recent, representative
@@ -1718,7 +1714,7 @@ mass ordering, but the differences are hardly relevant in our case.}
   \Delta m^2_{21} & = 7.41^{+0.21}_{-0.20} \times 10^{-5}~\text{eV}^2 \nonumber\\
   \Delta m^2_{31} & = \pm 2.507^{+0.026}_{-0.027} \times 10^{-3}~\text{eV}^2
 \end{align}
-Note the CP-violating phase is compatible, within current experimental uncertainities,
+Note the CP-violating phase is compatible, within current experimental uncertainties,
 with $\delta_\text{CP} = 180^\circ$, i.e. with no CP violation. And, since we are at it,
 this particular configuration translates into full matrix whose modulus can be written as
 \begin{align*}
@@ -1765,7 +1761,7 @@ equal contents of the three flavors, and $\nu_3$ is largely dominated by $\nu_\m
 and $\nu_\tau$, with a fairly small $\nu_e$ content.
 
 
-\subsection{Neutrino masses and mass hyerarchy}
+\subsection{Neutrino masses and mass hierarchy}
 
 The neutrino mass hierarchy cannot be fully resolved with current data. We do have
 relatively precise measurements of the absolute values of $\Delta m^2_{21}$ and
@@ -1776,16 +1772,15 @@ two, as
 \begin{align*}
   \Delta m^2_{31} = \Delta m^2_{21} + \Delta m^2_{32} \approx \Delta m^2_{32}.
 \end{align*}
-In other words, we know that $\nu_1$ and $\nu_2$ consitute a closely-spaced doublet,
+In other words, we know that $\nu_1$ and $\nu_2$ constitute a closely-spaced doublet,
 a relatively small small difference, while $\nu_3$ is comparatively further away.
 
 What we don't know for sure, yet, is whether  $m_3 > m_{1,2}$ or $m_3 < m_{1,2}$;
 we refer to the first case as \emph{normal ordering} and to the second as
-\emph{inverse ordering} and we do a theroretical prejudice to impute the largest
-mass to $m_3$, wich has the largest $\tau$ content---but it is fair to remember that
+\emph{inverse ordering} and we do a theoretical prejudice to impute the largest
+mass to $m_3$, which has the largest $\tau$ content---but it is fair to remember that
 in the old days another such prejudice existed for the PMNS matrix to be quasi-diagonal,
 as in the case of the CKM matrix, and that did not work out well.
-\todo{Consider adding the standard plot of neutrino masses.}
 
 \begin{marginfigure}
   \input{figures/neutrino_mass_scale.pgf}
@@ -1806,6 +1801,7 @@ or less all equal, in both normal and inverted ordering.
 
 \subsection{Three flavor mixing}
 
+
 Three-flavor neutrino mixing is significantly more complicated than the two-flavor
 version from a purely algebraic point of view, although the basic derivation proceeds
 exactly in the same way. We shall not work out the full calculation, here, but if we
@@ -1818,67 +1814,63 @@ and $\nu_\beta$ reads
   \sin^2\qty(\frac{\Delta m^2_{ij} L}{4\hbar c E})
 \end{align}
 
-
-Nature was kind enought, though, to help un in two ways: $\theta_{13}$ is
+Nature was kind enough, though, to help un in two ways: $\theta_{13}$ is
 \emph{small} and $\Delta m^2_{21} \ll \Delta m^2_{31}$. As we shall see in a second,
 this allows for significant simplifications in relevant setups.
 
-Let us start by examining the phases
+
+\subsubsection{Solar neutrinos}
+
+Since we know experimentally that $\abs{U_{e3}}^2 \approx 0.02$ is small, $\nu_e$
+neutrinos produced in the Sun are largely a mixture of $\nu_1$ and $\nu_2$, i.e., the
+$\nu_3$ component is negligible at the start. At the very basic level, this is the
+reason why the solar neutrino problem can be approximately interpreted in a two-flavor
+mixing scenario, with the relevant parameters being $\theta_{12}$ and $\Delta m^2_{21}$.
+
+When we plug in the numbers ($L \approx 1.5 \times 10^{11}$~m and $E \approx 1$~MeV)
+it turns out that $\nicefrac{L}{E}$ for solar neutrinos is very large compared
+to $\Delta m^2_{21}$, and the trigonometric term averages out quickly.
+
+Below $\sim 1$~MeV the matter potential in the Sun is small compared to the vacuum
+oscillation scale, so the MSW effect is negligible and neutrinos oscillate essentially
+in vacuum, with the survival probability given by
 \begin{align*}
-  \phi_{ij} = \frac{\Delta m^2_{ij} L}{4 \hbar c E} =
-  1.27\, \frac{\Delta m^2_{ij}~[\text{eV}^2]~L~[\text{m}]}{E~[\text{MeV}]}.
+  P(\nu_e \rightarrow \nu_e) \approx 1 - \frac{1}{2}\sin^2(2\theta_{12}) \approx 0.55.
 \end{align*}
-For solar neutrinos $\nicefrac{L}{E}$ is very large compared to all $\Delta m^2$,
-and the trigonometric terms averages out quickly---starting from the highest mass
-differences. In this case we have, only keeping the phase corresponding to the
-smallest mass difference
+and the rest of the neutrinos oscillating to some combination of $\nu_\mu$ and
+$\nu_\tau$\sidenote{More precisely, if we neglect the initial small contribution
+from $\nu_3$, since
+$$
+  \nu_e = \cos\theta_{12} \nu_1 + \sin\theta_{12} \nu_2,
+$$
+the oscillation is directed to the orthogonal combination in mass eigenstates
+$$
+  \nu_x = -\sin\theta_{12} \nu_1 + \cos\theta_{12} \nu_2.
+$$
+You can work for yourself the precise contributions from $\nu_\mu$ and $\nu_\tau$}.
+
+Above a few MeV, on the other hand, the phenomenon is dominated by the MSW effect,
+and basically all the neutrinos leave the Sun as $\nu_2$ mass eigenstate and
+arrive at the Earth unperturbed. At this point, the probability of detecting
+a $\nu_2$ neutrino as $\nu_e$ is simply given by the $\nu_e$ content of $\nu_2$,
+that is
 \begin{align*}
-  P(\nu_e \rightarrow \nu_{\mu,~\tau}) =
-  \cos^2(\theta_{13})\sin^2(2\theta_{12})\sin^2\qty(\frac{\Delta m^2_{21} L}{4\hbar c E}) +
-  \frac{1}{2}\sin^2(2\theta_{13}),
+  P(\nu_e) = \abs{U_{e2}}^2 = \sin^2(\theta_{12}) \approx 0.3
 \end{align*}
-that, in the limit of small $\theta_{13}$ becomes
-\begin{align*}
-  P(\nu_e \rightarrow \nu_{\mu,~\tau}) \approx
-  \sin^2(2\theta_{12})\sin^2\qty(\frac{\Delta m^2_{21} L}{4\hbar c E}).
-\end{align*}
-This is exactly the result we have derived early in the two-generation scheme---only
-now we have explicitly named the $\Delta m^2$ and mixing angle involved.
-
-For atmoshperic neutrinos the situation is different, as $\nicefrac{L}{E}$ is
-small compared to $\Delta m^2_{12}$, but not with respect $\Delta m^2_{23}$ and
-$\Delta m^2_{13}$, and the relevant oscillation probabilities read
-\begin{align*}
-  P(\nu_\mu \rightarrow \nu_\tau) & =
-  \cos^2(\theta_{13})\sin^2(2\theta_{23})\sin^2\qty(\frac{\Delta m^2_{32} L}{4\hbar c E})
-  \rightarrow \sin^2(2\theta_{23})\sin^2\qty(\frac{\Delta m^2_{32} L}{4\hbar c E})\\
-  P(\nu_e \rightarrow \nu_\mu) & =
-  \sin^2(\theta_{13})\sin^2(2\theta_{23})\sin^2\qty(\frac{\Delta m^2_{32} L}{4\hbar c E})
-  \rightarrow 0\\
-  P(\nu_e \rightarrow \nu_\tau) & =
-  \sin^2(\theta_{13})\cos^2(2\theta_{23})\sin^2\qty(\frac{\Delta m^2_{32} L}{4\hbar c E})
-  \rightarrow 0.
-\end{align*}
-Nowadays all the analyses are properly done with a three-flavor mixing framework,
-but we have learned that, due to the particular combinations of mixing parameter
-values, both solar and atmospheric neutrino oscillations can \emph{approximately}
-be interpreted in a two-flavor mixing scenario, the former being sensitive to
-$\theta_{12}$ and $\Delta m^2_{21}$, and the latter to $\theta_{32}$ and $\Delta m^2_{32}$.
-This is the very reason for the particular decomposition of the PMNS matrix, as
-well as the naming of the different terms.
+This is the very reason why an energy dependence is observed by the experiments
+measuring the flux of $\nu_e$.
 
 
-\section{Cosmic neutrinos}
+\subsubsection{Atmospheric neutrinos}
+
+For atmospheric neutrinos the situation is different, as $\nicefrac{L}{E}$ is
+small compared to $\Delta m^2_{21}$, but not with respect $\Delta m^2_{31}$ and
+$\Delta m^2_{32}$. That is to say: the oscillations are driven by the phase
+accumulated by the $\nu_3$ component with respect to the nearly degenerate
+$\nu_1$ and $\nu_2$ doublet.
+In this case we start with a mixture of $\nu_e$ and $\nu_\mu$ but, since $\nu_e$
+has a tiny $\nu_3$ component, it is effectively decoupled from the oscillation,
+and the latter only involves $\nu_\mu$ and $\nu_\tau$.
 
 
-\subsection{Neutrinos from Supernov\ae}
-
-
-\section{State of the art and outlook}
-
-% https://physics.stackexchange.com/questions/341904/how-is-delta-m2-12-is-identified-with-the-solar-mixing-angle
-% https://www.worldscientific.com/doi/pdf/10.1142/9789811269776_0225
-
-
-
-\subsection{Current open problems}
+\section{Neutrinos from Supernov\ae}
