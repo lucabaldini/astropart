@@ -970,14 +970,14 @@ other particles, as \emph{mass} eigenstate---and in a quantum field theory there
 nothing that guarantees that the two components of the hamiltonian (that for the mass
 and that for the interaction) can be made simultaneously diagonal. More specifically, if
 $\nu_e$ and $\nu_\mu$ are the flavor eigenstates\sidenote{We are calling the two
-flavor eigenstates $\nu_e$ and $\nu_\mu$ in order not to multiply the notation, but
-there is absolutely nothing special to prefer these two generations to the fellow
-$\nu_\tau$. The main point is that at each vertex of a weak Feynman diagram, each
-neutrino has a well defined flavor (and not a defined mass).} and $\nu_1$ and $\nu_2$
-are the mass eigenstates (with eigenvalues $m_1$ and $m_2$), we shall assume that a
-unitary transformation exists connecting the two representations\sidenote{Be advised
-you will find many instances in the literature where the transformation is written in
-the opposite way, i.e., with $U$ and $U^{-1}$ interchanged.}
+flavor eigenstates $\nu_e$ and $\nu_\mu$ while many text prefer to be agnostic and
+call them $\nu_\alpha$ and $\nu_\beta$. There is nothing special about any neutrino
+flavor as long as oscillation in vacuum are concerned, but all of a sudded $\nu_e$
+becomes very special in matter, which is why we stand behind this choice.} and $\nu_1$
+and $\nu_2$ are the mass eigenstates (with eigenvalues $m_1$ and $m_2$), we shall assume
+that a unitary transformation exists connecting the two representations\sidenote{Be
+advised you will find many instances in the literature where the transformation is
+written in the opposite way, i.e., with $U$ and $U^{-1}$ interchanged.}
 \begin{align*}
   \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix} = U
   \begin{pmatrix}\nu_1\\ \nu_2 \end{pmatrix}
@@ -1247,8 +1247,8 @@ If we now switch to the base of the flavor eigenstates, this transforms as
 \end{align}
 which is automatically traceless.
 
-So much for propagation in vacuum. When neutrinos propagate through matter, as
-we said, $\nu_e$ CC interactions give rise to an extra term in the Hamiltonian,
+So much for propagation in vacuum. When neutrinos propagate through matter, as we
+said, $\nu_e$ charged-current interactions give rise to an extra term in the Hamiltonian,
 which only affects the $\nu_e$-$\nu_e$ matrix element\sidenote{For completeness,
 all neutrino flavors interact with matter via neutral currents, but since this
 contribution is proportional to the identity, it only produces a global phase,
@@ -1395,27 +1395,27 @@ illustrated in figure~\ref{fig:msw_resonance_energy}.
 MSW conversion in presence of varying electron density is customarily illustrated in
 textbooks in the (somewhat fictional) two-generation, small-mixing-angle setup. This
 makes the discussion easier and more intuitive, as the mass and flavor eigenstates
-coincide, and, since the matter term due to CC interaction is only affecting the
-first mass eigenstate, the effective mass of the second does not depend
+coincide, and, since the matter term due to charged-current interaction is only affecting
+the first mass eigenstate, the effective mass of the second does not depend
 on $n_e$. When $\theta = 0^+$, we have $C(\zeta) = (1 - \zeta)$, and the two mass
 eigenvalues read
 \begin{align*}
   \begin{cases}
-  \tilde{m}_1^2 = m_1^2 + \zeta \Delta_m^2 & \quad (\text{for } \nu_e)\\
-  \tilde{m}_2^2 = m_2^2 & \quad (\text{for } \nu_\mu),
+  \tilde{m}_1^2 = m_1^2 + \zeta \Delta_m^2 & \quad (\text{for } \nu_e = \nu_1)\\
+  \tilde{m}_2^2 = m_2^2 & \quad (\text{for } \nu_\mu = \nu_2),
 \end{cases}
 \end{align*}
 as illustrated in figure~\ref{fig:msw_conversion}.
 An electron neutrino created above the resonance, where the electron number density
 is large (e.g. at the center of the Sun), propagating toward regions of comparatively
 lower density sees it effective mass gradually decreasing, until it reaches the
-resonance condition, where it is converted to a muon neutrino. At this point the
-electron density is no longer high enough to support matter oscillations, and the
-neutrino remains in its $\nu_\mu$ state. Most importantly, this can only happen
-if $\Delta m^2 > 0$, or $m_1 < m_2$, because otherwise the two lines in
-figure~\ref{fig:msw_conversion} do not cross. Unlike purely interferometric effects,
-whether or not MSW resonant conversion is at play in the Sun fixes the mass hierarchy
-of the two neutrinos involved in the process.
+resonance condition, where it is converted to a muon neutrino, which also happens to
+be the mass eigenstate $\nu_2$. At this point the electron density is no longer high
+enough to support matter oscillations, and the neutrino remains in the $\nu_2$ state.
+Most importantly, this can only happen if $\Delta m^2 > 0$, or $m_1 < m_2$, because
+otherwise the two lines in figure~\ref{fig:msw_conversion} do not cross. Unlike purely
+interferometric effects, whether or not MSW resonant conversion is at play in the Sun
+fixes the mass hierarchy of the two neutrinos involved in the process.
 
 Of course the situation in real life is more complicated, as $\nu_e$ is a mix of
 $\nu_1$ and $\nu_2$, and, in the presence of a varying electron density $n_e$, the
