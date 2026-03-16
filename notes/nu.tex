@@ -949,37 +949,40 @@ compose the puzzle: neutrino oscillation in vacuum and the MSW effect.
 
 The possibility that, \emph{if the neutrino mass is non zero}, neutrinos could mix
 across different generations and oscillate from one flavor to another, dates back to a
-seminal paper by B. Pontecorvo in 1957---the idea stemming from the analogy with
-mixing in the systems of other neutral particles, such as the Kaons. The fact that
-neutrino oscillations might resolve the solar neutrino problem was considered early
-on in the course of the events, but the implications were so far reaching that some
-sort of conclusive evidence was necessary for people to accept that this radically
-new paradigm was not just a mere speculation. In this section we briefly review the
-mechanism for neutrino oscillation in vacuum with two flavors\sidenote{The formalism
-for the description of neutrino oscillation is much easier to develop in the context
-of two-flavour mixing rather than three-flavour mixing. In addition, nature is such
-that some of the keyobservations (solar and atmospheric neutrinos) can in fact be
-interpreted, to a good approximation, in terms of two flavour mixing---therefore the
-relevance of this discussion is not merely academic.}.
+seminal paper by B. Pontecorvo in 1958~\cite{Pontecorvo:1957qd}, the idea stemming
+from the analogy with mixing in the systems of other neutral particles, such as the
+kaons\sidenote{Incidentally, the fact that neutrino oscillations might resolve the
+solar neutrino problem was considered early on in the course of the events, but the
+implications were so far reaching that some sort of conclusive evidence was necessary
+for people to accept that this radically new paradigm was not just a mere speculation.}.
+The formalism for the description of neutrino oscillation is much easier to develop
+in the context of two-flavour mixing rather than three-flavour mixing, so we shall start
+from the former. As we shall see, nature is such that some of the key observations,
+such as the phenomenology of solar and atmospheric neutrinos, can in fact be interpreted,
+to a good approximation, in terms of two flavour mixing, making the relevance of
+our initial discussion is not merely academic.
 
 The basic idea behind neutrino oscillation is that neutrinos are created and absorbed
 via the weak nuclear force as \emph{flavor} eigenstates, but then propagate, like all
 other particles, as \emph{mass} eigenstate---and in a quantum field theory there is
-nothing that guarantees that the two components of the lagrangian (that for the mass and that
-for the interaction) can be made simultaneously diagonal. More specifically, if
+nothing that guarantees that the two components of the hamiltonian (that for the mass
+and that for the interaction) can be made simultaneously diagonal. More specifically, if
 $\nu_e$ and $\nu_\mu$ are the flavor eigenstates\sidenote{We are calling the two
 flavor eigenstates $\nu_e$ and $\nu_\mu$ in order not to multiply the notation, but
 there is absolutely nothing special to prefer these two generations to the fellow
 $\nu_\tau$. The main point is that at each vertex of a weak Feynman diagram, each
 neutrino has a well defined flavor (and not a defined mass).} and $\nu_1$ and $\nu_2$
-are the mass eigenstate, we shall assume that a unitary tranformation exists connecting
-the two representations
+are the mass eigenstates (with eigenvalues $m_1$ and $m_2$), we shall assume that a
+unitary transformation exists connecting the two representations\sidenote{Be advised
+you will find many instances in the literature where the transformation is written in
+the opposite way, i.e., with $U$ and $U^{-1}$ interchanged.}
 \begin{align*}
   \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix} = U
   \begin{pmatrix}\nu_1\\ \nu_2 \end{pmatrix}
   \quad\text{and}\quad
   \begin{pmatrix}\nu_1\\ \nu_2 \end{pmatrix} = U^{-1}
-  \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix}.
+  \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix} \quad\text{with }\quad
+  U U^\dagger = U^\dagger U = 1.
 \end{align*}
 In two dimensions this unitary transformation is a rotation, and can be parametrized
 by means of a single \emph{mixing angle}\sidenote{As we shall see, in three dimensions
@@ -998,28 +1001,54 @@ in the CKM matrix.}
     \sin\theta & \cos\theta \\
   \end{pmatrix}.
 \end{align*}
-We note that for $\theta = 0^\circ$ (or $\theta = 90^\circ$, for what matters) the
-flavor and mass eigenstates coincide, i.e., there is no mixing, while the latter
-is maximal for $\theta = 45^\circ$, when each flavor eigenstate is an equal mixture
-of the two mass eigestates and vice-versa.
+We note that for $\theta = 0^\circ$ or $\theta = 90^\circ$ the flavor and mass
+eigenstates coincide, i.e., there is no mixing; the latter is maximal for
+$\theta = 45^\circ$, when each flavor eigenstate is an equal mixture of the two
+mass eigenstates and vice-versa.
 
-If we start with a flavour eigenstate (say $\nu_e$) with a given momentum $p$ at $t=0$
+The time evolution of the system is trivial in the basis of the mass eigenstates,
+where the Hamiltonian is diagonal
+\begin{align}\label{eq:nu_schroedinger}
+  i\hbar \pdv{t} \begin{pmatrix}\nu_1\\ \nu_2 \end{pmatrix} =
+  H \begin{pmatrix}\nu_1\\ \nu_2 \end{pmatrix} \quad\text{with}\quad
+  H =
+  \begin{pmatrix}
+  E_1 & 0\\
+  0 & E_2\\
+  \end{pmatrix},
+\end{align}
+and if we start with a flavour eigenstate (say $\nu_e$) with a given, well defined
+momentum $p$ at $t=0$
 \begin{align*}
   \ket{\nu(0)} = \ket{\nu_e} = \cos\theta \ket{\nu_1} + \sin\theta \ket{\nu_2},
 \end{align*}
-the two mass eigenstates will evolve in time each with its energy-dependent phase
+the two components will evolve in time each with its own (potentially different)
+energy-dependent phase
 \begin{align*}
   \ket{\nu(t)} =
-    \exp\qty{-i\frac{E_1t}{\hbar}} \cos\theta \ket{\nu_1} +
-    \exp\qty{-i\frac{E_2t}{\hbar}} \sin\theta \ket{\nu_2}.
+    \exp\qty{-i\frac{E_1}{\hbar}t} \cos\theta \ket{\nu_1} +
+    \exp\qty{-i\frac{E_2}{\hbar}t} \sin\theta \ket{\nu_2}.
 \end{align*}
 We can calculate the probability $P(\nu_e \rightarrow \nu_\mu)$ to detect our
-neutrino ($\nu_e$ at $t = 0$) as $\nu_\mu$ at a generic time $t$:
+neutrino as a different flavor $\nu_\mu$ at a generic time $t$ by calculating the
+scalar product with the other flavor eigenstate
+\begin{align*}
+  \ket{\nu_\mu} = -\sin\theta \ket{\nu_1} + \cos\theta \ket{\nu_2},
+\end{align*}
+and then taking the square of the modulus\sidenote{This might look involved, but
+what we are after is just
+\begin{align*}
+  \abs{e^{-i\delta_2} - e^{-i\delta_1}}^2 = \\
+  (e^{-i\delta_2} - e^{-i\delta_1}) (e^{i\delta_2} - e^{i\delta_1}) = \\
+  2 - e^{i(\delta_2 - \delta_1)} - e^{-i(\delta_1 - \delta_2)} = \\
+  2 - 2 \cos(\delta_2 - \delta_1) = \\
+  4 \sin^2\qty(\frac{\delta_2 - \delta_1}{2}).
+\end{align*}
+}
 \begin{align*}
   \abs{\braket{\nu_\mu}{\nu(t)}}^2 & = \sin^2\theta \cos^2\theta \;
-    \abs{\,\exp\qty{-i\frac{E_2t}{\hbar}} - \exp\qty{-i\frac{E_1t}{\hbar}}}^2 = \\
-  & = 2 \sin^2\theta \cos^2\theta \qty[1 - \cos\qty(\frac{(E_2 - E_1)t}{\hbar})] = \\
-  & = \sin^2(2\theta)\sin^2 \qty(\frac{(E_2 - E_1)t}{2 \hbar}).
+    \abs{\,\exp\qty{-i\frac{E_2}{\hbar}t} - \exp\qty{-i\frac{E_1}{\hbar}t}}^2 = \\
+  & = \sin^2(2\theta)\sin^2 \qty(\frac{(E_2 - E_1)}{2 \hbar}t).
 \end{align*}
 Since neutrinos are ultrarelativistic in all the situations that we might come
 across, we can approximate the dispersion relation as\sidenote{In the last passage
