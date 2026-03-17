@@ -959,31 +959,34 @@ implications were so far reaching that some sort of conclusive evidence was nece
 for people to accept that this radically new paradigm was not just a mere speculation.}.
 The formalism for the description of neutrino oscillation is much easier to develop
 in the context of two-flavour mixing rather than three-flavour mixing, so we shall start
-from the former. As we shall see, nature is such that some of the key observations,
-such as the phenomenology of solar and atmospheric neutrinos, can in fact be interpreted,
-to a good approximation, in terms of two flavour mixing, making the relevance of
-our initial discussion is not merely academic.
+from the former. As we shall see, nature is such that some of the key observations can
+in fact be largely interpreted in terms of two-flavour mixing, i.e.
+\begin{align*}
+  \nu_e \leftrightarrow (\nu_\mu, \nu_\tau) & \quad\text{(solar neutrinos)} \\
+  \nu_\mu \leftrightarrow \nu_\tau & \quad\text{(atmospheric neutrinos)},
+\end{align*}
+so our  discussion is not merely academic.
 
 The basic idea behind neutrino oscillation is that neutrinos are created and absorbed
 via the weak nuclear force as \emph{flavor} eigenstates, but then propagate, like all
 other particles, as \emph{mass} eigenstate---and in a quantum field theory there is
 nothing that guarantees that the two components of the hamiltonian (that for the mass
 and that for the interaction) can be made simultaneously diagonal. More specifically, if
-$\nu_e$ and $\nu_\mu$ are the flavor eigenstates\sidenote{We are calling the two
-flavor eigenstates $\nu_e$ and $\nu_\mu$ while many text prefer to be agnostic and
-call them $\nu_\alpha$ and $\nu_\beta$. There is nothing special about any neutrino
-flavor as long as oscillation in vacuum are concerned, but all of a sudded $\nu_e$
-becomes very special in matter, which is why we stand behind this choice.} and $\nu_1$
+$\nu_\alpha$ and $\nu_\beta$ are the flavor eigenstates\sidenote{For the time being we
+are agnostic about the flavors involved in the oscillation, as in vacuum there is
+nothing special about $\nu_e$, $\nu_\mu$, or $\nu_\tau$. As we shall see, when discussing
+oscillation in matter, all of a sudden $\nu_e$ becomes very special, and in the next
+section we shall amend notation to reflect this fact.}
 and $\nu_2$ are the mass eigenstates (with eigenvalues $m_1$ and $m_2$), we shall assume
 that a unitary transformation exists connecting the two representations\sidenote{Be
 advised you will find many instances in the literature where the transformation is
 written in the opposite way, i.e., with $U$ and $U^{-1}$ interchanged.}
 \begin{align*}
-  \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix} = U
+  \begin{pmatrix}\nu_\alpha\\ \nu_\beta\end{pmatrix} = U
   \begin{pmatrix}\nu_1\\ \nu_2 \end{pmatrix}
   \quad\text{and}\quad
   \begin{pmatrix}\nu_1\\ \nu_2 \end{pmatrix} = U^{-1}
-  \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix} \quad\text{with }\quad
+  \begin{pmatrix}\nu_\alpha\\ \nu_\beta\end{pmatrix} \quad\text{with }\quad
   U U^\dagger = U^\dagger U = 1.
 \end{align*}
 In two dimensions this unitary transformation is a rotation, and can be parametrized
@@ -1019,11 +1022,11 @@ where the Hamiltonian is diagonal
   0 & E_2\\
   \end{pmatrix},
 \end{align}
-and if we start with a flavour eigenstate (say $\nu_e$) with a given, well defined
+and if we start with a flavour eigenstate (say $\nu_\alpha$) with a given, well defined
 momentum $p$\sidenote{This is important: we are saying that the neutrino is created
 as a momentum eigenstate.} at $t=0$
 \begin{align*}
-  \ket{\nu(0)} = \ket{\nu_e} = \cos\theta \ket{\nu_1} + \sin\theta \ket{\nu_2},
+  \ket{\nu(0)} = \ket{\nu_\alpha} = \cos\theta \ket{\nu_1} + \sin\theta \ket{\nu_2},
 \end{align*}
 the two components will evolve in time each with its own (potentially different)
 energy-dependent phase
@@ -1032,11 +1035,11 @@ energy-dependent phase
     \exp\qty{-i\frac{E_1}{\hbar}t} \cos\theta \ket{\nu_1} +
     \exp\qty{-i\frac{E_2}{\hbar}t} \sin\theta \ket{\nu_2}.
 \end{align*}
-We can calculate the probability $P(\nu_e \rightarrow \nu_\mu)$ to detect our
-neutrino as a different flavor $\nu_\mu$ at a generic time $t$ by calculating the
+We can calculate the probability $P(\nu_\alpha \rightarrow \nu_\beta)$ to detect our
+neutrino as a different flavor $\nu_\beta$ at a generic time $t$ by calculating the
 scalar product with the other flavor eigenstate
 \begin{align*}
-  \ket{\nu_\mu} = -\sin\theta \ket{\nu_1} + \cos\theta \ket{\nu_2},
+  \ket{\nu_\beta} = -\sin\theta \ket{\nu_1} + \cos\theta \ket{\nu_2},
 \end{align*}
 and then taking the square of the modulus\sidenote{This might look involved, but
 what we are after is just
@@ -1049,7 +1052,7 @@ what we are after is just
 \end{align*}
 }
 \begin{align*}
-  \abs{\braket{\nu_\mu}{\nu(t)}}^2 & = \sin^2\theta \cos^2\theta \;
+  \abs{\braket{\nu_\beta}{\nu(t)}}^2 & = \sin^2\theta \cos^2\theta \;
     \abs{\,\exp\qty{-i\frac{E_2}{\hbar}t} - \exp\qty{-i\frac{E_1}{\hbar}t}}^2 = \\
   & = \sin^2(2\theta)\sin^2 \qty(\frac{(E_2 - E_1)}{2 \hbar}t).
 \end{align*}
@@ -1088,7 +1091,7 @@ $$
 and saying that the neutrino has an energy of 1~MeV is quite natural.} and
 the distance traveled $L = ct$
 \begin{align}\label{eq:nu_two_flavor_osc_prob}
-  P(\nu_e \rightarrow \nu_\mu) =
+  P(\nu_\alpha \rightarrow \nu_\beta) =
   \sin^2(2\theta)\sin^2 \qty(\frac{\Delta m^2 L}{4 \hbar c E}).
 \end{align}
 
@@ -1098,7 +1101,7 @@ determines the specific mix of flavor eigenstates in the mass eigenstates: as we
 said, if $\theta = 0$, then the two are the same and oscillations do not occur;
 for $\theta = 45^\circ$ the oscillation is maximal and there exists a point (or
 infinite points, really) on the line of flight of the neutrino beam where all the
-initial $\nu_e$ have oscillated to $\nu_\mu$. The other important parameter is
+initial $\nu_\alpha$ have oscillated to $\nu_\beta$. The other important parameter is
 the difference of the two squared masses $\Delta m^2$: \emph{for oscillations
 to occur at least of of the neutrinos must have non vanishing mass}\sidenote{That
 is: the observation of neutrino oscillations per se is a direct proof that
@@ -1135,7 +1138,8 @@ neutrino oscillation is that of \emph{oscillation length}
 using which the formula for the oscillation probability can can be rewritten in
 the equivalent form
 \begin{align*}
-  P(\nu_e \rightarrow \nu_\mu) =\sin^2(2\theta)\sin^2 \qty(\pi \frac{L}{L_\text{osc}}).
+  P(\nu_\alpha \rightarrow \nu_\beta) =
+  \sin^2(2\theta)\sin^2 \qty(\frac{\pi L}{L_\text{osc}}).
 \end{align*}
 If, for a given energy $E$ and propagation length $L$, $\varphi \ll 1$, then there
 is no oscillation. The regime in which $\varphi \approx 1$ is where it is possible
@@ -1166,7 +1170,7 @@ beam with an energy dispersion of $10\%$, everything averages out in a few cycle
 The oscillation probability at large distance is constant and only driven by the
 mixing angle
 \begin{align*}
-  P(\nu_e \rightarrow \nu_\mu) = \frac{1}{2} \sin^2 2\theta
+  P(\nu_\alpha \rightarrow \nu_\beta) = \frac{1}{2} \sin^2 2\theta
   \quad\text{for}\quad L \gg L_\text{osc}.
 \end{align*}
 
@@ -1189,14 +1193,23 @@ presence of dense matter in the Sun interior makes a difference.
 \label{sec:nu_oscillation_matter}
 
 When neutrino propagate in matter something interesting happens: while all the
-three neutrino species interact with the fermions the same way through NC forward
-scattering mediated by a $Z^0$, the electron neutrino can also be forward scattered by
-ordinary electrons through CC interaction mediated by a $W$---which implies a non
-trivial phase difference with respect to the other two flavour eigenstates. This
-additional process (which is customarily called MSW effect after Mikheyev, Smirnov
-and Wolfenstein, who first proposed the mechanism) can in fact be interpreted
-in terms of an effective refractive index (or, equivalently, an effective mass)
-which is different for $\nu_e$ with respect to $\nu_\mu$ and $\nu_\tau$.
+three neutrino species interact with the fermions the same way through neutral current
+forward scattering mediated by a $Z^0$, the electron neutrino can also be forward
+scattered by ordinary electrons through charged-current interaction mediated by
+a $W$---which implies a non trivial phase difference with respect to the other two
+flavour eigenstates. This additional process can be interpreted in terms of an
+effective refractive index (or, equivalently, an effective mass) which is different
+for $\nu_e$ with respect to $\nu_\mu$ and $\nu_\tau$.
+In other words, as we have anticipated, when propagating through matter $\nu_e$ becomes
+special, as ordinary matter contains electrons but not $\mu$ and $\tau$. In order to
+account for this mechanism, which is customarily referred to as MSW after Mikheyev,
+Smirnov and Wolfenstein, who first proposed it, in the rest of  this section we shall
+assume that our first flavor eigenstate is $\nu_e$ and, in order to make things concrete,
+you can assume that the second one is $\nu_\mu$
+\begin{align*}
+  \begin{pmatrix}\nu_\alpha\\ \nu_\beta\end{pmatrix} \rightarrow
+  \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix}.
+\end{align*}
 
 Let's go back for a second to the simple Hamiltonian~\eqref{eq:nu_schroedinger}
 that generates the time evolution in vacuum, and which we have expanded in the
