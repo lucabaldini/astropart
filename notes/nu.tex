@@ -1325,24 +1325,42 @@ we have two independent equations in the new quantities
     \Delta \tilde{m}^2 \sin 2\tilde{\theta} & = \Delta m^2 \sin 2\theta,
   \end{cases}
 \end{align*}
-that are readily solved as\sidenote{Sum the squares of the two equations and the
-results follows magically. Note that for $\zeta = 0$ we have
-$C(\zeta) = 1$, and we recover the vacuum case.}
+that are readily solved as\sidenote{You need to be careful here. If you sum the
+squares of the two equations, the result for $\Delta \tilde{m}^2$ follows
+immediately. When you plug that into the second equation, you get
+\begin{align*}
+  \sin 2\tilde{\theta} = \frac{\sin 2\theta}{C(\zeta)},
+\end{align*}
+which is what you find in many textbooks. This is perfectly fine, except for the
+fact that, by itself, this does not provide enough context to fix the quadrant
+of $\tilde{\theta}$---in order to do that you need, e.g., the expression for the
+cosine
+\begin{align*}
+  \cos 2\tilde{\theta} = \frac{\cos 2\theta - \zeta}{C(\zeta)}.
+\end{align*}
+At this point you can divide the two, and you get~\eqref{eq:matter_deltam_theta}
+in its final form, which you can feed into the \emph{atan2} function of your
+favourite programming language to calculate $\tilde{\theta}$.}
 \begin{align}\label{eq:matter_deltam_theta}
   \begin{cases}
-    \Delta \tilde{m}^2 = C(\zeta) \Delta m^2\\[5pt]
-    \sin 2\tilde{\theta} = \frac{\sin 2\theta}{C(\zeta)},
-  \end{cases}\quad\text{where}\quad
-  C(\zeta) = \sqrt{(\cos 2\theta - \zeta)^2 + \sin^2 2\theta}.
+    \Delta \tilde{m}^2 = \Delta m^2 C(\zeta)
+    \quad\text{where}\quad
+    C(\zeta) = \sqrt{(\cos 2\theta - \zeta)^2 + \sin^2 2\theta}\\[5pt]
+    \tan 2\tilde{\theta} = \frac{\sin 2\theta}{\cos 2\theta - \zeta},
+  \end{cases}.
 \end{align}
-And, if we took the long way (convert back into the mass basis and diagonalize),
-we would have had for free the full expression for the effective mass eigenvalues
-in matter for free
-\begin{align}
-  \tilde{m^2}_{1,2} =
-  \frac{1}{2} \left[ m_1^2 + m_2^2 + \zeta \Delta m^2 \mp \Delta m^2 C(\zeta) \right],
-\end{align}
-which reduces the usual formul\ae\ in vacuum for $\zeta = 0$.
+As a simple sanity check, note that for $\zeta = 0$ we have $C(\zeta) = 1$, and
+we recover the vacuum case. For large values of $\zeta \gg 1$ we have
+$C(\zeta) \approx \zeta$.
+
+%And, if we took the long way (convert back into the mass basis and diagonalize),
+%we would have had for free the full expression for the effective mass eigenvalues
+%in matter for free
+%\begin{align}
+%  \tilde{m^2}_{1,2} =
+%  \frac{1}{2} \left[ m_1^2 + m_2^2 + \zeta \Delta m^2 \mp \Delta m^2 C(\zeta) \right],
+%\end{align}
+%which reduces the usual formul\ae\ in vacuum for $\zeta = 0$.
 
 Let us take a breath, and see what we got. If the electron density is constant,
 neutrino oscillations in matter have the same basic phenomenology we have derived

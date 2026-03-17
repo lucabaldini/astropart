@@ -101,11 +101,12 @@ save_cf()
 
 
 margin_figure('msw mixing', height=2.5)
-zeta = np.linspace(0., 2, 100)
-C = np.sqrt((np.cos(np.radians(numix.THETA_12_CBE)) - zeta)**2. + (np.sin(np.radians(numix.THETA_12_CBE)))**2.)
-theta = 0.5 * np.arcsin(np.sin(2. * np.radians(numix.THETA_12_CBE)) / C)
-plt.plot(zeta, C, color='black')
-#plt.plot(zeta, np.degrees(theta), color='black')
+zeta = np.linspace(0., 5, 100)
+c2t = np.cos(2. * np.radians(numix.THETA_12_CBE))
+s2t = np.sin(2. * np.radians(numix.THETA_12_CBE))
+C = np.sqrt((c2t - zeta)**2. + (s2t)**2.)
+theta = 0.5 * np.atan2(s2t, c2t - zeta)
+plt.plot(zeta, np.degrees(theta), color='black')
 
 print(numix.DELTA_M21_CBE / 2. / np.sqrt(2.) / numix.G_F / 1.e6)
 print(numix.msw_resonance_energy(BS05.electron_numer_density(0.)))
