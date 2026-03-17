@@ -1380,6 +1380,13 @@ happens for
   E_\text{res} = \frac{\Delta m^2 \cos 2\theta}{2\sqrt{2}G_F n_e}.
 \end{align}
 
+\begin{marginfigure}
+  \input{figures/msw_resonance_energy.pgf}
+  \caption{Plot of the MSW resonance energy in the Sun, as a function of the distance
+  from the center. Overlaid is the pdf for the Boron neutrino production.}
+  \label{fig:msw_resonance_energy}
+\end{marginfigure}
+
 Up to this point we have treated $n_e$ as a number, i.e., we have operated under
 the implicit assumption that the electron number density of the medium traversed by
 the neutrino was constant---which is hardly the case for the Sun.
@@ -1391,13 +1398,6 @@ is just slightly in excess of 1~MeV. This means that every neutrino created at
 the center of the Sun with an energy greater than 1~MeV, as it propagates toward
 less dense material, will at some point come across the resonance condition, as
 illustrated in figure~\ref{fig:msw_resonance_energy}.
-
-\begin{marginfigure}
-  \input{figures/msw_resonance_energy.pgf}
-  \caption{Plot of the MSW resonance energy in the Sun, as a function of the distance
-  from the center. Overlaid is the pdf for the Boron neutrino production.}
-  \label{fig:msw_resonance_energy}
-\end{marginfigure}
 
 \begin{marginfigure}
   \input{figures/msw_conversion.pgf}
@@ -1437,14 +1437,24 @@ otherwise the two lines in figure~\ref{fig:msw_conversion} do not cross. Unlike 
 interferometric effects, whether or not MSW resonant conversion is at play in the Sun
 fixes the mass hierarchy of the two neutrinos involved in the process.
 
-Of course the situation in real life is more complicated, as $\nu_e$ is a mix of
-$\nu_1$ and $\nu_2$, and, in the presence of a varying electron density $n_e$, the
-Schrödinger equation for the evolution cannot be diagonalized along the entire path
-via a simple rotation. The basic phenomenology we have described here, though,
-remains qualitatively valid in the \emph{adiabatic} limit (that is, when the change
-of $n_e$ is small), in which case the mass eigenstates follow fixed trajectories in the
-phase space, with no level crossing, and adiabatic conversion can still occur,
-although in this case the evolution equation needs to be solved numerically.
+While the small-mixing-angle setup is useful to illustrate many of the things that
+happen in the Sun, it is also potentially misleading in many respects. If you take
+things literally, you might be tempted to picture the situation as: $\nu_e$
+(which happens to be also $\nu_1$) propagates happily as a flavor eigenstate;
+when it reaches the point at the critical density it suddenly converts to
+$\nu_\mu$ (which also happens to be $\nu_2$), and, from that point on, nothing
+else happens. In reality you should always keep in mind that neutrinos always
+propagate as instantaneous mass eigenstates, and when the mixing angle is non zero
+$\nu_e$ is a mix of $\nu_1$ and $\nu_2$. If the process is adiabaitc, i.e.,
+the change in the electron density is slow, the neutrino remains in the same mass
+eigenstate (sometimes this is expressed by saying that there is no level crossing)
+but the flavor content of that eigenstate changes continuosly. The resonance is
+not the point when the conversion suddenly happens, it is the point where the
+mass splitting is minimal, and the rotation in the flavor space is fastest.
+The Schrödinger equation for the evolution cannot be diagonalized along the entire path
+via a simple rotation and needs to be solved numerically, but it is still true that,
+as long as adiabaticity is preserve, neutrinos crossing the resonance emerge from
+the surface of the Sun as $\nu_2$.
 
 
 \section{The solution of the solar neutrino problem}
@@ -1524,14 +1534,14 @@ that are nowadays firmly excluded.
 
 More recent measurements include those by Borexino, but it is fair to say that, by
 the beginning of the years 2000s, the solar neutrino problem was solved and the
-very basic facts that neutrino have mass and oscillate accepted.
+very basic fact that neutrino have mass and oscillate accepted.
 
 
 \subsection{Verification with reactor neutrinos}
 
 Reactor experiments typically consists of tanks of liquid scintillator read out by
-photomultipliers and are designed to detect $\overline{\nu_e}$ (with a few MeV energy
-on average) through the reaction
+photomultipliers and are designed to detect $\overline{\nu_e}$ (with a few MeV
+energy on average) through the reaction
 \begin{align*}
   \overline{\nu_e} + p \rightarrow e^+ + n
 \end{align*}
@@ -1781,44 +1791,6 @@ equal contents of the three flavors, and $\nu_3$ is largely dominated by $\nu_\m
 and $\nu_\tau$, with a fairly small $\nu_e$ content.
 
 
-\subsection{Neutrino masses and mass hierarchy}
-
-The neutrino mass hierarchy cannot be fully resolved with current data. We do have
-relatively precise measurements of the absolute values of $\Delta m^2_{21}$ and
-$\Delta m^2_{32}$, and for the former that fact that MSW effect is playing a fundamental
-role for solar neutrino allows to break the degeneracy and in the direction $m_2 > m_1$.
-The third $\Delta m^2$, i.e., $\Delta m^2_{31}$, in not independent from the other
-two, as
-\begin{align*}
-  \Delta m^2_{31} = \Delta m^2_{21} + \Delta m^2_{32} \approx \Delta m^2_{32}.
-\end{align*}
-In other words, we know that $\nu_1$ and $\nu_2$ constitute a closely-spaced doublet,
-a relatively small small difference, while $\nu_3$ is comparatively further away.
-
-What we don't know for sure, yet, is whether  $m_3 > m_{1,2}$ or $m_3 < m_{1,2}$;
-we refer to the first case as \emph{normal ordering} and to the second as
-\emph{inverse ordering} and we do a theoretical prejudice to impute the largest
-mass to $m_3$, which has the largest $\tau$ content---but it is fair to remember that
-in the old days another such prejudice existed for the PMNS matrix to be quasi-diagonal,
-as in the case of the CKM matrix, and that did not work out well.
-
-\begin{marginfigure}
-  \input{figures/neutrino_mass_scale.pgf}
-  \caption{Illustration of the behavior of the three neutrino masses, in normal and
-  inverse ordering, as a function of $m_1$ (which is not yet well constrained by the
-  experimental data).}
-  \label{fig:neutrino_mass_scale}
-\end{marginfigure}
-
-In addition, we don't know the absolute scale of the masses, although we have several,
-independent evidences, from both $\beta$ decay and cosmological metrics, that none
-of the $m_i$ cannot be much larger than 1~eV. The implication is that, as summarized in
-figure~\ref{fig:neutrino_mass_scale}, if $m_1$ is zero (or close to zero), then
-$m_2 \approx 10$~meV and $m_3 \approx 50$~meV, assuming normal ordering. On the
-other hand, if $m_1$ is larger than $\sim 100$~meV, then the three masses are more
-or less all equal, in both normal and inverted ordering.
-
-
 \subsection{Three flavor mixing}
 
 
@@ -1836,7 +1808,9 @@ and $\nu_\beta$ reads
 
 Nature was kind enough, though, to help un in two ways: $\theta_{13}$ is
 \emph{small} and $\Delta m^2_{21} \ll \Delta m^2_{31}$. As we shall see in a second,
-this allows for significant simplifications in relevant setups.
+this allows for significant simplifications in relevant setups, although it is
+important to note that nowadays any physics analysis that is professionally done
+exploits the full power of the three-generation formalism.
 
 
 \subsubsection{Solar neutrinos}
@@ -1892,5 +1866,42 @@ In this case we start with a mixture of $\nu_e$ and $\nu_\mu$ but, since $\nu_e$
 has a tiny $\nu_3$ component, it is effectively decoupled from the oscillation,
 and the latter only involves $\nu_\mu$ and $\nu_\tau$.
 
+
+\subsection{Neutrino masses and mass hierarchy}
+
+The neutrino mass hierarchy cannot be fully resolved with current data. We do have
+relatively precise measurements of the absolute values of $\Delta m^2_{21}$ and
+$\Delta m^2_{32}$, and for the former that fact that MSW effect is playing a fundamental
+role for solar neutrino allows to break the degeneracy and in the direction $m_2 > m_1$.
+The third $\Delta m^2$, i.e., $\Delta m^2_{31}$, in not independent from the other
+two, as
+\begin{align*}
+  \Delta m^2_{31} = \Delta m^2_{21} + \Delta m^2_{32} \approx \Delta m^2_{32}.
+\end{align*}
+In other words, we know that $\nu_1$ and $\nu_2$ constitute a closely-spaced doublet,
+a relatively small small difference, while $\nu_3$ is comparatively further away.
+
+\begin{marginfigure}
+  \input{figures/neutrino_mass_scale.pgf}
+  \caption{Illustration of the behavior of the three neutrino masses, in normal and
+  inverse ordering, as a function of $m_1$ (which is not yet well constrained by the
+  experimental data).}
+  \label{fig:neutrino_mass_scale}
+\end{marginfigure}
+
+What we don't know for sure, yet, is whether  $m_3 > m_{1,2}$ or $m_3 < m_{1,2}$;
+we refer to the first case as \emph{normal ordering} and to the second as
+\emph{inverse ordering} and we do a theoretical prejudice to impute the largest
+mass to $m_3$, which has the largest $\tau$ content---but it is fair to remember
+that in the old days another such prejudice existed for the PMNS matrix to be
+quasi-diagonal, as in the case of the CKM matrix, and that did not work out well.
+
+In addition, we don't know the absolute scale of the masses, although we have several,
+independent evidences, from both $\beta$ decay and cosmological metrics, that none
+of the $m_i$ cannot be much larger than 1~eV. The implication is that, as summarized in
+figure~\ref{fig:neutrino_mass_scale}, if $m_1$ is zero (or close to zero), then
+$m_2 \approx 10$~meV and $m_3 \approx 50$~meV, assuming normal ordering. On the
+other hand, if $m_1$ is larger than $\sim 100$~meV, then the three masses are more
+or less all equal, in both normal and inverted ordering.
 
 \section{Neutrinos from Supernov\ae}
