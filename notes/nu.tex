@@ -1010,9 +1010,12 @@ in the CKM matrix.}
   \end{pmatrix}.
 \end{align*}
 We note that for $\theta = 0^\circ$ or $\theta = 90^\circ$ the flavor and mass
-eigenstates coincide, i.e., there is no mixing; the latter is maximal for
-$\theta = 45^\circ$, when each flavor eigenstate is an equal mixture of the two
-mass eigenstates and vice-versa.
+eigenstates coincide\sidenote{Technically, when $\theta = 90^\circ$ we are swapping
+the eigenstates, i.e., we are mapping $\nu_\alpha$ to $\nu_2$ and $\nu_\beta$ to
+$\nu_1$. The thing looks just silly in this context, but we shall come back to it
+when we shall discuss oscillations in matter.}, i.e., there is no mixing; the latter
+is maximal for $\theta = 45^\circ$, when each flavor eigenstate is an equal mixture
+of the two mass eigenstates and vice-versa.
 
 The time evolution of the system is trivial in the basis of the mass eigenstates,
 where the Hamiltonian is diagonal
@@ -1213,6 +1216,9 @@ you can assume that the second one is $\nu_\mu$
   \begin{pmatrix}\nu_\alpha\\ \nu_\beta\end{pmatrix} \rightarrow
   \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix}.
 \end{align*}
+(Bear with me. At the end of the story we shall realize that solar neutrino
+oscillations are slightly more complicated than this, but this is irrelevant
+at the moment.)
 
 Let's go back for a second to the simple Hamiltonian~\eqref{eq:nu_schroedinger}
 that generates the time evolution in vacuum, and which we have expanded in the
@@ -1352,15 +1358,14 @@ favourite programming language to calculate $\tilde{\theta}$.}
 As a simple sanity check, note that for $\zeta = 0$ we have $C(\zeta) = 1$, and
 we recover the vacuum case. For large values of $\zeta \gg 1$ we have
 $C(\zeta) \approx \zeta$.
-
-%And, if we took the long way (convert back into the mass basis and diagonalize),
-%we would have had for free the full expression for the effective mass eigenvalues
-%in matter for free
-%\begin{align}
-%  \tilde{m^2}_{1,2} =
-%  \frac{1}{2} \left[ m_1^2 + m_2^2 + \zeta \Delta m^2 \mp \Delta m^2 C(\zeta) \right],
-%\end{align}
-%which reduces the usual formul\ae\ in vacuum for $\zeta = 0$.
+And, since we are at it, if we took the long way (convert back into the mass
+basis and diagonalize), we would have had for free the full expression for the
+effective mass eigenvalues in matter for free
+\begin{align}
+  \tilde{m}^2_{1,2} =
+  \frac{1}{2} \left[ m_1^2 + m_2^2 + \zeta \Delta m^2 \mp \Delta m^2 C(\zeta) \right],
+\end{align}
+which reduces the usual formul\ae\ in vacuum for $\zeta = 0$.
 
 Let us take a breath, and see what we got. If assume for a second that the electron
 density is constant, neutrino oscillations in matter have the same basic phenomenology
@@ -1369,9 +1374,9 @@ difference and mixing angle are modified according to~\eqref{eq:matter_deltam_th
 Implicitly, equation~\eqref{eq:msw_hamiltonian_1} defines an energy-dependent
 \emph{critical} electron number density
 \begin{align*}
-  n_c = \frac{\Delta m^2}{2\sqrt{2}G_F E}
+  n_c(E) = \frac{\Delta m^2}{2\sqrt{2}G_F E}
   \quad\text{so that}\quad
-  \zeta = \frac{n_e}{n_c}.
+  \zeta = \frac{n_e}{n_c(E)}.
 \end{align*}
 This rules the scaling of the matter effects on neutrino propagation, in the sense
 that when $n_e \ll n_c$ we recover our initial setup in vacuum. Just so that we
@@ -1383,25 +1388,43 @@ $\zeta$ at the center of the Sun is 1 at $\sim 3$~MeV, 2 at $\sim 6$~MeV, and
 4 at $\sim 12$~MeV, which is more or less at the upper bound of the neutrino
 energies that we get.}.
 
-More on~\eqref{eq:matter_deltam_theta}: if $\sin 2\theta = 0$, then
+More fan facts about~\eqref{eq:matter_deltam_theta}. If $\sin 2\theta = 0$, then
 $\sin 2\tilde{\theta} = 0$ no matter what $C(\zeta)$ amounts to: for oscillations
-to happen in matter, the mixing angle in vacuum must be non-vanishing.
-On the other hand, when $C(\zeta)$
-is very large, $\sin 2\tilde{\theta}$ is small no matter what the mixing angle
-is in vacuum, that is, when the electron number density is very large, oscillations
-are suppressed altogether.
+to happen in matter, the mixing angle in vacuum must be non-trivial.
+When that is not the case, it is easy to see that
+\begin{align*}
+  \lim_{\zeta \rightarrow \pm \infty} \tan 2\tilde{\theta} = -\frac{1}{\zeta}
+  \quad\text{or}\quad
+  \begin{cases}
+    \tilde{\theta} \rightarrow \frac{\pi}{2} & \quad (\zeta > 0)\\
+    \tilde{\theta} \rightarrow 0 & \quad (\zeta < 0)
+  \end{cases}.
+\end{align*}
+In both cases the mass and flavor eigenstates are the same, and oscillations in
+matter are suppressed, no matter what the mixing angle in vacuum is. But there is
+more to that: there is a distinct difference depending on the sign of $\zeta$ (which,
+in turn, takes the sign of $\Delta m^2$)---in the first case $\nu_e = \nu_2$, while in
+the second $\nu_e = \nu_1$. (And in both cases $\nu_e$ maps to the heaviest mass
+eigenstate.) Keep this is mind because we shall come back to it in a second.
 
-Something even more interesting happens when $\zeta = \cos 2\theta$\sidenote{Note that,
-assuming that $\theta$ lies in the first quadrant, this can only take place for
-$\zeta > 0$, i.e., $m_2^2 > m_1^2$. Again, matter effect are sensitive to the sign
-of $\Delta m^2$.}, in that $C = \sin 2\theta$, and therefore $\sin 2\tilde{\theta} = 1$,
-no matter what the original value of $\sin 2\theta$ is. In other words, \emph{the
-mixing becomes maximal even if the mixing angle in vacuum is small, and arbitrarily
-so}. For any given value of the electron density $n_e$ this resonant condition
-happens for
+There is another, even more amusing fact that is always cited in textbooks:
+when $\zeta = \cos 2\theta$\sidenote{This is about 0.4 for the mixing angle appropriate
+for solar neutrinos. Note that, assuming that $\theta$ lies in the first quadrant,
+this can only take place for $\zeta > 0$, i.e., $m_2^2 > m_1^2$. Again, matter effects
+are sensitive to the sign of $\Delta m^2$.}, $C = \sin 2\theta$, $\tan 2\theta$ diverges,
+which is to say that $\sin 2\tilde{\theta} = 1$, no matter what the original value of
+$\sin 2\theta$ is. In other words, the mixing becomes maximal even if the mixing angle
+in vacuum is small, and arbitrarily so. For any given value of the electron density
+$n_e$ this \emph{resonant} condition happens for
 \begin{align}\label{eq:msw_resonance_energy}
-  E_\text{res} = \frac{\Delta m^2 \cos 2\theta}{2\sqrt{2}G_F n_e}.
+  E_c = \frac{\Delta m^2 \cos 2\theta}{2\sqrt{2}G_F n_e}.
 \end{align}
+For what it's worth at the center of the Sun, where the electron density is
+$\sim 6 \times 10^{25}$~cm$^{-3}$, the resonance energy is just slightly in excess
+of 1~MeV, as illustrated in figure~\ref{fig:msw_resonance_energy}.
+(Technically, this means that every neutrino created at the center of the Sun with
+an energy greater than 1~MeV, as it propagates toward less dense material, will at
+some point come across the resonance condition.)
 
 \begin{marginfigure}
   \input{figures/msw_resonance_energy.pgf}
@@ -1410,17 +1433,31 @@ happens for
   \label{fig:msw_resonance_energy}
 \end{marginfigure}
 
-Up to this point we have treated $n_e$ as a number, i.e., we have operated under
-the implicit assumption that the electron number density of the medium traversed by
-the neutrino was constant---which is hardly the case for the Sun.
-If, once again, we jump for a second all the way to the end of the story and we
-plug into~\eqref{eq:msw_resonance_energy} the values of $\Delta m^2$ and $\theta$
-that are appropriate for Solar neutrinos, we find that the resonance energy at
-the center of the Sun, where the electron density is $\sim 6 \times 10^{25}$~cm$^{-3}$,
-is just slightly in excess of 1~MeV. This means that every neutrino created at
-the center of the Sun with an energy greater than 1~MeV, as it propagates toward
-less dense material, will at some point come across the resonance condition, as
-illustrated in figure~\ref{fig:msw_resonance_energy}.
+So much for oscillations in matter with constant electron density. The MSW mechanism
+in presence of varying electron density is customarily illustrated in textbooks in
+the (somewhat fictional) two-generation, small-mixing-angle setup\sidenote{This is
+largely for historical reasons, owing to the fact up to the late 1990s the small-mixing
+angle solution was still compatible with the measurements}. This makes the discussion
+easier, as the mass and flavor eigenstates coincide, and, since the matter term due
+to charged-current interaction is only affecting the first mass eigenstate, the
+effective mass of $\nu_2$ does not depend on $n_e$. When $\theta = 0^+$, we have
+$C(\zeta) = (1 - \zeta)$, and the two mass eigenvalues read
+\begin{align*}
+  \begin{cases}
+  \tilde{m}_1^2 = m_1^2 + \zeta \Delta_m^2 & \quad (\text{for } \nu_e = \nu_1)\\
+  \tilde{m}_2^2 = m_2^2 & \quad (\text{for } \nu_\mu = \nu_2),
+\end{cases}
+\end{align*}
+as illustrated in figure~\ref{fig:msw_conversion}. An electron neutrino (which is also
+the $\nu_1$ mass eigenstate) created close to the center of the Sun with an energy
+above the resonance energy, while propagating toward regions of comparatively lower
+density, sees it effective mass gradually decreasing, until it reaches the resonance
+condition. At this point it is converted to a muon neutrino, which also happens to
+be the mass eigenstate $\nu_2$, after which the electron density is no longer high
+enough to support matter oscillations, and nothing else happens. The narration goes on
+noting that this is only possible if $\Delta m^2 > 0$ (otherwise the level crossing
+simply cannot happen) and the fact the MSW mechanism is at play in the Sun fixes
+the mass hierarchy within the $\nu_1$-$\nu_2$ doublet.
 
 \begin{marginfigure}
   \input{figures/msw_conversion.pgf}
@@ -1431,48 +1468,20 @@ illustrated in figure~\ref{fig:msw_resonance_energy}.
   \label{fig:msw_conversion}
 \end{marginfigure}
 
-MSW conversion in presence of varying electron density is customarily illustrated in
-textbooks in the (somewhat fictional) two-generation, small-mixing-angle setup. This
-makes the discussion easier and more intuitive, as the mass and flavor eigenstates
-coincide, and, since the matter term due to charged-current interaction is only affecting
-the first mass eigenstate, the effective mass of the second does not depend
-on $n_e$. When $\theta = 0^+$, we have $C(\zeta) = (1 - \zeta)$, and the two mass
-eigenvalues read
-\begin{align*}
-  \begin{cases}
-  \tilde{m}_1^2 = m_1^2 + \zeta \Delta_m^2 & \quad (\text{for } \nu_e = \nu_1)\\
-  \tilde{m}_2^2 = m_2^2 & \quad (\text{for } \nu_\mu = \nu_2),
-\end{cases}
-\end{align*}
-as illustrated in figure~\ref{fig:msw_conversion}.
-An electron neutrino created above the resonance, where the electron number density
-is large (e.g. at the center of the Sun), propagating toward regions of comparatively
-lower density sees it effective mass gradually decreasing, until it reaches the
-resonance condition, where it is converted to a muon neutrino, which also happens to
-be the mass eigenstate $\nu_2$\sidenote{This is pointing to a subtle issue: in our toy
-setup with small mixing angle the mass eigenstates are the same as the flavor eigenstates,
-but you have to keep in mind that the MSW effect in the Sun convert $\nu_e$ to $\nu_2$,
-not to $\nu_\mu$ as implied in many texts.}. At this point the electron density is no
-longer high enough to support matter oscillations, and the neutrino remains in the
-$\nu_2$ state.
-Most importantly, this can only happen if $\Delta m^2 > 0$, or $m_1 < m_2$, because
-otherwise the two lines in figure~\ref{fig:msw_conversion} do not cross. Unlike purely
-interferometric effects, whether or not MSW resonant conversion is at play in the Sun
-fixes the mass hierarchy of the two neutrinos involved in the process.
-
-While the small-mixing-angle setup is useful to illustrate many of the things that
-happen in the Sun, it is also potentially misleading in many respects. If you take
-things literally, you might be tempted to picture the situation as: $\nu_e$
-(which happens to be also $\nu_1$) propagates happily as a flavor eigenstate;
-when it reaches the point at the critical density it suddenly converts to
-$\nu_\mu$ (which also happens to be $\nu_2$), and, from that point on, nothing
-else happens. This is \emph{not} what happens in the Sun.
+While the small-mixing-angle setup is useful to illustrate many of the features
+of the MSW mechanism,  it is also potentially misleading in many respects, and
+definitely \emph{not} what happens in the Sun. Particularly, if you are thinking
+that high-energy electron neutrinos produced in the inner regions of the Sun are
+efficiently converted to muon neutrinos along their path and emerge from the
+surface as $\nu_\mu$ flavor eigenstates, you might want to hold for a second
+before you commit that to memory.
+As a matter of fact, in reality \emph{they emerge as $\nu_2$ mass eigenstates}.
 
 In reality you should always keep in mind that neutrinos always propagate as
 instantaneous mass eigenstates, and when the mixing angle is non zero $\nu_e$ is
 a mix of $\nu_1$ and $\nu_2$. The point is: at the center of the Sun the electron
 density greatly exceeds the critical energy, so that $C(\zeta)$ is very large,
-the effective mixing angle $\tilde{\theta}$ is pratically $90^\circ$ and the
+the effective mixing angle $\tilde{\theta}$ is practically $90^\circ$ and the
 electron neutrinos produced as flavor eigenstates in nuclear fusion also happen
 to be almost pure $\tilde{\nu}_2$. From that point on, \emph{if} the process is adiabatic,
 i.e., the change in the electron density is slow, the neutrino remains in the same
