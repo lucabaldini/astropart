@@ -1346,7 +1346,7 @@ cosine
 \end{align*}
 At this point you can divide the two, and you get~\eqref{eq:matter_deltam_theta}
 in its final form, which you can feed into the \emph{atan2} function of your
-favourite programming language to calculate $\tilde{\theta}$.}
+favorite programming language to calculate $\tilde{\theta}$.}
 \begin{align}\label{eq:matter_deltam_theta}
   \begin{cases}
     \Delta \tilde{m}^2 = \Delta m^2 C(\zeta)
@@ -1411,11 +1411,11 @@ There is another, even more amusing fact that is always cited in textbooks:
 when $\zeta = \cos 2\theta$\sidenote{This is about 0.4 for the mixing angle appropriate
 for solar neutrinos. Note that, assuming that $\theta$ lies in the first quadrant,
 this can only take place for $\zeta > 0$, i.e., $m_2^2 > m_1^2$. Again, matter effects
-are sensitive to the sign of $\Delta m^2$.}, $C = \sin 2\theta$, $\tan 2\theta$ diverges,
-which is to say that $\sin 2\tilde{\theta} = 1$, no matter what the original value of
-$\sin 2\theta$ is. In other words, the mixing becomes maximal even if the mixing angle
-in vacuum is small, and arbitrarily so. For any given value of the electron density
-$n_e$ this \emph{resonant} condition happens for
+are sensitive to the sign of $\Delta m^2$.}, $C(\zeta) = \sin 2\theta$, $\tan 2\theta$
+diverges, which is to say that $\sin 2\tilde{\theta} = 1$, no matter what the original
+value of $\sin 2\theta$ is. In other words, the mixing becomes maximal even if the
+mixing angle in vacuum is small, and arbitrarily so. For any given value of the
+electron density $n_e$ this \emph{resonant} condition happens for
 \begin{align}\label{eq:msw_resonance_energy}
   E_c = \frac{\Delta m^2 \cos 2\theta}{2\sqrt{2}G_F n_e}.
 \end{align}
@@ -1434,7 +1434,9 @@ some point come across the resonance condition.)
 \end{marginfigure}
 
 So much for oscillations in matter with constant electron density. The MSW mechanism
-in presence of varying electron density is customarily illustrated in textbooks in
+in presence of varying electron density is more complex (the Schrödinger equation
+for the evolution cannot be diagonalized along the entire path via a simple rotation
+and needs to be solved numerically) and is customarily illustrated in textbooks in
 the (somewhat fictional) two-generation, small-mixing-angle setup\sidenote{This is
 largely for historical reasons, owing to the fact up to the late 1990s the small-mixing
 angle solution was still compatible with the measurements}. This makes the discussion
@@ -1477,25 +1479,55 @@ surface as $\nu_\mu$ flavor eigenstates, you might want to hold for a second
 before you commit that to memory.
 As a matter of fact, in reality \emph{they emerge as $\nu_2$ mass eigenstates}.
 
-In reality you should always keep in mind that neutrinos always propagate as
-instantaneous mass eigenstates, and when the mixing angle is non zero $\nu_e$ is
-a mix of $\nu_1$ and $\nu_2$. The point is: at the center of the Sun the electron
-density greatly exceeds the critical energy, so that $C(\zeta)$ is very large,
-the effective mixing angle $\tilde{\theta}$ is practically $90^\circ$ and the
-electron neutrinos produced as flavor eigenstates in nuclear fusion also happen
-to be almost pure $\tilde{\nu}_2$. From that point on, \emph{if} the process is adiabatic,
-i.e., the change in the electron density is slow, the neutrino remains in the same
-mass eigenstate (sometimes this is expressed by saying that there is no level crossing)
-but the flavor content of that eigenstate changes continuously, connecting smoothly
-to the good, old $\nu_2$ mass eigenstate in vacuum. The resonance is \emph{not}
-the point when the conversion suddenly happens, it is the point where the mass
-splitting is minimal, and the rotation in the flavor space is fastest---although
-not \emph{too} fast for the adiabaticity condition to hold.
-The Schrödinger equation for the evolution cannot be diagonalized along the entire
-path via a simple rotation and needs to be solved numerically, but it is still
-true that neutrinos crossing the resonance emerge from the surface of the Sun as
-$\nu_2$, not $\nu_\mu$. It is time to move on, but if you want to dig deeper into
-this issue, \cite{2001hep.ph....6042F} is a very useful, pedagogical resource.
+\begin{marginfigure}
+  \input{figures/msw_mixing.pgf}
+  \caption{Effective mixing angle in matter $\tilde{\theta}$ as a function of
+    $\zeta$ for a mixing angle in vacuum $\theta = 33.41^\circ$ (current best-fit
+    value for solar neutrino oscillations).}
+  \label{fig:msw_mixing}
+\end{marginfigure}
+
+In order to understand what is really happening, we need to take a step back and
+look at the expression~\eqref{eq:matter_deltam_theta} for the effective mixing
+angle in matter. We have already pointed out that, when $\zeta$ is large \emph{and}
+positive, $\tilde{\theta}$ gets close to $90^\circ$; if we fast-forward for a
+second to the end of the story, plug into the formula the appropriate mixing angle
+for solar neutrinos and plot the effective mixing angle as a function of $\zeta$
+we get something like figure~\ref{fig:msw_mixing}. If you think about for a second,
+this is telling us that \emph{high-energy electron neutrinos produced as flavor
+eigenstates in nuclear fusion close to the center of the Sun also happen to be
+almost pure $\tilde{\nu}_2$ local mass eigenstates}. (Note $\nu_2$, not $\nu_1$.
+And since the sign $\zeta$ fixes the mass hierarchy within the doublet, $\nu_2$
+is the heaviest mass eigenstate in this case.)
+
+\begin{marginfigure}
+  \input{figures/msw_mass.pgf}
+  \caption{Effective mass squared $\tilde{m}^2_i$ in matter as a
+    function of $\zeta$ for a mixing angle in vacuum $\theta = 33.41^\circ$
+    (current best-fit value for solar neutrino oscillations). Note the value
+    of $\zeta$ corresponding to the resonance condition, here, is $\sim 0.4$.}
+  \label{fig:msw_mass}
+\end{marginfigure}
+
+From this point on, these neutrinos propagate as instantaneous mass eigenstates,
+and \emph{if} the process is adiabatic, i.e., the change in the electron density
+is slow, their flavor content changes continuously, but they remain in the same
+mass eigenstate, connecting smoothly to the good old $\nu_2$ in vacuum.
+The resonance condition~\eqref{eq:msw_resonance_energy}, in this context, is
+not the point where the conversion $\nu_e \rightarrow \nu_\mu$ suddenly happens,
+but rather the point where the effective mass splitting is smallest, and the
+rotation in the flavor space is fastest---although not \emph{too} fast for the
+adiabaticity condition to hold.
+
+If you compare figures~\ref{fig:msw_conversion} and~\ref{fig:msw_mass} you might
+notice some superficial resemblance between the two but, at a closer look, they
+represent two fundamentally different things. Most notably, in the second case
+(which, again, is what happens in the Sun) there is no level crossing---the
+two mass eigenvalues evolve smoothly along the neutrino path without ever
+touching each other, and neutrinos crossing the resonance conditions emerge from
+the surface of the Sun mostly as $\nu_2$ eigenstates. We have beaten this long
+enough and it is time to move on, but if you want to dig deeper into this issue,
+\cite{2001hep.ph....6042F} is a very useful, pedagogical resource.
 
 % This is also a good resource.
 % https://indico.cern.ch/event/396357/contributions/1836485/attachments/1136688/1626886/Neutrinos.pdf?utm_source=chatgpt.com
