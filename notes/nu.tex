@@ -1996,28 +1996,129 @@ neutron star. We have calculated in section~\ref{sec:white_dwarfs} the
 gravitational self energy of a uniform sphere\sidenote{Sure enough, a neutron
 star, or the precursor stellar core for what matters, is \emph{not} a uniform
 sphere, but all we care about is the order of magnitude, here. Note the self-energy
-is negative, and corresponds to the energy that we would need to put in to disperse
-the star to infinity---if you change the sign you get the energy released in the
-process of formation.}
+is negative---if you change the sign you get the energy released in the process
+of formation or, equivalently, the energy you would need to pull the thing apart.}
 \begin{align*}
-  E_G = \frac{-3 G M^2}{5R}
+  E_G = \frac{-3 G M^2}{5R}.
 \end{align*}
-and if we plug into the formula the mass $M \approx 1.4 M_\odot$ and radius
-$R \approx 10$~km of a canonical neutron star\sidenote{Technically, the energy release
-is the difference between the initial and final gravitational binding energies, but
-you get the scaling from the formula: whatever sensible radius you take for the
-initial stellar core, it gravitational self energy is negligible compared to that
-of the neutron star.}, the resulting energy release is massive---of the order
-of~$5 \times 10^{53}$~erg.
+Technically, the energy released in the collapsed is the difference between the
+initial and final gravitational binding energies, but you get the scaling from the
+formula: whatever sensible radius you take for the initial stellar core, its
+gravitational self energy is negligible compared to that of the neutron star, and
+can be neglected. If we plug into the formula the mass $M \approx 1.4 M_\odot$ and
+radius $R \approx 10$~km of a canonical neutron star the resulting energy release
+is spectacular---of the order of~$5 \times 10^{53}$~erg.
+
+Now, in section~\ref{sec:supernovae} we have already estimated how much \emph{visible}
+energy is released in a type Ia supernova (mostly in the form of kinetic energy of the
+ejecta) and this was of the order of $10^{51}$~erg. Interestingly, this is roughly
+representative of the other types of supernov\ae, which brings us to the first important
+point: \emph{in core-collapsed supernov\ae, less than 1\% of the overall energy budget
+goes into visible energy---kinetic energy of the ejecta or light.} The remaining 99\%
+must be released in some other form of neutrinos, and we shall see in a moment that
+this form is neutrinos.
 
 
+For 1e53 erg spread over 1e57 neutrons, we get an average energy of 60 MeV.
+Only part of this goes into motion, and temperature is of the order of tens of MeV.
 
-Need core-collapsed SN (not SN-Ia).
 
-About 99\% of the gravitational energy (1e53 ergs) is released as neutrinos,
-while 1\% goes into light and kinetic energy.
+How are the neutrino produced?
+
+During the initial phases of the collapse of the stellar core, neutrinos are
+primarily produced by electron capture on protons, i.e.,
+\begin{align*}
+  p + e^- \rightarrow n + \nu_e,
+\end{align*}
+This continuously removes electrons, lessening the degeneracy pressure that was
+supporting the core, and creates neutrinos, which initially escape freely.
+If we assume that the collapsing core has a mass comparable with the solar mass, the
+number of barions and electrons is given by
+\begin{align*}
+  N_B \approx \frac{M_\odot}{m_N} \approx 10^{57} \quad\text{and}\quad
+  N_e \approx \frac{1}{2} N_B.
+\end{align*}
+Even if this initial neutronization process removed \emph{all} the free electrons,
+this would amount to some $5 \times 10^{56}$ electron neutrinos, that, assuming an
+average energy of $10$~MeV, would imply a total energy release of
+$\sim 5 \times 10^{51}$~erg, or 5\% of the total energy budget\sidenote{In reality,
+we keep track of the electron fraction as
+\begin{align*}
+  Y_e = \frac{n_{e^-} - n_{e^+}}{n_B}
+\end{align*}
+and in this initial phase $Y_e$ only decreases from 0.5 to 0.35--0.4, and our
+crude estimate is wrong (in excess) by a factor of a few.}
+This is definitely not the main mechanism through which the energy is released.
+
+% The initial core is similar to a white dwarf with a higher average density,
+% and the Fermi energy is of the order of 10~MeV, so the neutrinos produced by
+% electron capture have roughly this energy,
+
+When the density approach $10^{12}$~g~cm$^{-3}$, the mean free path for neutrinos
+becomes of the same order of the size of the core and neutrinos become trapped---they
+start \emph{diffusing} instead of streaming freely out of the star.
+This changes the picture completely as electron capture still happens, but since
+neutrinos have nowhere to go, the inverse reaction
+\begin{align*}
+  \nu_e + n \rightarrow p + e^-
+\end{align*}
+becomes important, and the system approaches beta equilibrium.
+
+% Calculation of the neutrino mean free path:
+% coherent neutral-current scattering on nuclei nu + A -> nu + A
+% -> coherent because the wavelength of the neutrino hbar c/E ~ 20 fm at 10 MeV
+%    is larger than the size of the nucleus (1 fm A^{1/3} ~ 4 fm), so the scattering
+%    amplitude adds up coherently for all nucleons
+%    Note coherence only applies to neutral current elastic scattering, not to
+%    charged current, absorption, or inelastic scattering.
+% weak cross section times A^2 (2500) = 1e-39 cm2 at 10 MeV
+% nA = rho / A / m_N = 1.e34 cm^-3
+% lambda = 1 / (nA sigma) = 1 km
+% For R = 100 km the diffusion time is tau = R^2 / (c lambda) = 30 ms
+% 1e12 g/cm3 is roughly where neutrino mean free paths become so short
+% that neutrinos no longer free-stream out of the collapsing core.
+
+% At nuclear densities 2--3e14 g/cm3, the inner core stops collapsing
+% and bounces back, creating a shock wave.
+% After the shock passes: density drops, nuclei are broken -> less coherent scattering
+% mean free path increases dramatically ->  region becomes transparent to nu_e
+
+% which produces a relatively short ($\sim 10$~ms) burst of $\nu_e$ neutrinos, which is
+% customarily called \emph{neutronization burst}.
+% These are the neutrinos stored by electron capture
+% The energy involved is, again, small (1e51 erg)
+% And then propagation in matter...
+
+% Final cool down
+% Hot proto star, R = 30--50 km, T = 10--30 MeV, nuclear density 10^14 g/cm3
+% Basic idea: cool down via neutrino emission, which is the only way to get
+% rid of energy, as photons are just trapped
+% Now lambda ~ 1 cm, and tau_diff ~ 10s
+% -> nuclei are dissolved and scattering on nucleons, n_N = rho / m_N ~ 6e37 cm^-3
+% cross section is the same
+
+% Production by thermal pair processes like
+% e+e−→ννˉ
+%  after bounce.
+% The proto–neutron star cools over ~10 seconds by diffusing out neutrinos of all flavors, releasing ~
+
+If we knew the average energy of the neutrinos, we could estimate the total number of
+neutrinos emitted in the explosion, and come up with some back-of-the-envelope
+sensitivity estimation.
+
+
+Neutrinos are produced and trapped long enough to reach (approximate)
+thermal equilibrium with the matter, but they decouple in the neutrinosphere,
+less dense and with lower temperature. This is where the 10~MeV come from.
+
+Alternatively, Fermi energy of ~10 MeV, and this is the typical energy of the neutrinos.
+
 
 Typical energies of 10--20 MeV.
+
+
+
+
 
 Emission lasts ~10 seconds, much longer than the initial collapse (~milliseconds).
 This reflects the cooling of the proto-neutron star.
@@ -2027,18 +2128,6 @@ All six types are produced, but decouple at different depth (different spectra)
 Neutrinos escape the star before light.
 
 
-
-
-The 99\% comes from the ratio to the $10^{51}$~erg inferred in \emph{visible}
-energy (light and ejecta kinetic energy).
-
-For 1e53 erg spread over 1e57 neutrons, we get an average energy of 60 MeV.
-Only part of this goes into motion, and temperature is of the order of tens of MeV.
-Neutrinos are produced and trapped long enough to reach (approximate)
-thermal equilibrium with the matter, but they decouple in the neutrinosphere,
-less dense and with lower temperature. This is where the 10~MeV come from.
-
-Alternatively, Fermi energy of ~10 MeV, and this is the typical energy of the neutrinos.
 
 
 
@@ -2076,3 +2165,6 @@ Now the escape time in a random walk
   \tau \sim \frac{R^2}{c\lambda} \approx 0.01
 \end{align}
 This is too small, we need to refine the cross section and get to the famous 10 s.
+
+
+\subsection{SN1987A}
