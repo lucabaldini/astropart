@@ -82,8 +82,9 @@ plt.axhline(numix.DELTA_M21_CBE, color='black')
 plt.plot(zeta, zeta * numix.DELTA_M21_CBE, color='black')
 plt.text(2., 1.1 * numix.DELTA_M21_CBE, '$\\nu_\\mu = \\nu_2$', va='bottom')
 plt.text(2.6, 2.3 * numix.DELTA_M21_CBE, '$\\nu_e = \\nu_1$', va='bottom')
-plt.text(0.1, 3.5 * numix.DELTA_M21_CBE, '$\\rightarrow$ increasing $\\varrho$')
+plt.text(1.1, 3.75 * numix.DELTA_M21_CBE, '$\\rightarrow$ increasing $n_e$')
 plt.plot(1., numix.DELTA_M21_CBE, 'o', color='black', ms=4)
+plt.axvline(1., color='black', ls='dashed')
 plt.text(1., 0.9 * numix.DELTA_M21_CBE, 'Resonant conversion',
          ha='left', va='top', size='x-small')
 setup_ca(xlabel='$\\zeta$', ylabel='$\\tilde{m}^2_i$', yticks=(m1sq, m2sq), ymin=0.,
@@ -98,7 +99,7 @@ ne = BS05.electron_numer_density(r)
 E = numix.msw_resonance_energy(ne) * 1.e-6
 plt.plot(r, E, color='black')
 plt.plot(r, 1000. * BS05.pdf_flux_B8(r), color='gray', ls='dashed')
-setup_ca(xlabel='$r$ [$R_\\odot$]', ylabel='$E_c$ [MeV]', xticks=(0., 0.1, 0.2),
+setup_ca(xlabel='$r$ [$R_\\odot$]', ylabel='$E_\\mathrm{res}$ [MeV]', xticks=(0., 0.1, 0.2),
     ymin=0.)
 save_cf()
 
@@ -127,9 +128,10 @@ m1_tilde2 = 0.5 * (m1sq + m2sq + zeta * delta_m2 - C * delta_m2)
 m2_tilde2 = 0.5 * (m1sq + m2sq + zeta * delta_m2 + C * delta_m2)
 plt.plot(zeta, m1_tilde2, color='black')
 plt.plot(zeta, m2_tilde2, color='black')
-plt.text(0.1, 3.75 * numix.DELTA_M21_CBE, '$\\rightarrow$ increasing $\\varrho$')
+plt.text(0.6, 4. * numix.DELTA_M21_CBE, '$\\rightarrow$ increasing $n_e$')
 plt.text(2., m2sq - 2.e-5, "$\\nu_1$")
 plt.text(2.5, m2sq + 1.2e-4, "$\\nu_2$")
+plt.axvline(np.cos(np.radians(2. * numix.THETA_12_CBE)), color='black', ls='dashed')
 setup_ca(xlabel='$\\zeta$', ylabel='$\\tilde{m}^2_i$', yticks=(m1sq, m2sq),
          ymin=0., xticks=(0., 1., 2., 3., 4.))
 plt.gca().yaxis.set_label_coords(-0.12, 0.5)
