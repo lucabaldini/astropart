@@ -1155,9 +1155,10 @@ to study the minimum/maximum in the oscillation behavior.
   \input{figures/sun_neutrino_oscillation.pgf}
   \caption{Oscillation probability $P(\nu_e \rightarrow \nu_\mu)$ as a function of
   the distance $L$ traveled for a monochromatic 1~MeV beam, and for a gaussian beam
-  with the same average energy but with a standard deviation of 100~keV. The plot is
-  made assuming $\theta = 33.41^\circ$ and $\Delta m^2 = 7.41 \times 10^{-5}$~eV$^2$
-  that, as we shall see in a moment, are appropriate for solar neutrino oscillations.}
+  with the same average energy but with a standard deviation of 100~keV.
+  The plot is made assuming $\theta_\odot = 33.41^\circ$ and
+  $\Delta m^2_\odot = 7.41 \times 10^{-5}$~eV$^2$ that, as we shall see in due
+  time, are appropriate for solar neutrino oscillations.}
   \label{fig:sun_neutrino_oscillation}
 \end{figure}
 
@@ -1210,24 +1211,22 @@ In other words, as we have anticipated, when propagating through matter $\nu_e$ 
 special, as ordinary matter contains electrons but not $\mu$ and $\tau$. In order to
 account for this mechanism, which is customarily referred to as MSW after Mikheyev,
 Smirnov and Wolfenstein, who first proposed it, in the rest of  this section we shall
-assume that our first flavor eigenstate is $\nu_e$ and, in order to make things concrete,
-you can assume that the second one is $\nu_\mu$
+assume that our first flavor eigenstate is $\nu_e$
 \begin{align*}
   \begin{pmatrix}\nu_\alpha\\ \nu_\beta\end{pmatrix} \rightarrow
-  \begin{pmatrix}\nu_e\\ \nu_\mu\end{pmatrix}.
+  \begin{pmatrix}\nu_e\\ \nu_\beta\end{pmatrix}.
 \end{align*}
-(Bear with me. At the end of the story we shall realize that solar neutrino
-oscillations are slightly more complicated than this, but this is irrelevant
-at the moment.)
+(Bear with me for a little longer. We will see what $\nu_\beta$ physically means
+in due time.)
 
 Let's go back for a second to the simple Hamiltonian~\eqref{eq:nu_schroedinger}
 that generates the time evolution in vacuum, and which we have expanded in the
 ultra-relativistic limit as\sidenote{Since in this section we shall deal with
 several different versions of the Hamiltonian, we shall explicitely indicate with
-two subscript letters (in this order) if the latter is in vacuum or in matter
-(v, m) and if the explicit formula is in the mass of flavor basis (m, f).}
+a subscript letter if the latter is expressed in the basis of mass ($m$) or flavor
+($f$) eigenstates.}
 \begin{align*}
-  H_\text{v,m} =
+  H_m =
   \begin{pmatrix}
   E_1 & 0\\
   0 & E_2\\
@@ -1238,36 +1237,39 @@ two subscript letters (in this order) if the latter is in vacuum or in matter
   \end{pmatrix}.
 \end{align*}
 Since any term proportional to the $2 \times 2$ identity is only causing a common
-phase that is irrelevant for the oscillation, it is useful to decompose the hamiltonian
-isolating the traceless component\sidenote{Formally, for any square $n \times n$
-matrix $M$ this is done via the decomposition
+phase that is irrelevant for the oscillation, it is useful to decompose the
+hamiltonian factoring this part out and isolating the remaining, traceless
+component\sidenote{Formally, for any square $n \times n$ matrix $M$ this is done
+via the decomposition
 \begin{align*}
-  M = \frac{1}{n} \text{Tr}(M) + \left[ M - \frac{1}{n} \text{Tr}(M) \right]
+  M = \frac{\text{Tr}(M)}{n} I_{n \times n} +
+  \left[ M - \frac{\text{Tr}(M)}{n} I_{n \times n} \right]
 \end{align*}
 where it is trivial to show that the second part
 \begin{align*}
-  M^\circ = M - \frac{1}{n} \text{Tr}(M)
+  M^\circ = M - \frac{\text{Tr}(M)}{n} I_{n \times n}.
 \end{align*}
 is traceless.}, which in our particular case (restoring the usual shortcut $pc = E$)
 reads
 \begin{align*}
-  H^\circ_\text{v,m} = H_\text{v,m} - \frac{1}{2}\text{Tr}(H_\text{v,m}) I =
+  H^\circ_\text{m} =
+  H_m - \frac{\text{Tr}(H_m)}{2} I_{2 \times 2} =
   \frac{\Delta m^2}{4E}
   \begin{pmatrix}
     -1 & 0\\
     0 & 1\\
   \end{pmatrix}.
 \end{align*}
-If we now switch to the base of the flavor eigenstates, this transforms as
+If we now switch to the base of the flavor eigenstates, this transforms into
 \begin{align}\label{eq:vacuum_hamiltonian_flavor}
-  H^\circ_\text{v,f} =
-  U H^\circ_\text{v,m} U^\dag = \frac{\Delta m^2}{4E}
+  H^\circ_f =
+  U H^\circ_m U^\dag = \frac{\Delta m^2}{4E}
   \begin{pmatrix}
    -\cos2\theta & \sin2\theta\\
    \sin2\theta & \cos2\theta\\
   \end{pmatrix},
 \end{align}
-which is automatically traceless.
+which, as you can easily verify, is automatically traceless.
 
 So much for propagation in vacuum. When neutrinos propagate through matter, as we
 said, $\nu_e$ charged-current interactions give rise to an extra term in the Hamiltonian,
@@ -1278,7 +1280,7 @@ which is irrelevant for our argument.}. It is natural to expect that this term
 will be proportional to the Fermi constant $G_F$ and the electron number
 density---without dragging it too long
 \begin{align*}
-  H_\text{m,f} = H_\text{v,f} +
+  \tilde{H}_f = H_f +
   \begin{pmatrix}
   \sqrt{2} G_F n_e & 0\\
   0 & 0\\
@@ -1287,7 +1289,7 @@ density---without dragging it too long
 This is not traceless, but if we apply the small trick we are proficient with, we
 get
 \begin{align}\label{eq:msw_hamiltonian_1}
-  H^\circ_\text{m,f} = \frac{\Delta m^2}{4E}
+  \tilde{H}^\circ_f = \frac{\Delta m^2}{4E}
   \begin{pmatrix}
    -\cos 2\theta + \zeta & \sin 2\theta\\
    \sin 2\theta & \cos 2\theta - \zeta\\
@@ -1297,7 +1299,7 @@ get
 \end{align}
 We note that $\zeta$ can be positive or negative, depending on the sign of
 $\Delta m^2$. We shall come back to this in a second, but the implications are
-far reaching as, unlike purely interferometric effects, \emph{matter effect are
+far reaching as, unlike purely interferometric effects, \emph{matter effects are
 sensitive to the sign of the difference of mass squared}.
 
 If we transform this back into the basis of the (original) mass eigenstates,
@@ -1317,7 +1319,7 @@ diagonal matrix in the mass basis reads like~\eqref{eq:vacuum_hamiltonian_flavor
 in the flavor basis, we can get the final answer quickly by a direct comparison
 between~\eqref{eq:msw_hamiltonian_2} and~\eqref{eq:msw_hamiltonian_1}.}
 \begin{align}\label{eq:msw_hamiltonian_2}
-  H^\circ_\text{m,f} = \frac{\Delta \tilde{m}^2}{4E}
+  \tilde{H}^\circ_f = \frac{\Delta \tilde{m}^2}{4E}
   \begin{pmatrix}
    -\cos 2\tilde{\theta} & \sin 2\tilde{\theta}\\
    \sin 2\tilde{\theta} & \cos 2\tilde{\theta}\\
@@ -1393,7 +1395,8 @@ $\sin 2\tilde{\theta} = 0$ no matter what $C(\zeta)$ amounts to: for oscillation
 to happen in matter, the mixing angle in vacuum must be non-trivial.
 When that is not the case, it is easy to see that
 \begin{align*}
-  \lim_{\zeta \rightarrow \pm \infty} \tan 2\tilde{\theta} = -\frac{1}{\zeta}
+  \lim_{\zeta \rightarrow \pm \infty} \tan 2\tilde{\theta} =
+  -\frac{\sin 2\theta}{\zeta} \rightarrow 0^\mp
   \quad\text{or}\quad
   \begin{cases}
     \tilde{\theta} \rightarrow \frac{\pi}{2} & \quad (\zeta > 0)\\
@@ -1408,16 +1411,18 @@ the second $\nu_e = \nu_1$. (And in both cases $\nu_e$ maps to the heaviest mass
 eigenstate.) Keep this is mind because we shall come back to it in a second.
 
 There is another, even more amusing fact that is always cited in textbooks:
-when $\zeta = \cos 2\theta$\sidenote{This is about 0.4 for the mixing angle appropriate
-for solar neutrinos. Note that, assuming that $\theta$ lies in the first quadrant,
-this can only take place for $\zeta > 0$, i.e., $m_2^2 > m_1^2$. Again, matter effects
-are sensitive to the sign of $\Delta m^2$.}, $C(\zeta) = \sin 2\theta$, $\tan 2\theta$
-diverges, which is to say that $\sin 2\tilde{\theta} = 1$, no matter what the original
-value of $\sin 2\theta$ is. In other words, the mixing becomes maximal even if the
-mixing angle in vacuum is small, and arbitrarily so. For any given value of the
-electron density $n_e$ this \emph{resonant} condition happens for
+when $\zeta = \zeta_\text{res} = \cos 2\theta$\sidenote{This is about 0.4 for the
+mixing angle appropriate for solar neutrinos. Note that, assuming that $\theta$
+lies in the first quadrant, this can only take place for $\zeta > 0$, i.e.,
+$m_2^2 > m_1^2$. Again, matter effects are sensitive to the sign of $\Delta m^2$.},
+$C(\zeta_\text{res}) = \sin 2\theta$, $\tan 2\tilde{\theta}$ diverges, which is
+to say that $\sin 2\tilde{\theta} = 1$, no matter what the original value of
+$\sin 2\theta$ is.
+In other words, the mixing becomes maximal even if the mixing angle in vacuum is
+small, and arbitrarily so. For any given value of the electron density $n_e$ this
+\emph{resonant} condition happens for
 \begin{align}\label{eq:msw_resonance_energy}
-  E_c = \frac{\Delta m^2 \cos 2\theta}{2\sqrt{2}G_F n_e}.
+  E_\text{res} = \frac{\Delta m^2 \cos 2\theta}{2\sqrt{2}G_F n_e}.
 \end{align}
 For what it's worth at the center of the Sun, where the electron density is
 $\sim 6 \times 10^{25}$~cm$^{-3}$, the resonance energy is just slightly in excess
@@ -1482,8 +1487,8 @@ As a matter of fact, in reality \emph{they emerge as $\nu_2$ mass eigenstates}.
 \begin{marginfigure}
   \input{figures/msw_mixing.pgf}
   \caption{Effective mixing angle in matter $\tilde{\theta}$ as a function of
-    $\zeta$ for a mixing angle in vacuum $\theta = 33.41^\circ$ (current best-fit
-    value for solar neutrino oscillations).}
+    $\zeta$ for a mixing angle in vacuum $\theta_\odot = 33.41^\circ$ (current
+    best-fit value for solar neutrino oscillations).}
   \label{fig:msw_mixing}
 \end{marginfigure}
 
@@ -1503,9 +1508,10 @@ is the heaviest mass eigenstate in this case.)
 \begin{marginfigure}
   \input{figures/msw_mass.pgf}
   \caption{Effective mass squared $\tilde{m}^2_i$ in matter as a
-    function of $\zeta$ for a mixing angle in vacuum $\theta = 33.41^\circ$
-    (current best-fit value for solar neutrino oscillations). Note the value
-    of $\zeta$ corresponding to the resonance condition, here, is $\sim 0.4$.}
+    function of $\zeta$ for a mixing angle in vacuum $\theta_\odot = 33.41^\circ$
+    and $\Delta m^2_\odot = 7.41 \times 10^{-5}$~eV$^2$ (current best-fit value
+    for solar neutrino oscillations). Note the value of $\zeta$ corresponding to
+    the resonance condition, indicated by the vertical dashed line, is $\sim 0.4$.}
   \label{fig:msw_mass}
 \end{marginfigure}
 
@@ -1585,13 +1591,6 @@ incoming direction of the neutrino, and the same holds for the electron in the
 charged-current channel. The only channel with directional capabilities is the
 elastic scattering pioneered by Super Kamiokande.}
 
-\begin{figure}[!htbp]
-  \input{figures/solar_nu_survival.pgf}
-  \caption{Solar neutrino survival probability as a function of energy,
-    as measured by the Borexino experiment (adapted from~\cite{2018Natur.562..505B}).}
-  \label{fig:solar_nu_survival}
-\end{figure}
-
 The SNO results~\cite{2004PhRvL..92r1301A} constitute the first contemporaneous
 measurement of the solar $\nu_e$ flux and the \emph{total} neutrino flux (the
 latter through inelastic scattering mediated by neutral currents) above an
@@ -1604,7 +1603,9 @@ This was in agreement with the findings by the Homestake experiment. Most import
 a detailed analysis of all the available solar neutrino data showed that the SSM
 could be reconciled with all the available information, providing that neutrino
 oscillate \emph{and} that the MSW mechanism is at play, the global best fit for the
-relevant parameters being
+relevant parameters being\sidenote{These values are mainly for historical reference,
+at this time. Section~\ref{sec:nu_oscillation_3nu} will cover the current best fit
+values.}
 \begin{align*}
   \Delta m^2_\odot \approx 7.1 \times 10^{-5}~\text{eV}^2
   \quad\text{and}\quad
@@ -1615,10 +1616,33 @@ solution to the solar neutrino problem, an expression that in the early days was
 used to distinguish this set of parameters from different regions in the phase space
 that are nowadays firmly excluded.
 
-More recent measurements include those by Borexino, shown in
-figure~\ref{fig:solar_nu_survival}, but it is fair to say that, by
-the beginning of the years 2000s, the solar neutrino problem was solved and the
-very basic fact that neutrino have mass and oscillate accepted.
+\begin{figure}[!htbp]
+  \input{figures/solar_nu_survival.pgf}
+  \caption{Solar neutrino survival probability as a function of energy,
+    as measured by the Borexino experiment (adapted from~\cite{2018Natur.562..505B}).}
+  \label{fig:solar_nu_survival}
+\end{figure}
+
+Figure~\ref{fig:solar_nu_survival} shows some of the most up-to-date measurements
+of the solar neutrino survival probability as a function of the neutrino
+energy, as measured by the Borexino experiment. We now have all the ingredients
+to understand the limiting behaviors. Below $\sim 1$~MeV the matter potential
+in the Sun is small compared to the vacuum oscillation scale, so the MSW effect
+is negligible and neutrinos oscillate essentially in vacuum, with the survival
+probability given by
+\begin{align*}
+  P(\nu_e \rightarrow \nu_e) \approx 1 - \frac{1}{2}\sin^2(2\theta_\odot) \approx 0.55.
+\end{align*}
+Above a few MeV, on the other hand, the phenomenon is dominated by the MSW effect,
+and basically all the neutrinos leave the Sun as $\nu_2$ mass eigenstate and
+arrive at the Earth unperturbed. At this point, the probability of detecting
+a $\nu_2$ neutrino as $\nu_e$ is simply given by the $\nu_e$ content of $\nu_2$,
+that is
+\begin{align*}
+  P(\nu_e) \approx \sin^2(\theta_\odot) \approx 0.3
+\end{align*}
+This is the very reason why an energy dependence is observed by the experiments
+measuring the flux of $\nu_e$.
 
 
 \subsection{Verification with reactor neutrinos}
@@ -1709,7 +1733,6 @@ separate $\nu_e$ and $\nu_\mu$ fluxes, as well as their ratio, as a function of 
 zenith angle, i.e., as a function of the distance $L$ traveled by the neutrino,
 and as a function of the energy.
 
-
 The main Super Kamiokande results are that, while $\nu_e$ measurements agree reasonably
 well with expectations in absence of oscillations, we have a significant deficit of
 $\nu_\mu$, amounting to some $\sim 50\%$ and extending to all zenith angle at low
@@ -1736,6 +1759,7 @@ that in this case appears to be maximal.
 
 
 \section{Three-flavor neutrino oscillations}
+\label{sec:nu_oscillation_3nu}
 
 Up to this point we have discussed all the measurements in terms of oscillations
 for two generations of neutrino, ending up with two distinct sets of $\Delta m^2$
@@ -1897,27 +1921,16 @@ important to note that nowadays any physics analysis that is professionally done
 exploits the full power of the three-generation formalism.
 
 
-\subsubsection{Solar neutrinos}
-
 Since we know experimentally that $\abs{U_{e3}}^2 \approx 0.02$ is small, $\nu_e$
 neutrinos produced in the Sun are largely a mixture of $\nu_1$ and $\nu_2$, i.e., the
 $\nu_3$ component is negligible at the start. At the very basic level, this is the
 reason why the solar neutrino problem can be approximately interpreted in a two-flavor
 mixing scenario, with the relevant parameters being $\theta_{12}$ and $\Delta m^2_{21}$.
-
-When we plug in the numbers ($L \approx 1.5 \times 10^{11}$~m and $E \approx 1$~MeV)
-it turns out that $\nicefrac{L}{E}$ for solar neutrinos is very large compared
-to $\Delta m^2_{21}$, and the trigonometric term averages out quickly.
-
-Below $\sim 1$~MeV the matter potential in the Sun is small compared to the vacuum
-oscillation scale, so the MSW effect is negligible and neutrinos oscillate essentially
-in vacuum, with the survival probability given by
-\begin{align*}
-  P(\nu_e \rightarrow \nu_e) \approx 1 - \frac{1}{2}\sin^2(2\theta_{12}) \approx 0.55.
-\end{align*}
-and the rest of the neutrinos oscillating to some combination of $\nu_\mu$ and
-$\nu_\tau$\sidenote{More precisely, if we neglect the initial small contribution
-from $\nu_3$, since
+As we said, $\nicefrac{L}{E}$ for solar neutrinos is very large compared to
+$\Delta m^2_{21}$, and the trigonometric term averages out quickly. Below $\sim 1$~MeV
+the matter effect are negligible and the $\nu_e$ basically  oscillate in vacuum
+to some combination of $\nu_\mu$ and $\nu_\tau$\sidenote{More precisely, if we neglect
+the initial small contribution from $\nu_3$, since
 $$
   \nu_e = \cos\theta_{12} \nu_1 + \sin\theta_{12} \nu_2,
 $$
@@ -1926,20 +1939,8 @@ $$
   \nu_x = -\sin\theta_{12} \nu_1 + \cos\theta_{12} \nu_2.
 $$
 You can work for yourself the precise contributions from $\nu_\mu$ and $\nu_\tau$}.
-
 Above a few MeV, on the other hand, the phenomenon is dominated by the MSW effect,
-and basically all the neutrinos leave the Sun as $\nu_2$ mass eigenstate and
-arrive at the Earth unperturbed. At this point, the probability of detecting
-a $\nu_2$ neutrino as $\nu_e$ is simply given by the $\nu_e$ content of $\nu_2$,
-that is
-\begin{align*}
-  P(\nu_e) = \abs{U_{e2}}^2 = \sin^2(\theta_{12}) \approx 0.3
-\end{align*}
-This is the very reason why an energy dependence is observed by the experiments
-measuring the flux of $\nu_e$.
-
-
-\subsubsection{Atmospheric neutrinos}
+which is the very basic reason for the energy dependence of the survival probability.
 
 For atmospheric neutrinos the situation is different, as $\nicefrac{L}{E}$ is
 small compared to $\Delta m^2_{21}$, but not with respect $\Delta m^2_{31}$ and
