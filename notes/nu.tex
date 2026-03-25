@@ -2170,9 +2170,9 @@ process through which that happens.
 At this point the nuclei have been largely dissociated by the shock wave, and the
 core is mostly made of individual nucleons---mostly neutrons
 \begin{align*}
-  n_n \approx \frac{\density}{m_N} \approx 2 \times 10^{38}~\text{cm}^{-3}
+  n_B \approx \frac{\density}{m_N} \approx 2 \times 10^{38}~\text{cm}^{-3}
   \quad\text{and}\quad
-  n_e = Y_e n_n.
+  n_e = Y_e n_B.
 \end{align*}
 It is not hard to see that, if we plug in for a second the Thomson cross section
 $\sigma_T = 6.65 \times 10^{-25}~\text{cm}^2$, the mean free path for photons
@@ -2187,7 +2187,34 @@ long compared to all the other time scales in the problem.}. Whatever is channel
 out our $10^{53}$~erg of gravitational energy, it is definitely not photons.
 
 Neutrinos are in fact the only particles that can actually diffuse away from the
-collapsing core with a reasonable efficiency: if we take our na\"ive estimate of the
+collapsing core with a reasonable efficiency. They are copiously produced
+by thermal pair production\sidenote{In a highly-degenerate system such as the one
+we are dealing with, charged-current reactions such as
+\begin{align*}
+  e^- + p \rightarrow n + \nu_e
+\end{align*}
+tend to be suppressed because the neutron in the final state needs to be produced
+with an energy above the Fermi level, and the phase space for that is limited.}
+\begin{align*}
+  e^+ + e^- \rightarrow \nu + \bar{\nu}
+\end{align*}
+and nucleon-nucleon bremsstrahlung
+\begin{align*}
+  N + N \rightarrow N + N + \nu + \bar{\nu}
+\end{align*}
+which are neutral current processes (i.e., mediated by a $Z^0$) and therefore
+produce all three flavors of neutrinos (and associated antineutrinos) in roughly
+equal amounts\sidenote{There are relatively subtle differences in the production
+rates of the different neutrino flavors due to opacity effects, since different
+flavors tend to decouple at different depths.}.
+If we assume a total energy budget of $5 \times 10^{53}$~erg, and an average
+neutrino energy of 10~MeV, we get a total number of neutrinos emitted in the
+explosion of the order of
+\begin{align*}
+  N_\nu \approx 3 \times 10^{58}.
+\end{align*}
+
+And what about the time scales? Well, if we take our na\"ive estimate of the
 neutrino-nucleon cross section at 10~MeV, $\sigma_\nu \approx 10^{-42}~\text{cm}^2$,
 the mean free path turns out to be
 \begin{align*}
@@ -2212,38 +2239,68 @@ distance of the order of $R \sim 10$~km:
 \begin{align}
   \tau_\text{esc} \sim \frac{R^2}{c\lambda} \approx 10~\text{s}.
 \end{align}
-
+That is, the neutrino emission accounting for the bulk of the energy release in
+the explosion lasts for about 10 seconds, which is much longer than the initial collapse
+phase, which is of the order of milliseconds.
 
 %https://academic.oup.com/ptep/article/2024/5/05B101/7658451
 
 
-% Basic idea: cool down via neutrino emission, which is the only way to get
-% rid of energy, as photons are just trapped
-% Now lambda ~ 1 cm, and tau_diff ~ 10s
-% -> nuclei are dissolved and scattering on nucleons, n_N = rho / m_N ~ 6e37 cm^-3
-% cross section is the same
-
-% Production by thermal pair processes like
-% e+e−→ννˉ
-%  after bounce.
-% The proto–neutron star cools over ~10 seconds by diffusing out neutrinos of all flavors, releasing ~
 
 
 
-Emission lasts ~10 seconds, much longer than the initial collapse (~milliseconds).
-This reflects the cooling of the proto-neutron star.
-
-All six types are produced, but decouple at different depth (different spectra)
 
 Neutrinos escape the star before light.
 
 
-
-%If we knew the average energy of the neutrinos, we could estimate the total number of
-%neutrinos emitted in the explosion, and come up with some back-of-the-envelope
-%sensitivity estimation.
-
-
-
-
 \subsection{SN1987A}
+
+The fun thing in all this is that, rare as explosions of supernov\ae in our
+proximity are, we do actually have one notable example of a nearby core-collapsed
+supernova recent enough for sensitive neutrino detectors to be listening to it:
+SN1987A, which exploded in the Large Magellanic Cloud, at a distance of
+$d \sim 50$~kpc, in February 1987.
+
+The overall neutrino fluence (i.e., the number of neutrinos per unit area) at Earth
+can be simply estimated as\sidenote{Keep in mind this is more or less equally
+divided among the six neutrino and antineutrino species.}
+\begin{align*}
+  F_\nu = \frac{N_\nu}{4\pi d^2} \approx 10^{11}~\text{cm}^{-2}
+\end{align*}
+(over a time interval of the order of 10~s---the corresponding average
+flux is in the same ballpark of the neutrino flux from the Sun.)
+
+On the detector side, Kamiokande-II was online at the time, and instrumented
+with a fiducial mass was 2140 tons of water, the dominant detection channel
+being the inverse beta decay on the protons\sidenote{This means that we are
+basically sensitive to $\nicefrac{1}{6}$ of the overall neutrino fluence.}
+\begin{align*}
+  \bar{\nu}_e + p \rightarrow n + e^+
+  \quad \text{with} \quad
+  \sigma_\text{IBD} \sim 10^{-41}~\text{cm}^2
+\end{align*}
+(The cross section $\sigma_\text{IBD}$ for the inverse beta decay at 10~MeV is
+about 100~times larger than that for $\nu_e$ elastic scattering on electrons.)
+With a total number of target protons of the order of $N_p \approx 10^{32}$,
+there is really nothing else that we need to calculate the expected number of
+events in the detector
+\begin{align*}
+  N_\text{events} = \frac{1}{6} F_\nu \sigma_\text{IBD} N_p \approx 15.
+\end{align*}
+(Think about the colossal coincidence: if the supernova was only a factor
+of a few further away we would not have seen it.)
+
+All right---we have a clear prediction in terms of what we would expect to
+see in the detector for a supernova explosion at a distance of 50~kpc:
+\emph{10~neutrinos of about 10~MeV in 10~s}.
+
+The abstract of the original Kamiokande-II paper~\cite{1987PhRvL..58.1490H} reads
+\begin{quote}
+  A neutrino burst was observed in the Kamiokande II detector on 23 February 1987,
+  7:35:35UT (+1 min) during a time interval of 13~sec. The signal consisted of
+  eleven electron events of energy 7.5 to 36 MeV, of which the first two point
+  back to the Large Magellanic Cloud with angles $18^\circ \pm 18^\circ$ and
+  $15^\circ \pm 27^\circ$.
+\end{quote}
+Brief and to the point, as papers used to be in the old days.
+
