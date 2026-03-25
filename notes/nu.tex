@@ -1846,6 +1846,7 @@ and spell out the PMNS mixing matrix in its full form
 which gives an immediate idea of how the formulation is algebraically more complicated
 in the three-generation case, compared to the two-generation one.
 
+
 Several global analyses of all available neutrino data exist, a recent, representative
 one~\cite{2020JHEP...09..178E} yielding\sidenote{We are deliberately glitching over
 some subtle details, as the fit results are slightly different in normal and inverse
@@ -1892,6 +1893,49 @@ choice, leading to the surprisingly simple (and elegant) form of the mixing matr
 \end{align*}
 This is now definitely ruled out by the most recent measurements, but it is still
 found in recent literature.}.
+
+\begin{marginfigure}
+  \begin{tikzpicture}[x=4cm,y=1cm, font=\small]
+
+    % styles
+    \tikzset{
+      box/.style={draw, fill=gray!25},
+      label/.style={anchor=east},
+      mlabel/.style={font=\scriptsize}
+    }
+
+    % --- nu_e bar ---
+    \node[label] at (-0.03,2.5) {$\nu_e$};
+    \draw[box] (0,2.3) rectangle (0.681,2.7);
+    \draw[box] (0.681,2.3) rectangle (0.978,2.7);
+    \draw[box] (0.978,2.3) rectangle (1.00,2.7);
+    \node[mlabel] at (0.335,2.5) {$\nu_1$};
+    \node[mlabel] at (0.82,2.5) {$\nu_2$};
+    %\node[mlabel] at (0.985,2.5) {$\nu_3$};
+
+    % --- nu_mu bar ---
+    \node[label] at (-0.03,1.5) {$\nu_\mu$};
+    \draw[box] (0,1.3) rectangle (0.131,1.7);
+    \draw[box] (0.131,1.3) rectangle (0.558,1.7);
+    \draw[box] (0.558,1.3) rectangle (1.00,1.7);
+    \node[mlabel] at (0.065,1.5) {$\nu_1$};
+    \node[mlabel] at (0.355,1.5) {$\nu_2$};
+    \node[mlabel] at (0.77,1.5) {$\nu_3$};
+
+    % --- nu_tau bar ---
+    \node[label] at (-0.03,0.5) {$\nu_\tau$};
+    \draw[box] (0,0.3) rectangle (0.187,0.7);
+    \draw[box] (0.187,0.3) rectangle (0.463,0.7);
+    \draw[box] (0.463,0.3) rectangle (1.00,0.7);
+    \node[mlabel] at (0.09,0.5) {$\nu_1$};
+    \node[mlabel] at (0.325,0.5) {$\nu_2$};
+    \node[mlabel] at (0.745,0.5) {$\nu_3$};
+  \end{tikzpicture}
+  \caption{Sketch of the mass-eigenstate composition of the three neutrino
+  flavor eigenstates.}
+  \label{fig:nu_mass_composition}
+\end{marginfigure}
+
 The explicit form of the modulus of the PMNS matrix is useful, as it allows to grasp
 immediately the flavor content of the neutrino mass eigenstate, i.e.,
 \begin{align}
@@ -1996,3 +2040,267 @@ other hand, if $m_1$ is larger than $\sim 100$~meV, then the three masses are mo
 or less all equal, in both normal and inverted ordering.
 
 \section{Neutrinos from Supernov\ae}
+
+In the explosion of a core-collapsed supernova, the main energy source is the
+gravitational binding energy released when the stellar core collapses into a
+neutron star. We have calculated in section~\ref{sec:white_dwarfs} the
+gravitational self energy of a uniform sphere\sidenote{Sure enough, a neutron
+star, or the precursor stellar core for what matters, is \emph{not} a uniform
+sphere, but all we care about is the order of magnitude, here. Note the self-energy
+is negative---if you change the sign you get the energy released in the process
+of formation or, equivalently, the energy you would need to pull the thing apart.}
+\begin{align*}
+  E_G = \frac{-3 G M^2}{5R}.
+\end{align*}
+Technically, the energy released in the collapsed is the difference between the
+initial and final gravitational binding energies, but you get the scaling from the
+formula: whatever sensible radius you take for the initial stellar core, its
+gravitational self energy is negligible compared to that of the neutron star, and
+can be neglected. If we plug into the formula the mass $M \approx 1.4 M_\odot$ and
+radius $R \approx 10$~km of a canonical neutron star the resulting energy release
+is spectacular---of the order of~$5 \times 10^{53}$~erg.
+
+Now, in section~\ref{sec:supernovae} we have already estimated how much \emph{visible}
+energy is released in a type Ia supernova (mostly in the form of kinetic energy of the
+ejecta) and this was of the order of $10^{51}$~erg. Interestingly, this is roughly
+representative of the other types of supernov\ae, which brings us to the first important
+point: \emph{in core-collapsed supernov\ae, less than 1\% of the overall energy budget
+goes into visible energy---kinetic energy of the ejecta or light.} The remaining 99\%
+must be released in some other form of neutrinos, and we shall see in a moment that
+this form is neutrinos.
+
+Let us try and work our way through the relevant orders of magnitude. If we assume that
+the collapsing core has a mass comparable with the solar mass, the number of baryons
+and electrons is given by
+\begin{align*}
+  N_B \approx \frac{M_\odot}{m_N} \approx 10^{57} \quad\text{and}\quad
+  N_e \approx \frac{1}{2} N_B.
+\end{align*}
+Now, for $\sim 10^{53}$~erg (or $\sim 6 \times 10^{58}$~MeV) spread over
+$\sim 10^{57}$ nucleons, we get a total energy budget of 60~MeV per nucleon, but
+we would be wrong if we assumed that this reflects the temperature of the system:
+the latter is a degenerate system with a Fermi energy of the order of several
+tens of MeV, and only a relatively small fraction of this energy goes into thermal
+motion. If we tentatively assume a temperature of a few~MeV\sidenote{Keep in mind
+that for a Fermi-Dirac distribution we have
+\begin{align*}
+  \ave{E} \approx 3.15 \kB T.
+\end{align*}}
+we get an average nucleon kinetic energy of the order of $\sim 10$~MeV. Pretty crude,
+but enough for our purposes.
+
+Now, during the initial phases of the collapse of the stellar core, neutrinos are
+primarily produced by electron capture on protons, i.e.,
+\begin{align*}
+  p + e^- \rightarrow n + \nu_e.
+\end{align*}
+Note this process not only produces neutrinos, which initially escape freely;
+in addition to that, it continuously removes electrons, reducing the degeneracy
+pressure that was supporting the core, and causing the latter to contract
+further. (This is important: neutrinos are not just spectators that serve the
+purpose of radiating out the excess energy---they play a prominent role in
+determining the dynamics of the collapse all along.)
+Even if this initial neutronization process removed \emph{all} the free electrons,
+in terms of energetics it would amount to some $5 \times 10^{56}$ electron neutrinos,
+that, assuming an average energy of $10$~MeV, would imply a total energy release of
+$\sim 5 \times 10^{51}$~erg, or $\sim 5$\% of the total energy budget\sidenote{In reality,
+we keep track of the electron fraction as
+\begin{align*}
+  Y_e = \frac{n_{e^-} - n_{e^+}}{n_B}
+\end{align*}
+and in this initial phase $Y_e$ only decreases from 0.5 to 0.35--0.4, and our
+crude estimate is wrong (in excess) by a factor of a few.}
+This is definitely \emph{not} the main mechanism through which the energy is released.
+
+% The initial core is similar to a white dwarf with a higher average density,
+% and the Fermi energy is of the order of 10~MeV, so the neutrinos produced by
+% electron capture have roughly this energy,
+
+When the density approaches $10^{12}$~g~cm$^{-3}$, the mean free path for neutrinos
+becomes of the same order of the size of the core\sidenote{We are not interested
+very much in the details of the physical processes at play in this phase, but it
+is interesting to note that, owing to the fact that the neutrino wavelength at 10~MeV
+is larger than the size of the nuclei, the mean free path in this regime is dominated
+by coherent neutral-current scattering, whose typical cross section is ehnanced by
+a factor $A^2$ (i.e., three orders of magnitude for Fe nuclei) with respect to the
+neutrino-nucleon one.} and neutrinos become trapped---they start \emph{diffusing}
+instead of streaming freely out of the star. This changes the picture completely as
+electron capture still happens, but since neutrinos have nowhere to go, the inverse
+reaction
+\begin{align*}
+  \nu_e + n \rightarrow p + e^-
+\end{align*}
+becomes important, and the system approaches beta equilibrium---the electron removal
+becomes less and less efficient. (This is the reason why our previous estimate of the
+energy release during neutronization was more like a generous upper limit).
+
+% Calculation of the neutrino mean free path:
+% coherent neutral-current scattering on nuclei nu + A -> nu + A
+% -> coherent because the wavelength of the neutrino hbar c/E ~ 20 fm at 10 MeV
+%    is larger than the size of the nucleus (1 fm A^{1/3} ~ 4 fm), so the scattering
+%    amplitude adds up coherently for all nucleons
+%    Note coherence only applies to neutral current elastic scattering, not to
+%    charged current, absorption, or inelastic scattering.
+% weak cross section times A^2 (2500) = 1e-39 cm2 at 10 MeV
+% nA = rho / A / m_N = 1.e34 cm^-3
+% lambda = 1 / (nA sigma) = 1 km
+% For R = 100 km the diffusion time is tau = R^2 / (c lambda) = 30 ms
+% 1e12 g/cm3 is roughly where neutrino mean free paths become so short
+% that neutrinos no longer free-stream out of the collapsing core.
+
+If we move along a little bit further, when the density approaches nuclear density
+the inner core stops collapsing and and bounces back, creating a shock wave.
+This is interesting, because as this reverse shock-wave propagates outwards, it
+breaks up the nuclei, and the mean free path, which was initially dominated by
+coherent scattering, increases dramatically. As a result, the external regions
+of the core become suddenly transparent, and all the $\nu_e$ that were trapped
+are released in a relatively short ($\sim 10$~ms) burst which is customarily
+called the \emph{neutronization burst}. It is no surprise that the energy released
+in the neutronization burst is of the same order of magnitude as the one we
+estimated for the initial neutronization phase, as the two are intimately connected.
+Again, this is not the main mechanism through which the energy is released.
+
+And here we are, with a hot proto-neutron start, with a radius of the order of
+50~km, a temperature of the order of 10~MeV, and a density of the order of the
+order of the nuclear density (a few $10^{14}$~g~cm$^{-3}$). Most importantly, the vast
+majority of the $10^{53}$~erg that we know must be produced in the explosion have
+not been released, yet, and we need to ask ourselves what is the main physical
+process through which that happens.
+
+At this point the nuclei have been largely dissociated by the shock wave, and the
+core is mostly made of individual nucleons---mostly neutrons
+\begin{align*}
+  n_B \approx \frac{\density}{m_N} \approx 2 \times 10^{38}~\text{cm}^{-3}
+  \quad\text{and}\quad
+  n_e = Y_e n_B.
+\end{align*}
+It is not hard to see that, if we plug in for a second the Thomson cross section
+$\sigma_T = 6.65 \times 10^{-25}~\text{cm}^2$, the mean free path for photons
+\begin{align*}
+  \lambda_\gamma = \frac{1}{n_e \sigma_T} = \frac{1}{Y_e n_n \sigma_T}
+\end{align*}
+is tiny for any reasonable assumption on $Y_e$\sidenote{If you take $Y_e = 0.1$,
+you get $\lambda_\gamma \sim 10^{-11}$~cm, some 15~orders of magnitude smaller
+than the typical radius of the core. You don't even have to go into the trouble of
+calculating the corresponding escape time to realize that the latter is exceedingly
+long compared to all the other time scales in the problem.}. Whatever is channeling
+out our $10^{53}$~erg of gravitational energy, it is definitely not photons.
+
+Neutrinos are in fact the only particles that can actually diffuse away from the
+collapsing core with a reasonable efficiency. They are copiously produced
+by thermal pair production\sidenote{In a highly-degenerate system such as the one
+we are dealing with, charged-current reactions such as
+\begin{align*}
+  e^- + p \rightarrow n + \nu_e
+\end{align*}
+tend to be suppressed because the neutron in the final state needs to be produced
+with an energy above the Fermi level, and the phase space for that is limited.}
+\begin{align*}
+  e^+ + e^- \rightarrow \nu + \bar{\nu}
+\end{align*}
+and nucleon-nucleon bremsstrahlung
+\begin{align*}
+  N + N \rightarrow N + N + \nu + \bar{\nu}
+\end{align*}
+which are neutral current processes (i.e., mediated by a $Z^0$) and therefore
+produce all three flavors of neutrinos (and associated antineutrinos) in roughly
+equal amounts\sidenote{There are relatively subtle differences in the production
+rates of the different neutrino flavors due to opacity effects, since different
+flavors tend to decouple at different depths.}.
+If we assume a total energy budget of $5 \times 10^{53}$~erg, and an average
+neutrino energy of 10~MeV, we get a total number of neutrinos emitted in the
+explosion of the order of
+\begin{align*}
+  N_\nu \approx 3 \times 10^{58}.
+\end{align*}
+
+And what about the time scales? Well, if we take our na\"ive estimate of the
+neutrino-nucleon cross section at 10~MeV, $\sigma_\nu \approx 10^{-42}~\text{cm}^2$,
+the mean free path turns out to be
+\begin{align*}
+  \lambda_\nu = \frac{1}{n_n \sigma_\nu} \approx 50~m \quad\text{(too large)}
+\end{align*}
+(Note this is still small wrt the NS---that is, neutrinos diffuse, but huge compared
+to that we have calculated for photons.) This figure is in fact a few orders of
+magnitude \emph{too large}. For one thing we have plugged in a generic back-of-the-envelope
+estimate for the neutrino-nucleon cross section, neglecting the fact that there
+are several different processes at play, each one with its own prefactor that can
+be significantly $> 1$. But, more importantly, this is where our crude description of
+the system breaks down, and we would need a more detailed calculation of
+effective transport opacity integrated through the whole star, with strong radial
+variation in density, temperature, composition, and degeneracy.
+
+We shall make a long story short, and limit ourselves to say that the characteristic
+effective mean free path for neutrinos in our situation is of the order of
+$\lambda_\nu \sim 5$~cm, or some three orders of magnitude smaller than our
+simplistic estimate. We can turn this into an estimate for the associate escape
+time, assuming a random walk from the center to the surface of the core, at a
+distance of the order of $R \sim 10$~km:
+\begin{align}
+  \tau_\text{esc} \sim \frac{R^2}{c\lambda} \approx 10~\text{s}.
+\end{align}
+That is, the neutrino emission accounting for the bulk of the energy release in
+the explosion lasts for about 10 seconds, which is much longer than the initial collapse
+phase, which is of the order of milliseconds.
+
+%https://academic.oup.com/ptep/article/2024/5/05B101/7658451
+
+
+
+
+
+
+Neutrinos escape the star before light.
+
+
+\subsection{SN1987A}
+
+The fun thing in all this is that, rare as explosions of supernov\ae in our
+proximity are, we do actually have one notable example of a nearby core-collapsed
+supernova recent enough for sensitive neutrino detectors to be listening to it:
+SN1987A, which exploded in the Large Magellanic Cloud, at a distance of
+$d \sim 50$~kpc, in February 1987.
+
+The overall neutrino fluence (i.e., the number of neutrinos per unit area) at Earth
+can be simply estimated as\sidenote{Keep in mind this is more or less equally
+divided among the six neutrino and antineutrino species.}
+\begin{align*}
+  F_\nu = \frac{N_\nu}{4\pi d^2} \approx 10^{11}~\text{cm}^{-2}
+\end{align*}
+(over a time interval of the order of 10~s---the corresponding average
+flux is in the same ballpark of the neutrino flux from the Sun.)
+
+On the detector side, Kamiokande-II was online at the time, and instrumented
+with a fiducial mass was 2140 tons of water, the dominant detection channel
+being the inverse beta decay on the protons\sidenote{This means that we are
+basically sensitive to $\nicefrac{1}{6}$ of the overall neutrino fluence.}
+\begin{align*}
+  \bar{\nu}_e + p \rightarrow n + e^+
+  \quad \text{with} \quad
+  \sigma_\text{IBD} \sim 10^{-41}~\text{cm}^2
+\end{align*}
+(The cross section $\sigma_\text{IBD}$ for the inverse beta decay at 10~MeV is
+about 100~times larger than that for $\nu_e$ elastic scattering on electrons.)
+With a total number of target protons of the order of $N_p \approx 10^{32}$,
+there is really nothing else that we need to calculate the expected number of
+events in the detector
+\begin{align*}
+  N_\text{events} = \frac{1}{6} F_\nu \sigma_\text{IBD} N_p \approx 15.
+\end{align*}
+(Think about the colossal coincidence: if the supernova was only a factor
+of a few further away we would not have seen it.)
+
+All right---we have a clear prediction in terms of what we would expect to
+see in the detector for a supernova explosion at a distance of 50~kpc:
+\emph{10~neutrinos of about 10~MeV in 10~s}.
+
+The abstract of the original Kamiokande-II paper~\cite{1987PhRvL..58.1490H} reads
+\begin{quote}
+  A neutrino burst was observed in the Kamiokande II detector on 23 February 1987,
+  7:35:35UT (+1 min) during a time interval of 13~sec. The signal consisted of
+  eleven electron events of energy 7.5 to 36 MeV, of which the first two point
+  back to the Large Magellanic Cloud with angles $18^\circ \pm 18^\circ$ and
+  $15^\circ \pm 27^\circ$.
+\end{quote}
+Brief and to the point, as papers used to be in the old days.
+
