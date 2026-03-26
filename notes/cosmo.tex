@@ -1,17 +1,6 @@
 \chapter{Cosmology 101}
 \label{chap:cosmo}
 
-% \begin{itemize}
-%   \item Intro: equivalence principle.
-%   \item Manifolds and all that.
-%   \item Describing the curvature.
-%   \item Stress-energy tensor.
-%   \item Einstein field equation and the Newtonian limit.
-%   \item The cosmological principle and the FLRW metric.
-%   \item Friedmann equations.
-%   \item Model universes
-% \end{itemize}
-
 
 \section{The equivalence principle}
 
@@ -101,7 +90,7 @@ along the lines of
 \end{align}
 except that we don't really know how to express curvature, nor the source term (we
 know what mass, energy and momentum means for a single particle, but how do we
-generalize that to our situation).
+generalize that to our situation?).
 
 
 
@@ -155,6 +144,30 @@ transforming in the same way
 \end{align}
 (Four-) velocity and (four-) momentum are typical examples, but there are countless
 vectors transforming in the same fashion.
+
+Let us work this out is a simple situation---the transformation from cartesian to
+polar coordinates in a two-dimensional Euclidean space
+\begin{align*}
+  x^\mu = (x, y) \rightarrow x^{\mu'} = (r, \theta) \quad
+\end{align*}
+which are defined by the following sets of equations
+\begin{align*}
+  \begin{cases}
+    x = r\cos\theta\\
+    y = r\sin\theta
+  \end{cases} \quad\text{and}\quad
+  \begin{cases}
+    r = \sqrt{x^2 + y^2}\\
+    \theta = \arctan\qty(\frac{y}{x})
+  \end{cases}.
+\end{align*}
+The differentials of the new coordinates read
+\begin{align*}
+  dr &= \pdv{r}{x}dx + \pdv{r}{y}dy =
+  \frac{x}{\sqrt{x^2 + y^2}}dx + \frac{y}{\sqrt{x^2 + y^2}}dy =
+  \cos\theta dx + \sin\theta dy\\
+  d\theta &= \pdv{\theta}{x}dx + \pdv{\theta}{y}dy =
+\end{align*}
 
 This is not to say that \emph{all} the objects with four components are the same.
 The gradient is a typical example of an object that, being the differential of
