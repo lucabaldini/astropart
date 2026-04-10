@@ -163,11 +163,15 @@ which are defined by the following sets of equations
 \end{align*}
 The differentials of the new coordinates read
 \begin{align*}
+  \begin{cases}
   dr &= \pdv{r}{x}dx + \pdv{r}{y}dy =
-  \frac{x}{\sqrt{x^2 + y^2}}dx + \frac{y}{\sqrt{x^2 + y^2}}dy =
+  \frac{xdx + ydy}{\sqrt{x^2 + y^2}} =
   \cos\theta dx + \sin\theta dy\\
   d\theta &= \pdv{\theta}{x}dx + \pdv{\theta}{y}dy =
+  \frac{-ydx + xdy}{x^2 + y^2} = \frac{-\sin\theta dx + \cos\theta dy}{r},
+  \end{cases}
 \end{align*}
+which is consistent with our geometrical intuition.
 
 This is not to say that \emph{all} the objects with four components are the same.
 The gradient is a typical example of an object that, being the differential of
