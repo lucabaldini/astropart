@@ -1844,11 +1844,11 @@ second derivative of the scale factor and the pressure disappear
     \frac{\ddot{a}}{a} = -\frac{4\pi G}{3c^2}(\edensity + 3\pressure)
     \quad\text{(acceleration equation)} \\[8pt]
     \left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G}{3c^2}\edensity - \frac{k c^2}{a^2}
-    \quad\text{(expansion rate equation)}
+    \quad\text{(expansion-rate equation)}
   \end{cases}
 \end{align}
 \todo{Cross-check that we got the units right in the curvature term of the
-expansion rate equation, and consistent with the prescription on $k$.}
+expansion-rate equation, and consistent with the prescription on $k$.}
 
 We note that the Friedman-Lemaitre equations have the fluid equation embedded, but
 we maintain it was instructive to derive the latter on its own ground, as this
@@ -1902,13 +1902,13 @@ if we take an empty universe to be one where the ovearall energy density
 is much smaller than the critical density.}, the simplest possible universe is one
 with nothing in it---no energy density, no pressure. In this case the the acceleration
 equation tells us that the scale factor $a(t)$ scales linearly with time, and the
-expansion rate equation
+expansion-rate equation
 \begin{align*}
   \dot{a}^2 = - k c^2
 \end{align*}
 allows for a static flat universe (where the FLRW metric reduces to the Minkowski
 metric of special relativity) and for a negatively curved universe\sidenote{Positively
-curved empty universes are clearly forbidden by the expansion rate equation} where
+curved empty universes are clearly forbidden by the expansion-rate equation} where
 the scale factor grows linearly with time
 \begin{align}
   a(t) = a_0 \frac{t}{t_0} = a_0 H_0 t.
@@ -2027,7 +2027,7 @@ curvature $k$. On the other hand we have a good grasp on the effect of all these
 separate components on the cosmic evolution, so the big question is: how do we
 characterize the energy content of the universe in terms of everything that we know?
 
-We shall start back from the expansion rate equation, which we rewrite in the slightly
+We shall start back from the expansion-rate equation, which we rewrite in the slightly
 different form\sidenote{Note we have temporarily tweaked the notation restoring the
 explicit time dependence of the various bits in order to underline the fact that the
 energy density, the scale factor and the Hubble parameter are not constant with time.
@@ -2038,69 +2038,109 @@ the current time.}
   %= \frac{8\pi G}{3c^4} \left[ \edensity_m(t) + \edensity_r(t)  +
   %\edensity_\Lambda(t) \right] - \frac{kc^2}{a^2(t)}.
 \end{align*}
-The energy density is best measured in terms of the critical density $\edensity_c$
-we have encountered in section~\ref{sec:hubble}, i.e., as what is generally
-known as the density parameter $\Omega$
+Next we are going to break down the overall energy density $\edensity$ into the
+various contributions that we have laid on the table, namely
+\begin{align*}
+  \edensity(t) = \edensityrad(t) + \edensitymat(t) + \edensitylam(t),
+\end{align*}
+with a meaning of the various terms that should be pretty much self-explaining:
+$\edensityrad(t)$ is the energy density of radiation, $\edensitymat(t)$
+that of non-relativistic matter, and $\edensitylam(t)$ that associated
+with the vacuum energy. The energy densities for each one of the components of the
+universe fluid are best measured in terms of the critical density $\edensitycrit$
+we have already encountered in section~\ref{sec:hubble}
+\begin{align*}
+  \edensitycrit(t) = \frac{3H^2(t) c^2}{8\pi G},
+\end{align*}
+that is, in the form of the so-called density parameters\sidenote{We shall also
+casually use the notation $\Omega$ for the overall density parameter of the
+universe, i.e.,
+\begin{align*}
+  \Omega(t) = \frac{\edensity(t)}{\edensitycrit(t)} =
+  \Omegarad(t) + \Omegamat(t) + \Omegalam(t).
+\end{align*}
+}
 \begin{align}
-  \Omega(t) = \frac{\edensity(t)}{\edensity_c(t)} \quad\text{with}\quad
-  \edensity_c(t) = \frac{3H^2(t) c^2}{8\pi G}.
+  \Omegarad(t) = \frac{\edensityrad(t)}{\edensitycrit(t)} \quad
+  \Omegamat(t) = \frac{\edensitymat(t)}{\edensitycrit(t)} \quad
+  \Omegalam(t) = \frac{\edensitylam(t)}{\edensitycrit(t)}.
 \end{align}
+You get it: the density parameters are unique for each component, the critical
+density at the denominator is the same for all of them, and everything, in general,
+varies with time.
 (So much for restoring the explicit time dependence in all the terms of the equations:
 you have a sense of what is constant and what varies with time.)
 
 Most importantly, the critical density has now a precise and easily understood meaning,
-as the expansion rate equation becomes
+as the expansion-rate equation becomes much more nice-looking when expressed in terms
+of the density parameters:
+\begin{align*}
+  H^2 = H^2 (\Omegarad + \Omegamat + \Omegalam) - \frac{k c^2}{a^2}.
+\end{align*}
+We can actually go one step further and make it even nicer by defining an additional
+density parameter associated with the curvature of the spacetime\sidenote{In many
+respects, this would seem to amount to adding a fourth component to the mix, and
+one whose energy density scales as $a^{-2}$. If you go back for a second to our
+discussion of the fluid equation, this would imply a peculiar equation of state
+\begin{align*}
+  \pressure = -\frac{1}{3} \edensity,
+\end{align*}
+but of course you should keep in mind that this is \emph{not} a real energy
+density, just a notational shortcut.}
 \begin{align}
-  H^2 = H^2 \Omega - \frac{k c^2}{a^2}\quad\text{or}\quad
-  \Omega - 1 = \frac{k c^2}{H^2 a^2} = -\Omegak,
+  \Omegak = -\frac{kc^2}{H^2 a^2},
 \end{align}
-(we have implicitly defined a density parameter $\Omegak$ associated to the curvature
-of the spacetime) which implies that \emph{the sign of the curvature $k$ is determined
-by whether the overall density parameter of the universe is smaller, equal or greater
-than the critical density}. Note that, since the right-hand side of the expression cannot
-change sign with time\sidenote{If your are tempted to entertain the notion of a
-curvature $k$ that goes from positive to negative of vice-versa, try explaining
-how you would go about turning a 2-shpere into a pseudoshpere in the context of
-a perfectly homogeneous and isotropic expansion.}, so does the left-hand side, which
-implies that if the density parameter of the universe is below (above) the critical
-value at any given time, then it remains below (above) it at all times. If the
-density parameter is exactly equal to the critical value at any given time, that
-it does not change across the cosmic time.
-
-If we now decompose the overall density parameter into the various contributions
-due to matter, radiation and the cosmological constant, the conservation of energy
-on a cosmic scale can be expressed as
+using which the term $H^2$ cancels altogether and the expansion-rate equation
+expresses the conservation of energy on a cosmic scale in its maximally compact
+form
 \begin{align}\label{eq:omega_sum}
   \Omegamat + \Omegarad + \Omegalam + \Omegak = 1.
 \end{align}
-Keep in mind that all the terms here change with time (as does the critical density)
-and~\eqref{eq:omega_sum} is valid at all times.
-We note that in this new language the deceleration parameter $q$ defined in
-equation~\eqref{eq:deceleration_param_alt}\sidenote{We have used the equations
-of state for the three components of the universe fluid.}
+
+Let us stop for a second and look at this. One trivial way to rewrite it is
+\begin{align*}
+  \Omegak = 1 - \Omegamat + \Omegarad + \Omegalam = 1 - \Omega,
+\end{align*}
+which means that \emph{the curvature parameter $k \in \{-1, 0, 1\}$ is determined
+by whether the overall density parameter of the universe is smaller, equal or
+larger than the critical density}. An equivalent way to state this is by
+noting that, since $k$ cannot change sign with time\sidenote{If your are tempted
+to entertain the notion of a curvature $k$ that goes from positive to negative
+of vice-versa, try explaining how you would go about turning a 2-shpere into a
+pseudoshpere in the context of a perfectly homogeneous and isotropic expansion,
+with no cuts or singularities.}, so does the right-hand side of the equation,
+which implies that if the density parameter of the universe is below (above)
+the critical value at any given time, then it remains below (above) it at all times.
+If the density parameter is exactly equal to the critical value at any given time,
+that does not change across the cosmic time.
+
+Since we are at it, it is worth expressing our old friend the deceleration
+parameter $q$ in this new language
 \begin{align*}
   q = \frac{4\pi G}{3H^2c^2} (\edensity + 3\pressure) =
-  \frac{1}{2 \edensity_c} (\edensity + 3\pressure) =
-  \frac{1}{2 \edensity_c} (\edensity_m + 2 \edensity_r - 2\edensity_\Lambda)
+  \frac{(\edensity + 3\pressure)}{2 \edensitycrit} =
+  %\frac{1}{2 \edensitycrit} \sum_i \edensity_i (1 + 3w_i) =
+  \frac{1}{2} \sum_i \Omega_i (1 + 3w_i),
 \end{align*}
-can be rewritten in terms of the density parameters as
+where the index $i$ runs over radiation, matter and vacuum energy. By simply
+plugging in the equations of state for the three components of our fluid we get
 \begin{align}
-  q = \frac{1}{2}\Omegamat  + \Omegarad - \Omegalam.
+  q = \Omegarad + \frac{1}{2}\Omegamat - \Omegalam.
 \end{align}
+Keep this in mind because we shall make use of this in a little while.
 
 Let us now turn to the universe in its current state. We shall denote all the
 time-dependent quantities, when measured at the current time, with a subscript
 zero---e.g., $\Omegamatzero$ represents the current value of the matter density
 parameter, $a_0$ the current value of the scale parameter and so on and so forth.
-If we divide the Friedman equation by the \emph{current} value $H_0$ of the Hubble
-parameter (also known as the Hubble constant), we can recast it in terms of the
-relevant quantities measured \emph{today}. Take the radiation component, for
-instance\sidenote{All you have to keep in mind is how the energy density scales
-with the scale factor, i.e.,
+The fundamental question that we are trying to answer is: is there any sensible
+way to recast the expansion-rate equation in its form~\eqref{eq:omega_sum}
+only in terms of the quantities measured today? Luckily, yes. Take for instance
+the radiation component: by using the known scaling
 \begin{align*}
-  \edensity_r = \edensity_{r,0} \left(\frac{a_0}{a}\right)^4.
+  \edensityrad = \edensityradzero \left(\frac{a_0}{a}\right)^4.
 \end{align*}
-}
+we can express the corresponding density parameter as
 \begin{align*}
   \Omegarad = \frac{\edensity_r}{\edensity_c} =
   \frac{\edensity_{r,0}}{\edensity_c} \left(\frac{a_0}{a}\right)^4 =
@@ -2110,10 +2150,7 @@ with the scale factor, i.e.,
   \Omegaradzero \left(\frac{a_0}{a}\right)^4 \frac{H_0^2}{H^2}.
 \end{align*}
 This can be done in exactly the same fashion for all the components, each one
-with their own peculiar scaling, which yields\sidenote{Note we have re-ordered the
-terms according to the power of $a$ of their characteristic scalings. Also keep
-in ming that the four density parameters are not independent, as they must satisfy
-the sum rule given by the conservation of the energy.}
+with their own peculiar scaling, which yields
 \begin{align}\label{eq:friedman_today}
   \left( \frac{H}{H_0} \right)^2 =
   \Omegaradzero \left(\frac{a_0}{a}\right)^4 +
@@ -2121,9 +2158,13 @@ the sum rule given by the conservation of the energy.}
   \Omegak \left(\frac{a_0}{a}\right)^2 +
   \Omegalamzero.
 \end{align}
-This is obviously very useful, as if we are somehow able to measure all the relevant
-cosmological parameters today, then we have a good grasp on the entire evolution
-of the universe, including its past and ultimate fate.
+Now this is something. We have an equation for the scale factor $a(t)$ and
+its time derivative $\dot{a}(t)$---through the Hubble parameter $H(t)$---that
+only involves the density parameters \emph{measured today}. We shall come
+back to it in a second, but this should definitely struck you as something
+potentially useful.
+
+
 
 Now the Friedman equation in the form~\eqref{eq:friedman_today} has too many
 parameters to be able to visualize it in a sensible fashion. Without spoiling too
