@@ -1,17 +1,6 @@
 \chapter{Cosmology 101}
 \label{chap:cosmo}
 
-% \begin{itemize}
-%   \item Intro: equivalence principle.
-%   \item Manifolds and all that.
-%   \item Describing the curvature.
-%   \item Stress-energy tensor.
-%   \item Einstein field equation and the Newtonian limit.
-%   \item The cosmological principle and the FLRW metric.
-%   \item Friedmann equations.
-%   \item Model universes
-% \end{itemize}
-
 
 \section{The equivalence principle}
 
@@ -2086,22 +2075,45 @@ on a cosmic scale can be expressed as
 \end{align}
 Keep in mind that all the terms here change with time (as does the critical density)
 and~\eqref{eq:omega_sum} is valid at all times.
-We note that in this new language the deceleration parameter $q$ defines in
-equation~\eqref{eq:deceleration_param_alt} can be rewritten as
+We note that in this new language the deceleration parameter $q$ defined in
+equation~\eqref{eq:deceleration_param_alt}\sidenote{We have used the equations
+of state for the three components of the universe fluid.}
+\begin{align*}
+  q = \frac{4\pi G}{3H^2c^2} (\edensity + 3\pressure) =
+  \frac{1}{2 \edensity_c} (\edensity + 3\pressure) =
+  \frac{1}{2 \edensity_c} (\edensity_m + 2 \edensity_r - 2\edensity_\Lambda)
+\end{align*}
+can be rewritten in terms of the density parameters as
 \begin{align}
-  q = \Omegarad + \frac{1}{2}\Omegamat - \Omegalam.
+  q = \frac{1}{2}\Omegamat  + \Omegarad - \Omegalam.
 \end{align}
 
-Let us now turn to the universe in its current state. We shall denote all the time-dependent
-quantities, when measured at the current time, with a subscript zero---e.g., $\Omegamatzero$
-represents the current value of the matter density parameter, $a_0$ the current value
-of the scale parameter and so on and so forth. If we divide the Friedman equation
-by the \emph{current} value $H_0$ of the Hubble parameter (also known as the Hubble
-constant), we can recast it in terms of the relevant quantities measured
-\emph{today}\sidenote{Note we have re-ordered the terms according to the power of
-$a$ of their characteristic scalings. Also keep in ming that the four density
-parameters are not independent, as they must satisfly the sum rule given by the
-conservation of the energy.}
+Let us now turn to the universe in its current state. We shall denote all the
+time-dependent quantities, when measured at the current time, with a subscript
+zero---e.g., $\Omegamatzero$ represents the current value of the matter density
+parameter, $a_0$ the current value of the scale parameter and so on and so forth.
+If we divide the Friedman equation by the \emph{current} value $H_0$ of the Hubble
+parameter (also known as the Hubble constant), we can recast it in terms of the
+relevant quantities measured \emph{today}. Take the radiation component, for
+instance\sidenote{All you have to keep in mind is how the energy density scales
+with the scale factor, i.e.,
+\begin{align*}
+  \edensity_r = \edensity_{r,0} \left(\frac{a_0}{a}\right)^4.
+\end{align*}
+}
+\begin{align*}
+  \Omegarad = \frac{\edensity_r}{\edensity_c} =
+  \frac{\edensity_{r,0}}{\edensity_c} \left(\frac{a_0}{a}\right)^4 =
+  \overbrace{\frac{\edensity_{r,0}}{\edensity_{c,0}}}^{\Omegaradzero}
+  \underbrace{\frac{\edensity_{c,0}}{\edensity_c}}_{\nicefrac{H_0^2}{H^2}}
+  \left(\frac{a_0}{a}\right)^4 =
+  \Omegaradzero \left(\frac{a_0}{a}\right)^4 \frac{H_0^2}{H^2}.
+\end{align*}
+This can be done in exactly the same fashion for all the components, each one
+with their own peculiar scaling, which yields\sidenote{Note we have re-ordered the
+terms according to the power of $a$ of their characteristic scalings. Also keep
+in ming that the four density parameters are not independent, as they must satisfy
+the sum rule given by the conservation of the energy.}
 \begin{align}\label{eq:friedman_today}
   \left( \frac{H}{H_0} \right)^2 =
   \Omegaradzero \left(\frac{a_0}{a}\right)^4 +
@@ -2207,7 +2219,7 @@ where
     \Omegakzero (1 + z)^2 + \Omegalamzero}
 \end{align}
 Note this expresses the the Hubble parameter for a source at redshift $z$ in terms
-of the density parameters of the universe \emph{measured today} (and teh Hubble
+of the density parameters of the universe \emph{measured today} (and the Hubble
 constant, of course).
 
 What might sound intuitive, and we want now to express in a quantitative fashion, is
