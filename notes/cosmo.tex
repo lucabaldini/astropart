@@ -2151,7 +2151,7 @@ we can express the corresponding density parameter as
 \end{align*}
 This can be done in exactly the same fashion for all the components, each one
 with their own peculiar scaling, which yields
-\begin{align}\label{eq:friedman_today}
+\begin{align}\label{eq:expansion_rate_today}
   \left( \frac{H}{H_0} \right)^2 =
   \Omegaradzero \left(\frac{a_0}{a}\right)^4 +
   \Omegamatzero \left(\frac{a_0}{a}\right)^3 +
@@ -2165,13 +2165,125 @@ back to it in a second, but this should definitely struck you as something
 potentially useful.
 
 
+\subsection{The redshift scale}
 
-Now the Friedman equation in the form~\eqref{eq:friedman_today} has too many
-parameters to be able to visualize it in a sensible fashion. Without spoiling too
-much of the end of the story, we note that, among the density parameters there is
-one that we measure very well, and that is $\Omegaradzero \approx 10^{-5}$ from the
-temperature of the CMB. When we first calculated it, this figure came with no
-particular significance attached to it, but now we can see that it implies that
+Before we start discussing how we gauge the values of the density parameters of
+the universe we happen to live in, we shall take a moment to recast the
+expansion-rate equation~\eqref{eq:expansion_rate_today} in a slightly different
+form. Noting that it contains powers of $\nicefrac{a0}{a}$, and recalling
+the very meaning of the redshift
+\begin{align*}
+  1 + z = \frac{a_0}{a},
+\end{align*}
+we have immediately
+\begin{align*}
+  \left( \frac{H}{H_0} \right)^2 =
+  \Omegaradzero \left(1 + z\right)^4 +
+  \Omegamatzero \left(1 + z\right)^3 +
+  \Omegak \left(1 + z\right)^2 +
+  \Omegalamzero \coloneq E^2(z),
+\end{align*}
+where we have implicitly defined the function
+\begin{align}
+  E(z) = \sqrt{\Omegaradzero (1 + z)^4 + \Omegamatzero (1 + z)^3 +
+    \Omegakzero (1 + z)^2 + \Omegalamzero}.
+\end{align}
+This allows to rewrite the Hubble parameter (that up to this point was a
+function of the cosmic time through the time dependence of the scale factor
+$a(t)$) as a function of the redshift $z$
+\begin{align}
+  H(z) = H_0 E(z),
+\end{align}
+(again, in terms of the density parameters measured today).
+
+What might sound intuitive, and we want now to express in a quantitative fashion, is
+that time and redshift effectively act as two interchangeable cosmological evolution
+scales, the key being the definition of the Hubble parameter
+\begin{align*}
+  H = \frac{\dot{a}}{a}
+  \quad\text{or}\quad
+  \dv{a}{t} = aH.
+\end{align*}
+We want to relate the differential of the cosmic time to that of the redshift and,
+as usual, we shall do that by being casual in manipulating differentials
+\begin{align*}
+  dt = \frac{1}{aH} da = \frac{1}{aH}\dv{a}{z} dz.
+\end{align*}
+The derivative of the scale factor with respect to the redshift is easily
+calculated by inverting the definition of the redshift itself\sidenote{All we need
+is to invert the expression for the redshift
+\begin{align*}
+  1 + z = \frac{a_0}{a} \quad\text{into}\quad
+  a = \frac{a_0}{(1 + z)}
+\end{align*}
+which yields
+\begin{align*}
+  \dv{a}{z} = -\frac{a_0}{(1 + z)^2}.
+\end{align*}
+}
+\begin{align*}
+  dt = -\frac{a_0}{a} \frac{dz}{(1 + z)^2 H} =
+  -\frac{dz}{(1 + z) H} = -\frac{dz}{(1 + z) H_0 E(z)}
+\end{align*}
+
+This can be used in a number of ways, but for our purposes it allows
+immediately to calculate the time elapsed between the moment $t$ when a photon
+was emitted by a distant source at redshift $z$ and the current time $t_0$
+when we receive the photon\sidenote{Note we re-absorb the minus sign by swapping
+the bounds for the integration when changing variable from $t$ to $z$.}
+\begin{align}\label{eq:lookback_time_z}
+  t_L(z) = \int_t^{t_0} dt' =
+  \frac{1}{H_0} \int_0^z \frac{dz'}{(1 + z') E(z')}
+  \quad\text{(lookback time)}
+\end{align}
+This is customarily referred to as the \emph{lookback time}, and, formally,
+can be defined as the difference between the age of the universe now and the
+age of the universe when the light was emitted\sidenote{It should be noted, again,
+that this is expressed entirely in terms of quantities (the density parameters)
+measured at the current time.}. It goes without saying that in the general case
+this integral needs to be evaluated numerically, but the truth is, there is
+nothing fundamentally more complicated here than in the simple one-component
+universes we have glanced through in the previous section.
+
+Incidentally, the age of the universe today is readily found integrating the lookback
+time all the way to $\infty$
+\begin{align}
+  t_0 = \frac{1}{H_0} \int_0^\infty \frac{dz}{(1 + z) E(z)}
+  \quad\text{(age of the universe)}.
+\end{align}
+Complicated as this might seem, you can check for yourself that this reduces to the
+expressions we have calculated explicitly for the toy, single-component universes.
+
+
+\section{Dissecting the universe}
+
+Now that we have a good grasp on the general features of the cosmological evolution,
+and a way to express cosmic history based on the cosmological parameters measured
+\emph{today}, we turn to the next basic question---that is: how do we go about
+constraining the energy content of the universe we happen to live in?
+
+The Friedman equation in the form~\eqref{eq:expansion_rate_today} has too many
+density parameters to be able to visualize it in a sensible fashion. Even if
+we use the sum rule~\eqref{eq:omega_sum} to eliminate, e.g., $\Omegak$, we are
+still left with a three-dimensional phase space. Too much. But there is one
+piece of information that we know off-hand: if we assume for a second that the
+energy density of the radiation today is dominated by the CMB\sidenote{This is
+actually not true, as the presence of the cosmic microwave background implies the
+existence of a cosmic neutrino background, which, as we shall see in due time,
+amounts to a good 40\% of the radiation energy density today. But since we are
+off only by a factor of 2, this is irrelevant for our immediate purposes, and we
+can continue pretending we didn't know that.}, then everything
+can be calculated in terms of the current temperature $T$ of the CMB, which
+is measured to an astounding level of precision\sidenote{Here $\sigma$ is the
+Stefan-Boltzmann constant---have a look at appendix~\ref{chap:qstat} if you
+need a quick refresher.} and the Hubble constant
+\begin{align*}
+  \edensityradzero = \frac{4\sigma}{c} T^4 \quad\text{and}\quad
+  \Omegaradzero = \frac{\edensityradzero}{\edensitycritzero} =
+  \frac{32\pi G \sigma T^4}{3 H_0^2 c^3} \approx 10^{-5}.
+\end{align*}
+
+ but now we can see that it implies that
 \emph{radiation is basically irrelevant in the contemporary universe}\sidenote{You
 will also note that radiation has the largest scaling power with the scale factor,
 so that fact that it is irrelevant today does not mean that it has been irrelevant
@@ -2246,87 +2358,6 @@ figure~\ref{fig:cosmo_map}.
 
 
 
-\subsection{The redshift scale}
-
-So much for the zoology of the universes.
-If we recall the very meaning of the cosmological redshift $z$ there is yet another
-way we can recast the Friedmann equation, that is
-\begin{align}
-  H(z) = H_0 E(z),
-\end{align}
-where
-\begin{align}
-  E(z) = \sqrt{\Omegaradzero (1 + z)^4 + \Omegamatzero (1 + z)^3 +
-    \Omegakzero (1 + z)^2 + \Omegalamzero}
-\end{align}
-Note this expresses the the Hubble parameter for a source at redshift $z$ in terms
-of the density parameters of the universe \emph{measured today} (and the Hubble
-constant, of course).
-
-What might sound intuitive, and we want now to express in a quantitative fashion, is
-that time and redshift effectively act as two interchangeable cosmological evolution
-scales, the key being the definition of the Hubble parameter
-\begin{align*}
-  H = \frac{\dot{a}}{a}
-  \quad\text{or}\quad
-  \dv{a}{t} = aH.
-\end{align*}
-Rearranging the last term, and using the definition of the redshift in terms of the
-scale factor\sidenote{We need to invert the expression for the redshift
-\begin{align*}
-  1 + z = \frac{a_0}{a}
-\end{align*}
-which yields
-\begin{align*}
-  a = \frac{a_0}{(1 + z)}
-  \quad\text{and}\quad
-  \dv{a}{z} = -\frac{a_0}{(1 + z)^2}.
-\end{align*}
-(Note we re-absorb the minus sign by swapping the bounds for the integration.)}
-\begin{align*}
-  dt = \frac{1}{aH} da = \frac{1}{aH} \dv{a}{z} dz =
-  -\frac{dz}{(1 + z) H} = -\frac{dz}{(1 + z) H_0 E(z)}
-\end{align*}
-
-\todo{Put the lookback time first, and clarify if this is general or assumes a flat space.}
-This can be used in a number of ways. For one thing, we can derive an explicit
-expression for for the comoving distance $\chi$ to a source at redshift $z$ in terms
-of an integral over the redshift
-\begin{align}\label{eq:comoving_distance_z}
-  \chi(z) = c  \int_t^{t_0} \frac{dt'}{a(t')} =
-  c   \int_0^z \frac{\cancel{(1 + z')}}{a_0} \frac{dz'}{\cancel{(1 + z')} H_0 E(z')} =
-  \frac{c}{a_0 H_0} \int_0^z \frac{dz'}{E(z')}
-\end{align}\label{eq:proper_distance_z}
-from which we get the proper distance $d_p$ for free
-\begin{align}
-  d_p(z) = c a(z) \chi(z) = \frac{c}{H_0 (1 + z)} \int_0^z \frac{dz'}{E(z')}.
-\end{align}
-
-We can also calculate the \emph{lookback time}, or the difference between the
-age of the universe now and the age of the universe at the time a given photon
-was emitted by a source at a given redshift $z$\sidenote{Note this is expressed
-only in terms of quantities measured at the current time.}
-\begin{align}\label{eq:lookback_time_z}
-  t_L(z) = \int_t^{t_0} dt' =
-  \frac{1}{H_0} \int_0^z \frac{dz'}{(1 + z') E(z')}
-  \quad\text{(lookback time)}
-\end{align}
-This is looking dauntingly complicated, but the truth is, there is nothing fundamentally
-more complicated here than in the simple one-component universes we have glanced
-through in the previous section. Sure enough, in the general case it is impossible
-to derive expression for the lookback time in closed form, but we can always resort
-to calculate the proper integrals numerically.
-
-Incidentally, the age of the universe is readily found integrating the lookback
-time all the way to $\infty$
-\begin{align}
-  t_0 = \frac{1}{H_0} \int_0^\infty \frac{dz}{(1 + z) E(z)}
-  \quad\text{(age of the universe)}.
-\end{align}
-Complicated as this might seem, you can check for yourself that this reduces to the
-expressions we have calculated explicitly for the toy, single-component universes
-we have examined in the previous section.
-
 
 
 \subsection{The luminosity distance}
@@ -2399,12 +2430,8 @@ a second.
 
 
 
-\section{Dissecting the universe}
 
-Now that we have a good grasp on the general features of the cosmological evolution,
-and a way to express cosmic history based on the cosmological parameters measured
-\emph{today}, we turn to the next basic question---that is: how do we go about
-constraining the energy content of the universe we happen to live in?
+
 
 We know for sure that matter is present in our Universe, in the form, e.g., of dust,
 stars and galaxies, a rough inventory of which yields an average density of the
