@@ -2263,9 +2263,9 @@ and a way to express cosmic history based on the cosmological parameters measure
 constraining the energy content of the universe we happen to live in?
 
 The Friedman equation in the form~\eqref{eq:expansion_rate_today} has too many
-density parameters to be able to visualize it in a sensible fashion. Even if
-we use the sum rule~\eqref{eq:omega_sum} to eliminate, e.g., $\Omegak$, we are
-still left with a three-dimensional phase space. Too much. But there is one
+density parameters to be able to visualize it in a sensible fashion. Even if we
+use the sum rule~\eqref{eq:omega_sum} to eliminate, e.g., $\Omegak$, we are still
+left with a three-dimensional phase space--too much to handle. But there is one
 piece of information that we know off-hand: if we assume for a second that the
 energy density of the radiation today is dominated by the CMB\sidenote{This is
 actually not true, as the presence of the cosmic microwave background implies the
@@ -2282,17 +2282,21 @@ need a quick refresher.} and the Hubble constant
   \Omegaradzero = \frac{\edensityradzero}{\edensitycritzero} =
   \frac{32\pi G \sigma T^4}{3 H_0^2 c^3} \approx 10^{-5}.
 \end{align*}
-
- but now we can see that it implies that
-\emph{radiation is basically irrelevant in the contemporary universe}\sidenote{You
-will also note that radiation has the largest scaling power with the scale factor,
-so that fact that it is irrelevant today does not mean that it has been irrelevant
+This is interesting: we have (re-) discovered that \emph{radiation is basically
+irrelevant in the contemporary universe}\sidenote{And, for the billionth time,
+since radiation has the largest scaling power with the scale factor,
+the fact that it is irrelevant today does not mean that it has been irrelevant
 across the entire cosmic evolution---and in fact there must have been a time
 when the universe was radiation-dominated, but we shall come back to this later.}.
-If that is the case, we can pretend that $\Omegaradzero = 0$; if, in addition to
-this, we use the fact that $\Omegak$ is fixed by the other density parameters from
-the sum rule~\eqref{eq:omega_sum}, then we are effectively navigating into a
-two-parameter space, and that is much easier to explore.
+
+Now we start seeing a possible course of action toward a simple classification
+of the possible universes: we shall provisionally work under the assumption that
+\begin{align*}
+  \Omegaradzero = 0 \quad\text{and}\quad
+  \Omegakzero = 1 - \Omegamatzero - \Omegalamzero
+\end{align*}
+so that we are effectively navigating into a two-parameter space, and that is
+much easier to explore.
 
 \begin{figure}[!htbp]
   \input{figures/cosmo_map.pgf}
