@@ -1847,122 +1847,164 @@ second derivative of the scale factor and the pressure disappear
     \quad\text{(expansion-rate equation)}
   \end{cases}
 \end{align}
-\todo{Cross-check that we got the units right in the curvature term of the
-expansion-rate equation, and consistent with the prescription on $k$.}
 
 We note that the Friedman-Lemaitre equations have the fluid equation embedded, but
 we maintain it was instructive to derive the latter on its own ground, as this
 clarify that all it depends on is the FLRW metric, and not the Einstein equation.
 
-It is interesting to note that, while the FL equations determine the evolution of
-the scale factor, if we limit ourselves to the immediate vicinity of the current
-time $t_0$ we can expand $a(t)$ in a Taylor series
+
+\subsection{The deceleration parameter}
+
+While the Friedman-Lemaitre equations fully determine the evolution of the scale
+factor with cosmic time, if we limit ourselves to the immediate vicinity of the
+current time $t_0$ we can expand $a(t)$ in a Taylor series\sidenote{Here and in
+the following we shall extend to all the relevant quantities the uses of a
+subscript $0$ to indicate their value at the current time, e.g.,
 \begin{align*}
-  a(t) \approx a(t_0) + \dot{a}(t_0) (t - t_0) + \frac{1}{2}\ddot{a}(t_0) (t - t_0)^2,
+  a_0 = a(t_0),\quad \dot{a}_0 = \dot{a}(t_0),\quad \ddot{a}_0 = \ddot{a}(t_0).
 \end{align*}
-which, dividing both hands by the scale factor at the current time $a_0$ becomes
+}
 \begin{align*}
-  \frac{a(t)}{a_0} \approx 1 + \frac{\dot{a}(t_0)}{a_0} (t - t_0) +
-  \frac{1}{2}\frac{\ddot{a}(t_0)}{a_0} (t - t_0)^2.
+  a(t) \approx a_0 + \dot{a}_0 (t - t_0) + \frac{1}{2}\ddot{a}_0 (t - t_0)^2,
 \end{align*}
-In the liner term of this expression we recognize the Hubble parameter
+which, dividing both hands by $a_0$ becomes
 \begin{align*}
+  \frac{a(t)}{a_0} \approx 1 + \frac{\dot{a}_0}{a_0} (t - t_0) +
+  \frac{1}{2}\frac{\ddot{a}_0}{a_0} (t - t_0)^2.
+\end{align*}
+In the linear term of this expression we recognize the Hubble parameter
+\begin{align}\label{eq:hubble_param}
   H = \frac{\dot{a}}{a}\quad\text{(Hubble parameter)}
-\end{align*}
+\end{align}
 evaluated at the current time. If we define the \emph{deceleration parameter}\sidenote{The
 deceleration parameter is a convenient measure of the rate at which the Hubble constant
 changes. Note the negative sign in its definition, coming from a theretical prejudice
-from back in the 1950s, when the quantity was first introduced.}
+from back in the 1950s, when the quantity was first introduced. More about this
+in a second.}
 \begin{align}\label{eq:deceleration_param}
-  q = -\frac{a \ddot{a}}{\dot{a}^2} = -\frac{\ddot{a}}{a H^2} \quad\text{(deceleration parameter)}
+  q = -\frac{\ddot{a}}{a H^2} = -\frac{a \ddot{a}}{\dot{a}^2} \quad\text{(deceleration parameter)}
 \end{align}
 we can rewrite our Taylor expansion in the standard form
 \begin{align*}
-  \frac{a(t)}{a_0} \approx 1 + H_0 (t - t_0) - \frac{1}{2} q_0 H_0^2 (t - t_0)^2.
+  \frac{a(t)}{a_0} \approx 1 + H_0 (t - t_0) - \frac{1}{2} q_0 H_0^2 (t - t_0)^2,
 \end{align*}
+which is the basis for recasting the old Hubble law in our new language.
 As we shall see, the deceleration parameter is one of the most important handles
 when it comes to measuring the cosmological parameters and the energy content of
-the universe. We note that, using the acceleration equation, we can write the acceleration
-parameter as
+the universe.
+
+Using the acceleration equation, we can write the acceleration parameter in terms
+of the fundamental quantities of our model of the universe
 \begin{align}\label{eq:deceleration_param_alt}
   q = \frac{4 \pi G}{3 H^2 c^2}(\edensity + 3\pressure).
 \end{align}
-
+If we now limit ourselves to a single component of the fluid universe, among our
+inventory of three, this can be further simplified by plugging in the relevant
+equation of state
+\begin{align*}
+  q = \frac{4 \pi G}{3 H^2 c^2}\edensity (1 + 3w),
+\end{align*}
+which makes it immediately clear that $q$ is positive (i.e., the expansion of the
+universe decelerates with cosmic time) if $w > -\nicefrac{1}{3}$, that is, for
+radiation and matter. This is the very reason why $q$ bears a minus sign in its
+definition: ordinary matter and radiation tend to decelerate the expansion of the
+universe, and at the time all this formalism was developed it only seemed natural
+that the effect of gravity on large scales would be to slow down the expansion.
+The peculiar equation of state of the vacuum energy, on the other hand, is such
+that a universe dominated by the cosmological constant would have a negative
+deceleration parameter, that is, its expansion would accelerate with cosmic time.
+The time has now come to look at all of this in more detail.
 
 
 \section{Cosmic evolution}
 
 The Friedman-Lemaitre equations, in either form (or any linear combination, for
 what matters), encode the evolution of the scale parameter $a(t)$ of the universe
-with cosmic time. Silly as this might seem\sidenote{Maybe this will look less silly
-if we take an empty universe to be one where the ovearall energy density
-\begin{align*}
-  \edensity \ll \edensity_c
-\end{align*}
-is much smaller than the critical density.}, the simplest possible universe is one
-with nothing in it---no energy density, no pressure. In this case the the acceleration
-equation tells us that the scale factor $a(t)$ scales linearly with time, and the
-expansion-rate equation
-\begin{align*}
-  \dot{a}^2 = - k c^2
-\end{align*}
-allows for a static flat universe (where the FLRW metric reduces to the Minkowski
-metric of special relativity) and for a negatively curved universe\sidenote{Positively
-curved empty universes are clearly forbidden by the expansion-rate equation} where
-the scale factor grows linearly with time
-\begin{align}
-  a(t) = a_0 \frac{t}{t_0} = a_0 H_0 t.
-\end{align}
-It is easy to see that in this fictional model the age of the universe $t_0$ is the
-Hubble time $H_0^{-1}$.
-
+with cosmic time.
 
 
 \subsection{Single-component universes}
 
-\todo{Add that we are implicitly setting $k=0$, and in fact we might start from
-the other Friedman equation to make it clear.}
-Empty universes aside, and equipped with the acceleration equation, the fluid equation,
-and our general (linear) equation of state we can start looking at how the scale parameter
-$a(t)$ evolves with time in a few simple, single-component scenarios\sidenote{By
-single-component we mean a setting where the universe is not a mixture of fluids
-with different equations of state.} before we turn our eyes to the more complex
-universe we happen to live in. The basic reasoning is as follows: we plug the equation
-of state into the acceleration equation
+Silly as this might seem\sidenote{Maybe this will look less silly if we take an
+empty universe to be one where the ovearall energy density is small enough in
+some sense that we shal make more precise in a second.}, the simplest possible
+universe is one with nothing in it---no energy density, no pressure. In this
+the expansion-rate equation
 \begin{align*}
-  \frac{\ddot{a}}{a} =
-  -\frac{4\pi G}{3c^2}(\edensity + 3\pressure) =
-  -\frac{4\pi G}{3c^2} (1 + 3w) \edensity
-  \quad\text{or}\quad
-  \frac{\ddot{a}}{a} \propto \edensity
+  \dot{a}^2 = - k c^2
 \end{align*}
-and then use the scaling of the energy density we have derived using the fluid
-equation
+allows for a static flat universe (where the FLRW metric reduces to the Minkowski
+metric of special relativity) and for a negatively curved universe where
+the scale factor grows linearly with time, which resembles the na\"ive picture
+of an expansions at constant speed that we imagined when we fists discussed the
+Hubble law in section~\ref{sec:hubble-law}. Positively curved empty universes
+are not allowed, as they would require $\dot{a}^2 < 0$.
+
+The next simplest things that we can consider are single-component
+universes---special settings where the universe is not a mixture of fluids
+with different equations of state, but is dominated by a single component,
+be it radiation, non-relativistic matter, or vacuum energy. The discussion is
+particularly easy if we restrict ourselves for a second to flat universes, in which
+case the expansion-rate equation reduces to\sidenote{You can make the exact same
+argument by starting from acceleration equation and expressing the pressure
+in terms of the energy density using the relevant equations of state. Since the
+acceleration equation does not depend on the curvature, you might wonder where
+our additional assumption of flatness comes into play. Well, that is a second-order
+differential equation, and you got an additial integration constant that you have
+to fix---that is where the curvature enters. We maintain that starting from the
+expansion-rate equation is the clearest and most straightforward approach.}
 \begin{align*}
-  \frac{\ddot{a}}{a} \propto a^{-3(1 + w)}
-  \quad \text{or} \quad \ddot{a} \propto a^{-(2 + 3w)}.
+  \left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G}{3c^2}\edensity.
+\end{align*}
+But we know how the energy density scales with the scale factor in all the cases
+of interest, and that gives us
+\begin{align*}
+  \left(\frac{\dot{a}}{a}\right)^2 \propto
+   \begin{cases}
+    a^{-4} & \quad \text{radiation}\\
+    a^{-3} & \quad \text{matter}\\
+    \text{const.} & \quad \Lambda
+  \end{cases} \quad \text{or}\quad
+  \dot{a} \propto
+  \begin{cases}
+    a^{-1} & \quad \text{radiation}\\
+    a^{-\frac{1}{2}} & \quad \text{matter}\\
+    a & \quad \Lambda.
+  \end{cases}
 \end{align*}
 
-This is a simple differential equation for $a(t)$, whose solution can be in most
-cases searched for in the form of a power law $a(t) \propto t^\beta$. Plugging this
-ansatz in the equation yields
+This is a simple differential equation for $a(t)$ with a general form\sidenote{Note
+this also cover our fellow empty universe, where $\gamma = 0$.}
 \begin{align*}
-  t^{\beta - 2} \propto t^{-(2 + 3w)\beta}
+  \dot{a} \propto a^\gamma
+\end{align*}
+whose solution can be in most
+cases searched for in the form of a power law $a(t) \propto t^\beta$. Plugging this
+ansatz in the equation and requiring that both sides scale with the same power of
+$t$ yields
+\begin{align*}
+  \beta - 1 = \gamma\beta
   \quad \text{or} \quad
-  \beta = \frac{2}{3(1 + w)} =
+  \beta = \frac{1}{1 - \gamma} =
   \begin{cases}
-    \nicefrac{2}{3} \quad\text{(matter)}\\
-    \nicefrac{1}{2}\quad\text{(radiation)}
+    1 & \quad\text{empty}\\
+    \nicefrac{1}{2} & \quad\text{radiation}\\
+    \nicefrac{2}{3} & \quad\text{matter}\\
+    \infty \text{ (?)} & \quad\Lambda
   \end{cases}.
 \end{align*}
-The formula breaks down for the cosmological constant, in which case the solution
-is not a power law, and we have to go back to the original equation, which for
-$w = -1$ reads\todo{Verify the units and make sure we're not missing a $c^2$.}
+The formula clearly breaks down for the cosmological constant, in which case
+we have to go back to the original equation  and solve it directly
 \begin{align*}
-  \frac{\ddot{a}}{a} = \frac{8\pi G}{3c^2} \edensity_\Lambda = \frac{\Lambda}{3}
-  \quad \text{and} \quad
-  a \propto \exp\left(\sqrt{\frac{\Lambda}{3}} t\right).
+  \left(\frac{\dot{a}}{a}\right)^2 = \frac{\Lambda}{3}
+  \quad \text{or} \quad
+  \dot{a} = \sqrt{\frac{\Lambda}{3}} a,
 \end{align*}
+whose solution is clearly not a power law, but an exponential
+\begin{align*}
+  a(t) = a_0 \exp\left\{\sqrt{\frac{\Lambda}{3}} (t - t_0) \right\},
+\end{align*}
+as illustrated in figure~\ref{fig:single_component_scale}.
 
 \begin{figure}[!htbp]
   \input{figures/single_component_scale.pgf}
@@ -1974,41 +2016,93 @@ $w = -1$ reads\todo{Verify the units and make sure we're not missing a $c^2$.}
     intersection with the $x$-axis, with the sign changed. Note that, despite the
     completely different evolution, all the models have the same radius and Hubble
     constant at the present time, i.e., they could not be distinguished by the
-    Hubble law alone.}
+    Hubble law alone. (But they do have different deceleration parameters.)}
   \label{fig:single_component_scale}
 \end{figure}
 
-Let us examine the three cases separately for a second. In a matter-dominated
-universe, where the universe fluid is pressureless ($w = 0$), we have
-\begin{align}
-  a_m(t) = a_0 \left( \frac{t}{t_0} \right)^\frac{2}{3}
-  \quad\text{(matter-dominated)}.
-\end{align}
-In this case the Hubble constant reads
+Now that we have general solutions for $a(t)$, we can work our way through all
+the formalism we have developed so far. Let's start from the power-law case, covering
+empty universes and universes dominated by matter or radiation\sidenote{With our
+choice for the normalization the scale factor at the current time $t_0$ is
+precisely $a_0$.}
 \begin{align*}
-  H_0 = \frac{\dot{a}(t_0)}{a(t_0)} = \frac{2}{3} \frac{1}{t_0}
-  \quad\text{and}\quad
-  t_0 = \frac{2}{3} H_0^{-1},
+  a(t) = a_0 \left( \frac{t}{t_0} \right)^\beta \quad
+  \dot{a}(t) = \frac{\beta a_0}{t_0} \left( \frac{t}{t_0} \right)^{\beta - 1} \quad
+  \ddot{a}(t) = \frac{\beta(\beta - 1) a_0}{t_0^2} \left( \frac{t}{t_0} \right)^{\beta - 2}
 \end{align*}
-i.e., the age of the universe is smaller than the Hubble time.
-
-In a radiation-dominated universe, with $w = \nicefrac{1}{3}$, our equation yields
+from which follows that the Hubble parameter and the deceleration parameter
+read\sidenote{Note that the deceleration parameter, in this particular case,
+is constant (i.e., independent of time), and positive for $\beta < 1$.}
+\begin{align*}
+  H(t) = \frac{\dot{a}}{a} = \frac{\beta}{t} \quad\text{and}\quad
+  q(t) = -\frac{a \ddot{a}}{\dot{a}^2} = \frac{1 - \beta}{\beta} \quad \text{(constant)}.
+\end{align*}
+The age of the universe $t_0$ can be expressed in terms of the Hubble constant $H_0$
+for the three cases as
 \begin{align}
-  a_r(t) = a_0 \left( \frac{t}{t_0} \right)^\frac{1}{2}
-  \quad\text{(radiation-dominated)}.
+  t_0 = \frac{\beta}{H_0} =
+  \begin{cases}
+    H_0^{-1} & \quad\text{empty}\\
+    \nicefrac{1}{2} H_0^{-1} & \quad\text{radiation}\\
+    \nicefrac{2}{3} H_0^{-1} & \quad\text{matter}.
+  \end{cases}
 \end{align}
-and the age of the universe $t_0 = \nicefrac{1}{2} H_0^{-1}$ is half of the Hubble
-time.
+As we can could have guessed, it is exactly the Hubble time $H_0^{-1}$ for an
+empty universe, and it is smaller than that for the other two cases, which is a
+consequence of the fact that the expansion is decelerating.
 
-Finally, in a universe dominated by the cosmological constant, we have
-\begin{align}
-  a_\Lambda(t) = a_0 \exp\left \{ \sqrt{\frac{\Lambda}{3}} (t - t_0) \right\} =
-  a_0 e^{H_0 (t - t_0)}
-  \quad \text{(}\Lambda\text{-dominated)},
-\end{align}
-that is, the scale factor is exponentially expanding, and the universe itself
-is infinitely old.
+The process can be repeated for a $\Lambda$-dominated universe, yielding
+\begin{align*}
+  H(t) = \sqrt{\frac{\Lambda}{3}} \quad\text{and}\quad
+  q(t) = -1,
+\end{align*}
+both of which are constant. It goes without saying, in this case the age of the
+universe is infinite.
 
+This is all illustrated nicely in figure~\ref{fig:single_component_scale}, where
+we have plotted the evolution of the scale factor for the for toy models we
+have considered. We emphasize that the four curves all have the same value $a_0$
+at the current time $t_0$, and they also have the same time derivate---which
+means that they all have the same Hubble constant at the current time.
+In other words, we would not be able to distinguish between these four models
+by only measuring $H_0$, but we would be able to tell them apart with the
+additional measurement of the deceleration parameter $q_0$\sidenote{The idea
+to constrain the cosmic evolution by measuring the relevant cosmological
+parameters \emph{today} is a profound one, and we shall pursue it in the next
+section.}.
+
+Table \ref{tab:single_component} summarizes the results we have found for the four
+single-component universes we have considered. We acknowledge that this entire
+discussion is largely academic, and we shall develop the proper formalism for
+a mixture of fluids in the next section; but it is worth emphasizing that, since
+the radiation energy density scales with the largest power of the scale factor,
+we should fully expect that the early universe (when $a$ was small) was
+dominated by radiation, and the results we have obtained are fully applicable
+there.
+
+{\renewcommand{\arraystretch}{2.}
+\begin{table}[!htbp]
+  \centering
+  \begin{tabular}{lcccc}
+    \hline
+    & empty & radiation & matter & $\Lambda$ \\
+    \hline
+    \hline
+    $a(t)$ & $a_0 \left( \frac{t}{t_0} \right)$ &
+    $a_0 \left( \frac{t}{t_0} \right)^{1/2}$ &
+    $a_0 \left( \frac{t}{t_0} \right)^{2/3}$ &
+    $a_0 \exp\left(\sqrt{\frac{\Lambda}{3}} t\right)$ \\
+    $H(t)$ & $\frac{1}{t}$ & $\frac{1}{2t}$ & $\frac{2}{3t}$ & $H_0$ \\
+    $q(t)$ & 0 & 1 & $\frac{1}{2}$ & $-1$ \\
+    $t_0$ & $\frac{1}{H_0}$ & $\frac{1}{2H_0}$ & $\frac{2}{3H_0}$ & $\infty$\\[5pt]
+    \hline
+  \end{tabular}
+  \caption{Summary of the evolution of the scale factor, the Hubble parameter, the
+    deceleration parameter and the age of the universe for the four single-component
+    universes with a power-law evolution.}
+  \label{tab:single_component}
+\end{table}
+}
 
 
 \subsection{Multiple-component universes}
@@ -2312,14 +2406,14 @@ in the $\Omegamatzero$-$\Omegalamzero$ plane, as showed in figure~\ref{fig:cosmo
 We note that, in this plane, \emph{flat} universes lay on the line
 \begin{align*}
   \Omegakzero = 0 \quad\text{or}\quad
-  \Omegamatzero + \Omegalamzero = 1,
+  \Omegamatzero + \Omegalamzero = 1, \quad\text{(flat universes)},
 \end{align*}
 which is a straight line with slope $-1$ and intercept $1$.
 Points above (below) this line representing positively (negatively) curved universes.
 Additionally, universes where the current deceleration parameter is zero
-lie on the line
+(that is, universes that are currently \emph{coasting}) lie on the line
 \begin{align*}
-  \frac{1}{2} \Omegamatzero - \Omegalamzero = 0,
+  \frac{1}{2} \Omegamatzero - \Omegalamzero = 0, \quad\text{(currently coasting universes)},
 \end{align*}
 which is, again, a stright line going through the origin, this time with
 slope $\nicefrac{1}{2}$. Anything above this line represents universes that
