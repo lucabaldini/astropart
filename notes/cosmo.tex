@@ -1924,6 +1924,7 @@ with cosmic time.
 
 
 \subsection{Single-component universes}
+\label{sec:single_component_universes}
 
 Silly as this might seem\sidenote{Maybe this will look less silly if we take an
 empty universe to be one where the ovearall energy density is small enough in
@@ -2436,30 +2437,31 @@ the reader might find the details in~\cite{2001_carrol} but the result is the
 solid line\sidenote{The separation line looks awfully close to the line $\Omegalamzero = 0$
 but in fact this is only true for $\Omegamatzero \le 1$. For $\Omegamatzero > 1$
 it departs slightly from the horizontal toward positive values of $\Omegalamzero$.
-It is also worth noting that for $\Omegamatzero = 0$ the universe expands forever
+It is also worth noting that for $\Omegalamzero = 0$ the universe expands forever
 if $\Omegamatzero > 1$ and re-collapses if $\Omegamatzero < 1$, which made it into
-mainstream popular cosmology as a general truth, where in fact reality is much more
-complex.} in figure~\ref{fig:cosmo_map}, dividing the universe that expand forever
+mainstream popular cosmology as a general truth, where in fact reality is more
+nuanced.} in figure~\ref{fig:cosmo_map}, dividing the universe that expand forever
 from those the ultimately collapse.
 
-The vast majority of the universes in figure~\ref{fig:cosmo_map} start with a
+The vast majority of the universes in figure~\ref{fig:cosmo_map} starts with a
 singularity $a(0) = 0$ and then start expanding---the initial singularity is generally
-referred to as the \emph{Big Bang}. Now, a closer look at~\eqref{eq:friedman_fate_condition}
-shows that the situation can arise, if $\Omegamatzero$ and $\Omegalamzero$ are both
-positive, where $H^2$ is positive both for small values of the scale factor (where
-matter dominates) and for large values of the scale factor (where the vacuum energy
-dominates) but the term $(1 - \Omegamatzero - \Omegalamzero)$ is negative enough
-for $H^2$ to be negative at intermediate values of $a$. Since this is physically
-impossible, that simply means that there exist a portion of the phase space where
-we have a forbidden range of values for the scale factor $a(t)$, which means that
-the possibility exists for universes not to start with a big bang, but rather from
-low-density, $\Lambda$-dominates start with a large scale factor $a(0) \gg a_0$,
-contract to a minimum and then bounce back expanding. Again, the algebra is not
-trivial, but the result is the shaded region in the top-left corner of
-figure~\ref{fig:cosmo_map}.
-
-
-
+referred to as the \emph{Big Bang}. Consider now the particular setup with
+$\Omegamatzero = 0$ and $\Omegalamzero = \nicefrac{3}{2}$, in the top-left corner
+of our plot. The condition ~\eqref{eq:friedman_fate_condition} becomes
+\begin{align*}
+  -\frac{1}{2} \left(\frac{a_0}{a}\right)^2  + \frac{3}{2}\geq 0 \quad\text{or}\quad
+  a(t) \geq \frac{a_0}{\sqrt{3}}.
+\end{align*}
+That is, there exist a forbidden range of values for the scale factor $a(t)$, which
+means that this particular universe cannot originate from a big bang, but rather
+start from low-density, $\Lambda$-dominated situation with a large scale factor
+$a(0) \gg a_0$, contract to a minimum and then bounce back expanding\sidenote{If you
+are wondering why this did not come up in our discussion of $\Lambda$-dominated
+cosmologies in section~\ref{sec:single_component_universes}, well: that was limited
+to flat universes, in which the particular combination we have picked here is just
+not allowed. You can easily see for yourslf that a negative $\Omegakzero$, and
+therefore a positive curvature, is the key for this new phenomenon.}. This is the
+very origin of the shaded region in the top-left corner of figure~\ref{fig:cosmo_map}.
 
 
 \subsection{The luminosity distance}
