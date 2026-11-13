@@ -231,7 +231,7 @@ assume the stars in the LMC are all approximately at the same distance.} This, i
 turn, paved the way to the indirect measurement of the distances of other galaxies
 by the measurement of the period and the relative magnitude of Cepheid stars embedded
 into them: you derive the absolute magnitude from the period and gauge the distance
-via the inverse-square low by comparing it to the relative magnitude.
+via the inverse-square law by comparing it to the relative magnitude.
 
 Cepheids constitute the first instance of so called \emph{standard candles}, or
 objects whose absolute luminosity is known or can be reliably inferred by the
@@ -317,7 +317,7 @@ of the universe and we call the function $H(t)$ the Hubble parameter, while we r
 the name Hubble constant for the value $H_0$ of the Hubble parameter at the present
 time.} is simply
 \begin{align}
-	H(t) = \frac{\dot{a(t)}}{a(t)}.
+	H(t) = \frac{ \dot{a}(t)}{a(t)}.
 \end{align}
 
 Let us go along with this na\"ive argument and assume that this expansion has been
@@ -930,7 +930,7 @@ When we observe the light emitted by a star, what we are mainly looking at is it
 blackbody\sidenote{Sure enough, no star is a perfect blackbody, and yet this is a
 surprisingly good approximation, and one that allows to derive a number of interesting
 and far-reaching consequences that allow to gain profund insight into the inner
-workings of these objects.}, we know that the spectrum of the radiation is described
+workings of these objects.}, we note that the spectrum of the radiation is described
 by the Planck distribution, and depends on a single parameter---the effective temperature.
 The hotter the blackbody, the shorter the wavelength (or the higher the frequency
 and energy) at which the spectrum peaks, as captured by Wien's displacement law
@@ -1033,7 +1033,7 @@ energy output, irrespectively of the star temperature.
 
 Now, it is obvious from figure~\ref{fig:color_index} that the fraction of the spectral
 radiance measured in the visual band depends on the temperature: it is largest when
-the blackbody spectrum peaks of at the center of the $V$ band (that is, for an effective
+the blackbody spectrum peaks at the center of the $V$ band (that is, for an effective
 temperature of $6000$--$7000~^\circ$K) and smaller (and, quite possibly, much smaller)
 for lower and higher temperature. Just like the conversion between temperature
 and color index, the bolometric correction can be calculated from first principles
@@ -1129,7 +1129,7 @@ when the stars contracts, half of the gravitational energy is lost from the surf
 of the star, and the other half is converted into internal energy (i.e., heat),
 causing a raise of the temperature\sidenote{There is an amusing, purely mechanical
 analogous of this phenomenon: the decay of the orbit of a satellite, where the
-velocity (and the kiketic energy) of the latter increases as the height of the
+velocity (and the kinetic energy) of the latter increases as the height of the
 orbit (and hence the potential energy) decreases.}.
 The virial theorem is instrumental in guaranteeing the stability of a star as the
 nuclear fuel is burned into its core: if the energy production increase, this
@@ -1240,12 +1240,12 @@ thin layers as shown in figure~\ref{fig:sphere_gravitational_energy}:
 and the corresponding energy density reads
 \begin{align*}
   u_G = \frac{E_G}{V} =
-  -\frac{3GM^2}{5R} \frac{3}{4\pi R^3} = -\frac{9}{20} \frac{GM^2}{R^4}.
+  -\frac{3GM^2}{5R} \frac{3}{4\pi R^3} = -\frac{9}{20} \frac{GM^2}{\pi R^4}.
 \end{align*}
 We can then use the expression for the stellar radius as a function of the number
 density~\eqref{eq:wd_radius_density} to recast this as
 \begin{align}
-	u_G = -\frac{3}{5} \left( \frac{4}{3} \right)^\frac{1}{3} \pi^\frac{4}{3} G M^\frac{2}{3}
+	u_G = -\frac{3}{5} \left( \frac{4}{3} \right)^\frac{1}{3} \pi^\frac{1}{3} G M^\frac{2}{3}
 	\muave^\frac{4}{3} m_p^\frac{4}{3} n^\frac{4}{3}.
 \end{align}
 
@@ -1312,7 +1312,7 @@ flawed, shortly after his paper Stoner worked out the uniform sphere problem in
 a fully relativistic approach~\cite{1930LEDPM...9..944S}. This was hardly a mere
 incremental improvement over the previous model, as incorporating the relativistic
 effects gives birth to a completely new phenomenon: the existence of a hard mass
-limit above which the equilibrium~\ref{eq:wd_equilibrium_condition} simply cannot
+limit above which the equilibrium(~\ref{eq:wd_equilibrium_condition}) simply cannot
 hold. Perhaps the easiest way to see this is to note that in the ultra-relativistic
 regime the energy density due to the Fermi degeneracy pressure
 \begin{align*}
@@ -1494,7 +1494,7 @@ can be simply estimated by
   \quad\text{or}\quad
   v_\text{ej} = \sqrt{\frac{2 E_\text{Ia}}{M_\odot}} \approx 10,000~\text{km~s}^{-1}.
 \end{align}
-As we shall see in section~\ref{sec}, this will be relevant for the discussion of
+As we shall see in section~\ref{sec:shock_acceleration}, this will be relevant for the discussion of
 the acceleration of cosmic rays in shocks.
 
 
@@ -2038,7 +2038,7 @@ compelling experimental evidences that the universe is isotropic at large scales
 	$\subcmb{\density} \approx 0.2606$~eV~cm$^{-3}$
 }
 
-Everything we have said about the Planck distribution in appendix~\ref{chap:qstats}
+Everything we have said about the Planck distribution in appendix~\ref{chap:qstat}
 holds for the CMB. The differential number density peaks at $3.74 \times 10^{-4}$~eV,
 but due to the right tail in the distribution the average photon energy is
 $6.62 \times 10^{-4}$~eV. The total number density is $410$~cm$^{-3}$ and the total
@@ -2085,7 +2085,7 @@ only amounts to 5--10\% of the former, indicating the energy density of the CMB
 is (much) larger than the energy density of all the light produced by all the stars
 in the history of the universe. So much so that, to a first approximation, the
 EBL can be just neglected from a cosmological standpoint. And yet we shall see in
-section~\ref{sec:universe_opacity} that it is fundamental for very-high-energy
+section~\ref{sec:universe_transparency} that it is fundamental for very-high-energy
 gamma-ray astronomy, as it is the component that renders the universe opaque to
 photons above $~\sim 100$~GeV.
 
